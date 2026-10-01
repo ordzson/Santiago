@@ -679,10 +679,10 @@ function sketch(E, pts, w, o){
   }
   c.lineWidth = w * px * (.8 + .4 * R()); c.strokeStyle = o.color || E.ink; c.stroke();
 }
-function claw(E, x, y, ang, L){
+function foamCurl(E, x, y, ang, L){
   const c = E.ctx; c.save(); c.translate(x, y); c.rotate(ang);
-  const p = P(`M0 -3 C${L * .45} -4.2 ${L * .85} -2.4 ${L} 1.6 C${L * .8} .6 ${L * .65} 1.4 ${L * .6} 3.4 C${L * .4} 3.4 ${L * .2} 3.2 0 3 Z`);
-  fill(E, p, E.paper); edge(E, p, .7);
+  const p = P(`M0 1.8 C${L * .28} .8 ${L * .55} ${-L * .16} ${L} ${-L * .08} C${L * .8} ${L * .05} ${L * .62} ${L * .18} ${L * .36} 3.8 C${L * .22} 4.5 ${L * .08} 3.8 0 1.8 Z`);
+  fill(E, p, E.paper); edge(E, p, .65);
   c.restore();
 }
 function seaLines(E, x0, x1, y0, rows, gap, brk){
@@ -698,46 +698,53 @@ function wavelet(E, x, y, s){
 }
 function curlWave(E, o){
   o = o || {};
-  const c = E.ctx, d = o.dens || 1, R = E.rand;
-  const body = P('M440 372 C380 366 330 300 310 220 C298 168 282 128 262 120 C230 104 168 112 148 150 C136 172 146 206 168 214 C160 198 166 178 190 172 C214 166 236 176 240 196 C246 240 226 320 180 372 Z');
-  const lip = P('M262 120 C230 104 168 112 148 150 C136 172 146 206 168 214 C160 198 166 178 190 172 C214 166 236 176 240 196 C256 186 276 176 298 177 C290 146 280 126 262 120 Z');
-  fill(E, body, E.paper);
-  // the body of water: lines sweeping from the back to the face
-  const back = catmull([[440, 372], [380, 360], [340, 316], [316, 262], [298, 177]], 12);
-  const face = catmull([[180, 372], [214, 330], [236, 270], [243, 226], [240, 196]], 12);
+  const c = E.ctx, R = E.rand, d = o.dens || 1, s = o.scale || 1;
+  c.save(); c.translate(o.x || 0, o.y || 0); c.scale(s, s);
+  const W = Object.assign({}, E, { px: E.px / s });
+
+  // A low, wind-driven breaker: the silhouette leans into the curl instead of
+  // rising like a column. The inner edge leaves a generous, readable hollow.
+  const body = P('M470 322 C423 317 382 301 346 278 C314 257 286 214 263 176 C247 149 229 132 203 124 C174 115 143 126 116 149 C97 165 87 184 91 200 C94 213 106 222 121 223 C110 213 109 201 116 190 C125 174 142 166 160 167 C183 168 201 183 205 204 C213 238 198 274 173 299 C162 310 149 318 137 322 Z');
+  fill(W, body, W.paper);
+
+  const back = catmull([[470, 322], [423, 316], [382, 300], [346, 278], [315, 250], [286, 213], [263, 176]], 10);
+  const face = catmull([[137, 322], [158, 310], [178, 288], [195, 260], [205, 231], [210, 211], [205, 204]], 10);
   c.save(); c.clip(body);
-  const N = Math.max(10, Math.round(56 * d));
+  const N = Math.max(16, Math.round(38 * d));
   for (let k = 0; k <= N; k++) {
-    const L = lerpPts(back, face, k / N);
-    sketch(E, L.slice(0, Math.round(L.length * (1 - R() * .28))), .5 + .35 * (k / N), { wob: .5, brk: .015 });
+    const t = k / N, L = lerpPts(back, face, t);
+    sketch(W, L.slice(0, Math.round(L.length * (1 - R() * .15))), .48 + .28 * t, { wob: .42, brk: .012 });
   }
-  const zone = (s0, s1) => polyPath(lerpPts(back, face, s0).concat(lerpPts(back, face, s1).reverse()));
-  hatch(E, zone(.7, 1.04), [160, 170, 140, 210], { ang: 72, gap: 1.35, w: .5, wob: .2 });
-  hatch(E, zone(.86, 1.04), [160, 170, 140, 210], { ang: -18, gap: 1.8, w: .45, wob: .2 });
+  const zone = (a, b) => polyPath(lerpPts(back, face, a).concat(lerpPts(back, face, b).reverse()));
+  hatch(W, zone(.7, 1), [128, 186, 110, 142], { ang: 66, gap: 1.55, w: .46, wob: .18 });
+  hatch(W, zone(.84, 1), [128, 186, 110, 142], { ang: -22, gap: 2.15, w: .42, wob: .18 });
   c.restore();
-  // the white curl of foam
-  fill(E, lip, E.paper);
-  const outer = catmull([[262, 120], [232, 108], [196, 110], [164, 126], [146, 154], [146, 186], [156, 206], [168, 214]], 10);
-  const inner = catmull([[298, 177], [268, 182], [240, 196], [230, 178], [210, 168], [190, 172], [174, 190], [168, 214]], 10);
+
+  // The foam is one continuous ribbon, with only a handful of tapered curls.
+  const outer = catmull([[263, 176], [250, 148], [229, 130], [203, 124], [174, 118], [145, 127], [116, 149], [97, 174], [91, 197], [97, 212], [107, 220], [121, 223]], 10);
+  const inner = catmull([[286, 196], [264, 181], [242, 170], [218, 165], [194, 166], [174, 171], [160, 167], [141, 168], [125, 178], [116, 193], [114, 209], [121, 223]], 10);
+  const lip = polyPath(outer.concat(inner.slice().reverse()));
+  fill(W, lip, W.paper);
   c.save(); c.clip(lip);
-  hatch(E, polyPath(lerpPts(outer, inner, .78).concat(inner.slice().reverse())), [150, 150, 160, 70], { ang: 30, gap: 1.2, w: .5 });
+  hatch(W, polyPath(lerpPts(outer, inner, .7).concat(inner.slice().reverse())), [88, 116, 210, 118], { ang: 25, gap: 1.45, w: .45, wob: .2 });
   c.restore();
-  [.24, .48, .7].forEach(s => sketch(E, lerpPts(outer, inner, s), .5, { wob: .4, brk: .04 }));
-  edge(E, body, 1.1); edge(E, lip, .9);
-  // claws of foam along the leading edge
-  for (let i = 8; i < outer.length - 5; i += 4) {
+  [.22, .47, .72].forEach(t => sketch(W, lerpPts(outer, inner, t), .48, { wob: .32, brk: .025 }));
+  edge(W, body, 1.15); edge(W, lip, .9);
+
+  const curls = [16, 32, 48, 65, 82, 99];
+  curls.forEach((i, n) => {
     const a = outer[i - 1], b = outer[i + 1], q = outer[i];
-    let tx = b[0] - a[0], ty = b[1] - a[1]; const tl = Math.hypot(tx, ty) || 1; tx /= tl; ty /= tl;
-    let nx = ty, ny = -tx;
-    if ((q[0] - 205) * nx + (q[1] - 165) * ny < 0) { nx = -nx; ny = -ny; }
-    claw(E, q[0], q[1], Math.atan2(ny + ty * .6, nx + tx * .6), 8 + R() * 5);
+    const dx = b[0] - a[0], dy = b[1] - a[1], dl = Math.hypot(dx, dy) || 1;
+    foamCurl(W, q[0], q[1], Math.atan2(dx / dl, -dy / dl) + (n - 2) * .05, 10 + R() * 5);
+  });
+
+  // Spray is blown left, in the same direction as the wind bands on the cover.
+  for (let i = 0; i < 88 * d; i++) {
+    const q = outer[8 + Math.floor(R() * Math.max(1, outer.length * .72 - 8))];
+    const flight = 5 + Math.abs(W.g()) * 32;
+    dot(W, q[0] - flight - R() * 9, q[1] - 3 - Math.abs(W.g()) * 19 + W.g() * 4, .28 + .46 * R());
   }
-  // spray thrown off the curl
-  for (let i = 0; i < 140 * d; i++) {
-    const q = outer[2 + Math.floor(R() * (outer.length - 12))];
-    const dx = q[0] - 205, dy = q[1] - 165, dl = Math.hypot(dx, dy) || 1, r = 6 + Math.abs(E.g()) * 22;
-    dot(E, q[0] + dx / dl * r + E.g() * 4, q[1] + dy / dl * r + E.g() * 4, .3 + .5 * R());
-  }
+  c.restore();
 }
 
 Object.assign(VIG, {
@@ -787,41 +794,10 @@ Object.assign(VIG, {
     dot(E, 96, 30, 1, E.red); dot(E, 110, 22, .8, E.red); dot(E, 103, 13, .6, E.red);
   },
   wave(E){
-    const c = E.ctx;
-    // A small illustration needs a stronger silhouette than the full cover:
-    // one white curling lip, one dark face and only a few supporting sea marks.
-    const body = P('M194 151 C172 149 156 136 149 116 C143 99 143 82 136 69 C131 60 124 55 115 51 C96 43 72 45 56 56 C44 64 38 76 40 88 C42 98 50 104 58 106 C54 97 57 87 66 80 C76 73 90 75 98 84 C108 99 108 126 94 151 Z');
-    const face = P('M136 69 C146 84 146 101 151 117 C158 137 173 147 194 151 L94 151 C108 126 108 99 98 84 C108 78 122 72 136 69 Z');
-    const lip = P('M115 51 C96 43 72 45 56 56 C44 64 38 76 40 88 C42 98 50 104 58 106 C54 97 57 87 66 80 C76 73 90 75 98 84 C108 78 122 72 136 69 C131 60 124 55 115 51 Z');
-
-    fill(E, body, E.paper);
-    hatch(E, face, [92, 68, 104, 84], { ang: 76, gap: 1.35, w: .52, wob: .2 });
-    hatch(E, face, [92, 68, 104, 84], { ang: -14, gap: 3.4, w: .42, wob: .2 });
-    c.save(); c.clip(body);
-    for (let k = 0; k < 7; k++) {
-      c.beginPath(); c.moveTo(190, 145 - k * 8);
-      c.bezierCurveTo(168, 143 - k * 7, 154, 123 - k * 5, 140, 77 - k * .8);
-      c.lineWidth = (.45 + k * .035) * E.px; c.strokeStyle = E.ink; c.stroke();
-    }
-    c.restore();
-
-    fill(E, lip, E.paper);
-    const outer = catmull([[115, 51], [96, 44], [76, 47], [57, 57], [43, 72], [41, 89], [48, 101], [58, 106]], 6);
-    const inner = catmull([[136, 69], [119, 72], [103, 79], [98, 84], [91, 75], [77, 73], [66, 80], [58, 106]], 6);
-    [.3, .58, .82].forEach(s => sketch(E, lerpPts(outer, inner, s), .55, { wob: .32, brk: .025 }));
-    edge(E, body, 1.35); edge(E, lip, 1.2);
-
-    [[104, 47, -1.9, 8], [86, 45, -1.65, 7], [68, 50, -2.25, 7], [53, 59, -2.7, 8], [43, 74, -3.05, 7], [42, 90, 2.85, 6]].forEach(a => claw(E, a[0], a[1], a[2], a[3]));
-    for (let i = 0; i < 36; i++) {
-      const q = outer[Math.floor(E.rand() * Math.max(1, outer.length - 8))];
-      const dx = q[0] - 78, dy = q[1] - 77, dl = Math.hypot(dx, dy) || 1;
-      const r = 4 + Math.abs(E.g()) * 12;
-      dot(E, q[0] + dx / dl * r + E.g() * 2.5, q[1] + dy / dl * r + E.g() * 2.5, .3 + E.rand() * .35);
-    }
-
+    curlWave(E, { scale: .44, dens: .72 });
     E.ctx.strokeStyle = E.ink;
     seaLines(E, 6, 196, 151, 3, 3.2, .22);
-    wavelet(E, 28, 149, .72);
+    wavelet(E, 35, 150, .66);
     for (let k = 0; k < 3; k++) rough(E, 158 + k * 4, 21 + k * 9, 196, 13 + k * 8, .55, { wob: .35, brk: .12, step: 3 });
   },
   flower(E){
@@ -1037,7 +1013,7 @@ COVERS[1] = function(E){
   seaLines(E, 24, 210, 326, 5, 9, .35);
   wavelet(E, 58, 350, 1.4); wavelet(E, 118, 340, 1); wavelet(E, 160, 360, 1.1);
   // the wave itself
-  curlWave(E, {});
+  curlWave(E, { y: 35 });
   // the sea in front
   seaLines(E, 16, 440, 375, 9, 3.4);
   wavelet(E, 40, 384, 1.7); wavelet(E, 132, 388, 1.3); wavelet(E, 86, 398, 1.5);
