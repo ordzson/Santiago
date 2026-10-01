@@ -1,0 +1,114 @@
+<div class="book" id="book">
+  <div class="spine" aria-hidden="true"></div>
+
+  <div class="view home" id="home">
+    <header class="hero cover" id="hero">
+      <canvas class="cover-art" id="hero-art" aria-hidden="true"></canvas>
+      <div class="cover-in">
+        <div class="brand">
+          <p class="brand-1"><span class="dot"></span>Los libros de la Biblia</p>
+          <p class="brand-2">El Compañero 2026</p>
+        </div>
+        <p class="version">Nueva Biblia<br>de las Américas</p>
+        <div class="c-main">
+          <p class="c-pre">la epístola de</p>
+          <h1 class="c-title">Santiago</h1>
+          <p class="c-chap">Capítulos 1 al 5</p>
+          <div class="dashes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <p class="c-desc">Una carta práctica sobre las pruebas, la lengua, las riquezas y una fe que se ve en las obras, para leer página por página.</p>
+          <p class="hero-epi">«A las doce tribus que están en la dispersión: Saludos.» <span>Santiago 1:1</span></p>
+          <div class="c-actions">
+            <button class="btn-start" id="resume-btn"><span id="resume-txt">Empezar a leer</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </button>
+            <button class="btn-resume" id="to-index">Ver capítulos</button>
+          </div>
+          <p class="resume-sub" id="resume-sub"></p>
+        </div>
+      </div>
+    </header>
+
+    <section class="index" id="capitulos" aria-labelledby="index-h">
+      <div class="index-top">
+        <h2 class="index-h" id="index-h">Capítulos</h2>
+        <span class="index-meta">5 capítulos · 108 versículos</span>
+      </div>
+      <div class="dashes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <ol class="chap-list" id="chap-list"></ol>
+      <div class="howto">
+        <p class="blk-label" style="--c:var(--red)">Cómo usar</p>
+        <p><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h14M7 6l-4 4 4 4M13 6l4 4-4 4"/></svg><span>Pasa de página con las flechas de los lados o deslizando el dedo. Al terminar un capítulo, sigue el siguiente.</span></p>
+        <p><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 15h14" stroke-dasharray="1.5 2.5"/><path d="M6 11V5M10 11V3M14 11V7"/></svg><span>Toca las palabras subrayadas para ver el griego original.</span></p>
+        <p><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 5h12M4 10h12M4 15h8"/></svg><span>Toca el número de página, arriba a la derecha, para saltar a cualquier sección o cambiar de capítulo.</span></p>
+        <p><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 6 10l6 6"/></svg><span>Vuelve a este índice con el botón de arriba a la izquierda. Tu avance queda guardado en este dispositivo.</span></p>
+      </div>
+      <p class="credit">Texto bíblico tomado de la Nueva Biblia de las Américas (NBLA), Copyright © 2005 por The Lockman Foundation. Usado con permiso. Las notas del griego, las preguntas, las oraciones y los grabados son material de estudio y no forman parte del texto bíblico.</p>
+    </section>
+  </div>
+
+  <div class="view reader" id="reader" hidden>
+    <header class="bar" id="bar">
+      <button class="bar-back" data-home="index" aria-label="Volver al índice de capítulos">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
+        <span id="bar-ch">Santiago 1</span>
+      </button>
+      <button class="count" id="count" aria-haspopup="dialog" aria-controls="toc-sheet">
+        <span id="count-txt">1 / 13</span>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3 4.5h10M3 8h10M3 11.5h6"/></svg>
+      </button>
+      <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+    </header>
+
+    <main class="deck" id="deck"></main>
+
+    <button class="turn prev" id="prev" aria-label="Página anterior">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
+    </button>
+    <button class="turn next" id="next" aria-label="Página siguiente">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg>
+    </button>
+
+    <div class="scrim" id="scrim"></div>
+
+    <section class="sheet" id="note-sheet" role="dialog" aria-modal="true" aria-labelledby="ns-word" inert>
+      <div class="sheet-top">
+        <div class="dashes" aria-hidden="true" data-long="2"><i></i><i></i><i></i><i></i></div>
+        <button class="x" data-close>Cerrar
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+        </button>
+      </div>
+      <p class="ns-kick" id="ns-kick">Mira de cerca</p>
+      <h2 class="ns-word" id="ns-word"></h2>
+      <p class="ns-greek"><span class="gr" id="ns-gr" lang="grc"></span><span class="tr" id="ns-tr"></span></p>
+      <p class="ns-gloss" id="ns-gloss"></p>
+      <p class="ns-body" id="ns-body"></p>
+      <div class="ns-nav">
+        <button id="ns-prev"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>Anterior</button>
+        <span class="ns-pos" id="ns-pos"></span>
+        <button id="ns-next">Siguiente<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
+      </div>
+    </section>
+
+    <section class="sheet" id="toc-sheet" role="dialog" aria-modal="true" aria-labelledby="toc-h" inert>
+      <div class="sheet-top">
+        <div class="dashes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <button class="x" data-close>Cerrar
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+        </button>
+      </div>
+      <h2 class="toc-h" id="toc-h">Santiago 1</h2>
+      <div class="toc-ch" role="group" aria-label="Cambiar de capítulo">
+        <span>Capítulo</span>
+        <button data-chapter="1" aria-label="Capítulo 1">1</button>
+        <button data-chapter="2" aria-label="Capítulo 2">2</button>
+        <button data-chapter="3" aria-label="Capítulo 3">3</button>
+        <button data-chapter="4" aria-label="Capítulo 4">4</button>
+        <button data-chapter="5" aria-label="Capítulo 5">5</button>
+      </div>
+      <ol class="toc-list" id="toc-list"></ol>
+      <button class="toc-index" data-home="index">Ver el índice de capítulos</button>
+    </section>
+
+    <p class="sr" aria-live="polite" id="live"></p>
+  </div>
+</div>
