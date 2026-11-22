@@ -55,7 +55,6 @@
         }
         @if(scene() && (phase() === 'fading' || phase() === 'black')){<div class="fade-veil" [class.black]="phase() === 'black'" [style.--fade-ms]="fadeMs + 'ms'" (click)="veilTap()"><span class="sr-only" role="status">{{phase() === 'black' ? (blackReady() ? 'Fin de la escena. Toca para volver al estudio.' : '') : 'La escena se funde a negro.'}}</span></div>}
       </div>
-      <p class="preview-footnote"><v-icon name="sparkle"/> La interfaz se retira. La Palabra permanece.</p>
     </section>
 
     <aside class="scene-settings" aria-label="Diseño de la escena">
