@@ -1046,39 +1046,11 @@ output {
   inset:0;
   background:var(--paper);
   z-index:35;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:50px 32px
+  overflow:hidden
 }
-.ending-screen>v-engraving {
-  width:min(100%,330px);
-  height:160px;
-  margin-top:-100px;
-  margin-bottom:22px
-}
-.ending-rule {
-  width:30px;
-  height:2px;
-  background:var(--red);
-  margin-bottom:30px
-}
-.ending-screen h2 {
-  font:400 45px/1.18 var(--display);
-  letter-spacing:-.035em;
-  max-width:14ch;
-  overflow-wrap:anywhere
-}
-.ending-screen>p {
-  font:400 12px var(--ui);
-  color:var(--muted);
-  margin-top:24px
-}
-.ending-flower {
-  margin-top:40px;
-  color:var(--red)
+/* El polvo ambiental del cierre flota sobre el papel y la luz. */
+.preview-frame.is-finished v-particles {
+  z-index:36
 }
 .ending-actions {
   position:absolute;
@@ -1096,6 +1068,28 @@ output {
 .ending-actions.visible {
   opacity:1;
   pointer-events:auto
+}
+/* Velo del cierre: negro 0→1 en FADE_MS (la duración la pone la app), ease-in-out. También con reduced motion: es opacidad y es el cierre buscado. */
+.fade-veil {
+  position:absolute;
+  inset:0;
+  z-index:60;
+  background:#000;
+  opacity:0;
+  animation:fade-veil-in var(--fade-ms,6000ms) cubic-bezier(.45,0,.55,1) forwards;
+  cursor:default
+}
+.fade-veil.black {
+  opacity:1;
+  animation:none
+}
+@keyframes fade-veil-in {
+  from {
+    opacity:0
+  }
+  to {
+    opacity:1
+  }
 }
 .dark-scene {
   color:var(--ink);
@@ -1734,9 +1728,6 @@ code {
     max-width:420px;
     padding-inline:18px
   }
-  .ending-screen h2 {
-    font-size:40px
-  }
   .dialog-heading {
     padding:20px 20px 15px
   }
@@ -1801,6 +1792,10 @@ code {
     animation:none!important;
     transition:none!important;
     scroll-behavior:auto!important
+  }
+  /* El fundido a negro es opacidad y es el cierre buscado: se conserva también con movimiento reducido. */
+  .fade-veil:not(.black) {
+    animation:fade-veil-in var(--fade-ms,6000ms) cubic-bezier(.45,0,.55,1) forwards!important
   }
 }
 .preview-frame {
@@ -1957,10 +1952,10 @@ code {
 .intro-cover.lifted {
   opacity:0
 }
+/* El fundido final de la portada es opacidad y es la entrada buscada: se conserva con movimiento reducido (la regla global usa !important). */
 @media (prefers-reduced-motion:reduce) {
   .intro-cover {
-    transition-duration:.9s;
-    transition-timing-function:linear
+    transition:opacity .9s linear!important
   }
 }
 @media(max-width:700px) {

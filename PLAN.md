@@ -190,7 +190,7 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
     - Hacer: obtener la fuente con `pnpm add -D @fontsource/noto-serif-hebrew` (o `@fontsource-variable/…` si existe con eje de peso), copiar solo el woff2 del subconjunto hebreo y su OFL, y `pnpm remove` el paquete (no queda dependencia). Cargar `data/hebreo.json` opcional en `loadContent`; casilla de carga hebrea; estado con ambos conteos; diálogo con `lang`/`dir` y etiqueta de idioma; renombrar clases `.greek-*` a `.original-*` donde aplique.
     - Hecho cuando: `pnpm exec playwright test` pasa `hebrew.spec.ts`: Biblia sintética «Génesis» (marcada como prueba) + `hebreo.json` sintético con `original:"בְּרֵאשִׁית"` para «principio» → el panel muestra «Consultar hebreo», tocar «principio» abre el diálogo con `.original-word[lang="he"][dir="rtl"]` y `document.fonts.check('44px "Noto Serif Hebrew"','בְּרֵאשִׁית')` es `true`; un archivo hebreo con término latino muestra el error en `role=alert`. Captura `.impeccable/review/mobile-hebrew.png` revisada: niqqud visibles, sin cortes ni cajas vacías.
 
-- [ ] O4 — Portada de episodio
+- [x] O4 (70a7be5) — Portada de episodio
   - Verificación: `pnpm test && pnpm build && pnpm exec playwright test`
   - Commit: `feat(estudio): episode title card with light`
   - [x] T1 — Ajustes de portada en la preparación · invoca `/impeccable polish --target estudio/src/app/app.html`
@@ -210,16 +210,16 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
 - [ ] O5 — Cierre con versículos elegidos y fundido a negro
   - Verificación: `pnpm test && pnpm build && pnpm exec playwright test`
   - Commit: `feat(estudio): ending with chosen verses and fade to black`
-  - [ ] T1 — Pantalla de cierre · invoca `/impeccable layout --target estudio/src/app/ending.ts`
+  - [x] T1 — Pantalla de cierre · invoca `/impeccable layout --target estudio/src/app/ending.ts`
     - Leer: este plan §Cierre, `estudio/src/app/app.html` (`.ending-screen`), `estudio/src/styles.css` (`.ending-*`), `estudio/src/app/title-card.ts`, `estudio/src/app/lumen.ts`
     - Archivos: `estudio/src/app/ending.ts` (nuevo componente: cabecera compacta, lista de elegidos con ajuste automático de tamaño vía `ResizeObserver`, mensaje final, hoja), `estudio/src/styles.css` (quitar estilos `.ending-*` obsoletos)
     - Hecho cuando: capturas móvil y escritorio, día y noche, con 0, 1, 3 y 7 elegidos (incluido uno largo, p. ej. Santiago 1:5) sin solapes ni texto cortado; la letra no baja de 15 px.
-  - [ ] T2 — Flujo de cierre en la app · invoca `/impeccable animate --target estudio/src/app/app.html` (fundido a negro, apagado del polvo y aparición de acciones bajo la cinta)
+  - [x] T2 — Flujo de cierre en la app · invoca `/impeccable animate --target estudio/src/app/app.html` (fundido a negro, apagado del polvo y aparición de acciones bajo la cinta)
     - Leer: este plan §Fases, §Cierre, `estudio/src/app/app.ts` (`finishScene`, `continueScene`, `exitScene`, `move`)
     - Archivos: `estudio/src/app/app.ts`, `estudio/src/app/app.html`, `estudio/src/styles.css` (velo negro)
     - Hacer: fases `ending→fading→black`, velo `FADE_MS`, guarda de 600 ms, acciones bajo la cinta en `ending`, vaciar elegidos al iniciar y al continuar, polvo ambiental encendido en `ending` y apagado al fundir.
     - Hecho cuando: en `pnpm dev`: cerrar lectura con 2 elegidos → se ven; toque → fundido de ~6 s; toques durante el fundido no hacen nada; en negro un toque vuelve a la preparación.
-  - [ ] T3 — E2E de cierre
+  - [x] T3 — E2E de cierre
     - Leer: este plan §Cierre, `estudio/e2e/studio.spec.ts`
     - Archivos: `estudio/e2e/ending.spec.ts` (nuevo), `estudio/e2e/studio.spec.ts` (ajustar el final que hoy espera `.ending-screen`)
     - Hecho cuando: `pnpm exec playwright test` pasa con: elegir v.2 del cap. 1 y v.1 del cap. 2 → cierre muestra ambos en orden con referencias «Santiago 1:2» y «Santiago 2:1»; clic → velo con opacidad creciente; clic a los 2 s no navega; tras ~6,8 s un clic muestra la preparación (`Entrar en escena` visible). Regla «cada capítulo» + «Continuar lectura» → el siguiente cierre no repite los elegidos del tramo anterior. Captura `.impeccable/review/mobile-ending.png`.
@@ -270,6 +270,12 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
 - 2026-11-22 O4 T1: ajustes de portada listos. Para T2: sustituir el marcador estático `.intro-preview` de `.preview-frame` por `<v-title-card>` y enganchar la fase `intro` en `toggleIntroPreview()` (señal `introPreview`, dura `intro.duration`). Revisión de noche del grupo «La portada» pendiente (O6 T2).
 
 - 2026-11-22 O4 T2: secuencia lista (`intro.ts` línea de tiempo pura, `title-card.ts` con modo `compact` para O5, `v-lumen`+polvo en `.intro-stage`). Los helpers e2e sin `quiet` entran con portada D=5 s: para T3 fijar `intro.duration`=3 vía `verbo.settings` y cuenta atrás desactivada. El ejecutor pudo matar con `pkill` un `ng serve` ajeno (puerto 4201; hoy hay uno activo): avisar al usuario. Flaky del poll de encuadre endurecido (null-safe, 3/3 verde).
+
+- 2026-11-22 O5 T1: `v-ending` + `ending-fit.ts` listos; `lumen` fase `dim` ahora quieta. Para T2: acciones siguen abajo (`.ending-actions`, relleno inferior 88 px en `v-ending`); cinta de ajustes visible en cierre (correcto); `v-particles` z-index 36 en `.is-finished`. Cabecera del cierre usa `settings.intro.title` aunque la portada esté desactivada.
+
+- 2026-11-22 O5 T2: flujo `ending→fading→black` listo (FADE_MS 6000, guarda 600 ms; teclado Escape/Enter/Espacio añadido). RIESGO a revisar en O6 T2: la regla global reduced-motion `animation/transition:none!important` puede anular el fundido de opacidad final de la portada (`.intro-cover`); el velo ya tiene excepción. La cinta sigue visible (inert) bajo el velo durante el fundido.
+
+- 2026-11-22 O5 T3: riesgo de O5 T2 CONFIRMADO y arreglado (prueba mostró corte seco de `.intro-cover` bajo reduced motion; ahora `transition:opacity .9s linear!important`).
 
 ## Próximos hitos
 

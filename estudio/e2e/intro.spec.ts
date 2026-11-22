@@ -59,3 +59,23 @@ test('con la portada desactivada las cintas aparecen de inmediato',async({browse
   expect(errors).toEqual([]);
   await context.close();
 });
+
+test('con movimiento reducido el final de la portada es un fundido real de opacidad',async({browser})=>{
+  const {context,page,errors}=await newPhone(browser,false,WITH_INTRO);
+  expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);
+  await start(page);
+  const cover=page.locator('.intro-cover');
+  await expect(cover).toBeVisible();
+  expect(await cover.evaluate(el=>Number(getComputedStyle(el).opacity)),'antes del final la portada tapa la página').toBe(1);
+  await expect(page.locator('.intro-cover.lifted')).toBeAttached({timeout:4000});
+  // Se muestrea la opacidad fotograma a fotograma: debe pasar por valores intermedios, no saltar de 1 a 0.
+  const samples=await page.evaluate(()=>new Promise<number[]>(resolve=>{
+    const el=document.querySelector('.intro-cover');const out:number[]=[];const t0=performance.now();
+    const tick=()=>{if(!el){resolve(out);return;}out.push(Number(getComputedStyle(el).opacity));
+      if(performance.now()-t0<900)requestAnimationFrame(tick);else resolve(out);};tick();
+  }));
+  const middle=samples.filter(o=>o>0.05&&o<0.95);
+  expect(middle.length,`muestras intermedias de opacidad: ${samples.map(o=>o.toFixed(2)).join(' ')}`).toBeGreaterThanOrEqual(3);
+  expect(Math.min(...samples)).toBeLessThan(0.1);
+  expect(errors).toEqual([]);await context.close();
+});

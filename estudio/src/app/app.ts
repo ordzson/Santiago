@@ -10,11 +10,15 @@ import { ChosenVerse, chosenIn, toggleChosen } from './chosen';
 import { Settings, DEFAULTS, parseSettings } from './settings';
 import { IconComponent } from './icon';
 import { EngravingComponent } from './engraving';
-export type ScenePhase='countdown'|'intro'|'reading';
-@Component({selector:'app-root',standalone:true,imports:[FormsModule,ReaderComponent,ParticlesComponent,LumenComponent,TitleCardComponent,IconComponent,EngravingComponent],templateUrl:'./app.html'})
+import { EndingComponent } from './ending';
+/** Duración del fundido a negro del cierre y guarda tras llegar al negro (evita que el mismo toque saque de la escena). */
+export const FADE_MS=6000;
+export const BLACK_GUARD_MS=600;
+export type ScenePhase='countdown'|'intro'|'reading'|'ending'|'fading'|'black';
+@Component({selector:'app-root',standalone:true,imports:[FormsModule,ReaderComponent,ParticlesComponent,LumenComponent,TitleCardComponent,IconComponent,EngravingComponent,EndingComponent],templateUrl:'./app.html'})
 export class AppComponent implements OnDestroy {
   bible=signal<Bible|null>(null);notes=signal<OriginalNote[]>([]);loading=signal(true);loadError=signal('');notice=signal('');
-  scene=signal(false);finished=signal(false);controls=signal(true);playing=signal(false);countdown=signal<number|null>(null);activeNote=signal<OriginalNote|null>(null);
+  scene=signal(false);controls=signal(true);playing=signal(false);countdown=signal<number|null>(null);activeNote=signal<OriginalNote|null>(null);
   // Elegidos para el cierre: sobreviven al cambio de capítulo y quedan en orden canónico (libro, capítulo, versículo).
   chosen=signal<ChosenVerse[]>([]);
   specials=computed(()=>chosenIn(this.chosen(),this.currentBook()?.id,this.currentChapter()?.number));
@@ -40,8 +44,14 @@ export class AppComponent implements OnDestroy {
   settings:Settings=this.loadSettings();session:Location[]=[];endAt=signal<Location|null>(null);
   reader=viewChild(ReaderComponent);particles=viewChild(ParticlesComponent);dialog=viewChild.required<ElementRef<HTMLDialogElement>>('dialog');noteDialog=viewChild.required<ElementRef<HTMLDialogElement>>('noteDialog');
   dialogType=signal<'settings'|'content'|'help'>('settings');importError=signal('');importing=signal(false);
-  /** Fase de la escena. `countdown → intro → reading`; fuera de la cuenta atrás y la portada siempre es `reading`. Solo en `reading` hay cintas, gestos y teclas. */
+  /** Fase de la escena. `countdown → intro → reading → ending → fading → black`; fuera de la escena siempre es `reading`. Solo en `reading` hay gestos y teclas de lectura. */
   phase=signal<ScenePhase>('reading');
+  /** Cierre en curso (pantalla de cierre, fundido o negro). */
+  finished=computed(()=>{const p=this.phase();return p==='ending'||p==='fading'||p==='black';});
+  /** Tras la guarda de 600 ms en negro, un toque vuelve a la preparación. */
+  blackReady=signal(false);
+  readonly fadeMs=FADE_MS;
+  private endTimers:ReturnType<typeof setTimeout>[]=[];
   /** Portada en curso (escena o vista previa): lo que pintan la luz, la tarjeta y el velo. `null` = no hay portada. */
   intro=signal<IntroView|null>(null);
   /** El último número de la cuenta atrás se disuelve en luz mientras arranca la portada. */
@@ -84,7 +94,7 @@ export class AppComponent implements OnDestroy {
     const bible=this.bible();if(!bible || this.selectionError())return;
     this.session=sessionLocations(bible,this.mode,this.start,this.end);if(!this.session.length)return;
     this.stopIntro();
-    this.current.set({...this.session[0]});this.finished.set(false);this.scene.set(true);this.controls.set(false);this.playing.set(false);this.chosen.set([]);this.endAt.set(null);
+    this.clearEndTimers();this.blackReady.set(false);this.phase.set('reading');this.current.set({...this.session[0]});this.scene.set(true);this.controls.set(false);this.playing.set(false);this.chosen.set([]);this.endAt.set(null);
     if(this.settings.countdown){this.phase.set('countdown');this.countdown.set(3);this.countdownTimer=setInterval(()=>{const remaining=this.countdown()!;if(remaining<=1){clearInterval(this.countdownTimer);this.afterCountdown();}else this.countdown.set(remaining-1);},1000);}
     else this.afterCountdown();
     this.acquireWakeLock();
@@ -119,7 +129,7 @@ export class AppComponent implements OnDestroy {
     this.runIntro(()=>{},()=>this.introPreview.set(false));
   }
   async acquireWakeLock(){try{if('wakeLock' in navigator && !this.wakeLock)this.wakeLock=await navigator.wakeLock.request('screen');}catch{}}
-  async exitScene(){this.playing.set(false);clearInterval(this.countdownTimer);this.stopIntro();this.countdown.set(null);this.phase.set('reading');this.scene.set(false);this.finished.set(false);this.controls.set(true);await this.wakeLock?.release();this.wakeLock=null;}
+  async exitScene(){this.playing.set(false);clearInterval(this.countdownTimer);this.clearEndTimers();this.blackReady.set(false);this.stopIntro();this.countdown.set(null);this.phase.set('reading');this.scene.set(false);this.controls.set(true);await this.wakeLock?.release();this.wakeLock=null;}
   toggleControls(){this.controls.update(v=>!v);if(this.controls())this.scheduleHide();}
   holdControls(){clearTimeout(this.hideTimer);}
   scheduleHide(){clearTimeout(this.hideTimer);this.hideTimer=setTimeout(()=>{if(!this.dialog().nativeElement.open && !this.noteDialog().nativeElement.open && !document.activeElement?.closest('.scene-controls'))this.controls.set(false);},5000);}
@@ -137,8 +147,27 @@ export class AppComponent implements OnDestroy {
     if(next){this.current.set({...next});this.scheduleHide();}
     else if(direction>0){if(this.settings.endRule==='manual'){this.announce('Llegaste al final del recorrido. Puedes cerrar la lectura cuando quieras.');}else{this.endAt.set(null);this.finishScene();}}
   }
-  finishScene(){this.playing.set(false);this.finished.set(true);this.controls.set(false);this.activeNote.set(null);}
-  continueScene(){const next=this.endAt();this.chosen.set([]);if(next){this.current.set({...next});this.endAt.set(null);this.finished.set(false);}else{this.startScene();}}
+  /** Cierre: la luz se queda quieta, el polvo flota y las acciones cuelgan de la cinta. */
+  finishScene(){
+    if(this.phase()!=='reading')return;
+    this.playing.set(false);this.controls.set(false);this.activeNote.set(null);this.phase.set('ending');this.particles()?.ambient(true);
+  }
+  private clearEndTimers(){for(const t of this.endTimers)clearTimeout(t);this.endTimers=[];}
+  /** Toque en el cierre: velo negro 0→1 en FADE_MS y el polvo se apaga a la vez. Después, negro y guarda. */
+  private beginFade(){
+    if(this.phase()!=='ending')return;
+    this.clearEndTimers();this.controls.set(false);clearTimeout(this.hideTimer);this.phase.set('fading');this.particles()?.ambient(false);
+    this.endTimers.push(setTimeout(()=>{this.phase.set('black');this.endTimers.push(setTimeout(()=>this.blackReady.set(true),BLACK_GUARD_MS));},FADE_MS));
+  }
+  /** Toque sobre la pantalla de cierre (las acciones y la cinta quedan fuera). */
+  endingTap(event:Event){if((event.target as Element)?.closest('.ending-actions'))return;this.beginFade();}
+  /** Toque sobre el velo: durante el fundido no hace nada; en negro, pasada la guarda, vuelve a la preparación. */
+  veilTap(){if(this.phase()==='black'&&this.blackReady())this.exitScene();}
+  continueScene(){
+    if(this.phase()!=='ending')return;
+    const next=this.endAt();this.chosen.set([]);this.particles()?.ambient(false);
+    if(next){this.current.set({...next});this.endAt.set(null);this.phase.set('reading');}else{this.startScene();}
+  }
   showNote(note:OriginalNote){this.playing.set(false);this.activeNote.set(note);this.noteDialog().nativeElement.showModal();}
   openDialog(type:'settings'|'content'|'help'){this.playing.set(false);this.dialogType.set(type);this.importError.set('');this.dialog().nativeElement.showModal();}
   closeDialog(){this.dialog().nativeElement.close();if(this.scene())this.scheduleHide();}
@@ -157,10 +186,18 @@ export class AppComponent implements OnDestroy {
   announce(message:string){this.notice.set(message);clearTimeout(this.noticeTimer);this.noticeTimer=setTimeout(()=>this.notice.set(''),4000);}
   @HostListener('document:visibilitychange') visibility(){if(document.hidden){this.playing.set(false);this.wakeLock?.release();this.wakeLock=null;}else if(this.scene())this.acquireWakeLock();}
   @HostListener('document:keydown',['$event']) key(event:KeyboardEvent){
-    if(!this.scene() || this.dialog().nativeElement.open || this.noteDialog().nativeElement.open || this.phase()!=='reading')return;
+    if(!this.scene() || this.dialog().nativeElement.open || this.noteDialog().nativeElement.open)return;
+    const phase=this.phase();
+    if(phase==='black'){if(['Enter','Escape'].includes(event.key)||event.code==='Space'){event.preventDefault();this.veilTap();}return;}
+    if(phase==='ending'){
+      if(event.key==='Escape'){event.preventDefault();this.toggleControls();}
+      else if((event.key==='Enter'||event.code==='Space')&&!['BUTTON','A','SELECT','INPUT'].includes((event.target as Element)?.tagName)){event.preventDefault();this.beginFade();}
+      return;
+    }
+    if(phase!=='reading')return;
     if(event.key==='Escape'){event.preventDefault();this.toggleControls();return;}
     if(['INPUT','SELECT','TEXTAREA','BUTTON'].includes((event.target as Element)?.tagName))return;
     if(event.code==='Space'){event.preventDefault();this.togglePlay();}if(event.key==='ArrowRight')this.move(1,true);if(event.key==='ArrowLeft')this.move(-1);
   }
-  ngOnDestroy(){clearTimeout(this.noticeTimer);clearTimeout(this.hideTimer);clearInterval(this.countdownTimer);this.clearSceneTimers();this.wakeLock?.release();}
+  ngOnDestroy(){clearTimeout(this.noticeTimer);clearTimeout(this.hideTimer);clearInterval(this.countdownTimer);this.clearSceneTimers();this.clearEndTimers();this.wakeLock?.release();}
 }

@@ -35,7 +35,8 @@ test('preparación y escena en escritorio y teléfono',async({browser})=>{
   await expect(phone.locator('.chapter-numeral')).toHaveText('2');
   await openPanel(phone);
   await phone.getByRole('button',{name:'Completar lectura'}).click();await expect(phone.locator('.ending-screen')).toBeVisible();
-  await phone.screenshot({path:'.impeccable/review/mobile-ending.png'});
+  // Sin elegidos el cierre muestra el grabado y el mensaje (la captura con elegidos vive en ending.spec.ts).
+  await expect(phone.locator('.ending-screen v-ending .pick')).toHaveCount(0);
   expect([...errors,...phoneErrors]).toEqual([]);await desktop.close();await mobile.close();
 });
 

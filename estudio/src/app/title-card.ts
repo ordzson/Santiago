@@ -70,7 +70,7 @@ export const TITLE_CARD_PHASES:readonly TitleCardPhase[]=['off','in','out'];
     :host(.compact){position:static;inset:auto;padding:0;display:block}
     :host(.compact) .card{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:0 .6em;max-width:100%}
     :host(.compact) .title,:host(.compact) .label{
-      font:500 12px/1.5 var(--ui);font-variant-caps:all-small-caps;letter-spacing:.14em;color:var(--label);
+      font:500 var(--compact-size,12px)/1.5 var(--ui);font-variant-caps:all-small-caps;letter-spacing:.14em;color:var(--label);
       -webkit-mask-image:none;mask-image:none;padding:0;text-transform:none;
     }
     :host(.compact) .rule{display:none}

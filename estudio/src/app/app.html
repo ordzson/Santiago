@@ -32,13 +32,13 @@
         @if(intro(); as view){<div class="intro-stage" [class.night]="settings.night" role="img" [attr.aria-label]="'Portada: '+(settings.intro.title ? settings.intro.title+', ' : '')+sceneText"><div class="intro-cover" [class.lifted]="!view.veil"></div><v-lumen [phase]="view.lumen" [night]="settings.night"/><v-title-card [phase]="view.card" [title]="settings.intro.title" [label]="sceneText" [night]="settings.night"/></div>}
         @if(scene() || intro()){
           <v-particles [theme]="settings.night ? 'night' : 'day'"/>
-          @if(scene() && phase() === 'reading'){
-            <button class="ribbon control-ribbon" [class.active]="controls()" (click)="toggleControls()" [attr.aria-expanded]="controls()" aria-label="Mostrar u ocultar herramientas"><v-icon [name]="controls() ? 'close' : 'sliders'"/></button>
+          @if(scene() && (phase() === 'reading' || phase() === 'ending' || phase() === 'fading')){
+            <button class="ribbon control-ribbon" [class.active]="controls()" [attr.inert]="phase() === 'fading' ? '' : null" (click)="toggleControls()" [attr.aria-expanded]="controls()" aria-label="Mostrar u ocultar herramientas"><v-icon [name]="controls() ? 'close' : 'sliders'"/></button>
             @if(!finished()){<button class="ribbon play-ribbon" [class.active]="playing()" (click)="togglePlay()" [attr.aria-pressed]="playing()" aria-label="Iniciar o pausar autoscroll"><v-icon [name]="playing() ? 'pause' : 'play'"/></button>}
           }
           @if(scene() && (phase() === 'countdown' || dissolve())){<div class="countdown-overlay" [class.dissolving]="dissolve()" [attr.aria-hidden]="dissolve() ? 'true' : null"><span class="sr-only" role="status" aria-live="assertive">{{dissolve() ? '' : countdown()}}</span>@for(n of [countdown()]; track n){<span class="countdown-number" aria-hidden="true">{{n}}</span>}<p>Prepara tu voz.</p><button class="text-button" [disabled]="dissolve()" (click)="exitScene()">Cancelar</button></div>}
           @if(finished()){
-            <div class="ending-screen"><v-engraving/><span class="ending-rule"></span><h2>{{settings.endMessage}}</h2><p>{{previewLabel}}</p><span class="ending-flower"><v-icon name="leaf"/></span><div class="ending-actions" [class.visible]="controls()"><button class="text-button" (click)="exitScene()"><v-icon name="back"/> Volver al estudio</button><button class="text-button" (click)="continueScene()">{{endAt() ? 'Continuar lectura' : 'Leer de nuevo'}} <v-icon name="arrow"/></button></div></div>
+            <div class="ending-screen" (click)="endingTap($event)"><v-lumen phase="dim" [night]="settings.night"/><v-ending [title]="settings.intro.title" [label]="sceneText" [chosen]="chosen()" [message]="settings.endMessage" [night]="settings.night"/><div class="ending-actions" [class.visible]="controls()" [attr.inert]="controls() ? null : ''"><button class="text-button" (click)="exitScene()"><v-icon name="back"/> Volver al estudio</button><button class="text-button" (click)="continueScene()">{{endAt() ? 'Continuar lectura' : 'Leer de nuevo'}} <v-icon name="arrow"/></button></div></div>
           }@else if(scene() && phase() === 'reading'){
             <div class="scene-controls" [class.visible]="controls()" [attr.inert]="controls() ? null : ''" (pointerdown)="scheduleHide()" (focusin)="holdControls()" (focusout)="scheduleHide()">
               <div class="scene-topbar"><button class="text-button" (click)="exitScene()"><v-icon name="back"/> Estudio</button><span>{{previewLabel}}</span><button class="icon-button" (click)="openDialog('settings')" aria-label="Ajustes de escena"><v-icon name="sliders"/></button></div>
@@ -54,6 +54,7 @@
             </div>
           }
         }
+        @if(scene() && (phase() === 'fading' || phase() === 'black')){<div class="fade-veil" [class.black]="phase() === 'black'" [style.--fade-ms]="fadeMs + 'ms'" (click)="veilTap()"><span class="sr-only" role="status">{{phase() === 'black' ? (blackReady() ? 'Fin de la escena. Toca para volver al estudio.' : '') : 'La escena se funde a negro.'}}</span></div>}
       </div>
       <p class="preview-footnote"><v-icon name="sparkle"/> La interfaz se retira. La Palabra permanece.</p>
     </section>

@@ -82,8 +82,8 @@ export const LUMEN_PHASES:readonly LumenPhase[]=['off','rise','hold','flood','di
       mask-image:radial-gradient(ellipse 80% 108% at 50% 6%,#000 0%,rgba(0,0,0,.55) 46%,transparent 100%);
       animation:lumen-sway 18s ease-in-out infinite alternate;animation-play-state:paused;
     }
-    /* Giro de ±3° (solo transform), únicamente mientras la luz está sostenida. */
-    :host([data-phase=hold]) .rays i,:host([data-phase=dim]) .rays i{animation-play-state:running}
+    /* Giro de ±3° (solo transform), únicamente mientras la luz está sostenida; la fase dim (cierre) queda quieta. */
+    :host([data-phase=hold]) .rays i{animation-play-state:running}
     @keyframes lumen-sway{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
 
     @media (prefers-reduced-motion:reduce){
