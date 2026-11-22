@@ -80,7 +80,8 @@ export const TITLE_CARD_PHASES:readonly TitleCardPhase[]=['off','in','out'];
 
     @media (prefers-reduced-motion:reduce){
       :host(:not([data-phase=off])) .title,:host(:not([data-phase=off])) .rule,:host(:not([data-phase=off])) .label{animation:none!important}
-      .card{transition:opacity .9s linear}
+      /* Con !important para ganar a la regla global de movimiento reducido (como .intro-cover). */
+      :host .card{transition:opacity .9s linear!important}
       :host([data-phase=out]) .card{transform:none;filter:none}
     }
   `

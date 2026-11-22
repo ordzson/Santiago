@@ -224,7 +224,7 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
     - Archivos: `estudio/e2e/ending.spec.ts` (nuevo), `estudio/e2e/studio.spec.ts` (ajustar el final que hoy espera `.ending-screen`)
     - Hecho cuando: `pnpm exec playwright test` pasa con: elegir v.2 del cap. 1 y v.1 del cap. 2 → cierre muestra ambos en orden con referencias «Santiago 1:2» y «Santiago 2:1»; clic → velo con opacidad creciente; clic a los 2 s no navega; tras ~6,8 s un clic muestra la preparación (`Entrar en escena` visible). Regla «cada capítulo» + «Continuar lectura» → el siguiente cierre no repite los elegidos del tramo anterior. Captura `.impeccable/review/mobile-ending.png`.
 
-- [ ] O6 — Pulido de la escena y documentación
+- [x] O6 (a650b26) — Pulido de la escena y documentación
   - Verificación: `pnpm test && pnpm build && pnpm exec playwright test` (o `node scripts/verify.mjs full` si existe)
   - Commit: `feat(estudio): scene polish and docs for video flow`
   - [x] T1 — Página más llamativa · invoca `/impeccable bolder --target estudio/src/app/reader.css`

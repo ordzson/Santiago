@@ -94,7 +94,7 @@ export class AppComponent implements OnDestroy {
     const bible=this.bible();if(!bible || this.selectionError())return;
     this.session=sessionLocations(bible,this.mode,this.start,this.end);if(!this.session.length)return;
     this.stopIntro();
-    this.clearEndTimers();this.blackReady.set(false);this.phase.set('reading');this.current.set({...this.session[0]});this.scene.set(true);this.controls.set(false);this.playing.set(false);this.chosen.set([]);this.endAt.set(null);
+    this.clearEndTimers();this.blackReady.set(false);this.phase.set('reading');this.current.set({...this.session[0]});this.reader()?.reset();this.scene.set(true);this.controls.set(false);this.playing.set(false);this.chosen.set([]);this.endAt.set(null);
     if(this.settings.countdown){this.phase.set('countdown');this.countdown.set(3);this.countdownTimer=setInterval(()=>{const remaining=this.countdown()!;if(remaining<=1){clearInterval(this.countdownTimer);this.afterCountdown();}else this.countdown.set(remaining-1);},1000);}
     else this.afterCountdown();
     this.acquireWakeLock();
@@ -129,7 +129,7 @@ export class AppComponent implements OnDestroy {
     this.runIntro(()=>{},()=>this.introPreview.set(false));
   }
   async acquireWakeLock(){try{if('wakeLock' in navigator && !this.wakeLock)this.wakeLock=await navigator.wakeLock.request('screen');}catch{}}
-  async exitScene(){this.playing.set(false);clearInterval(this.countdownTimer);this.clearEndTimers();this.blackReady.set(false);this.stopIntro();this.countdown.set(null);this.phase.set('reading');this.scene.set(false);this.controls.set(true);await this.wakeLock?.release();this.wakeLock=null;}
+  async exitScene(){this.playing.set(false);clearInterval(this.countdownTimer);this.clearEndTimers();this.blackReady.set(false);this.stopIntro();this.countdown.set(null);this.phase.set('reading');this.scene.set(false);this.controls.set(true);this.reader()?.reset();await this.wakeLock?.release();this.wakeLock=null;}
   toggleControls(){this.controls.update(v=>!v);if(this.controls())this.scheduleHide();}
   holdControls(){clearTimeout(this.hideTimer);}
   scheduleHide(){clearTimeout(this.hideTimer);this.hideTimer=setTimeout(()=>{if(!this.dialog().nativeElement.open && !this.noteDialog().nativeElement.open && !document.activeElement?.closest('.scene-controls'))this.controls.set(false);},5000);}
@@ -166,7 +166,7 @@ export class AppComponent implements OnDestroy {
   continueScene(){
     if(this.phase()!=='ending')return;
     const next=this.endAt();this.chosen.set([]);this.particles()?.ambient(false);
-    if(next){this.current.set({...next});this.endAt.set(null);this.phase.set('reading');}else{this.startScene();}
+    if(next){this.current.set({...next});this.reader()?.reset();this.endAt.set(null);this.phase.set('reading');}else{this.startScene();}
   }
   showNote(note:OriginalNote){this.playing.set(false);this.activeNote.set(note);this.noteDialog().nativeElement.showModal();}
   openDialog(type:'settings'|'content'|'help'){this.playing.set(false);this.dialogType.set(type);this.importError.set('');this.dialog().nativeElement.showModal();}

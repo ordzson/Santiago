@@ -1,7 +1,7 @@
-import { Component, ElementRef, AfterViewInit, effect, input, output, signal, viewChild, computed, OnDestroy } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, effect, input, output, signal, viewChild, computed, OnDestroy, untracked } from '@angular/core';
 import { Chapter, OriginalNote, tokenize } from './content';
 import { IconComponent } from './icon';
-import { EDGE_PX, IDLE, PressEffect, PressState, pressCancel, pressDown, pressMove, pressUp } from './press';
+import { EDGE_PX, IDLE, SLOP_PX, PressEffect, PressState, pressCancel, pressDown, pressMove, pressUp } from './press';
 import type { Box, BurstKind } from './particles-engine';
 export interface Frame { enabled: boolean; corner: string; shape: string; size: number; guide: boolean }
 /** `rect` va en coordenadas de viewport (getBoundingClientRect); quien lo monte lo pasa al sistema de coordenadas de las partículas. */
@@ -82,7 +82,7 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
     if(wasPressing)this.scrollTakeover();
   };
   constructor(){
-    effect(()=>{this.focusedWord.set(this.chapter().verses[0].number+':0');this.bookId();this.wordMarks.set(new Set());this.verseMarks.set(new Set());this.progress.set(0);this.scroll()?.nativeElement.scrollTo(0,0);});
+    effect(()=>{this.chapter();this.bookId();untracked(()=>this.reset());});
     effect(()=>{if(!this.live())this.endPress();});
     effect(onCleanup=>{
       if(!this.playing() || !this.live())return;
@@ -112,12 +112,32 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
   onPointerDown(event:PointerEvent){
     if(!this.live()||event.button!==0||!event.isPrimary||this.press.phase!=='idle')return;
     const verseEl=(event.target as Element).closest?.<HTMLElement>('.verse[data-verse]');
-    if(!verseEl)return;
+    if(!verseEl){this.watchTouch(event);return;}
     const verse=Number(verseEl.dataset['verse']);
     this.pointer={x:event.clientX,y:event.clientY,type:event.pointerType,id:event.pointerId};
     this.press=pressDown(this.press,{verse,x:event.clientX,y:event.clientY,t:performance.now(),lit:this.verseMarks().has(verse),special:this.specials().has(verse)}).state;
     window.addEventListener('pointermove',this.onWindowMove);window.addEventListener('pointerup',this.onWindowUp);window.addEventListener('pointercancel',this.onWindowCancel);
     this.pressRaf=requestAnimationFrame(this.pressFrame);
+  }
+  /** Toque fuera de un versículo con el autoscroll activo: si el dedo se desliza (o el navegador toma el gesto y emite pointercancel), es un desplazamiento manual y pausa. El ratón se pausa con la rueda. */
+  private touch:{x:number;y:number;id:number}|null=null;
+  private readonly onTouchMove=(event:PointerEvent)=>{
+    const t=this.touch;if(!t||event.pointerId!==t.id)return;
+    if(Math.hypot(event.clientX-t.x,event.clientY-t.y)>SLOP_PX){this.stopTouchWatch();this.manualScroll();}
+  };
+  private readonly onTouchEnd=(event:PointerEvent)=>{
+    const t=this.touch;if(!t||event.pointerId!==t.id)return;
+    this.stopTouchWatch();if(event.type==='pointercancel')this.manualScroll();
+  };
+  private watchTouch(event:PointerEvent){
+    if(!this.playing()||event.pointerType==='mouse'||!event.isPrimary)return;
+    this.stopTouchWatch();
+    this.touch={x:event.clientX,y:event.clientY,id:event.pointerId};
+    window.addEventListener('pointermove',this.onTouchMove);window.addEventListener('pointerup',this.onTouchEnd);window.addEventListener('pointercancel',this.onTouchEnd);
+  }
+  private stopTouchWatch(){
+    this.touch=null;
+    window.removeEventListener('pointermove',this.onTouchMove);window.removeEventListener('pointerup',this.onTouchEnd);window.removeEventListener('pointercancel',this.onTouchEnd);
   }
   /** Un tick por frame mientras haya pulsación activa; también pinta lo que el autoscroll de borde deslice bajo el dedo quieto. */
   private readonly pressFrame=(time:number)=>{
@@ -195,10 +215,10 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
       const words=this.stash.get(verse);
       if(words){this.stash.delete(verse);this.wordMarks.update(set=>new Set([...set,...words]));}
     }
-    if(announce)this.announcement.set(on?`Versículo ${verse} resaltado`:`Versículo ${verse} sin resaltar`);
+    if(announce)this.say(on?`Versículo ${verse} resaltado`:`Versículo ${verse} sin resaltar`);
   }
   private toggleSpecial(verse:number){
-    this.announcement.set(this.specials().has(verse)?`Versículo ${verse} quitado del cierre`:`Versículo ${verse} elegido para el cierre`);
+    this.say(this.specials().has(verse)?`Versículo ${verse} quitado del cierre`:`Versículo ${verse} elegido para el cierre`);
     this.specialToggle.emit(verse);
   }
   private markable(verse:number){return this.verseMarks().has(verse)||this.specials().has(verse);}
@@ -235,10 +255,23 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
     const next=event.key==='Home'?0:event.key==='End'?words.length-1:Math.min(words.length-1,Math.max(0,index+(event.key==='ArrowRight'?1:-1)));
     words[next]?.focus();
   }
+  /** Vuelve la hoja al principio: sin marcas, sin pulsación en curso, sin desplazamiento y con el foco en la primera palabra. Se usa al cambiar de capítulo y al empezar o cerrar una escena. */
+  reset(){
+    this.endPress();this.stopTouchWatch();
+    this.focusedWord.set(this.chapter().verses[0].number+':0');
+    this.wordMarks.set(new Set());this.verseMarks.set(new Set());this.progress.set(0);
+    const el=this.scroll()?.nativeElement;if(el){el.scrollTop=0;el.scrollTo(0,0);}
+  }
+  /** Anuncio para lectores de pantalla: un mensaje idéntico al anterior se vuelve a leer porque la región se vacía antes (con margen para que Angular pinte el vacío). */
+  private say(message:string){
+    clearTimeout(this.sayTimer);this.announcement.set('');
+    this.sayTimer=setTimeout(()=>this.announcement.set(message),60);
+  }
+  private sayTimer?:ReturnType<typeof setTimeout>;
   /** Limpia resaltados y palabras del capítulo actual (no toca los elegidos). */
   clear(){this.wordMarks.set(new Set());this.verseMarks.set(new Set());}
   ngOnDestroy(){
-    cancelAnimationFrame(this.raf);this.endPress();clearTimeout(this.swallowTimer);
+    cancelAnimationFrame(this.raf);this.endPress();this.stopTouchWatch();clearTimeout(this.swallowTimer);clearTimeout(this.sayTimer);
     const el=this.scroll()?.nativeElement;el?.removeEventListener('click',this.swallowClick,true);el?.removeEventListener('touchmove',this.blockTouchScroll);
   }
 }
