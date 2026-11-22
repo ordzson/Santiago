@@ -967,7 +967,71 @@ output {
 .countdown-number {
   font:400 110px/1 var(--display);
   color:var(--red);
-  font-variant-numeric:tabular-nums
+  font-variant-numeric:tabular-nums;
+  animation:count-in .6s var(--ease) both
+}
+@keyframes count-in {
+  from {
+    opacity:0;
+    transform:scale(1.16);
+    filter:blur(10px)
+  }
+  to {
+    opacity:1;
+    transform:none;
+    filter:blur(0)
+  }
+}
+/* El último número se disuelve en luz: de carmín a oro mientras crece y se desenfoca. */
+.countdown-overlay.dissolving {
+  background:transparent;
+  pointer-events:none
+}
+.countdown-overlay.dissolving .countdown-number {
+  animation:count-dissolve .75s cubic-bezier(.4,0,.6,1) both
+}
+.countdown-overlay.dissolving p,.countdown-overlay.dissolving .text-button {
+  opacity:0;
+  transition:opacity .25s linear
+}
+@keyframes count-dissolve {
+  from {
+    opacity:1;
+    color:var(--red);
+    transform:none;
+    filter:blur(0)
+  }
+  40% {
+    opacity:.6;
+    color:var(--gold)
+  }
+  to {
+    opacity:0;
+    color:#e8c46a;
+    transform:scale(1.9) translateY(-8%);
+    filter:blur(24px)
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .countdown-number,.countdown-overlay.dissolving .countdown-number {
+    animation-name:count-fade
+  }
+  @keyframes count-fade {
+    from {
+      opacity:0
+    }
+    to {
+      opacity:1
+    }
+  }
+  .countdown-overlay.dissolving .countdown-number {
+    animation:count-fade-out .9s linear both
+  }
+  @keyframes count-fade-out {
+    to {
+      opacity:0
+    }
+  }
 }
 .countdown-overlay p {
   font:italic 20px var(--serif)
@@ -1827,4 +1891,86 @@ code {
 
 .preview-frame v-particles {
   z-index:20
+}
+.intro-field-label {
+  margin:20px 0 8px
+}
+.intro-duration {
+  margin:20px 0 12px
+}
+.intro-label {
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  margin-top:20px;
+  padding:12px 14px;
+  border-radius:6px;
+  background:#2c251f09;
+  min-width:0
+}
+.intro-label-name {
+  font-size:10px;
+  color:var(--muted)
+}
+.intro-label-text {
+  font:italic 400 16px/1.4 var(--serif);
+  color:var(--ink);
+  overflow-wrap:anywhere
+}
+.intro-label-text.is-empty {
+  color:var(--muted)
+}
+.preview-intro {
+  margin-top:8px;
+  justify-content:flex-start;
+  color:var(--red)
+}
+.preview-intro v-icon {
+  width:15px;
+  height:15px
+}
+.preview-intro:hover {
+  color:var(--red-dark)
+}
+.preview-intro:disabled {
+  color:var(--muted);
+  opacity:.6;
+  cursor:default
+}
+/* Portada: papel que cubre la página hasta la inundación; encima la luz y la tarjeta. */
+.intro-stage {
+  position:absolute;
+  inset:0;
+  z-index:15;
+  overflow:hidden;
+  --stage-paper:#f6f1e4
+}
+.intro-stage.night {
+  --stage-paper:#211c18
+}
+.intro-cover {
+  position:absolute;
+  inset:0;
+  background:var(--stage-paper);
+  transition:opacity .75s cubic-bezier(.4,0,.2,1)
+}
+.intro-cover.lifted {
+  opacity:0
+}
+@media (prefers-reduced-motion:reduce) {
+  .intro-cover {
+    transition-duration:.9s;
+    transition-timing-function:linear
+  }
+}
+@media(max-width:700px) {
+  .intro-label-name,.preview-intro {
+    font-size:12px
+  }
+  .intro-label-name {
+    font-size:11px
+  }
+  .intro-label-text {
+    font-size:17px
+  }
 }

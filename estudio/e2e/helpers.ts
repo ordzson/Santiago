@@ -3,9 +3,11 @@ import {expect,type Browser,type BrowserContext,type Page} from '@playwright/tes
 /** Ajustes de escena sin cuenta atrás ni portada: las pruebas validan estado, no la animación de entrada. */
 const QUIET=JSON.stringify({countdown:false,intro:{enabled:false,title:'Episodio 1',duration:5}});
 
-export async function newPhone(browser:Browser,quiet=true):Promise<{context:BrowserContext;page:Page;errors:string[]}>{
+/** `quiet`: ajustes sin cuenta atrás ni portada. `settings`: ajustes propios (sustituyen a `quiet`) para probar la portada. */
+export async function newPhone(browser:Browser,quiet=true,settings?:object):Promise<{context:BrowserContext;page:Page;errors:string[]}>{
   const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:1,reducedMotion:'reduce'});
-  if(quiet)await context.addInitScript(`try{if(!localStorage.getItem('verbo.settings'))localStorage.setItem('verbo.settings',${JSON.stringify(QUIET)});}catch{}`);
+  const initial=settings?JSON.stringify(settings):quiet?QUIET:null;
+  if(initial)await context.addInitScript(`try{if(!localStorage.getItem('verbo.settings'))localStorage.setItem('verbo.settings',${JSON.stringify(initial)});}catch{}`);
   const page=await context.newPage();const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/');await expect(page.locator('.chapter-heading')).toBeVisible();await page.evaluate(()=>document.fonts.ready);
   return {context,page,errors};

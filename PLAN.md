@@ -162,7 +162,7 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
     - Archivos: `estudio/src/app/lumen.ts` (nuevo componente `v-lumen`: rayos + resplandor + viñeta, inputs `phase: 'off'|'rise'|'hold'|'flood'|'dim'` y `night`, estilos propios, solo `transform`/`opacity`/`filter` acotados)
     - Hecho cuando: `pnpm build` pasa y una captura manual (página temporal o el propio preview con `phase='hold'` forzado y luego revertido) muestra la luz en día y noche; el forzado temporal no queda en el diff.
 
-- [ ] O3 — Gestos de resaltado y dos cintas
+- [x] O3 (8c2e747) — Gestos de resaltado y dos cintas
   - Verificación: `pnpm test && pnpm build && pnpm exec playwright test`
   - Commit: `feat(estudio): long-press highlights, chosen verses and ribbons`
   - [x] T1 — Gestos en el lector (lógica) · invoca `/impeccable animate --target estudio/src/app/reader.ts` (solo para la sensación de la carga 0→2→4 s, el tiempo de las ráfagas y la respuesta háptica; el aspecto final de las marcas es T2)
@@ -193,16 +193,16 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
 - [ ] O4 — Portada de episodio
   - Verificación: `pnpm test && pnpm build && pnpm exec playwright test`
   - Commit: `feat(estudio): episode title card with light`
-  - [ ] T1 — Ajustes de portada en la preparación · invoca `/impeccable polish --target estudio/src/app/app.html`
+  - [x] T1 — Ajustes de portada en la preparación · invoca `/impeccable polish --target estudio/src/app/app.html`
     - Leer: este plan §Ajustes nuevos, §Portada, `estudio/src/app/app.html` (aside `.scene-settings`), `estudio/src/styles.css` (`.setting-group`)
     - Archivos: `estudio/src/app/app.html`, `estudio/src/app/app.ts`, `estudio/src/styles.css`
     - Hacer: grupo «La portada» en «Hazla tuya.»: «Mostrar portada», campo «Título» (placeholder «Episodio 1», ej. de tema en la ayuda: «Fe que obra»), duración 3–10 s, vista del rótulo calculado (`sceneLabel`) en solo lectura; botón «Ver portada» que la reproduce dentro de la vista previa sin entrar en escena. En «Tu próxima lectura» usar `sceneLabel`.
     - Hecho cuando: `pnpm build` pasa; cambiar título/duración persiste tras recargar; el rótulo cambia con modo y selección; sin scroll horizontal a 320 px.
-  - [ ] T2 — Secuencia de portada · invoca `/impeccable animate --target estudio/src/app/title-card.ts`
+  - [x] T2 — Secuencia de portada · invoca `/impeccable animate --target estudio/src/app/title-card.ts`
     - Leer: este plan §Fases, §Portada, `estudio/src/app/lumen.ts`, `estudio/src/app/particles.ts`, `estudio/src/app/app.ts` (`startScene`, cuenta atrás), `estudio/src/styles.css` (`.countdown-overlay`)
     - Archivos: `estudio/src/app/title-card.ts` (nuevo: título + regla + rótulo con sus animaciones, input `phase`, reutilizable por el cierre en modo compacto), `estudio/src/app/app.ts` (fases `countdown→intro→reading`, temporizadores limpiados en `exitScene`/`ngOnDestroy`), `estudio/src/app/app.html`, `estudio/src/styles.css` (cuenta atrás reestilizada para enlazar con la luz: número en carmín sobre marfil que se disuelve en luz)
     - Hecho cuando: en `pnpm dev`, día y noche, la secuencia completa con D=5 s se ve como describe el contrato; tocar o pulsar teclas no la salta; reduced motion muestra la composición estática y el fundido final.
-  - [ ] T3 — E2E de portada
+  - [x] T3 — E2E de portada
     - Leer: este plan §Portada, `estudio/e2e/studio.spec.ts`
     - Archivos: `estudio/e2e/intro.spec.ts` (nuevo)
     - Hecho cuando: `pnpm exec playwright test` pasa con: título «Fe que obra» y duración 3 s → tras entrar sin cuenta atrás se ve `.title-card` con ese título y el rótulo esperado; un clic a 1 s no la quita; a ~3,5 s está oculta y las cintas son visibles; con portada desactivada las cintas aparecen de inmediato. Captura `.impeccable/review/mobile-intro.png`.
@@ -266,6 +266,10 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
 - 2026-11-22 O3 T3: cintas/panel/elegidos listos (`chosen.ts` puro). Desvíos: área táctil de cintas 37–40×59–65 px (plan: 44) para separación de 8 px; contador usa icono `star`; botón «Scroll» eliminado (lo sustituye play); `.dark-scene` ahora fija `color:var(--ink)`. Pendiente: botón sliders de la barra del panel repite el icono de la cinta (valorar en O6 T2 audit); textos de ayuda con Trazo → O6 T3; glifo «א» con fuente de respaldo hasta T5.
 
 - 2026-11-22 O3 T5: fuente `@fontsource-variable/noto-serif-hebrew` (eje de peso) copiada y paquete retirado. Input del lector sigue llamándose `greek` (`[greek]="originalOn()"`): renombrar si se toca. Aviso demo «Santiago es contenido de ejemplo» sale también con Biblia sintética (revisar en O6 T2).
+
+- 2026-11-22 O4 T1: ajustes de portada listos. Para T2: sustituir el marcador estático `.intro-preview` de `.preview-frame` por `<v-title-card>` y enganchar la fase `intro` en `toggleIntroPreview()` (señal `introPreview`, dura `intro.duration`). Revisión de noche del grupo «La portada» pendiente (O6 T2).
+
+- 2026-11-22 O4 T2: secuencia lista (`intro.ts` línea de tiempo pura, `title-card.ts` con modo `compact` para O5, `v-lumen`+polvo en `.intro-stage`). Los helpers e2e sin `quiet` entran con portada D=5 s: para T3 fijar `intro.duration`=3 vía `verbo.settings` y cuenta atrás desactivada. El ejecutor pudo matar con `pkill` un `ng serve` ajeno (puerto 4201; hoy hay uno activo): avisar al usuario. Flaky del poll de encuadre endurecido (null-safe, 3/3 verde).
 
 ## Próximos hitos
 

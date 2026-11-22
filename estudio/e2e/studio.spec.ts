@@ -12,6 +12,7 @@ test('preparación y escena en escritorio y teléfono',async({browser})=>{
   await expect(phone.getByRole('dialog',{name:'A tu manera.',exact:true})).toBeVisible();
   await phone.getByLabel('Cuenta atrás de 3 segundos al entrar').uncheck();
   await phone.getByRole('button',{name:'Listo',exact:true}).click();
+  await phone.getByLabel('Mostrar portada').uncheck();
   await enterScene(phone);
   // En lectura solo se ven las dos cintas; el panel está retirado.
   await expect(phone.locator('.play-ribbon')).toBeVisible();
@@ -182,8 +183,8 @@ test('encuadre, datos externos y límites de los tres modos',async({browser})=>{
   for(const corner of ['Arriba izquierda','Arriba derecha','Abajo izquierda','Abajo derecha']){
     await page.getByRole('button',{name:corner,exact:true}).click();
     await expect(page.locator('.presenter-space')).toBeVisible();
-    await expect.poll(async()=>{const camera=(await page.locator('.presenter-space').boundingBox())!;const text=(await page.locator('.reading-scroll').boundingBox())!;
-      return camera.y+camera.height<=text.y+1 || camera.y>=text.y+text.height-1;},{timeout:3000}).toBe(true);
+    await expect.poll(async()=>{const camera=await page.locator('.presenter-space').boundingBox();const text=await page.locator('.reading-scroll').boundingBox();
+      if(!camera||!text)return false;return camera.y+camera.height<=text.y+1 || camera.y>=text.y+text.height-1;},{timeout:3000}).toBe(true);
   }
   await page.getByRole('button',{name:'Noche',exact:true}).click();await expect(page.locator('.reading-sheet')).toHaveClass(/night/);
   await page.getByRole('button',{name:'Mi contenido',exact:true}).click();

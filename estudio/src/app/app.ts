@@ -1,13 +1,17 @@
 import { Component, signal, computed, viewChild, ElementRef, HostListener, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Bible, OriginalNote, OriginalLanguage, Location, ReadingMode, EndRule, parseBible, parseOriginal, sessionLocations, compare, locations, shouldEnd } from './content';
+import { Bible, OriginalNote, OriginalLanguage, Location, ReadingMode, EndRule, parseBible, parseOriginal, sessionLocations, sceneLabel, compare, locations, shouldEnd } from './content';
 import { ReaderComponent, ReaderBurst } from './reader';
 import { ParticlesComponent } from './particles';
+import { LumenComponent } from './lumen';
+import { TitleCardComponent } from './title-card';
+import { IntroView, INTRO_START, introSteps } from './intro';
 import { ChosenVerse, chosenIn, toggleChosen } from './chosen';
 import { Settings, DEFAULTS, parseSettings } from './settings';
 import { IconComponent } from './icon';
 import { EngravingComponent } from './engraving';
-@Component({selector:'app-root',standalone:true,imports:[FormsModule,ReaderComponent,ParticlesComponent,IconComponent,EngravingComponent],templateUrl:'./app.html'})
+export type ScenePhase='countdown'|'intro'|'reading';
+@Component({selector:'app-root',standalone:true,imports:[FormsModule,ReaderComponent,ParticlesComponent,LumenComponent,TitleCardComponent,IconComponent,EngravingComponent],templateUrl:'./app.html'})
 export class AppComponent implements OnDestroy {
   bible=signal<Bible|null>(null);notes=signal<OriginalNote[]>([]);loading=signal(true);loadError=signal('');notice=signal('');
   scene=signal(false);finished=signal(false);controls=signal(true);playing=signal(false);countdown=signal<number|null>(null);activeNote=signal<OriginalNote|null>(null);
@@ -36,11 +40,20 @@ export class AppComponent implements OnDestroy {
   settings:Settings=this.loadSettings();session:Location[]=[];endAt=signal<Location|null>(null);
   reader=viewChild(ReaderComponent);particles=viewChild(ParticlesComponent);dialog=viewChild.required<ElementRef<HTMLDialogElement>>('dialog');noteDialog=viewChild.required<ElementRef<HTMLDialogElement>>('noteDialog');
   dialogType=signal<'settings'|'content'|'help'>('settings');importError=signal('');importing=signal(false);
+  /** Fase de la escena. `countdown → intro → reading`; fuera de la cuenta atrás y la portada siempre es `reading`. Solo en `reading` hay cintas, gestos y teclas. */
+  phase=signal<ScenePhase>('reading');
+  /** Portada en curso (escena o vista previa): lo que pintan la luz, la tarjeta y el velo. `null` = no hay portada. */
+  intro=signal<IntroView|null>(null);
+  /** El último número de la cuenta atrás se disuelve en luz mientras arranca la portada. */
+  dissolve=signal(false);
+  /** Vista previa de la portada dentro del marco, sin entrar en escena (misma secuencia que en la escena). */
+  introPreview=signal(false);private sceneTimers:ReturnType<typeof setTimeout>[]=[];
   private noticeTimer?:ReturnType<typeof setTimeout>;private hideTimer?:ReturnType<typeof setTimeout>;private countdownTimer?:ReturnType<typeof setInterval>;private wakeLock:WakeLockSentinel|null=null;
   modes:{id:ReadingMode;icon:string;label:string;description:string}[]=[{id:'range',icon:'range',label:'Un recorrido',description:'De un capítulo a otro'},{id:'book',icon:'book',label:'Un libro',description:'De principio a fin'},{id:'chapters',icon:'chapters',label:'Capítulo a capítulo',description:'A tu propio ritmo'}];
   currentBook=computed(()=>this.bible()?.books[this.current().book]);currentChapter=computed(()=>this.currentBook()?.chapters[this.current().chapter]);
   selectionError(){return this.mode==='range' && compare(this.start,this.end)>0?'El final debe estar después del inicio.':'';}
-  get selectionLabel(){const b=this.bible();if(!b)return '';const start=b.books[this.start.book];const end=b.books[this.end.book];if(this.mode==='book')return start.name+' · '+start.chapters.length+' capítulos';if(this.mode==='chapters')return start.name+' '+start.chapters[this.start.chapter].number+' en adelante';return start.name+' '+start.chapters[this.start.chapter].number+' — '+(start.id===end.id?'':end.name+' ')+end.chapters[this.end.chapter].number;}
+  /** Rótulo del recorrido (portada, cierre y «Tu próxima lectura»). */
+  get sceneText(){const b=this.bible();return b&&!this.selectionError()?sceneLabel(b,this.mode,this.start,this.end):'';}
   get previewLabel(){const b=this.currentBook();return b ? b.name+' '+this.currentChapter()!.number : '';}
   get canPrevious(){const b=this.bible();if(!b)return false;if(this.mode==='chapters')return locations(b).findIndex(p=>compare(p,this.current())===0)>0;return this.session.findIndex(p=>compare(p,this.current())===0)>0 || this.mode==='book' && this.current().book>0;}
   get canNext(){const b=this.bible();if(!b)return false;if(this.mode==='chapters')return locations(b).findIndex(p=>compare(p,this.current())===0)<locations(b).length-1;return this.session.findIndex(p=>compare(p,this.current())===0)<this.session.length-1 || this.mode==='book' && this.current().book<b.books.length-1;}
@@ -62,7 +75,7 @@ export class AppComponent implements OnDestroy {
   chooseMode(mode:ReadingMode){this.mode=mode;this.updateSelection();}
   changeBook(which:'start'|'end'){this[which].chapter=0;if(which==='start' && this.mode==='range' && compare(this.start,this.end)>0)this.end={...this.start};this.updateSelection();}
   updateSelection(){this.current.set({...this.start,chapter:this.mode==='book'?0:this.start.chapter});this.saveSettings();}
-  changeSettings(){this.settings.frame={...this.settings.frame};this.saveSettings();}
+  changeSettings(){this.settings.frame={...this.settings.frame};if(!this.settings.intro.enabled&&this.introPreview())this.stopIntro();this.saveSettings();}
   private loadSettings():Settings{
     try{return parseSettings(JSON.parse(localStorage.getItem('verbo.settings')||'null'));}catch{return structuredClone(DEFAULTS);}
   }
@@ -70,12 +83,43 @@ export class AppComponent implements OnDestroy {
   startScene(){
     const bible=this.bible();if(!bible || this.selectionError())return;
     this.session=sessionLocations(bible,this.mode,this.start,this.end);if(!this.session.length)return;
+    this.stopIntro();
     this.current.set({...this.session[0]});this.finished.set(false);this.scene.set(true);this.controls.set(false);this.playing.set(false);this.chosen.set([]);this.endAt.set(null);
-    if(this.settings.countdown){this.countdown.set(3);this.countdownTimer=setInterval(()=>{const remaining=this.countdown()!;if(remaining<=1){clearInterval(this.countdownTimer);this.countdown.set(null);}else this.countdown.set(remaining-1);},1000);}
+    if(this.settings.countdown){this.phase.set('countdown');this.countdown.set(3);this.countdownTimer=setInterval(()=>{const remaining=this.countdown()!;if(remaining<=1){clearInterval(this.countdownTimer);this.afterCountdown();}else this.countdown.set(remaining-1);},1000);}
+    else this.afterCountdown();
     this.acquireWakeLock();
   }
+  /** Fin de la cuenta atrás (o escena sin ella): portada si está activada, si no directo a la lectura. */
+  private afterCountdown(){
+    const hadCountdown=this.countdown()!==null;
+    if(!this.settings.intro.enabled){this.countdown.set(null);this.phase.set('reading');return;}
+    this.phase.set('intro');
+    if(hadCountdown){this.dissolve.set(true);this.sceneTimers.push(setTimeout(()=>{this.dissolve.set(false);this.countdown.set(null);},950));}
+    this.runIntro(()=>this.phase.set('reading'),()=>{});
+  }
+  /** Reproduce la portada con la línea de tiempo de `intro.ts`. Los temporizadores se limpian en `stopIntro`/`exitScene`/`ngOnDestroy`. */
+  private runIntro(onDone:()=>void,onEnd:()=>void){
+    const reduced=typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.intro.set({...INTRO_START});
+    for(const step of introSteps(this.settings.intro.duration,reduced)){
+      this.sceneTimers.push(setTimeout(()=>{
+        if(step.view)this.intro.update(view=>view&&{...view,...step.view});
+        if(step.ambient!==undefined)this.particles()?.ambient(step.ambient);
+        if(step.done)onDone();
+        if(step.end){this.intro.set(null);onEnd();}
+      },step.at));
+    }
+  }
+  private clearSceneTimers(){for(const t of this.sceneTimers)clearTimeout(t);this.sceneTimers=[];}
+  /** Detiene la portada (o su vista previa) y apaga el polvo. */
+  private stopIntro(){this.clearSceneTimers();this.particles()?.ambient(false);this.intro.set(null);this.dissolve.set(false);this.introPreview.set(false);}
+  toggleIntroPreview(){
+    if(this.introPreview()||!this.settings.intro.enabled||this.scene()){this.stopIntro();return;}
+    this.introPreview.set(true);
+    this.runIntro(()=>{},()=>this.introPreview.set(false));
+  }
   async acquireWakeLock(){try{if('wakeLock' in navigator && !this.wakeLock)this.wakeLock=await navigator.wakeLock.request('screen');}catch{}}
-  async exitScene(){this.playing.set(false);clearInterval(this.countdownTimer);this.countdown.set(null);this.scene.set(false);this.finished.set(false);this.controls.set(true);await this.wakeLock?.release();this.wakeLock=null;}
+  async exitScene(){this.playing.set(false);clearInterval(this.countdownTimer);this.stopIntro();this.countdown.set(null);this.phase.set('reading');this.scene.set(false);this.finished.set(false);this.controls.set(true);await this.wakeLock?.release();this.wakeLock=null;}
   toggleControls(){this.controls.update(v=>!v);if(this.controls())this.scheduleHide();}
   holdControls(){clearTimeout(this.hideTimer);}
   scheduleHide(){clearTimeout(this.hideTimer);this.hideTimer=setTimeout(()=>{if(!this.dialog().nativeElement.open && !this.noteDialog().nativeElement.open && !document.activeElement?.closest('.scene-controls'))this.controls.set(false);},5000);}
@@ -113,10 +157,10 @@ export class AppComponent implements OnDestroy {
   announce(message:string){this.notice.set(message);clearTimeout(this.noticeTimer);this.noticeTimer=setTimeout(()=>this.notice.set(''),4000);}
   @HostListener('document:visibilitychange') visibility(){if(document.hidden){this.playing.set(false);this.wakeLock?.release();this.wakeLock=null;}else if(this.scene())this.acquireWakeLock();}
   @HostListener('document:keydown',['$event']) key(event:KeyboardEvent){
-    if(!this.scene() || this.dialog().nativeElement.open || this.noteDialog().nativeElement.open || this.countdown()!==null)return;
+    if(!this.scene() || this.dialog().nativeElement.open || this.noteDialog().nativeElement.open || this.phase()!=='reading')return;
     if(event.key==='Escape'){event.preventDefault();this.toggleControls();return;}
     if(['INPUT','SELECT','TEXTAREA','BUTTON'].includes((event.target as Element)?.tagName))return;
     if(event.code==='Space'){event.preventDefault();this.togglePlay();}if(event.key==='ArrowRight')this.move(1,true);if(event.key==='ArrowLeft')this.move(-1);
   }
-  ngOnDestroy(){clearTimeout(this.noticeTimer);clearTimeout(this.hideTimer);clearInterval(this.countdownTimer);this.wakeLock?.release();}
+  ngOnDestroy(){clearTimeout(this.noticeTimer);clearTimeout(this.hideTimer);clearInterval(this.countdownTimer);this.clearSceneTimers();this.wakeLock?.release();}
 }
