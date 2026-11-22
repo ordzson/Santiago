@@ -59,8 +59,9 @@ test('encuadre, datos externos y límites de los tres modos',async({browser})=>{
   await page.getByRole('checkbox',{name:'Reservar espacio para mi imagen'}).check();
   for(const corner of ['Arriba izquierda','Arriba derecha','Abajo izquierda','Abajo derecha']){
     await page.getByRole('button',{name:corner,exact:true}).click();
-    const camera=(await page.locator('.presenter-space').boundingBox())!;const text=(await page.locator('.reading-scroll').boundingBox())!;
-    expect(camera.y+camera.height<=text.y+1 || camera.y>=text.y+text.height-1).toBe(true);
+    await expect(page.locator('.presenter-space')).toBeVisible();
+    await expect.poll(async()=>{const camera=(await page.locator('.presenter-space').boundingBox())!;const text=(await page.locator('.reading-scroll').boundingBox())!;
+      return camera.y+camera.height<=text.y+1 || camera.y>=text.y+text.height-1;},{timeout:3000}).toBe(true);
   }
   await page.getByRole('button',{name:'Noche',exact:true}).click();await expect(page.locator('.reading-sheet')).toHaveClass(/night/);
   await page.getByRole('button',{name:'Mi contenido',exact:true}).click();

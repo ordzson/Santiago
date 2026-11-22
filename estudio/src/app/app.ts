@@ -1,15 +1,14 @@
 import { Component, signal, computed, viewChild, ElementRef, HostListener, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Bible, GreekNote, Location, ReadingMode, EndRule, parseBible, parseGreek, sessionLocations, compare, locations, shouldEnd } from './content';
-import { ReaderComponent, Tool, Frame } from './reader';
+import { Bible, OriginalNote, Location, ReadingMode, EndRule, parseBible, parseOriginal, sessionLocations, compare, locations, shouldEnd } from './content';
+import { ReaderComponent, Tool } from './reader';
+import { Settings, DEFAULTS, parseSettings } from './settings';
 import { IconComponent } from './icon';
 import { EngravingComponent } from './engraving';
-interface Settings {fontSize:number; speed:number; night:boolean; frame:Frame; endRule:EndRule; endMessage:string; countdown:boolean}
-const DEFAULTS:Settings={fontSize:22,speed:26,night:false,frame:{enabled:false,corner:'top-right',shape:'circle',size:104,guide:false},endRule:'session',endMessage:'Es todo por hoy.',countdown:true};
 @Component({selector:'app-root',standalone:true,imports:[FormsModule,ReaderComponent,IconComponent,EngravingComponent],templateUrl:'./app.html'})
 export class AppComponent implements OnDestroy {
-  bible=signal<Bible|null>(null);notes=signal<GreekNote[]>([]);loading=signal(true);loadError=signal('');notice=signal('');
-  scene=signal(false);finished=signal(false);controls=signal(true);playing=signal(false);countdown=signal<number|null>(null);tool=signal<Tool>('word');activeNote=signal<GreekNote|null>(null);
+  bible=signal<Bible|null>(null);notes=signal<OriginalNote[]>([]);loading=signal(true);loadError=signal('');notice=signal('');
+  scene=signal(false);finished=signal(false);controls=signal(true);playing=signal(false);countdown=signal<number|null>(null);tool=signal<Tool>('word');activeNote=signal<OriginalNote|null>(null);
   mode:ReadingMode='range';start:Location={book:0,chapter:0};end:Location={book:0,chapter:0};current=signal<Location>({book:0,chapter:0});
   settings:Settings=this.loadSettings();session:Location[]=[];endAt=signal<Location|null>(null);
   reader=viewChild(ReaderComponent);dialog=viewChild.required<ElementRef<HTMLDialogElement>>('dialog');noteDialog=viewChild.required<ElementRef<HTMLDialogElement>>('noteDialog');
@@ -29,7 +28,7 @@ export class AppComponent implements OnDestroy {
       const response=await fetch('data/biblia.json');if(!response.ok)throw new Error('No se encontró data/biblia.json. Puedes cargar tu archivo para empezar.');
       this.setBible(parseBible(await response.json()));
     }catch(error){this.loadError.set(error instanceof Error?error.message:'No se pudo cargar el contenido.');}
-    try{const response=await fetch('data/griego.json');if(response.ok){this.notes.set(parseGreek(await response.json()));this.hasGreekFile.set(true);}}catch{this.notes.set([]);}
+    try{const response=await fetch('data/griego.json');if(response.ok){this.notes.set(parseOriginal(await response.json(),'griego'));this.hasGreekFile.set(true);}}catch{this.notes.set([]);}
     this.loading.set(false);
   }
   setBible(value:Bible){this.bible.set(value);this.start={book:0,chapter:0};this.end={book:0,chapter:Math.min(1,value.books[0].chapters.length-1)};this.current.set({...this.start});this.session=[];}
@@ -38,11 +37,7 @@ export class AppComponent implements OnDestroy {
   updateSelection(){this.current.set({...this.start,chapter:this.mode==='book'?0:this.start.chapter});this.saveSettings();}
   changeSettings(){this.settings.frame={...this.settings.frame};this.saveSettings();}
   private loadSettings():Settings{
-    try{const data=JSON.parse(localStorage.getItem('verbo.settings')||'null');if(!data)return structuredClone(DEFAULTS);const valid:Settings=structuredClone(DEFAULTS);
-      if(Number.isFinite(data.fontSize))valid.fontSize=Math.min(32,Math.max(17,data.fontSize));if(Number.isFinite(data.speed))valid.speed=Math.min(70,Math.max(8,data.speed));valid.night=data.night===true;
-      if(['session','chapter','book','manual'].includes(data.endRule))valid.endRule=data.endRule;if(typeof data.endMessage==='string' && data.endMessage.trim())valid.endMessage=data.endMessage.slice(0,100);valid.countdown=data.countdown!==false;
-      if(data.frame){valid.frame.enabled=data.frame.enabled===true;valid.frame.guide=data.frame.guide===true;if(['top-left','top-right','bottom-left','bottom-right'].includes(data.frame.corner))valid.frame.corner=data.frame.corner;if(['circle','square'].includes(data.frame.shape))valid.frame.shape=data.frame.shape;if(Number.isFinite(data.frame.size))valid.frame.size=Math.min(150,Math.max(72,data.frame.size));}return valid;
-    }catch{return structuredClone(DEFAULTS);}
+    try{return parseSettings(JSON.parse(localStorage.getItem('verbo.settings')||'null'));}catch{return structuredClone(DEFAULTS);}
   }
   saveSettings(){try{localStorage.setItem('verbo.settings',JSON.stringify(this.settings));}catch{}}
   startScene(){
@@ -74,14 +69,14 @@ export class AppComponent implements OnDestroy {
   }
   finishScene(){this.playing.set(false);this.finished.set(true);this.controls.set(false);this.activeNote.set(null);}
   continueScene(){const next=this.endAt();if(next){this.current.set({...next});this.endAt.set(null);this.finished.set(false);}else{this.startScene();}}
-  showNote(note:GreekNote){this.playing.set(false);this.activeNote.set(note);this.noteDialog().nativeElement.showModal();}
+  showNote(note:OriginalNote){this.playing.set(false);this.activeNote.set(note);this.noteDialog().nativeElement.showModal();}
   openDialog(type:'settings'|'content'|'help'){this.playing.set(false);this.dialogType.set(type);this.importError.set('');this.dialog().nativeElement.showModal();}
   closeDialog(){this.dialog().nativeElement.close();if(this.scene())this.scheduleHide();}
   backdropClick(event:MouseEvent,dialog:HTMLDialogElement){if(event.target===dialog)dialog.close();}
   async importFile(event:Event,kind:'bible'|'greek'){
     const input=event.target as HTMLInputElement;const file=input.files?.[0];if(!file)return;this.importing.set(true);this.importError.set('');
     try{if(file.size>35*1024*1024)throw new Error('El archivo supera 35 MB. Divide o reduce el JSON antes de cargarlo.');const raw=JSON.parse(await file.text());
-      if(kind==='bible'){this.setBible(parseBible(raw));this.notes.set([]);this.hasGreekFile.set(false);this.loadError.set('');}else{this.notes.set(parseGreek(raw));this.hasGreekFile.set(true);}
+      if(kind==='bible'){this.setBible(parseBible(raw));this.notes.set([]);this.hasGreekFile.set(false);this.loadError.set('');}else{this.notes.set(parseOriginal(raw,'griego'));this.hasGreekFile.set(true);}
       this.announce(kind==='bible'?'Biblia cargada. Ya puedes preparar tu lectura.':'Notas del griego cargadas.');
     }catch(error){this.importError.set(error instanceof SyntaxError?'El JSON no es válido. Revisa comas, comillas y el formato del archivo.':error instanceof Error?error.message:'No se pudo leer el archivo.');}finally{this.importing.set(false);input.value='';}
   }

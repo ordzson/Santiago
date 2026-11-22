@@ -1,5 +1,5 @@
 import { Component, ElementRef, effect, input, output, signal, viewChild, computed, OnDestroy } from '@angular/core';
-import { Chapter, GreekNote, tokenize } from './content';
+import { Chapter, OriginalNote, tokenize } from './content';
 import { IconComponent } from './icon';
 export type Tool = 'word' | 'verse' | 'pen' | 'greek';
 export interface Frame { enabled: boolean; corner: string; shape: string; size: number; guide: boolean }
@@ -35,10 +35,10 @@ interface Point {x:number;y:number}
 </div>
 `,styleUrl:'./reader.css'})
 export class ReaderComponent implements OnDestroy {
-  chapter=input.required<Chapter>(); book=input('Santiago'); bookId=input('santiago'); version=input('NBLA'); notes=input<GreekNote[]>([]);
+  chapter=input.required<Chapter>(); book=input('Santiago'); bookId=input('santiago'); version=input('NBLA'); notes=input<OriginalNote[]>([]);
   fontSize=input(23); night=input(false); live=input(false); tool=input<Tool>('word'); playing=input(false); speed=input(26);
   frame=input<Frame>({enabled:false,corner:'top-right',shape:'circle',size:110,guide:true});
-  note=output<GreekNote>(); missingNote=output<void>(); advance=output<void>(); pause=output<void>();
+  note=output<OriginalNote>(); missingNote=output<void>(); advance=output<void>(); pause=output<void>();
   scroll=viewChild.required<ElementRef<HTMLElement>>('scroller'); content=viewChild.required<ElementRef<HTMLElement>>('content');
   wordMarks=signal(new Set<string>());verseMarks=signal(new Set<number>());drawings=signal<string[]>([]);activePath=signal('');canvasHeight=signal(2000); progress=signal(0);
   focusedWord=signal('1:0');
@@ -68,7 +68,7 @@ export class ReaderComponent implements OnDestroy {
   onScroll(){const el=this.scroll().nativeElement; const max=el.scrollHeight-el.clientHeight;this.progress.set(max>0?Math.round(el.scrollTop/max*100):100);}
   manualScroll(){if(this.playing())this.pause.emit();}
   toggleVerse(n:number){if(!this.live())return;this.verseMarks.update(set=>{const next=new Set(set);next.has(n)?next.delete(n):next.add(n);return next;});}
-  tapWord(verse:number,index:number,note?:GreekNote){
+  tapWord(verse:number,index:number,note?:OriginalNote){
     if(!this.live())return;
     if(this.tool()==='greek'){note?this.note.emit(note):this.missingNote.emit();return;}
     if(this.tool()==='verse'){this.toggleVerse(verse);return;}
