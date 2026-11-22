@@ -207,7 +207,7 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
     - Archivos: `estudio/e2e/intro.spec.ts` (nuevo)
     - Hecho cuando: `pnpm exec playwright test` pasa con: título «Fe que obra» y duración 3 s → tras entrar sin cuenta atrás se ve `.title-card` con ese título y el rótulo esperado; un clic a 1 s no la quita; a ~3,5 s está oculta y las cintas son visibles; con portada desactivada las cintas aparecen de inmediato. Captura `.impeccable/review/mobile-intro.png`.
 
-- [ ] O5 — Cierre con versículos elegidos y fundido a negro
+- [x] O5 (3007f9f) — Cierre con versículos elegidos y fundido a negro
   - Verificación: `pnpm test && pnpm build && pnpm exec playwright test`
   - Commit: `feat(estudio): ending with chosen verses and fade to black`
   - [x] T1 — Pantalla de cierre · invoca `/impeccable layout --target estudio/src/app/ending.ts`
@@ -227,16 +227,16 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
 - [ ] O6 — Pulido de la escena y documentación
   - Verificación: `pnpm test && pnpm build && pnpm exec playwright test` (o `node scripts/verify.mjs full` si existe)
   - Commit: `feat(estudio): scene polish and docs for video flow`
-  - [ ] T1 — Página más llamativa · invoca `/impeccable bolder --target estudio/src/app/reader.css`
+  - [x] T1 — Página más llamativa · invoca `/impeccable bolder --target estudio/src/app/reader.css`
     - Leer: este plan §Visual, `estudio/src/app/reader.css`, `estudio/src/app/reader.ts` (cabecera de capítulo), `estudio/DESIGN.md`
     - Archivos: `estudio/src/app/reader.css`, `estudio/src/app/reader.ts`, `estudio/src/styles.css`
     - Hacer: grano de papel estático (SVG `feTurbulence` como fondo, sin coste en scroll) y viñeta cálida suave; numeral del capítulo con entrada de tinta/luz al cambiar de capítulo (500–800 ms, una vez); barrido de luz breve sobre la página al pasar de capítulo; folio y cabecera con más carácter sin competir con el texto. Nada de movimiento continuo en la lectura.
     - Hecho cuando: capturas móvil/escritorio día/noche antes y después adjuntas en el reporte; el autoscroll sigue fluido (sin caídas visibles en `pnpm dev` con 26 px/s); contraste de lectura ≥ 7:1 en papel y noche.
-  - [ ] T2 — Auditoría y pulido final · invoca `/impeccable audit` y luego `/impeccable polish` sobre `estudio/src/app/app.html`
+  - [x] T2 — Auditoría y pulido final · invoca `/impeccable audit` y luego `/impeccable polish` sobre `estudio/src/app/app.html`
     - Leer: este plan completo §Diseño acordado, `estudio/e2e/captures.spec.ts`
     - Archivos: los que señale la auditoría dentro de `estudio/src/` (≲6), `estudio/e2e/captures.spec.ts` (añadir capturas de portada, marcas y cierre en día y noche)
     - Hecho cuando: una ronda de capturas + un lote de arreglos + como mucho una ronda de confirmación; `estudio/.impeccable/review/finish-review.md` actualizado con veredicto `ship` y sin pendientes de accesibilidad (foco visible, nombres, reduced motion, contraste).
-  - [ ] T3 — Documentación y ayuda · invoca `/impeccable document` para regenerar `DESIGN.md` y su sidecar desde el código final, y `/impeccable clarify --target estudio/src/app/app.html` para los textos de ayuda
+  - [x] T3 — Documentación y ayuda · invoca `/impeccable document` para regenerar `DESIGN.md` y su sidecar desde el código final, y `/impeccable clarify --target estudio/src/app/app.html` para los textos de ayuda
     - Leer: este plan §Diseño acordado, `estudio/README.md`, `estudio/DESIGN.md`, `estudio/PRODUCT.md`, `estudio/src/app/app.html` (diálogo de ayuda)
     - Archivos: `estudio/README.md`, `estudio/DESIGN.md`, `estudio/.impeccable/design.json` (si registra componentes de énfasis), `estudio/PRODUCT.md`, `estudio/src/app/app.html` (solo textos del diálogo de ayuda)
     - Hecho cuando: `grep -niE "trazo|dibuja|herramienta luz" estudio/README.md estudio/DESIGN.md estudio/src/app/app.html` no devuelve restos; README explica portada, cintas, gestos (2 s, arrastre, palabra, 4 s, teclado), cierre y fundido, y documenta `hebreo.json` junto a `griego.json` (campo `original`, alias `greek`/`hebrew`, validación por escritura, ejemplo con niqqud); PRODUCT.md dice «idioma original (griego y hebreo)»; DESIGN.md registra la tipografía hebrea y su tamaño; DESIGN.md documenta «luz de atril», hoja de oro, partículas y la excepción de movimiento en portada/cierre.
@@ -276,6 +276,10 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
 - 2026-11-22 O5 T2: flujo `ending→fading→black` listo (FADE_MS 6000, guarda 600 ms; teclado Escape/Enter/Espacio añadido). RIESGO a revisar en O6 T2: la regla global reduced-motion `animation/transition:none!important` puede anular el fundido de opacidad final de la portada (`.intro-cover`); el velo ya tiene excepción. La cinta sigue visible (inert) bajo el velo durante el fundido.
 
 - 2026-11-22 O5 T3: riesgo de O5 T2 CONFIRMADO y arreglado (prueba mostró corte seco de `.intro-cover` bajo reduced motion; ahora `transition:opacity .9s linear!important`).
+
+- 2026-11-22 O6 T1: página con grano SVG estático, viñeta, numeral 92/118 px y entrada de capítulo. Contraste lectura 8,2–10,6:1 peor píxel; autoscroll 0 frames >20 ms. Para T3 (DESIGN.md): `--page-muted` día #675d52, `--head-red` (día #922235, noche #f2a0a9), numeral, grano/viñeta, barrido y entrada del numeral como excepción de movimiento. Capturas antes/después en scratchpad `o6t1/`.
+
+- 2026-11-22 O6 T2: auditoría hecha, `finish-review.md` veredicto ship. Abierto (aceptado): cintas 37×59 móvil / 40×65 escritorio (>24 px WCAG AA, <44); `side-tab` del detector en `.verse-lit::before` (contrato); capturas de portada/cierre solo en reduced motion. Textos de ayuda con Trazo → T3.
 
 ## Próximos hitos
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-11T06:22:03.616222Z",
+  "generatedAt": "2026-11-22T07:55:33Z",
   "title": "Design System: Verbo · Estudio de lectura",
   "extensions": {
     "colorMeta": {
@@ -134,14 +134,14 @@
         "role": "neutral",
         "displayName": "Folio tenue",
         "tonalRamp": [
-          "oklch(15% 0.0222 72.36)",
-          "oklch(25% 0.0222 72.36)",
-          "oklch(35% 0.0222 72.36)",
-          "oklch(45% 0.0222 72.36)",
-          "oklch(55% 0.0222 72.36)",
-          "oklch(70% 0.0222 72.36)",
-          "oklch(85% 0.0222 72.36)",
-          "oklch(95% 0.0222 72.36)"
+          "oklch(15% 0.0215 69.95)",
+          "oklch(25% 0.0215 69.95)",
+          "oklch(35% 0.0215 69.95)",
+          "oklch(45% 0.0215 69.95)",
+          "oklch(55% 0.0215 69.95)",
+          "oklch(70% 0.0215 69.95)",
+          "oklch(85% 0.0215 69.95)",
+          "oklch(95% 0.0215 69.95)"
         ]
       },
       "night-paper": {
@@ -240,21 +240,121 @@
           "oklch(70% 0.1390 82.86)",
           "oklch(85% 0.1390 82.86)",
           "oklch(95% 0.1390 82.86)"
+        ],
+        "canonical": "rgb(219 167 52 / .3) en el extremo izquierdo del degradado horizontal"
+      },
+      "head-red": {
+        "role": "primary",
+        "displayName": "Carmín de cabecera",
+        "tonalRamp": [
+          "oklch(15% 0.1467 16.49)",
+          "oklch(25% 0.1467 16.49)",
+          "oklch(35% 0.1467 16.49)",
+          "oklch(45% 0.1467 16.49)",
+          "oklch(55% 0.1467 16.49)",
+          "oklch(70% 0.1467 16.49)",
+          "oklch(85% 0.1467 16.49)",
+          "oklch(95% 0.1467 16.49)"
         ]
       },
-      "drawing-ink": {
-        "role": "secondary",
-        "displayName": "Tinta de trazo",
+      "night-head-red": {
+        "role": "primary",
+        "displayName": "Carmín de cabecera de noche",
         "tonalRamp": [
-          "oklch(15% 0.1718 19.71)",
-          "oklch(25% 0.1718 19.71)",
-          "oklch(35% 0.1718 19.71)",
-          "oklch(45% 0.1718 19.71)",
-          "oklch(55% 0.1718 19.71)",
-          "oklch(70% 0.1718 19.71)",
-          "oklch(85% 0.1718 19.71)",
-          "oklch(95% 0.1718 19.71)"
+          "oklch(15% 0.0982 12.37)",
+          "oklch(25% 0.0982 12.37)",
+          "oklch(35% 0.0982 12.37)",
+          "oklch(45% 0.0982 12.37)",
+          "oklch(55% 0.0982 12.37)",
+          "oklch(70% 0.0982 12.37)",
+          "oklch(85% 0.0982 12.37)",
+          "oklch(95% 0.0982 12.37)"
         ]
+      },
+      "mote-amber": {
+        "role": "secondary",
+        "displayName": "Mota ámbar",
+        "tonalRamp": [
+          "oklch(15% 0.1300 80.83)",
+          "oklch(25% 0.1300 80.83)",
+          "oklch(35% 0.1300 80.83)",
+          "oklch(45% 0.1300 80.83)",
+          "oklch(55% 0.1300 80.83)",
+          "oklch(70% 0.1300 80.83)",
+          "oklch(85% 0.1300 80.83)",
+          "oklch(95% 0.1300 80.83)"
+        ]
+      },
+      "mote-gold": {
+        "role": "secondary",
+        "displayName": "Mota dorada",
+        "tonalRamp": [
+          "oklch(15% 0.1324 86.79)",
+          "oklch(25% 0.1324 86.79)",
+          "oklch(35% 0.1324 86.79)",
+          "oklch(45% 0.1324 86.79)",
+          "oklch(55% 0.1324 86.79)",
+          "oklch(70% 0.1324 86.79)",
+          "oklch(85% 0.1324 86.79)",
+          "oklch(95% 0.1324 86.79)"
+        ]
+      },
+      "mote-deep": {
+        "role": "secondary",
+        "displayName": "Mota ámbar profunda",
+        "tonalRamp": [
+          "oklch(15% 0.1154 74.30)",
+          "oklch(25% 0.1154 74.30)",
+          "oklch(35% 0.1154 74.30)",
+          "oklch(45% 0.1154 74.30)",
+          "oklch(55% 0.1154 74.30)",
+          "oklch(70% 0.1154 74.30)",
+          "oklch(85% 0.1154 74.30)",
+          "oklch(95% 0.1154 74.30)"
+        ]
+      },
+      "night-mote-amber": {
+        "role": "secondary",
+        "displayName": "Mota ámbar de noche",
+        "tonalRamp": [
+          "oklch(15% 0.1403 77.85)",
+          "oklch(25% 0.1403 77.85)",
+          "oklch(35% 0.1403 77.85)",
+          "oklch(45% 0.1403 77.85)",
+          "oklch(55% 0.1403 77.85)",
+          "oklch(70% 0.1403 77.85)",
+          "oklch(85% 0.1403 77.85)",
+          "oklch(95% 0.1403 77.85)"
+        ]
+      },
+      "night-mote-gold": {
+        "role": "secondary",
+        "displayName": "Mota dorada de noche",
+        "tonalRamp": [
+          "oklch(15% 0.1180 82.93)",
+          "oklch(25% 0.1180 82.93)",
+          "oklch(35% 0.1180 82.93)",
+          "oklch(45% 0.1180 82.93)",
+          "oklch(55% 0.1180 82.93)",
+          "oklch(70% 0.1180 82.93)",
+          "oklch(85% 0.1180 82.93)",
+          "oklch(95% 0.1180 82.93)"
+        ]
+      },
+      "gold-leaf": {
+        "role": "secondary",
+        "displayName": "Hoja de oro",
+        "tonalRamp": [
+          "oklch(15% 0.1324 86.79)",
+          "oklch(25% 0.1324 86.79)",
+          "oklch(35% 0.1324 86.79)",
+          "oklch(45% 0.1324 86.79)",
+          "oklch(55% 0.1324 86.79)",
+          "oklch(70% 0.1324 86.79)",
+          "oklch(85% 0.1324 86.79)",
+          "oklch(95% 0.1324 86.79)"
+        ],
+        "canonical": "rgb(224 181 74 / .4)"
       }
     },
     "typographyMeta": {
@@ -292,10 +392,31 @@
       },
       "greek": {
         "displayName": "Término griego",
-        "purpose": "Texto griego real proporcionado por el usuario; Noto Serif incluye glifos extendidos."
+        "purpose": "Texto griego real proporcionado por el usuario; Noto Serif incluye glifos extendidos. 38 px."
+      },
+      "numeral": {
+        "displayName": "Numeral de capítulo",
+        "purpose": "Gelasio carmín 92 px (118 px en escena desde 700 px) con sombra de relieve; entrada de tinta de .75 s al cambiar de capítulo."
+      },
+      "cover-title": {
+        "displayName": "Título de portada",
+        "purpose": "Noto Serif, clamp(36px, 11.2vw, 84px); entra de desenfoque a nitidez en la portada."
+      },
+      "cover-label": {
+        "displayName": "Rótulo de portada",
+        "purpose": "Gelasio cursiva, clamp(19px, 5.4vw, 28px); rótulo del recorrido generado por la app."
+      },
+      "hebrew": {
+        "displayName": "Término hebreo",
+        "purpose": "Texto hebreo real proporcionado por el usuario; Noto Serif Hebrew 44 px, interlineado 1.9 para niqqud y cantilación, RTL aislado, centrado."
       }
     },
     "shadows": [
+      {
+        "name": "word-light",
+        "value": "0 0 9px 1px rgb(219 167 52 / .26), text-shadow 0 0 6px rgb(219 167 52 / .4)",
+        "purpose": "Halo de la palabra marcada dentro de un versículo resaltado (noche: sin text-shadow, alfa .2)."
+      },
       {
         "name": "paper-preview",
         "value": "0 16px 40px #4a36121c",
@@ -322,14 +443,24 @@
         "purpose": "Confirmación temporal inferior."
       },
       {
-        "name": "word-light",
-        "value": "0 0 7px #d0a043b3,0 0 18px #dab64666",
-        "purpose": "text-shadow de palabra iluminada; no es box-shadow."
+        "name": "verse-light",
+        "value": "0 4px 20px -6px rgb(219 167 52 / .45)",
+        "purpose": "Resplandor exterior del versículo resaltado (noche: alfa .3)."
       },
       {
-        "name": "verse-light",
-        "value": "0 0 15px #dba73418",
-        "purpose": "box-shadow tenue del versículo marcado."
+        "name": "verse-special",
+        "value": "0 5px 22px -6px rgb(224 181 74 / .55)",
+        "purpose": "Resplandor de la hoja de oro del versículo elegido (noche: alfa .4)."
+      },
+      {
+        "name": "chapter-numeral",
+        "value": "0 2px 0 rgb(185 45 64 / .14), 0 12px 26px rgb(185 45 64 / .2)",
+        "purpose": "Relieve del numeral de capítulo; en noche, sombra oscura más halo dorado."
+      },
+      {
+        "name": "ribbon-play-thread",
+        "value": "drop-shadow(1px 0 0 gold) drop-shadow(-1px 0 0 gold) drop-shadow(0 1px 0 gold)",
+        "purpose": "Hilo dorado de 1 px alrededor de la cinta de reproducción."
       }
     ],
     "motion": [
@@ -349,24 +480,9 @@
         "purpose": "Movimiento del indicador al activar la reserva."
       },
       {
-        "name": "scene-tools",
-        "value": "opacity .3s var(--ease)",
-        "purpose": "Entrada y salida de herramientas, retenidas durante dibujo o foco."
-      },
-      {
-        "name": "ribbon",
-        "value": "transform .3s var(--ease)",
-        "purpose": "Estiramiento vertical de la cinta visible."
-      },
-      {
         "name": "mark-state",
         "value": ".25s",
         "purpose": "Cambios de fondo y halo de palabras y versículos."
-      },
-      {
-        "name": "ink-bloom",
-        "value": ".6s ease-out",
-        "purpose": "Una floración al marcar; el halo final permanece."
       },
       {
         "name": "loading-line",
@@ -374,9 +490,64 @@
         "purpose": "Solo estado de carga; no se usa durante la lectura."
       },
       {
+        "name": "scene-panel",
+        "value": "opacity .3s var(--ease)",
+        "purpose": "Entrada y salida del panel de ajustes, retenido mientras el foco está dentro."
+      },
+      {
+        "name": "ribbon",
+        "value": "transform .3s var(--ease)",
+        "purpose": "Estiramiento vertical de la cinta visible (la de reproducción queda «tirada» al reproducir)."
+      },
+      {
+        "name": "lit-in",
+        "value": ".7s cubic-bezier(.22,1,.36,1)",
+        "purpose": "Entrada de la luz de versículo: barrido de izquierda a derecha, una vez."
+      },
+      {
+        "name": "ink-bloom",
+        "value": ".6s ease-out",
+        "purpose": "Floración de la palabra marcada, una vez."
+      },
+      {
+        "name": "special-in",
+        "value": "1.2s cubic-bezier(.22,1,.36,1)",
+        "purpose": "Entrada de la hoja de oro: barrido de brillo y pulso de resplandor, una vez."
+      },
+      {
+        "name": "numeral-ink",
+        "value": ".75s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Entrada del numeral de capítulo al cambiar de capítulo en escena; excepción de movimiento puntual."
+      },
+      {
+        "name": "page-sweep",
+        "value": "1.1s cubic-bezier(.5,0,.2,1)",
+        "purpose": "Barrido de luz sobre la página al pasar de capítulo, una vez."
+      },
+      {
+        "name": "lumen-sway",
+        "value": "18s ease-in-out infinite alternate",
+        "purpose": "Oscilación de ±3° de los rayos (solo transform) durante el sostén de la portada y el cierre; el único movimiento continuo autorizado."
+      },
+      {
+        "name": "intro-sequence",
+        "value": "3 a 10 s (por defecto 5)",
+        "purpose": "Portada: luz, título, regla y rótulo, inundación en los últimos .9 s. No se puede saltar."
+      },
+      {
+        "name": "ending-fade",
+        "value": "6000ms ease-in-out",
+        "purpose": "Velo negro 0→1 al cerrar; se conserva con movimiento reducido."
+      },
+      {
+        "name": "particles",
+        "value": "Canvas 2D, tope 500, DPR ≤ 2",
+        "purpose": "Ráfagas lit/paint/word/special y polvo ambiental; sin partículas con movimiento reducido."
+      },
+      {
         "name": "reduced-motion",
         "value": "animation:none;transition:none;scroll-behavior:auto",
-        "purpose": "Anulación global bajo prefers-reduced-motion: reduce."
+        "purpose": "Anulación global bajo prefers-reduced-motion: reduce. Excepciones de opacidad deliberadas: velo del cierre y salida de la portada."
       }
     ],
     "breakpoints": [
@@ -472,31 +643,56 @@
       "css": ".ds-paper{position:relative;min-height:260px;padding:29px 28px 36px 32px;background:var(--paper,#f6f1e4);color:#30271f;border-radius:3px;box-shadow:0 16px 40px #4a36121c;overflow:hidden}.ds-spine{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--red,#b92d40);opacity:.85}.ds-page-heading{font:600 10px var(--ui,Archivo,Arial,sans-serif);letter-spacing:.18em}.ds-page-meta{font:400 11px var(--ui,Archivo,Arial,sans-serif);color:#756b5f;margin-top:7px}.ds-chapter{display:flex;align-items:center;gap:17px;margin:34px 0 25px}.ds-chapter>span{font:400 70px/.95 var(--serif,Gelasio,Georgia,serif);color:var(--red,#b92d40)}.ds-chapter h2{font:400 26px/1.2 var(--serif,Gelasio,Georgia,serif);max-width:12ch;letter-spacing:-.025em;margin:0}"
     },
     {
-      "name": "Cinta y herramientas",
+      "name": "Cintas de la escena",
       "kind": "nav",
       "refersTo": "ribbon",
-      "description": "Cinta de acceso y muestra del dock de herramientas.",
-      "html": "<div class=\"ds-scene\"><button class=\"ds-ribbon\" aria-expanded=\"true\" aria-label=\"Mostrar u ocultar herramientas\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 7h16M4 17h16M9 4v6M15 14v6\"/></svg></button><nav class=\"ds-dock\" aria-label=\"Herramientas de lectura\"><button class=\"ds-tool ds-active\" aria-pressed=\"true\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m12 3 2.3 6.7L21 12l-6.7 2.3L12 21l-2.3-6.7L3 12l6.7-2.3L12 3Z\"/></svg><span>Luz</span></button><button class=\"ds-tool\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m16 3 5 5-12 12-6 1 1-6L16 3ZM13 6l5 5\"/></svg><span>Trazo</span></button><button class=\"ds-tool\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7V5Z\"/></svg><span>Scroll</span></button></nav></div>",
-      "css": ".ds-scene{position:relative;min-height:180px;background:var(--paper,#f6f1e4)}.ds-ribbon{position:absolute;right:22px;top:0;width:44px;height:65px;border:0;background:transparent;color:var(--paper,#f6f1e4);padding:0;isolation:isolate;cursor:pointer}.ds-ribbon:before{content:\"\";position:absolute;top:0;right:0;width:32px;height:51px;background:var(--red,#b92d40);clip-path:polygon(0 0,100% 0,100% 100%,50% 88%,0 100%);transform-origin:top;transition:transform .3s var(--ease,cubic-bezier(.16,1,.3,1));z-index:-1}.ds-ribbon>svg{position:absolute;width:15px;height:15px;right:8px;top:17px}.ds-ribbon:hover:before{transform:scaleY(1.12)}.ds-ribbon:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}.ds-ribbon:active{transform:translateY(1px)}.ds-dock{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;gap:2px;padding:10px 16px 12px;background:var(--paper,#f6f1e4);box-shadow:0 -8px 35px #30231a12}.ds-tool{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-width:53px;min-height:58px;border:0;border-radius:7px;background:none;color:var(--muted,#6e6458);font:400 9px var(--ui,Archivo,Arial,sans-serif);cursor:pointer}.ds-active{color:var(--red,#b92d40);background:#b92d400b}.ds-tool:hover{background:#b92d400b}.ds-tool:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}.ds-tool:active{transform:translateY(1px)}"
+      "description": "Las dos cintas que cuelgan del borde superior en la lectura: ajustes (carmín) y reproducción (tinta, hilo dorado).",
+      "html": "<div class=\"ds-scene\"><button class=\"ds-ribbon ds-settings\" aria-expanded=\"false\" aria-label=\"Mostrar u ocultar herramientas\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 7h16M4 17h16M9 4v6M15 14v6\"/></svg></button><button class=\"ds-ribbon ds-play\" aria-pressed=\"false\" aria-label=\"Iniciar o pausar autoscroll\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7V5Z\"/></svg></button></div>",
+      "css": ".ds-scene{position:relative;min-height:120px;background:var(--paper,#f6f1e4)}.ds-ribbon{position:absolute;top:0;width:40px;height:65px;border:0;background:transparent;color:var(--paper,#f6f1e4);padding:0;isolation:isolate;cursor:pointer}.ds-settings{right:16px}.ds-play{right:64px;filter:drop-shadow(1px 0 0 var(--gold,#bc8c31)) drop-shadow(-1px 0 0 var(--gold,#bc8c31)) drop-shadow(0 1px 0 var(--gold,#bc8c31))}.ds-ribbon:before{content:\"\";position:absolute;top:0;left:50%;margin-left:-16px;width:32px;height:51px;background:var(--red,#b92d40);clip-path:polygon(0 0,100% 0,100% 100%,50% 88%,0 100%);transform-origin:top;transition:transform .3s var(--ease,cubic-bezier(.16,1,.3,1));z-index:-1}.ds-play:before{background:var(--ink,#2c251f)}.ds-ribbon>svg{position:absolute;left:50%;top:17px;margin-left:-7px;width:15px;height:15px}.ds-ribbon:hover:before{transform:scaleY(1.12)}.ds-ribbon:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}"
     },
     {
-      "name": "Palabra iluminada",
+      "name": "Palabra marcada",
       "kind": "custom",
       "refersTo": "illuminated-word",
-      "description": "La luz mantiene la tinta y responde una vez al marcar.",
+      "description": "Marcador ámbar en la mitad inferior de una palabra dentro de un versículo resaltado.",
       "html": "<p class=\"ds-scripture\">Una palabra con <button class=\"ds-word ds-lit\" aria-pressed=\"true\">luz</button>.</p>",
-      "css": ".ds-scripture{margin:0;color:#30271f;font:400 22px/1.73 var(--serif,Gelasio,Georgia,serif)}.ds-word{display:inline;font:inherit;line-height:inherit;text-align:inherit;padding:0;border:0;border-radius:3px;color:inherit;background:transparent;cursor:pointer;transition:text-shadow .25s,background-color .25s}.ds-lit{background:#dba73433;text-shadow:0 0 7px #d0a043b3,0 0 18px #dab64666;animation:ds-ink-bloom .6s ease-out}.ds-word:hover{color:inherit}.ds-word:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}.ds-word:active{transform:translateY(1px)}@keyframes ds-ink-bloom{0%{background:#e2ba5570;text-shadow:0 0 3px #d0a043}45%{text-shadow:0 0 12px #d0a043,0 0 28px #dab646}100%{text-shadow:0 0 7px #d0a043b3,0 0 18px #dab64666}}@media(prefers-reduced-motion:reduce){.ds-word{transition:none}.ds-lit{animation:none}}"
+      "css": ".ds-scripture{margin:0;color:#30271f;font:400 22px/1.73 var(--serif,Gelasio,Georgia,serif)}.ds-word{display:inline;font:inherit;line-height:inherit;padding:0;border:0;border-radius:3px;color:inherit;background:transparent;cursor:pointer}.ds-lit{background:linear-gradient(rgb(219 167 52 / 0) 0 46%,rgb(219 167 52 / .62) 46% 94%,rgb(219 167 52 / 0) 94%);box-shadow:0 0 9px 1px rgb(219 167 52 / .26);text-shadow:0 0 6px rgb(219 167 52 / .4);animation:ds-bloom .6s cubic-bezier(.22,1,.36,1)}.ds-word:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}@keyframes ds-bloom{0%{box-shadow:0 0 16px 4px rgb(255 232 160 / .6)}100%{box-shadow:0 0 9px 1px rgb(219 167 52 / .26)}}@media(prefers-reduced-motion:reduce){.ds-lit{animation:none}}"
+    },
+    {
+      "name": "Versículo resaltado",
+      "kind": "custom",
+      "refersTo": "illuminated-verse",
+      "description": "Luz de versículo: banda cálida que se apaga a la derecha, filete dorado y resplandor.",
+      "html": "<p class=\"ds-scripture\"><span class=\"ds-verse\"><sup>3</sup> Sabiendo que la prueba de vuestra fe produce paciencia.</span></p>",
+      "css": ".ds-scripture{margin:0;color:#30271f;font:400 22px/1.73 var(--serif,Gelasio,Georgia,serif)}.ds-verse{position:relative;display:inline;padding:2px 6px;border-radius:3px;background:linear-gradient(90deg,rgb(219 167 52 / .3),rgb(219 167 52 / .14) 55%,rgb(219 167 52 / .03));box-shadow:0 4px 20px -6px rgb(219 167 52 / .45);border-left:3px solid #bc8c31}.ds-verse sup{font:500 11px var(--ui,Archivo,Arial,sans-serif);color:#922235;margin-right:6px}"
+    },
+    {
+      "name": "Versículo elegido (hoja de oro)",
+      "kind": "custom",
+      "refersTo": "chosen-verse",
+      "description": "Versículo elegido para el cierre: fondo dorado, filetes finos, marcapáginas carmín y estrella.",
+      "html": "<p class=\"ds-scripture\"><span class=\"ds-chosen\"><sup>3</sup> Sabiendo que la prueba de vuestra fe produce paciencia. <i aria-hidden=\"true\">✦</i></span></p>",
+      "css": ".ds-scripture{margin:0;padding-left:14px;color:#30271f;font:400 22px/1.73 var(--serif,Gelasio,Georgia,serif)}.ds-chosen{position:relative;display:inline;padding:2px 6px;border-radius:3px;background:linear-gradient(115deg,transparent 0 38%,rgb(255 246 214 / .5) 46%,transparent 54% 100%),linear-gradient(90deg,transparent,#bc8c31 12% 88%,transparent) 0 0/100% 1px no-repeat,linear-gradient(90deg,transparent,#bc8c31 12% 88%,transparent) 0 100%/100% 1px no-repeat,linear-gradient(180deg,rgb(224 181 74 / .4),rgb(224 181 74 / .22));box-shadow:0 5px 22px -6px rgb(224 181 74 / .55)}.ds-chosen sup{font:500 11px var(--ui,Archivo,Arial,sans-serif);color:#922235;margin-right:6px}.ds-chosen i{color:#bc8c31;font-style:normal}"
+    },
+    {
+      "name": "Nota en hebreo",
+      "kind": "custom",
+      "refersTo": "hebrew",
+      "description": "Término hebreo de una nota: Noto Serif Hebrew 44 px, derecha a izquierda, aislado, centrado.",
+      "html": "<div class=\"ds-note\"><span class=\"ds-ref\">Hebreo · Génesis 1:1</span><p class=\"ds-he\" lang=\"he\" dir=\"rtl\">בְּרֵאשִׁית</p><p class=\"ds-tr\">bereshit</p></div>",
+      "css": ".ds-note{text-align:center;background:var(--paper,#f6f1e4);padding:20px}.ds-ref{font:500 10px var(--ui,Archivo,Arial,sans-serif);color:var(--muted,#6e6458)}.ds-he{font:400 44px/1.9 var(--hebrew,\"Noto Serif Hebrew\",\"Noto Serif\",Georgia,serif);color:var(--red,#b92d40);margin:14px 0 0;padding-block:4px;unicode-bidi:isolate;letter-spacing:0}.ds-tr{font:italic 17px var(--serif,Gelasio,Georgia,serif);color:var(--muted,#6e6458);margin:8px 0 0}"
     }
   ],
   "narrative": {
     "northStar": "El atril de grabación",
-    "overview": "Verbo reúne los materiales de un escritorio editorial: marfil, tinta cálida, reglas finas, una cinta carmín y un grabado geométrico. La preparación es compacta y práctica; la página conserva una lectura amplia y pausada. Comparte esos materiales con la referencia Santiago, pero este sistema pertenece únicamente a la app independiente de `estudio/`.\n\nEn escena, la página ocupa la ventana y las herramientas se retiran. La cinta conserva una entrada pequeña y reconocible a los controles. El énfasis ámbar ilumina palabras sin sustituir su tinta; el trazo rojo aporta una marca manual. La ornamentación procede del canvas geométrico original y de SVG de línea, sin imágenes rasterizadas en la interfaz.",
+    "overview": "Verbo reúne los materiales de un escritorio editorial: marfil, tinta cálida, reglas finas, una cinta carmín y un grabado geométrico. La preparación es compacta y práctica; la página conserva una lectura amplia y pausada. Comparte esos materiales con la referencia Santiago, pero este sistema pertenece únicamente a la app independiente de `estudio/`.\n\nEn escena, la página ocupa la ventana y el único rastro de interfaz son dos cintas que cuelgan del borde superior. Sobre ese papel actúa un material propio, la **luz de atril**: rayos cálidos que caen desde arriba al centro, polvo dorado suspendido y, para lo elegido, hoja de oro. El carmín sigue orientando (cintas, numerales, marcapáginas); el oro es luz y énfasis. La ornamentación procede del canvas geométrico original, de SVG de línea y de efectos procedurales (Canvas 2D, CSS); no hay imágenes rasterizadas en la interfaz.",
     "keyCharacteristics": [
       "Papel marfil sobre un escritorio ligeramente más oscuro.",
       "Serif de lectura generosa junto a controles Archivo compactos.",
-      "Carmín para orientar, marcar límites y recuperar herramientas.",
+      "Carmín para orientar, marcar límites y recuperar los ajustes.",
       "Profundidad suave reservada a la página y a superficies superpuestas.",
-      "Texto, encuadre del presentador y herramientas con espacios propios."
+      "Texto, encuadre del presentador y cintas con espacios propios.",
+      "Luz de atril en la portada y el cierre; en la lectura, solo marcas que se encienden una vez."
     ],
     "rules": [
       {
@@ -505,26 +701,46 @@
         "section": "colors"
       },
       {
+        "name": "The Gold Is Light Rule",
+        "body": "El oro nunca orienta ni rotula: solo ilumina (marcas, polvo, hoja de oro, hilo de la cinta de reproducción). Si un elemento necesita decir «aquí», es carmín.",
+        "section": "colors"
+      },
+      {
         "name": "The Reading Voice Rule",
         "body": "Gelasio sostiene el texto bíblico y Noto Serif sostiene títulos y griego; Archivo organiza la operación sin competir con la lectura.",
         "section": "typography"
+      },
+      {
+        "name": "The Right-to-Left Isolation Rule",
+        "body": "Un término hebreo siempre va en su propio elemento con `lang=\"he\"` y `dir=\"rtl\"`; nunca se mezcla en línea con texto en español ni se alinea a la izquierda por herencia.",
+        "section": "typography"
+      },
+      {
+        "name": "The Motion Exception Rule",
+        "body": "El movimiento continuo existe solo en la portada y el cierre, secuencias autorizadas porque son la toma, y nunca en la lectura. Las excepciones permitidas en la lectura son puntuales y de una sola pasada: entrada y barrido del numeral al cambiar de capítulo, floración de marcas y desplazamiento automático elegido. Con `prefers-reduced-motion` no hay partículas ni desplazamientos: la portada es una composición fija que dura lo configurado, las marcas aparecen sin animación y se conservan únicamente los fundidos de opacidad que son el cierre buscado (velo negro y salida de la portada).",
+        "section": "components"
       }
     ],
     "dos": [
       "**Do** mantener los roles separados de papel, escritorio, tinta de lectura y tinta secundaria.",
       "**Do** conservar Gelasio y su interlineado amplio al añadir superficies de lectura.",
-      "**Do** combinar color y una señal adicional para comunicar selección, como el check de modo o el contorno de tema.",
+      "**Do** combinar color y una señal adicional para comunicar selección, como el check de modo o el contorno de tema; en las marcas, forma además de color (filete, marcapáginas, estrella).",
       "**Do** preservar la reserva del presentador cuando su guía se oculta.",
-      "**Do** mantener foco visible, nombres de diálogo y acceso a herramientas mientras se usan con teclado.",
-      "**Do** reutilizar SVG de línea y el grabado geométrico original cuando la ornamentación ayude a enmarcar la página."
+      "**Do** mantener foco visible, nombres accesibles y alternativa de teclado para cada gesto.",
+      "**Do** reutilizar SVG de línea y el grabado geométrico original cuando la ornamentación ayude a enmarcar la página.",
+      "**Do** dar a cada efecto de luz un camino con movimiento reducido.",
+      "**Do** componer el hebreo en su propio elemento RTL a 44 px con Noto Serif Hebrew."
     ],
     "donts": [
       "**Don't** convertir cada grupo de ajustes en una tarjeta elevada: la preparación se organiza con reglas y tono.",
       "**Don't** usar el tamaño de las ayudas compactas para el texto bíblico o para el contenido de las notas.",
-      "**Don't** aplicar brillo al cuerpo completo: la luz corresponde a palabras o versículos marcados.",
+      "**Don't** aplicar brillo al cuerpo completo: la luz corresponde a palabras o versículos marcados, y los rayos a la portada y el cierre.",
       "**Don't** colocar la imagen del presentador por encima de los versículos ni eliminar su espacio al ocultar la guía.",
-      "**Don't** subrayar como consultable una palabra sin nota griega asociada.",
-      "**Don't** ocultar herramientas que contienen el foco ni reintroducir animaciones bajo movimiento reducido."
+      "**Don't** subrayar como consultable una palabra sin nota asociada.",
+      "**Don't** añadir movimiento continuo a la lectura, ni mostrar avisos visibles (toasts) durante la escena: saldrían en el video.",
+      "**Don't** usar el oro para orientar ni el carmín para iluminar.",
+      "**Don't** reintroducir animaciones bajo movimiento reducido; solo los fundidos de opacidad del cierre permanecen.",
+      "**Don't** ocultar controles que contienen el foco."
     ]
   }
 }

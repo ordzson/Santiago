@@ -20,18 +20,19 @@ Preparar la lectura antes de grabar. Entrar en una escena limpia y operar con ge
 ## Capabilities and Constraints
 - Tres modos: rango entre capítulos incluso de libros distintos; libro completo con cambio de libro en sus extremos; capítulos sucesivos.
 - Pantalla final configurable: fin o es todo por hoy, según límite de sesión, capítulo, libro o cierre manual.
-- Resaltar palabras con brillo legible, uno o varios versículos y dibujo libre con el dedo.
+- Escena de video con portada de episodio (título y rótulo del recorrido), dos cintas como únicos controles visibles y cierre con fundido lento a negro.
+- Gestos en lugar de herramientas: pulsación de 2 s resalta uno o varios versículos (arrastrando), toque en una palabra la marca dentro de un versículo resaltado, y pulsación de 4 s elige el versículo para el cierre. Alternativa de teclado.
 - Desplazamiento automático ajustable.
-- Mostrar contexto griego solo cuando haya datos asociados a la palabra.
+- Mostrar notas del idioma original (griego y hebreo) solo cuando haya datos asociados a la palabra; el hebreo se muestra de derecha a izquierda.
 - Reservar espacio circular o cuadrado en cualquiera de las cuatro esquinas para imagen externa del presentador, sin tapar texto.
-- El usuario agregará los JSON de Biblia y notas griegas al repo. Documentar el contrato y proporcionar solo datos de ejemplo claramente identificados.
+- El usuario agregará los JSON de Biblia y de notas del idioma original (`griego.json`, `hebreo.json`) al repo. Documentar el contrato y proporcionar solo datos de ejemplo claramente identificados.
 
 ## Brand Commitments
 Referencia explícita: marfil, cinta roja, grabados vectoriales y sensibilidad editorial de la app Santiago. Esta app tiene identidad e interacción propias; no replicar el lector anterior.
 
 ## Product Principles
 - El resultado debe ser agradable de ver en un video.
-- Las herramientas se retiran cuando no se necesitan.
+- Las herramientas se retiran cuando no se necesitan; en la toma, nada de interfaz salvo las cintas.
 - La legibilidad y los gestos fiables están por encima del adorno.
 - El contenido bíblico y las notas nunca se inventan como datos reales.
 

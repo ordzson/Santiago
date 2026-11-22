@@ -13,17 +13,18 @@ const chargeCurve=(level:number)=>Math.pow(level,1.6);
 @Component({selector:'v-reader',standalone:true,imports:[IconComponent],template:`
 <div class="reading-sheet" [class.live]="live()" [class.night]="night()" [style.--reading-size.px]="fontSize()" [style.--frame-size.px]="frame().size">
   <div class="sheet-ribbon" aria-hidden="true"></div>
+  @for (current of [chapter()]; track current) { <div class="page-sweep" aria-hidden="true"></div> }
   <header class="page-top" [class.camera-row]="frame().enabled && frame().corner.startsWith('top')" [class.frame-left]="frame().corner.endsWith('left')">
     <div class="page-heading"><span class="page-book">{{book()}}</span><span class="chapter-meta">Capítulo {{chapter().number}} <span>· {{version()}}</span></span></div>
     @if (frame().enabled && frame().corner.startsWith('top')) { <div class="presenter-space" [class.square]="frame().shape === 'square'" [class.no-guide]="live() && !frame().guide"><v-icon name="camera"/><span>Tu imagen</span></div> }
   </header>
   <div class="reading-scroll" #scroller (scroll)="onScroll()" (wheel)="manualScroll()" (pointerdown)="onPointerDown($event)" (contextmenu)="onContextMenu($event)" tabindex="0" aria-label="Texto bíblico; desplázate para leer">
     <div class="reading-content" #content>
-      <div class="chapter-heading"><span class="chapter-numeral">{{chapter().number}}</span><h2>{{chapter().title || book()}}</h2></div>
+      @for (current of [chapter()]; track current) { <div class="chapter-heading"><span class="chapter-numeral">{{current.number}}</span><h2>{{current.title || book()}}</h2></div> }
       <p class="sr-only" id="reading-keys">Utiliza las flechas izquierda y derecha para recorrer las palabras, Inicio y Fin para ir a los extremos, y Enter para tocar la palabra. H resalta el versículo y E lo elige para el cierre. Escape muestra el panel.</p>
       <article class="scripture" [attr.aria-label]="book() + ' ' + chapter().number" aria-describedby="reading-keys" (keydown)="onKey($event)">
       @for (verse of verses(); track verse.number) {
-        <p class="verse" [attr.data-verse]="verse.number" [class.verse-lit]="verseMarks().has(verse.number)" [class.verse-special]="specials().has(verse.number)"><span class="verse-number" aria-hidden="true">{{verse.number}}</span><span class="verse-words">@for (word of verse.words; track word.index) { @if (word.space) {{{word.text}}} @else {<button class="word" [attr.tabindex]="live() && focusedWord() === verse.number + ':' + word.index ? 0 : -1" (focus)="focusedWord.set(verse.number + ':' + word.index)" [class.word-lit]="wordMarks().has(verse.number + ':' + word.index)" [class.has-note]="greek() && word.note" [attr.aria-label]="wordLabel(verse.number, word)" [attr.aria-pressed]="wordPressed(verse.number, word.index)" (click)="tapWord($event, verse.number, word.index, word.note)">{{word.text}}</button>} }</span></p>
+        <p class="verse" [attr.data-verse]="verse.number" [class.verse-lit]="verseMarks().has(verse.number)" [class.verse-special]="specials().has(verse.number)"><span class="verse-number" aria-hidden="true">{{verse.number}}</span><span class="verse-words">@for (word of verse.words; track word.index) { @if (word.space) {{{word.text}}} @else {<button class="word" [attr.tabindex]="live() && focusedWord() === verse.number + ':' + word.index ? 0 : -1" (focus)="focusedWord.set(verse.number + ':' + word.index)" [class.word-lit]="wordMarks().has(verse.number + ':' + word.index)" [class.has-note]="original() && word.note" [attr.aria-label]="wordLabel(verse.number, word)" [attr.aria-pressed]="wordPressed(verse.number, word.index)" (click)="tapWord($event, verse.number, word.index, word.note)">{{word.text}}</button>} }</span></p>
       }
       </article>
       <div class="passage-end"><span></span><v-icon name="leaf"/><span></span></div>
@@ -31,7 +32,7 @@ const chargeCurve=(level:number)=>Math.pow(level,1.6);
     </div>
   </div>
   <footer class="page-bottom" [class.camera-row]="frame().enabled && frame().corner.startsWith('bottom')" [class.frame-left]="frame().corner.endsWith('left')">
-    <div class="page-folio"><span>{{book()}} {{chapter().number}}</span><span class="folio-line"></span><span>{{progress()}}<small>%</small></span></div>
+    <div class="page-folio"><span>{{book()}} {{chapter().number}}</span><span class="folio-line" [style.--p]="progress()"></span><span>{{progress()}}<small>%</small></span></div>
     @if (frame().enabled && frame().corner.startsWith('bottom')) {<div class="presenter-space" [class.square]="frame().shape === 'square'" [class.no-guide]="live() && !frame().guide"><v-icon name="camera"/><span>Tu imagen</span></div>}
   </footer>
   <div class="sr-only" role="status" aria-live="polite" aria-atomic="true">{{announcement()}}</div>
@@ -41,7 +42,7 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
   chapter=input.required<Chapter>(); book=input('Santiago'); bookId=input('santiago'); version=input('NBLA'); notes=input<OriginalNote[]>([]);
   fontSize=input(23); night=input(false); live=input(false); playing=input(false); speed=input(26);
   /** Modo «idioma original»: las palabras con nota abren la nota al tocarlas. */
-  greek=input(false);
+  original=input(false);
   /** Versículos «elegidos para el cierre» del capítulo actual (el almacén vive en la app). */
   specials=input<ReadonlySet<number>>(new Set());
   frame=input<Frame>({enabled:false,corner:'top-right',shape:'circle',size:110,guide:true});
@@ -202,13 +203,13 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
   }
   private markable(verse:number){return this.verseMarks().has(verse)||this.specials().has(verse);}
   wordLabel(verse:number,word:{text:string;note?:OriginalNote}){
-    if(this.greek()&&word.note)return `Ver ${word.note.language==='hebreo'?'hebreo':'griego'} de ${word.text}`;
+    if(this.original()&&word.note)return `Ver ${word.note.language==='hebreo'?'hebreo':'griego'} de ${word.text}`;
     return this.markable(verse)?`Resaltar ${word.text}`:word.text;
   }
   wordPressed(verse:number,index:number){return this.markable(verse)?this.wordMarks().has(verse+':'+index):null;}
   tapWord(event:MouseEvent,verse:number,index:number,note?:OriginalNote){
     if(!this.live())return;
-    if(this.greek()&&note){this.note.emit(note);return;}
+    if(this.original()&&note){this.note.emit(note);return;}
     if(!this.markable(verse))return;
     const key=verse+':'+index;const adding=!this.wordMarks().has(key);
     this.wordMarks.update(set=>{const next=new Set(set);adding?next.add(key):next.delete(key);return next;});

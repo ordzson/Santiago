@@ -6,7 +6,8 @@
 .reading-sheet {
   --page:#f6f1e4;
   --page-ink:#30271f;
-  --page-muted:#756b5f;
+  --page-muted:#675d52;
+  --head-red:var(--red-dark);
   --lit:219 167 52;
   --lit-gold:224 181 74;
   --lit-sheen:255 232 160;
@@ -16,9 +17,14 @@
   --halo-peak:.56;
   --sheen-a:.55;
   --num-lit:var(--red-dark);
+  --sweep-a:.22;
+  /* Papel: grano estático (un solo mosaico SVG, sin coste al desplazar), viñeta cálida y luz de atril arriba. Todo va bajo el texto, en el fondo de la hoja. */
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .24 0 0 0 0 .1 .4 0 0 0 -.16'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --paper-glow:radial-gradient(ellipse 85% 42% at 50% 0,rgb(255 244 214 / .55),transparent 72%);
+  --paper-vignette:radial-gradient(ellipse 130% 100% at 50% 44%,transparent 58%,rgb(128 84 34 / .07) 100%);
   position:relative;
   height:100%;
-  background:var(--page);
+  background:var(--grain) 0 0/240px 240px,var(--paper-glow),var(--paper-vignette),var(--page);
   color:var(--page-ink);
   display:flex;
   flex-direction:column;
@@ -29,6 +35,7 @@
   --page:#211c18;
   --page-ink:#eee4d2;
   --page-muted:#b6aa98;
+  --head-red:#f2a0a9;
   --lit:224 170 70;
   --lit-sheen:224 170 70;
   --mark-red:#e17581;
@@ -36,7 +43,11 @@
   --halo-a:.2;
   --halo-peak:.3;
   --sheen-a:.2;
-  --num-lit:#f8b6bd
+  --num-lit:#f8b6bd;
+  --sweep-a:.16;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9 0 0 0 0 .78 0 0 0 0 .6 .3 0 0 0 -.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --paper-glow:radial-gradient(ellipse 85% 42% at 50% 0,rgb(224 170 70 / .06),transparent 72%);
+  --paper-vignette:radial-gradient(ellipse 130% 100% at 50% 44%,transparent 55%,rgb(0 0 0 / .32) 100%)
 }
 .sheet-ribbon {
   position:absolute;
@@ -48,12 +59,24 @@
   opacity:.85
 }
 .page-top {
+  position:relative;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:12px;
   flex:none;
-  padding:29px 28px 19px 32px
+  padding:29px 28px 21px 32px
+}
+/* Filete de cabecera: línea fina de tinta que se apaga a la derecha, con una semilla carmín al inicio. */
+.page-top::after {
+  content:'';
+  position:absolute;
+  left:32px;
+  right:28px;
+  bottom:0;
+  height:2px;
+  pointer-events:none;
+  background:linear-gradient(90deg,var(--mark-red) 0 26px,transparent 26px) 0 0/100% 2px no-repeat,linear-gradient(90deg,color-mix(in srgb,var(--page-ink) 34%,transparent),transparent 92%) 0 1px/100% 1px no-repeat
 }
 .page-heading {
   display:flex;
@@ -61,12 +84,13 @@
   gap:7px
 }
 .page-book {
-  font:600 10px var(--ui);
+  font:600 11.5px/1 'Noto Serif',Georgia,serif;
   text-transform:uppercase;
-  letter-spacing:.18em
+  letter-spacing:.26em;
+  color:var(--head-red)
 }
 .chapter-meta {
-  font:400 11px var(--ui);
+  font:italic 400 13px/1.1 var(--serif);
   color:var(--page-muted)
 }
 .chapter-meta span {
@@ -94,15 +118,21 @@
 .chapter-heading {
   display:flex;
   align-items:center;
-  gap:17px;
-  margin:5px 0 25px
+  gap:19px;
+  margin:9px 0 29px
 }
 .chapter-numeral {
-  font:400 70px/.95 var(--serif);
-  color:var(--red)
+  /* Numeral grabado: más grande, con sombra de relieve (desplazada y difusa) y no solo color. */
+  font:400 92px/.9 var(--serif);
+  color:var(--mark-red);
+  letter-spacing:-.04em;
+  text-shadow:0 2px 0 rgb(185 45 64 / .14),0 12px 26px rgb(185 45 64 / .2)
+}
+.night .chapter-numeral {
+  text-shadow:0 2px 0 rgb(0 0 0 / .4),0 10px 28px rgb(var(--lit-gold) / .22)
 }
 .chapter-heading h2 {
-  font:400 26px/1.2 var(--serif);
+  font:400 28px/1.18 var(--serif);
   max-width:12ch;
   letter-spacing:-.025em;
   text-wrap:balance
@@ -132,7 +162,7 @@
 }
 .verse-number {
   display:inline;
-  color:var(--red);
+  color:var(--head-red);
   font:600 10px var(--ui);
   vertical-align:super;
   margin-right:7px;
@@ -245,7 +275,7 @@
 }
 /* Número de versículo: rojo claro de noche y más oscuro/claro sobre la luz para mantener ≥ 4.5:1. */
 .night .verse-number {
-  color:var(--mark-red)
+  color:var(--head-red)
 }
 .verse-lit .verse-number,.verse-special .verse-number,.verse[data-charge] .verse-number {
   color:var(--num-lit)
@@ -327,19 +357,32 @@
   align-items:center;
   gap:12px;
   width:100%;
-  font:500 9px var(--ui);
-  text-transform:uppercase;
-  letter-spacing:.08em;
+  font:italic 400 13px/1 var(--serif);
   color:var(--page-muted)
 }
+.page-folio span:last-child {
+  font-variant-numeric:tabular-nums;
+  min-width:3ch;
+  text-align:right
+}
+/* Línea del folio: la parte leída se tiñe de carmín (escala, sin repintar texto). */
 .folio-line {
+  position:relative;
   flex:1;
-  height:1px;
-  background:currentColor;
-  opacity:.25
+  height:2px;
+  background:linear-gradient(currentColor,currentColor) 0 50%/100% 1px no-repeat;
+  color:color-mix(in srgb,var(--page-muted) 45%,transparent)
+}
+.folio-line::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:var(--mark-red);
+  transform-origin:0 50%;
+  transform:scaleX(calc(var(--p,0) / 100))
 }
 .page-folio small {
-  font-size:8px;
+  font:600 9px var(--ui);
   margin-left:2px
 }
 .camera-row {
@@ -412,9 +455,65 @@
     box-shadow:0 0 34px 4px rgb(var(--lit-gold) / .7)
   }
 }
+/* Cambio de capítulo (solo en escena, una vez): barrido de luz sobre la página y numeral que entra como tinta. */
+.page-sweep {
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  opacity:0;
+  background:linear-gradient(104deg,transparent 28%,rgb(var(--lit-sheen) / var(--sweep-a)) 47%,rgb(255 244 214 / calc(var(--sweep-a) * .6)) 52%,transparent 72%)
+}
+.live .page-sweep {
+  animation:page-sweep 1.1s cubic-bezier(.5,0,.2,1) .1s both
+}
+.live .chapter-numeral {
+  animation:numeral-ink .75s cubic-bezier(.16,1,.3,1) both
+}
+.live .chapter-heading h2 {
+  animation:title-rise .6s cubic-bezier(.16,1,.3,1) .22s both
+}
+@keyframes page-sweep {
+  0% {
+    opacity:1;
+    transform:translateX(-100%)
+  }
+  75% {
+    opacity:1
+  }
+  100% {
+    opacity:0;
+    transform:translateX(100%)
+  }
+}
+@keyframes numeral-ink {
+  0% {
+    opacity:0;
+    filter:blur(9px);
+    clip-path:inset(0 0 100% 0);
+    transform:translateY(10px);
+    text-shadow:0 0 34px rgb(var(--lit-gold) / .95)
+  }
+  45% {
+    opacity:1;
+    text-shadow:0 0 30px rgb(var(--lit-gold) / .8)
+  }
+  100% {
+    clip-path:inset(-40% -40% -40% -40%)
+  }
+}
+@keyframes title-rise {
+  0% {
+    opacity:0;
+    transform:translateY(6px)
+  }
+}
 @media(prefers-reduced-motion:reduce) {
-  .word-lit,.verse-lit,.verse-special,.verse-lit::after,.verse-special::after {
+  .word-lit,.verse-lit,.verse-special,.verse-lit::after,.verse-special::after,.live .page-sweep,.live .chapter-numeral,.live .chapter-heading h2 {
     animation:none
+  }
+  .page-sweep {
+    display:none
   }
   .word,.verse {
     transition:none
@@ -440,6 +539,9 @@
     max-width:20ch
   }
   .live .chapter-numeral {
-    font-size:90px
+    font-size:118px
+  }
+  .live .chapter-heading {
+    gap:26px
   }
 }
