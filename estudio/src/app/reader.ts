@@ -8,6 +8,9 @@ export interface Frame { enabled: boolean; corner: string; shape: string; size: 
 export interface ReaderBurst { kind: BurstKind; rect: Box }
 /** Velocidad máxima (px/s) del desplazamiento de borde mientras se pinta; crece con la cercanía al borde. */
 const EDGE_SPEED=560;
+/** Duración (ms) de la aceleración al dar play y de la desaceleración al pausar. */
+const RAMP_MS=650;
+const easeInOut=(t:number)=>t*t*(3-2*t);
 /** La carga visual acelera hacia el umbral (anticipación): lenta al principio, urgente justo antes de cruzar 2 s o 4 s. */
 const chargeCurve=(level:number)=>Math.pow(level,1.6);
 @Component({selector:'v-reader',standalone:true,imports:[IconComponent],template:`
@@ -52,7 +55,6 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
   wordMarks=signal(new Set<string>());verseMarks=signal(new Set<number>());progress=signal(0);announcement=signal('');
   focusedWord=signal('1:0');
   verses=computed(()=>this.chapter().verses.map(v=>({...v,words:tokenize(v.text,this.notes().filter(n=>n.book===this.bookId() && n.chapter===this.chapter().number && n.verse===v.number))})));
-  private raf=0;
   // Estado del gesto de pulsación (la máquina pura vive en press.ts).
   private press:PressState=IDLE; private pressRaf=0; private pressClock=0;
   private pointer={x:0,y:0,type:'mouse',id:-1};
@@ -84,27 +86,37 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
   constructor(){
     effect(()=>{this.chapter();this.bookId();untracked(()=>this.reset());});
     effect(()=>{if(!this.live())this.endPress();});
-    effect(onCleanup=>{
-      if(!this.playing() || !this.live())return;
-      const velocity=this.speed();let previous=0;let position=this.scroll().nativeElement.scrollTop;
-      const tick=(time:number)=>{
-        const el=this.scroll().nativeElement;
-        if(previous)position+=Math.min(time-previous,64)*velocity/1000;
-        previous=time;el.scrollTop=position;
-        if(el.scrollTop+el.clientHeight>=el.scrollHeight-2){this.pause.emit();return;}
-        this.raf=requestAnimationFrame(tick);
-      };
-      this.raf=requestAnimationFrame(tick);onCleanup(()=>cancelAnimationFrame(this.raf));
-    });
+    // El bucle sigue vivo mientras haya rampa: al pausar desacelera solo y se detiene en 0.
+    effect(()=>{const live=this.live();this.playing();untracked(()=>live?this.startAuto():this.stopAuto());});
   }
+  /** Rampa del autoscroll (0 detenido … 1 a velocidad plena); la velocidad sigue una curva suave (ease-in-out). */
+  private ramp=0; private autoRaf=0; private autoPrev=0; private autoPos=0;
+  private startAuto(){
+    if(this.autoRaf||(!this.playing()&&!this.ramp))return;
+    this.autoPrev=0;this.autoPos=this.scroll().nativeElement.scrollTop;
+    this.autoRaf=requestAnimationFrame(this.autoTick);
+  }
+  private stopAuto(){cancelAnimationFrame(this.autoRaf);this.autoRaf=0;this.ramp=0;}
+  private readonly autoTick=(time:number)=>{
+    const el=this.scroll().nativeElement;
+    const dt=this.autoPrev?Math.min(time-this.autoPrev,64):0;this.autoPrev=time;
+    const on=this.playing()&&this.live();
+    this.ramp=Math.min(1,Math.max(0,this.ramp+(on?1:-1)*dt/RAMP_MS));
+    if(!on&&!this.ramp){this.autoRaf=0;return;}
+    // Si algo movió la hoja por fuera (reset, gesto), se parte de ahí.
+    if(Math.abs(el.scrollTop-this.autoPos)>2)this.autoPos=el.scrollTop;
+    this.autoPos+=dt*this.speed()*easeInOut(this.ramp)/1000;el.scrollTop=this.autoPos;
+    if(el.scrollTop+el.clientHeight>=el.scrollHeight-2){this.stopAuto();if(this.playing())this.pause.emit();return;}
+    this.autoRaf=requestAnimationFrame(this.autoTick);
+  };
   ngAfterViewInit(){
     const el=this.scroll().nativeElement;
     el.addEventListener('click',this.swallowClick,true);
     el.addEventListener('touchmove',this.blockTouchScroll,{passive:false});
   }
   onScroll(){const el=this.scroll().nativeElement; const max=el.scrollHeight-el.clientHeight;this.progress.set(max>0?Math.round(el.scrollTop/max*100):100);}
-  /** Autoscroll: solo la rueda o un desplazamiento manual real lo pausan (no el simple toque ni la carga). */
-  manualScroll(){if(this.playing())this.pause.emit();}
+  /** Autoscroll: la rueda o un desplazamiento manual real lo detienen en seco (el usuario ya mueve la hoja). */
+  manualScroll(){this.ramp=0;if(this.playing())this.pause.emit();}
   private scrollTakeover(){if(this.pointer.type!=='mouse')this.manualScroll();}
   onContextMenu(event:Event){if(this.live())event.preventDefault();}
 
@@ -114,6 +126,8 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
     const verseEl=(event.target as Element).closest?.<HTMLElement>('.verse[data-verse]');
     if(!verseEl){this.watchTouch(event);return;}
     const verse=Number(verseEl.dataset['verse']);
+    // Tocar un versículo para marcarlo detiene el autoscroll con desaceleración suave.
+    if(this.playing())this.pause.emit();
     this.pointer={x:event.clientX,y:event.clientY,type:event.pointerType,id:event.pointerId};
     this.press=pressDown(this.press,{verse,x:event.clientX,y:event.clientY,t:performance.now(),lit:this.verseMarks().has(verse),special:this.specials().has(verse)}).state;
     window.addEventListener('pointermove',this.onWindowMove);window.addEventListener('pointerup',this.onWindowUp);window.addEventListener('pointercancel',this.onWindowCancel);
@@ -257,7 +271,7 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
   }
   /** Vuelve la hoja al principio: sin marcas, sin pulsación en curso, sin desplazamiento y con el foco en la primera palabra. Se usa al cambiar de capítulo y al empezar o cerrar una escena. */
   reset(){
-    this.endPress();this.stopTouchWatch();
+    this.endPress();this.stopTouchWatch();this.stopAuto();
     this.focusedWord.set(this.chapter().verses[0].number+':0');
     this.wordMarks.set(new Set());this.verseMarks.set(new Set());this.progress.set(0);
     const el=this.scroll()?.nativeElement;if(el){el.scrollTop=0;el.scrollTo(0,0);}
@@ -271,7 +285,7 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
   /** Limpia resaltados y palabras del capítulo actual (no toca los elegidos). */
   clear(){this.wordMarks.set(new Set());this.verseMarks.set(new Set());}
   ngOnDestroy(){
-    cancelAnimationFrame(this.raf);this.endPress();this.stopTouchWatch();clearTimeout(this.swallowTimer);clearTimeout(this.sayTimer);
+    this.stopAuto();this.endPress();this.stopTouchWatch();clearTimeout(this.swallowTimer);clearTimeout(this.sayTimer);
     const el=this.scroll()?.nativeElement;el?.removeEventListener('click',this.swallowClick,true);el?.removeEventListener('touchmove',this.blockTouchScroll);
   }
 }

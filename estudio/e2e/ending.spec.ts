@@ -10,6 +10,7 @@ const tapEnding=(page:Page)=>page.mouse.click(195,300);
 
 test('cierre con elegidos en orden, fundido a negro, guarda y regreso a la preparación',async({browser})=>{
   const {context,page,errors}=await newPhone(browser,false,settings('session'));
+  await page.getByRole('button',{name:'Elegir hasta qué capítulo'}).click();
   await enterScene(page);
   // v.2 del cap. 1 y v.1 del cap. 2, elegidos con la pulsación larga.
   await hold(page,2,SPECIAL_HOLD);await expect(page.locator('.verse.verse-special')).toHaveCount(1);
@@ -62,6 +63,7 @@ test('cierre con elegidos en orden, fundido a negro, guarda y regreso a la prepa
 
 test('«Continuar lectura» no repite los elegidos del tramo anterior',async({browser})=>{
   const {context,page,errors}=await newPhone(browser,false,settings('chapter'));
+  await page.getByRole('button',{name:'Elegir hasta qué capítulo'}).click();
   await enterScene(page);
   await hold(page,2,SPECIAL_HOLD);await expect(page.locator('.verse.verse-special')).toHaveCount(1);
   await openPanel(page);

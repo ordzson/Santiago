@@ -20,12 +20,12 @@ export const TITLE_CARD_PHASES:readonly TitleCardPhase[]=['off','in','out'];
   styles:`
     :host{
       --ease:cubic-bezier(.16,1,.3,1);
-      --ink:#2c251f;--rule:#b92d40;--label:#4a3f35;
+      --ink:#2c251f;--rule:var(--red);--label:#4a3f35;
       position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
       padding:0 9%;text-align:center;pointer-events:none;
       opacity:0;visibility:hidden;
     }
-    :host(.night){--ink:#eee4d2;--rule:#e17581;--label:#d8cbb6}
+    :host(.night){--ink:#eee4d2;--rule:var(--red-night);--label:#d8cbb6}
     :host(:not([data-phase=off])){opacity:1;visibility:visible}
 
     .card{

@@ -116,6 +116,12 @@ export class ParticlesComponent {
     return s;
   }
 
+  /** Motas carmín siguen el acento elegido (`--red` / `--red-night`). */
+  private accent(){
+    const night=this.theme()==='night',v=getComputedStyle(this.host.nativeElement).getPropertyValue(night?'--red-night':'--red').trim();
+    return v||PALETTE[this.theme()].tones.carmine;
+  }
+
   private draw(){
     const ctx=this.ctx;if(!ctx)return;
     const f=this.field,pal=PALETTE[this.theme()];
@@ -129,12 +135,14 @@ export class ParticlesComponent {
       ctx.globalAlpha=s.alpha;ctx.strokeStyle=pal.tones.gold;ctx.lineWidth=s.width;
       ctx.beginPath();ctx.arc(r.x,r.y,s.radius,0,Math.PI*2);ctx.stroke();
     }
+    let accent:string|undefined;
     for(const p of f.particles){
       const s=renderState(p,f.ambientLevel);
       if(s.alpha<=.005)continue;
       const side=s.size*(p.sprite==='spark'?5:4);
       ctx.globalAlpha=Math.min(1,s.alpha);
-      ctx.drawImage(this.sprite(p.sprite,pal.tones[p.tone]),p.x-side/2,p.y-side/2,side,side);
+      const color=p.tone==='carmine'?(accent??=this.accent()):pal.tones[p.tone];
+      ctx.drawImage(this.sprite(p.sprite,color),p.x-side/2,p.y-side/2,side,side);
     }
     ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';
   }

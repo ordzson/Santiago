@@ -13,6 +13,10 @@ test('preparación y escena en escritorio y teléfono',async({browser})=>{
   await phone.getByLabel('Cuenta atrás de 3 segundos al entrar').uncheck();
   await phone.getByRole('button',{name:'Listo',exact:true}).click();
   await phone.getByLabel('Mostrar portada').uncheck();
+  // Por defecto el recorrido es un capítulo; se extiende hasta el siguiente.
+  await expect(phone.getByLabel('Capítulo final')).toHaveCount(0);
+  await phone.getByRole('button',{name:'Elegir hasta qué capítulo'}).click();
+  await expect(phone.getByLabel('Capítulo final')).toHaveValue(/.+/);
   await enterScene(phone);
   // En lectura solo se ven las dos cintas; el panel está retirado.
   await expect(phone.locator('.play-ribbon')).toBeVisible();
@@ -145,6 +149,7 @@ test('idioma original, cinta de play y navegación del panel',async({browser})=>
   await play.click();await expect(play).toHaveAttribute('aria-pressed','true');
   await expect.poll(()=>scroller.evaluate(el=>el.scrollTop),{timeout:5000}).toBeGreaterThan(before+2);
   await play.click();await expect(play).toHaveAttribute('aria-pressed','false');
+  await page.waitForTimeout(800); // desaceleración suave
   const stopped=await scroller.evaluate(el=>el.scrollTop);await page.waitForTimeout(400);
   expect(await scroller.evaluate(el=>el.scrollTop)).toBe(stopped);
   expect(errors).toEqual([]);await context.close();
@@ -194,7 +199,7 @@ test('encuadre, datos externos y límites de los tres modos',async({browser})=>{
   await page.locator('input[type=file]').first().setInputFiles({name:'test.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(synthetic))});
   await expect(page.locator('.content-status')).toContainText('2 libros');await page.getByRole('button',{name:'Cerrar ventana'}).click();
   await page.getByRole('button',{name:'Cierre y ajustes de escena'}).click();await page.getByLabel('Cuenta atrás de 3 segundos al entrar').uncheck();await page.getByLabel('Mostrar la pantalla de cierre').selectOption('manual');await page.getByRole('button',{name:'Listo',exact:true}).click();
-  await page.getByLabel('Capítulo inicial').selectOption({label:'Cap. 2'});await page.getByLabel('Libro final').selectOption({label:'Libro B'});
+  await page.getByLabel('Capítulo inicial').selectOption({label:'Cap. 2'});await expect(page.getByLabel('Libro final')).toHaveCount(0);await expect(page.locator('.session-summary strong')).toHaveText('Libro A 2');await page.getByRole('button',{name:'Elegir hasta qué capítulo'}).click();await page.getByLabel('Libro final').selectOption({label:'Libro B'});
   await page.getByRole('button',{name:'Entrar en escena'}).click();await page.getByRole('button',{name:'Mostrar u ocultar herramientas'}).click();await page.getByRole('button',{name:'Completar y avanzar capítulo'}).click();await expect(page.locator('.page-book')).toHaveText('Libro B');
   await page.getByRole('button',{name:'Completar lectura'}).click();await expect(page.locator('.ending-screen')).toHaveCount(0);await page.getByRole('button',{name:'Cerrar lectura',exact:true}).click();await expect(page.locator('.ending-screen')).toBeVisible();
   await page.getByRole('button',{name:'Mostrar u ocultar herramientas'}).click();await page.getByRole('button',{name:'Volver al estudio'}).click();

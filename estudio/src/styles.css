@@ -7,6 +7,9 @@
   --muted:#6e6458;
   --red:#b92d40;
   --red-dark:#922235;
+  --red-night:#e17581;
+  --red-night-soft:#f2a0a9;
+  --red-night-num:#f8b6bd;
   --rule:#cfc6b5;
   --gold:#bc8c31;
   --ui:'Archivo',Arial,sans-serif;
@@ -346,6 +349,25 @@ h1 em {
   min-width:0;
   flex:1
 }
+.range-add {
+  margin:14px 0 0 23px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:44px
+}
+.range-add v-icon {
+  width:16px;
+  height:16px
+}
+.range-remove {
+  margin-top:12px;
+  color:var(--muted)
+}
+.range-remove v-icon {
+  width:16px;
+  height:16px
+}
 .passage-field>label {
   display:block;
   font-size:10px;
@@ -548,6 +570,36 @@ output {
 }
 .night-swatch {
   background:#211c18
+}
+.accent-choice {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:14px;
+  font-size:11px
+}
+.accent-name output {
+  margin-left:6px;
+  color:var(--red)
+}
+.accent-swatches {
+  display:flex;
+  gap:6px
+}
+.accent-swatches button {
+  width:26px;
+  height:26px;
+  padding:0;
+  border-radius:50%;
+  background:var(--swatch);
+  border:2px solid var(--paper);
+  box-shadow:0 0 0 1px var(--rule);
+  cursor:pointer;
+  transition:box-shadow .2s var(--ease)
+}
+.accent-swatches button.selected {
+  box-shadow:0 0 0 2px var(--ink)
 }
 .switch-label {
   display:flex;
@@ -871,12 +923,12 @@ output {
 }
 .tool-strip>button:hover:not(:disabled) {
   color:var(--ink);
-  background:#b92d400b
+  background:color-mix(in srgb,var(--red) 4%,transparent)
 }
 .tool-strip>button.active {
   color:var(--red);
   border-color:var(--red);
-  background:#b92d4012
+  background:color-mix(in srgb,var(--red) 7%,transparent)
 }
 .tool-strip>button:disabled {
   opacity:.5
@@ -1109,7 +1161,7 @@ output {
   --ink:#eee4d2;
   --muted:#b6aa98;
   --rule:#564a3c;
-  --red:#e17581
+  --red:var(--red-night)
 }
 .dark-scene .scene-dock {
   box-shadow:0 -8px 35px #0003

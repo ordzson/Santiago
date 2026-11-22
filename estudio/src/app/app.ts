@@ -7,15 +7,14 @@ import { LumenComponent } from './lumen';
 import { TitleCardComponent } from './title-card';
 import { IntroView, INTRO_START, INTRO_LEAD_MS, introSteps } from './intro';
 import { ChosenVerse, chosenIn, toggleChosen } from './chosen';
-import { Settings, DEFAULTS, parseSettings } from './settings';
+import { Settings, DEFAULTS, parseSettings, ACCENTS, AccentId, applyAccent } from './settings';
 import { IconComponent } from './icon';
-import { EngravingComponent } from './engraving';
 import { EndingComponent } from './ending';
 /** Duración del fundido a negro del cierre y guarda tras llegar al negro (evita que el mismo toque saque de la escena). */
 export const FADE_MS=6000;
 export const BLACK_GUARD_MS=600;
 export type ScenePhase='countdown'|'intro'|'reading'|'ending'|'fading'|'black';
-@Component({selector:'app-root',standalone:true,imports:[FormsModule,ReaderComponent,ParticlesComponent,LumenComponent,TitleCardComponent,IconComponent,EngravingComponent,EndingComponent],templateUrl:'./app.html'})
+@Component({selector:'app-root',standalone:true,imports:[FormsModule,ReaderComponent,ParticlesComponent,LumenComponent,TitleCardComponent,IconComponent,EndingComponent],templateUrl:'./app.html'})
 export class AppComponent implements OnDestroy {
   bible=signal<Bible|null>(null);notes=signal<OriginalNote[]>([]);loading=signal(true);loadError=signal('');notice=signal('');
   scene=signal(false);controls=signal(true);playing=signal(false);countdown=signal<number|null>(null);activeNote=signal<OriginalNote|null>(null);
@@ -40,7 +39,7 @@ export class AppComponent implements OnDestroy {
   get ribbonsLeft(){return this.settings.frame.enabled&&this.settings.frame.corner==='top-right';}
   clearMarks(){this.reader()?.clear();this.scheduleHide();}
   onBurst(event:ReaderBurst){this.particles()?.burst(event.kind,event.rect);}
-  mode:ReadingMode='range';start:Location={book:0,chapter:0};end:Location={book:0,chapter:0};current=signal<Location>({book:0,chapter:0});
+  mode:ReadingMode='range';extendRange=false;start:Location={book:0,chapter:0};end:Location={book:0,chapter:0};current=signal<Location>({book:0,chapter:0});
   settings:Settings=this.loadSettings();session:Location[]=[];endAt=signal<Location|null>(null);
   reader=viewChild(ReaderComponent);particles=viewChild(ParticlesComponent);dialog=viewChild.required<ElementRef<HTMLDialogElement>>('dialog');noteDialog=viewChild.required<ElementRef<HTMLDialogElement>>('noteDialog');
   dialogType=signal<'settings'|'content'|'help'>('settings');importError=signal('');importing=signal(false);
@@ -61,15 +60,21 @@ export class AppComponent implements OnDestroy {
   /** Vista previa de la portada dentro del marco, sin entrar en escena (misma secuencia que en la escena). */
   introPreview=signal(false);private sceneTimers:ReturnType<typeof setTimeout>[]=[];
   private noticeTimer?:ReturnType<typeof setTimeout>;private hideTimer?:ReturnType<typeof setTimeout>;private countdownTimer?:ReturnType<typeof setInterval>;private wakeLock:WakeLockSentinel|null=null;
-  modes:{id:ReadingMode;icon:string;label:string;description:string}[]=[{id:'range',icon:'range',label:'Un recorrido',description:'De un capítulo a otro'},{id:'book',icon:'book',label:'Un libro',description:'De principio a fin'},{id:'chapters',icon:'chapters',label:'Capítulo a capítulo',description:'A tu propio ritmo'}];
+  modes:{id:ReadingMode;icon:string;label:string;description:string}[]=[{id:'range',icon:'range',label:'Un recorrido',description:'Uno o varios capítulos'},{id:'book',icon:'book',label:'Un libro',description:'De principio a fin'},{id:'chapters',icon:'chapters',label:'Capítulo a capítulo',description:'A tu propio ritmo'}];
   currentBook=computed(()=>this.bible()?.books[this.current().book]);currentChapter=computed(()=>this.currentBook()?.chapters[this.current().chapter]);
-  selectionError(){return this.mode==='range' && compare(this.start,this.end)>0?'El final debe estar después del inicio.':'';}
+  /** Final efectivo: sin «Hasta», el recorrido es solo el capítulo inicial. */
+  get rangeEnd(){return this.mode==='range'&&!this.extendRange?this.start:this.end;}
+  setRangeEnd(on:boolean){this.extendRange=on;const b=this.bible();if(on&&b&&compare(this.end,this.start)<=0){const all=locations(b),i=all.findIndex(p=>compare(p,this.start)===0);this.end={...(all[i+1]??this.start)};}this.updateSelection();}
+  selectionError(){return this.mode==='range' && compare(this.start,this.rangeEnd)>0?'El final debe estar después del inicio.':'';}
   /** Rótulo del recorrido (portada, cierre y «Tu próxima lectura»). */
-  get sceneText(){const b=this.bible();return b&&!this.selectionError()?sceneLabel(b,this.mode,this.start,this.end):'';}
+  get sceneText(){const b=this.bible();return b&&!this.selectionError()?sceneLabel(b,this.mode,this.start,this.rangeEnd):'';}
   get previewLabel(){const b=this.currentBook();return b ? b.name+' '+this.currentChapter()!.number : '';}
   get canPrevious(){const b=this.bible();if(!b)return false;if(this.mode==='chapters')return locations(b).findIndex(p=>compare(p,this.current())===0)>0;return this.session.findIndex(p=>compare(p,this.current())===0)>0 || this.mode==='book' && this.current().book>0;}
   get canNext(){const b=this.bible();if(!b)return false;if(this.mode==='chapters')return locations(b).findIndex(p=>compare(p,this.current())===0)<locations(b).length-1;return this.session.findIndex(p=>compare(p,this.current())===0)<this.session.length-1 || this.mode==='book' && this.current().book<b.books.length-1;}
-  constructor(){this.originalActive.set(this.settings.original);this.loadContent();}
+  readonly accents=Object.entries(ACCENTS).map(([id,a])=>({id:id as AccentId,label:a.label,color:a.main}));
+  get accentLabel(){return ACCENTS[this.settings.accent].label;}
+  chooseAccent(id:AccentId){this.settings.accent=id;applyAccent(id);this.saveSettings();}
+  constructor(){this.originalActive.set(this.settings.original);applyAccent(this.settings.accent);this.loadContent();}
   async loadContent(){
     this.loading.set(true);this.loadError.set('');
     try{
@@ -85,7 +90,7 @@ export class AppComponent implements OnDestroy {
   }
   setBible(value:Bible){this.bible.set(value);this.start={book:0,chapter:0};this.end={book:0,chapter:Math.min(1,value.books[0].chapters.length-1)};this.current.set({...this.start});this.session=[];}
   chooseMode(mode:ReadingMode){this.mode=mode;this.updateSelection();}
-  changeBook(which:'start'|'end'){this[which].chapter=0;if(which==='start' && this.mode==='range' && compare(this.start,this.end)>0)this.end={...this.start};this.updateSelection();}
+  changeBook(which:'start'|'end'){this[which].chapter=0;if(which==='start' && this.mode==='range' && this.extendRange && compare(this.start,this.end)>0)this.end={...this.start};this.updateSelection();}
   updateSelection(){this.current.set({...this.start,chapter:this.mode==='book'?0:this.start.chapter});this.saveSettings();}
   changeSettings(){this.settings.frame={...this.settings.frame};if(!this.settings.intro.enabled&&this.introPreview())this.stopIntro();this.saveSettings();}
   private loadSettings():Settings{
@@ -94,7 +99,7 @@ export class AppComponent implements OnDestroy {
   saveSettings(){try{localStorage.setItem('verbo.settings',JSON.stringify(this.settings));}catch{}}
   startScene(){
     const bible=this.bible();if(!bible || this.selectionError())return;
-    this.session=sessionLocations(bible,this.mode,this.start,this.end);if(!this.session.length)return;
+    this.session=sessionLocations(bible,this.mode,this.start,this.rangeEnd);if(!this.session.length)return;
     this.enterFullscreen();
     this.stopIntro();
     this.clearEndTimers();this.blackReady.set(false);this.phase.set('reading');this.current.set({...this.session[0]});this.reader()?.reset();this.scene.set(true);this.controls.set(false);this.playing.set(false);this.chosen.set([]);this.endAt.set(null);
@@ -187,9 +192,18 @@ export class AppComponent implements OnDestroy {
     }catch(error){this.importError.set(error instanceof SyntaxError?'El JSON no es válido. Revisa comas, comillas y el formato del archivo.':error instanceof Error?error.message:'No se pudo leer el archivo.');}finally{this.importing.set(false);input.value='';}
   }
   /** Pantalla completa al iniciar (síncrono, dentro del gesto del usuario). Si falla, la escena sigue igual. */
-  private enterFullscreen(){try{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.()?.catch(()=>{});}catch{}}
-  private leaveFullscreen(){try{if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});}catch{}}
-  async fullscreen(){try{if(document.fullscreenElement)await document.exitFullscreen();else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else this.announce('Usa «Añadir a pantalla de inicio» para abrir sin la barra del navegador.');}catch{this.announce('La pantalla completa no está disponible en este navegador.');}}
+  /** Pantalla completa con respaldo `webkit` (Safari, iPadOS y navegadores antiguos). */
+  private fsElement():Element|null{const d=document as any;return document.fullscreenElement??d.webkitFullscreenElement??null;}
+  private requestFs():Promise<void>|null{const el=document.documentElement as any;const fn=el.requestFullscreen??el.webkitRequestFullscreen;if(!fn)return null;return Promise.resolve(fn.call(el));}
+  private exitFs():Promise<void>{const d=document as any;const fn=document.exitFullscreen??d.webkitExitFullscreen;return Promise.resolve(fn?.call(document));}
+  private standalone(){return matchMedia('(display-mode: fullscreen), (display-mode: standalone)').matches||(navigator as any).standalone===true;}
+  private enterFullscreen(){
+    if(this.fsElement()||this.standalone())return;
+    const fail=(error?:unknown)=>this.announce(error instanceof Error&&error.name!=='TypeError'?`No se pudo abrir en pantalla completa (${error.name}).`:'Para verlo sin barras, usa «Añadir a pantalla de inicio» y abre Verbo desde ese icono.');
+    try{const request=this.requestFs();if(request)request.catch(fail);else fail();}catch(error){fail(error);}
+  }
+  private leaveFullscreen(){try{if(this.fsElement())this.exitFs().catch(()=>{});}catch{}}
+  async fullscreen(){try{if(this.fsElement())await this.exitFs();else{const request=this.requestFs();if(request)await request;else this.announce('Usa «Añadir a pantalla de inicio» para abrir sin la barra del navegador.');}}catch{this.announce('La pantalla completa no está disponible en este navegador.');}}
   announce(message:string){this.notice.set(message);clearTimeout(this.noticeTimer);this.noticeTimer=setTimeout(()=>this.notice.set(''),4000);}
   @HostListener('document:visibilitychange') visibility(){if(document.hidden){this.playing.set(false);this.wakeLock?.release();this.wakeLock=null;}else if(this.scene())this.acquireWakeLock();}
   @HostListener('document:keydown',['$event']) key(event:KeyboardEvent){
