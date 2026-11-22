@@ -124,7 +124,7 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
 
 ### Oleadas
 
-- [ ] O1 — Arnés de pruebas y lógica pura
+- [x] O1 (ae980cc) — Arnés de pruebas y lógica pura
   - Verificación: `pnpm test && pnpm build && pnpm exec playwright test` (las e2e actuales siguen pasando).
   - Commit: `feat(estudio): add scene label, settings and press logic`
   - [x] T1 — Playwright autosuficiente
@@ -153,11 +153,11 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
 - [ ] O2 — Motor de luz y partículas
   - Verificación: `pnpm test && pnpm build`
   - Commit: `feat(estudio): add light and particle engine`
-  - [ ] T1 — Partículas · invoca `/impeccable animate --target estudio/src/app/particles.ts`
+  - [x] T1 — Partículas · invoca `/impeccable animate --target estudio/src/app/particles.ts`
     - Leer: este plan §Partículas, §Visual, `estudio/src/app/engraving.ts` (estilo de componente)
     - Archivos: `estudio/src/app/particles.ts` (componente `v-particles` con `burst(kind, rect:DOMRect)`, `ambient(on)`, `theme` input `day|night`; lógica de pool/emisión en funciones puras exportadas), `estudio/tests/particles.test.ts` (nuevo)
     - Hecho cuando: `pnpm test` verifica funciones puras (conteos por tipo y por teléfono/escritorio, tope 500, partículas mueren al terminar su vida, `dt` acotado, reduced motion → 0 emitidas). `pnpm build` pasa.
-  - [ ] T2 — Capa de luz reutilizable · invoca `/impeccable animate --target estudio/src/app/lumen.ts`
+  - [x] T2 — Capa de luz reutilizable · invoca `/impeccable animate --target estudio/src/app/lumen.ts`
     - Leer: este plan §Visual, §Portada, §Cierre, `estudio/DESIGN.md`, `estudio/src/styles.css` (tokens `:root`, `.dark-scene`)
     - Archivos: `estudio/src/app/lumen.ts` (nuevo componente `v-lumen`: rayos + resplandor + viñeta, inputs `phase: 'off'|'rise'|'hold'|'flood'|'dim'` y `night`, estilos propios, solo `transform`/`opacity`/`filter` acotados)
     - Hecho cuando: `pnpm build` pasa y una captura manual (página temporal o el propio preview con `phase='hold'` forzado y luego revertido) muestra la luz en día y noche; el forzado temporal no queda en el diff.
@@ -254,6 +254,10 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
 - 2026-11-22 O1 T4: `press.ts` añade `pressCancel` (pointercancel). Para O3 T1: llamar `pressTick` cada frame rAF mientras `phase!==idle`; `pressUp` nunca emite `charge` (la UI limpia la carga al soltar); el versículo de origen no emite `paint`.
 
 - 2026-11-22 O1: flaky e2e `studio.spec.ts:56` arreglado (expect.poll sobre solape del encuadre; 5/5 verde). T5 tocó `app.html` (`note.greek`→`note.original`) sin cambio visible; clave de `importFile` sigue `greek` hasta O3 T5.
+
+- 2026-11-22 O2 T1: lógica pura en `particles-engine.ts` (tests node no parsean decoradores); `particles.ts` reexporta. `burst`/`ambient` no hacen nada antes del primer render. Montar `<v-particles>` en `.preview-frame` en O3 T3; revisar visualmente entonces.
+
+- 2026-11-22 O2 T2: `v-lumen` listo (aún sin montar). Para O4 T2: pasar de `flood` a `off` cuando la página empiece a aparecer (en día `flood` deja la luz casi blanca). `dim` oscila a ≈50 %; para cierre quieto en O5 es una línea.
 
 ## Próximos hitos
 
