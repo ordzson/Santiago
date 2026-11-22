@@ -12,6 +12,7 @@
   --ui:'Archivo',Arial,sans-serif;
   --serif:'Gelasio',Georgia,serif;
   --display:'Noto Serif',Georgia,serif;
+  --hebrew:'Noto Serif Hebrew','Noto Serif',Georgia,serif;
   --ease:cubic-bezier(.16,1,.3,1);
   color-scheme:light;
   font-family:var(--ui);
@@ -800,29 +801,6 @@ output {
   height:100%;
   display:block
 }
-.control-ribbon {
-  position:absolute;
-  right:22px;
-  top:0;
-  width:32px;
-  height:51px;
-  background:var(--red);
-  color:var(--paper);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding-bottom:5px;
-  z-index:45;
-  clip-path:polygon(0 0,100% 0,100% 100%,50% 88%,0 100%);
-  transition:transform .3s var(--ease)
-}
-.control-ribbon v-icon {
-  width:15px;
-  height:15px
-}
-.control-ribbon:hover,.control-ribbon.active {
-  height:59px
-}
 .scene-controls {
   position:absolute;
   inset:0;
@@ -845,10 +823,14 @@ output {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:10px 68px 10px 20px;
+  padding:10px calc(var(--rib-edge) + var(--rib-w) * 2 + 10px) 10px 20px;
   background:var(--paper);
   border-bottom:1px solid var(--rule);
   font-size:11px
+}
+.ribbons-left .scene-topbar {
+  padding-right:20px;
+  padding-left:calc(var(--rib-edge) + var(--rib-w) * 2 + 10px)
 }
 .scene-topbar .text-button {
   font-size:11px
@@ -869,64 +851,81 @@ output {
 }
 .tool-strip {
   display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:2px
+  align-items:stretch;
+  gap:8px
 }
 .tool-strip>button {
+  flex:1 1 0;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   gap:6px;
-  min-width:53px;
-  min-height:58px;
+  min-height:62px;
+  padding:8px 6px;
+  border:1px solid var(--rule);
   border-radius:7px;
-  font-size:9px;
+  font-size:11px;
+  line-height:1.2;
   color:var(--muted)
+}
+.tool-strip>button:hover:not(:disabled) {
+  color:var(--ink);
+  background:#b92d400b
 }
 .tool-strip>button.active {
   color:var(--red);
-  background:#b92d400b
+  border-color:var(--red);
+  background:#b92d4012
 }
-.tool-strip>button:hover {
-  background:#b92d400b
+.tool-strip>button:disabled {
+  opacity:.5
 }
 .tool-strip v-icon {
   width:21px;
   height:21px
 }
-.greek-tool {
+.original-glyph {
+  font:400 24px/1 var(--display);
+  height:21px;
+  display:inline-flex;
+  align-items:center;
+  white-space:nowrap
+}
+.original-tool {
   font:400 28px/.8 var(--display);
   height:21px;
   display:inline-flex;
   align-items:center
 }
-.tool-divider {
-  height:28px;
-  width:1px;
-  background:var(--rule);
-  margin:0 6px
-}
-.tool-context {
-  min-height:34px;
+.chosen-count {
+  margin:10px 0 0;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
-  font-size:10px;
-  color:var(--muted)
+  gap:7px;
+  font-size:11px;
+  color:var(--ink)
 }
-.tool-context button {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:34px;
-  height:34px
+.chosen-count v-icon {
+  width:13px;
+  height:13px;
+  color:var(--gold)
 }
-.tool-context button v-icon {
-  width:14px;
-  height:14px
+.chosen-count strong {
+  font-weight:600;
+  font-variant-numeric:tabular-nums
+}
+.press-hint {
+  margin:10px 0 0;
+  text-align:center;
+  font-size:11px;
+  line-height:1.4;
+  color:var(--muted);
+  text-wrap:balance
+}
+.press-hint+.press-hint {
+  margin-top:2px
 }
 .chapter-nav {
   border-top:1px solid var(--rule);
@@ -1035,6 +1034,7 @@ output {
   pointer-events:auto
 }
 .dark-scene {
+  color:var(--ink);
   --paper:#211c18;
   --ink:#eee4d2;
   --muted:#b6aa98;
@@ -1043,9 +1043,6 @@ output {
 }
 .dark-scene .scene-dock {
   box-shadow:0 -8px 35px #0003
-}
-.dark-scene .control-ribbon {
-  color:#211c18
 }
 dialog {
   color:var(--ink);
@@ -1172,7 +1169,7 @@ dialog::backdrop {
   width:100%;
   cursor:pointer
 }
-.upload-field>.greek-tool {
+.upload-field>.original-tool {
   width:20px;
   justify-content:center;
   color:var(--red)
@@ -1243,7 +1240,7 @@ code {
   color:var(--red);
   margin-top:2px
 }
-.greek-dialog {
+.original-dialog {
   width:min(430px,calc(100% - 36px));
   text-align:center;
   overflow-wrap:anywhere
@@ -1253,21 +1250,32 @@ code {
   top:12px;
   right:12px
 }
-.greek-content {
+.original-content {
   padding:42px 30px 32px
 }
 .note-reference {
   font:500 10px var(--ui);
   color:var(--muted)
 }
-.greek-content h2 {
+.original-content h2 {
   font:400 22px var(--serif);
   margin-top:18px
 }
-.greek-word {
+.original-word {
   font:400 38px/1.4 var(--display);
   color:var(--red);
   margin-top:25px
+}
+/* Hebreo: derecha a izquierda, aislado del texto en español, interlínea amplia para que el niqqud y la cantilación no se corten. */
+.original-word[lang="he"] {
+  font:400 44px/1.9 var(--hebrew);
+  letter-spacing:0;
+  unicode-bidi:isolate;
+  text-align:center;
+  margin-top:14px;
+  padding-block:4px;
+  overflow:visible;
+  font-feature-settings:"mark" 1,"mkmk" 1
 }
 .transliteration {
   font:italic 17px var(--serif);
@@ -1651,17 +1659,8 @@ code {
     border:0;
     max-width:none
   }
-  .recording .control-ribbon {
-    right:16px;
-    top:0;
-    width:29px;
-    height:45px
-  }
-  .recording .control-ribbon.active {
-    height:53px
-  }
   .scene-topbar {
-    padding:8px 52px 8px 12px
+    padding:8px calc(var(--rib-edge) + var(--rib-w) * 2 + 8px) 8px 12px
   }
   .scene-topbar>span {
     font-size:10px
@@ -1740,50 +1739,77 @@ code {
     scroll-behavior:auto!important
   }
 }
-.control-ribbon {
-  background:transparent;
-  clip-path:none;
-  width:44px;
-  height:65px;
+.preview-frame {
+  --rib-form:32px;
+  --rib-hform:51px;
+  --rib-edge:16px;
+  --rib-w:calc(var(--rib-form) + 8px);
+  --rib-h:calc(var(--rib-hform) + 14px)
+}
+.ribbon {
+  position:absolute;
+  top:0;
+  width:var(--rib-w);
+  height:var(--rib-h);
   padding:0;
+  color:var(--paper);
+  z-index:45;
   isolation:isolate
 }
-.control-ribbon::before {
+.control-ribbon {
+  right:var(--rib-edge)
+}
+.play-ribbon {
+  right:calc(var(--rib-edge) + var(--rib-w));
+  filter:drop-shadow(1px 0 0 var(--gold)) drop-shadow(-1px 0 0 var(--gold)) drop-shadow(0 1px 0 var(--gold))
+}
+.ribbons-left .control-ribbon {
+  right:auto;
+  left:var(--rib-edge)
+}
+.ribbons-left .play-ribbon {
+  right:auto;
+  left:calc(var(--rib-edge) + var(--rib-w))
+}
+.ribbon::before {
   content:"";
   position:absolute;
   top:0;
-  right:0;
-  width:32px;
-  height:51px;
+  left:50%;
+  width:var(--rib-form);
+  height:var(--rib-hform);
+  margin-left:calc(var(--rib-form) / -2);
   background:var(--red);
   clip-path:polygon(0 0,100% 0,100% 100%,50% 88%,0 100%);
   transform-origin:top;
   transition:transform .3s var(--ease);
   z-index:-1
 }
-.control-ribbon v-icon {
-  position:absolute;
-  right:8px;
-  top:17px
+.play-ribbon::before {
+  background:var(--ink)
 }
-.control-ribbon:hover,.control-ribbon.active {
-  height:65px
-}
-.control-ribbon:hover::before,.control-ribbon.active::before {
+.ribbon:hover::before,.ribbon.active::before {
   transform:scaleY(1.12)
 }
+.ribbon v-icon {
+  position:absolute;
+  left:50%;
+  top:calc(var(--rib-hform) * .33);
+  width:15px;
+  height:15px;
+  margin-left:-7.5px
+}
+.play-ribbon v-icon {
+  margin-left:-6.5px
+}
+.play-ribbon.active v-icon {
+  margin-left:-7.5px
+}
 @media(max-width:700px) {
-  .recording .control-ribbon,.recording .control-ribbon.active {
-    width:44px;
-    height:60px
-  }
-  .recording .control-ribbon::before {
-    width:29px;
-    height:45px
-  }
-  .recording .control-ribbon v-icon {
-    right:7px;
-    top:14px
+  .preview-frame {
+    --rib-form:29px;
+    --rib-hform:45px;
+    --rib-edge:12px
   }
 }
 
@@ -1797,4 +1823,8 @@ code {
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
+}
+
+.preview-frame v-particles {
+  z-index:20
 }

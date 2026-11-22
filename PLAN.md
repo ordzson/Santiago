@@ -150,7 +150,7 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
     - Archivos: `estudio/src/app/content.ts`, `estudio/tests/content.test.ts`, `estudio/src/app/app.ts` y `estudio/src/app/reader.ts` (solo renombrar tipo y llamar a `parseOriginal(raw,'griego')`; sin cambio visible todavía)
     - Hecho cuando: `pnpm test` cubre: griego con campo `greek` (formato actual, el `griego.json` instalado sigue cargando sus 286 notas) y con `original`; hebreo con `hebrew` y con `original`; término latino en archivo hebreo → error que nombra la nota; término hebreo en archivo griego → error; `tokenize` asocia una nota hebrea por su palabra española igual que la griega; mezcla griego+hebreo conserva `language` de cada una. `pnpm build` pasa.
 
-- [ ] O2 — Motor de luz y partículas
+- [x] O2 (668982d) — Motor de luz y partículas
   - Verificación: `pnpm test && pnpm build`
   - Commit: `feat(estudio): add light and particle engine`
   - [x] T1 — Partículas · invoca `/impeccable animate --target estudio/src/app/particles.ts`
@@ -165,26 +165,26 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
 - [ ] O3 — Gestos de resaltado y dos cintas
   - Verificación: `pnpm test && pnpm build && pnpm exec playwright test`
   - Commit: `feat(estudio): long-press highlights, chosen verses and ribbons`
-  - [ ] T1 — Gestos en el lector (lógica) · invoca `/impeccable animate --target estudio/src/app/reader.ts` (solo para la sensación de la carga 0→2→4 s, el tiempo de las ráfagas y la respuesta háptica; el aspecto final de las marcas es T2)
+  - [x] T1 — Gestos en el lector (lógica) · invoca `/impeccable animate --target estudio/src/app/reader.ts` (solo para la sensación de la carga 0→2→4 s, el tiempo de las ráfagas y la respuesta háptica; el aspecto final de las marcas es T2)
     - Leer: este plan §Gestos, `estudio/src/app/reader.ts`, `estudio/src/app/press.ts`
     - Archivos: `estudio/src/app/reader.ts`, `estudio/src/app/reader.css` (solo clases mínimas de estado; el aspecto final es T2)
     - Hacer: quitar Trazo (ink-layer, `drawings`, `undo`, input `tool`) y sustituirlo por input `greek:boolean`; `data-verse` en cada `.verse`; conectar `press.ts` con pointer events + temporizador rAF mientras haya pulsación; listener `touchmove` no pasivo solo en fase de pintura; arrastre con autoscroll de borde; tragar click; input `specials:Set<number>` del capítulo y outputs `specialToggle(verse)`, `burst({kind,rect})`, `note`; región `aria-live` sr-only; teclas Enter/H/E; cambio de la regla de pausa del autoscroll.
     - Hecho cuando: `pnpm build` pasa y, en `pnpm dev`, ratón: mantener 2 s resalta, 4 s marca elegido (clase `.verse-special`), clic en palabra de versículo resaltado alterna `.word-lit`.
-  - [ ] T2 — Aspecto de marcas · invoca `/impeccable bolder --target estudio/src/app/reader.css`
+  - [x] T2 — Aspecto de marcas · invoca `/impeccable bolder --target estudio/src/app/reader.css`
     - Leer: este plan §Aspecto de las marcas, `estudio/src/app/reader.css`, `estudio/DESIGN.md` §Scripture emphasis
     - Archivos: `estudio/src/app/reader.css`, `estudio/src/app/reader.ts` (solo si hace falta un span/atributo para el marcapáginas o la estrella)
     - Hecho cuando: capturas móvil día y noche con un versículo cargando, uno resaltado con dos palabras, uno elegido; contraste del texto ≥ 4.5:1 medido en cada estado (anotar valores en el reporte); sin reflujo al resaltar (la altura de `.reading-content` no cambia).
-  - [ ] T3 — Cintas, panel y elegidos en la app · invoca `/impeccable polish --target estudio/src/app/app.html`
+  - [x] T3 — Cintas, panel y elegidos en la app · invoca `/impeccable polish --target estudio/src/app/app.html`
     - Leer: este plan §Cintas, §Panel, §Cierre (almacén de elegidos), `estudio/src/app/app.ts`, `estudio/src/app/app.html`, `estudio/src/styles.css` (`.control-ribbon`, `.scene-controls`, `.scene-dock`, bloque final de `.control-ribbon`)
     - Archivos: `estudio/src/app/app.ts`, `estudio/src/app/app.html`, `estudio/src/styles.css`, `estudio/src/app/icon.ts` (quitar `pen`/`undo` si quedan sin uso)
     - Hacer: cinta play/pausa; posición espejo con encuadre `top-right`; panel nuevo; interruptor «Idioma original» ligado a `settings.original` (glifo, nombre y deshabilitado según las notas del libro actual; el diálogo hebreo completo es T5); almacén de elegidos con texto y referencia; montar `v-particles` en `.preview-frame` y reenviar `burst` del lector (rect relativo al frame); quitar `tool` y la lógica de Trazo de `scheduleHide`.
     - Hecho cuando: `pnpm build` pasa; en `pnpm dev` (móvil 390×844) se ven solo las dos cintas, play mueve el texto, el panel muestra Griego/Limpiar/contador/navegación, y con encuadre arriba-derecha las cintas están a la izquierda.
-  - [ ] T4 — E2E de escena
+  - [x] T4 — E2E de escena
     - Leer: este plan §Gestos, §Cintas, `estudio/e2e/studio.spec.ts`, `estudio/e2e/captures.spec.ts`
     - Archivos: `estudio/e2e/studio.spec.ts`, `estudio/e2e/captures.spec.ts`
     - Hacer: reemplazar los pasos de Luz/Versículo/Trazo/Scroll por: pulsación 2,2 s (`mouse.down` + espera + `mouse.up`) → `.verse-lit`; repetir → se quita; pulsar 2,2 s y arrastrar sobre dos versículos más → 3 `.verse-lit`; clic en palabra de versículo resaltado alterna `.word-lit` y en uno no resaltado no; 4,2 s → `.verse-special` y el estado de resaltado previo se conserva; el interruptor «Consultar griego» del panel abre la nota «siervo»; cinta play aumenta `scrollTop`; encuadre arriba-derecha → cintas a la izquierda sin solaparse con `.presenter-space`. Desactivar portada en estas pruebas vía ajustes.
     - Hecho cuando: `pnpm exec playwright test` pasa.
-  - [ ] T5 — Hebreo en la app: fuente, carga y diálogo · invoca `/impeccable typeset --target estudio/src/app/app.html`
+  - [x] T5 — Hebreo en la app: fuente, carga y diálogo · invoca `/impeccable typeset --target estudio/src/app/app.html`
     - Leer: este plan §Notas del idioma original, `estudio/public/fonts/fuentes.css`, `estudio/src/app/app.html` (diálogo «Tu contenido» y `#noteDialog`), `estudio/src/app/app.ts` (`loadContent`, `importFile`), `estudio/src/styles.css` (`.greek-dialog`, `.greek-word`, `.greek-tool`)
     - Archivos: `estudio/public/fonts/noto-serif-hebrew-*.woff2` + `estudio/public/fonts/fuentes.css`, `estudio/public/licencias/Noto-Serif-Hebrew-OFL.txt`, `estudio/src/app/app.ts`, `estudio/src/app/app.html`, `estudio/src/styles.css`, `estudio/e2e/hebrew.spec.ts` (nuevo)
     - Hacer: obtener la fuente con `pnpm add -D @fontsource/noto-serif-hebrew` (o `@fontsource-variable/…` si existe con eje de peso), copiar solo el woff2 del subconjunto hebreo y su OFL, y `pnpm remove` el paquete (no queda dependencia). Cargar `data/hebreo.json` opcional en `loadContent`; casilla de carga hebrea; estado con ambos conteos; diálogo con `lang`/`dir` y etiqueta de idioma; renombrar clases `.greek-*` a `.original-*` donde aplique.
@@ -258,6 +258,14 @@ Fuente de verdad para los ejecutores. Si una tarea choca con esto, se anota en �
 - 2026-11-22 O2 T1: lógica pura en `particles-engine.ts` (tests node no parsean decoradores); `particles.ts` reexporta. `burst`/`ambient` no hacen nada antes del primer render. Montar `<v-particles>` en `.preview-frame` en O3 T3; revisar visualmente entonces.
 
 - 2026-11-22 O2 T2: `v-lumen` listo (aún sin montar). Para O4 T2: pasar de `flood` a `off` cuando la página empiece a aparecer (en día `flood` deja la luz casi blanca). `dim` oscila a ≈50 %; para cierre quieto en O5 es una línea.
+
+- 2026-11-22 O3 T1: gestos listos en `reader.ts`. e2e `studio.spec.ts:2` y `captures.spec.ts:2` rotas a propósito (T4 las reescribe). Para T3: `burst.rect` viene en coords de viewport (restar origen de `.preview-frame`); app.ts tiene `chosen`/`toggleSpecial`/`tool` transitorios que T3 reemplaza; se quitó output `missingNote` (sin toast). `touchmove` no pasivo bloquea scroll en lit/painting/special.
+
+- 2026-11-22 O3 T2: marcas listas en `reader.css`; contraste mínimo medido 5.30–7.82 día / 5.45–9.74 noche (≥4.55 en animación); sin reflujo (4740.47 px antes/después). Número de versículo en noche pasó de #b92d40 (2.82:1) a #e17581. Noche simulada con `.night` a mano: revisar en T3/T4 con la app real. Capturas en scratchpad `marks/`.
+
+- 2026-11-22 O3 T3: cintas/panel/elegidos listos (`chosen.ts` puro). Desvíos: área táctil de cintas 37–40×59–65 px (plan: 44) para separación de 8 px; contador usa icono `star`; botón «Scroll» eliminado (lo sustituye play); `.dark-scene` ahora fija `color:var(--ink)`. Pendiente: botón sliders de la barra del panel repite el icono de la cinta (valorar en O6 T2 audit); textos de ayuda con Trazo → O6 T3; glifo «א» con fuente de respaldo hasta T5.
+
+- 2026-11-22 O3 T5: fuente `@fontsource-variable/noto-serif-hebrew` (eje de peso) copiada y paquete retirado. Input del lector sigue llamándose `greek` (`[greek]="originalOn()"`): renombrar si se toca. Aviso demo «Santiago es contenido de ejemplo» sale también con Biblia sintética (revisar en O6 T2).
 
 ## Próximos hitos
 

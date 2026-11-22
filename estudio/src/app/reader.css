@@ -7,6 +7,15 @@
   --page:#f6f1e4;
   --page-ink:#30271f;
   --page-muted:#756b5f;
+  --lit:219 167 52;
+  --lit-gold:224 181 74;
+  --lit-sheen:255 232 160;
+  --mark-red:#b92d40;
+  --mark-gold:#bc8c31;
+  --halo-a:.26;
+  --halo-peak:.56;
+  --sheen-a:.55;
+  --num-lit:var(--red-dark);
   position:relative;
   height:100%;
   background:var(--page);
@@ -19,7 +28,15 @@
 .night {
   --page:#211c18;
   --page-ink:#eee4d2;
-  --page-muted:#b6aa98
+  --page-muted:#b6aa98;
+  --lit:224 170 70;
+  --lit-sheen:224 170 70;
+  --mark-red:#e17581;
+  --mark-gold:#e0b54a;
+  --halo-a:.2;
+  --halo-peak:.3;
+  --sheen-a:.2;
+  --num-lit:#f8b6bd
 }
 .sheet-ribbon {
   position:absolute;
@@ -95,9 +112,23 @@
   text-wrap:pretty
 }
 .verse {
-  margin:0 0 17px;
-  border-radius:3px;
-  transition:background-color .25s,box-shadow .25s
+  /* Relleno compensado con margen negativo: las marcas respiran sin mover el texto. */
+  position:relative;
+  isolation:isolate;
+  margin:-6px -12px 11px;
+  padding:6px 12px;
+  border-radius:4px;
+  transition:box-shadow .25s
+}
+.verse::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  border-radius:inherit;
+  pointer-events:none;
+  opacity:0;
+  background:linear-gradient(100deg,transparent 0 36%,rgb(var(--lit-sheen) / var(--sheen-a)) 50%,transparent 64% 100%) 100% 0/300% 100% no-repeat
 }
 .verse-number {
   display:inline;
@@ -128,13 +159,122 @@
   cursor:pointer
 }
 .word-lit {
-  background:#dba73433;
-  text-shadow:0 0 7px #d0a043b3,0 0 18px #dab64666;
-  animation:ink-bloom .6s ease-out
+  /* Trazo de marcador en la mitad inferior de la palabra + halo; la tinta no cambia. */
+  background:linear-gradient(rgb(var(--lit) / 0) 0 46%,rgb(var(--lit) / .62) 46% 94%,rgb(var(--lit) / 0) 94%) 0 0/100% 100% no-repeat;
+  box-shadow:0 0 9px 1px rgb(var(--lit) / var(--halo-a));
+  text-shadow:0 0 6px rgb(var(--lit) / .4);
+  animation:word-bloom .6s cubic-bezier(.22,1,.36,1)
 }
+.night .word-lit {
+  background:linear-gradient(rgb(var(--lit) / 0) 0 46%,rgb(var(--lit) / .32) 46% 94%,rgb(var(--lit) / 0) 94%) 0 0/100% 100% no-repeat;
+  text-shadow:none
+}
+/* Luz de versículo: banda cálida que se apaga a la derecha, filete dorado y resplandor suave. */
 .verse-lit {
-  background:#dba73426;
-  box-shadow:0 0 15px #dba73418
+  background:linear-gradient(90deg,rgb(var(--lit) / .3),rgb(var(--lit) / .14) 55%,rgb(var(--lit) / .03));
+  box-shadow:0 4px 20px -6px rgb(var(--lit) / .45);
+  animation:lit-in .7s cubic-bezier(.22,1,.36,1)
+}
+.night .verse-lit {
+  background:linear-gradient(90deg,rgb(var(--lit) / .2),rgb(var(--lit) / .1) 55%,rgb(var(--lit) / .02));
+  box-shadow:0 4px 20px -6px rgb(var(--lit) / .3)
+}
+.verse-lit::before {
+  content:'';
+  position:absolute;
+  left:0;
+  top:6px;
+  bottom:6px;
+  width:3px;
+  border-radius:2px;
+  background:linear-gradient(180deg,#e0b54a,#bc8c31 60%,#a8741f)
+}
+.verse-lit::after {
+  animation:lit-sweep .7s cubic-bezier(.22,1,.36,1)
+}
+/* Hoja de oro (elegido): prevalece sobre la luz de versículo. */
+.verse-special {
+  background:
+    linear-gradient(115deg,transparent 0 38%,rgb(255 246 214 / .5) 46%,transparent 54% 100%),
+    linear-gradient(90deg,transparent,var(--mark-gold) 12% 88%,transparent) 0 0/100% 1px no-repeat,
+    linear-gradient(90deg,transparent,var(--mark-gold) 12% 88%,transparent) 0 100%/100% 1px no-repeat,
+    linear-gradient(180deg,rgb(var(--lit-gold) / .4),rgb(var(--lit-gold) / .22));
+  box-shadow:0 5px 22px -6px rgb(var(--lit-gold) / .55);
+  animation:special-in 1.2s cubic-bezier(.22,1,.36,1)
+}
+.night .verse-special {
+  background:
+    linear-gradient(115deg,transparent 0 38%,rgb(var(--lit-gold) / .1) 46%,transparent 54% 100%),
+    linear-gradient(90deg,transparent,var(--mark-gold) 12% 88%,transparent) 0 0/100% 1px no-repeat,
+    linear-gradient(90deg,transparent,var(--mark-gold) 12% 88%,transparent) 0 100%/100% 1px no-repeat,
+    linear-gradient(180deg,rgb(var(--lit) / .26),rgb(var(--lit) / .15));
+  box-shadow:0 5px 22px -6px rgb(var(--lit-gold) / .4)
+}
+.verse-special::before {
+  content:'';
+  position:absolute;
+  left:-4px;
+  top:3px;
+  width:14px;
+  height:22px;
+  border-radius:1px 1px 0 0;
+  background:linear-gradient(90deg,var(--mark-red),color-mix(in srgb,var(--mark-red) 78%,#000));
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 74%,0 100%);
+  filter:drop-shadow(0 1px 1px rgb(0 0 0 / .3))
+}
+.verse-special::after {
+  background:linear-gradient(100deg,transparent 0 34%,rgb(255 246 214 / .7) 50%,transparent 66% 100%) 100% 0/300% 100% no-repeat;
+  animation:lit-sweep 1.2s cubic-bezier(.22,1,.36,1)
+}
+.night .verse-special::after {
+  background:linear-gradient(100deg,transparent 0 34%,rgb(var(--lit-gold) / .14) 50%,transparent 66% 100%) 100% 0/300% 100% no-repeat
+}
+.verse-special .verse-number::after {
+  /* Estrella de cuatro puntas con ancho neto cero: no empuja el texto. */
+  content:'';
+  display:inline-block;
+  vertical-align:top;
+  width:8px;
+  height:8px;
+  margin:12px -9px 0 1px;
+  background:linear-gradient(135deg,#c98f1e,#8f5f10);
+  clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)
+}
+.night .verse-special .verse-number::after {
+  background:linear-gradient(135deg,#ffe29a,#e0b54a)
+}
+/* Número de versículo: rojo claro de noche y más oscuro/claro sobre la luz para mantener ≥ 4.5:1. */
+.night .verse-number {
+  color:var(--mark-red)
+}
+.verse-lit .verse-number,.verse-special .verse-number,.verse[data-charge] .verse-number {
+  color:var(--num-lit)
+}
+/* Carga de la pulsación: ámbar creciente, luego oro con contorno y aureola finos. */
+.verse[data-charge="1"] {
+  background:radial-gradient(circle at var(--px,50%) var(--py,50%),rgb(var(--lit) / calc(.38 * var(--charge,0))),transparent calc(30% + 70% * var(--charge,0)));
+  box-shadow:0 0 calc(10px * var(--charge,0)) rgb(var(--lit) / calc(.3 * var(--charge,0)));
+  animation:none
+}
+.verse[data-charge="2"] {
+  background:radial-gradient(circle at var(--px,50%) var(--py,50%),rgb(var(--lit-gold) / calc(.2 + .28 * var(--charge,0))),rgb(var(--lit) / .15) calc(40% + 60% * var(--charge,0)));
+  box-shadow:inset 0 0 0 calc(1px * var(--charge,0)) var(--mark-gold),0 0 calc(16px * var(--charge,0)) rgb(var(--lit-gold) / calc(.5 * var(--charge,0)));
+  animation:none
+}
+.night .verse[data-charge="1"] {
+  background:radial-gradient(circle at var(--px,50%) var(--py,50%),rgb(var(--lit) / calc(.3 * var(--charge,0))),transparent calc(30% + 70% * var(--charge,0)))
+}
+.night .verse[data-charge="2"] {
+  background:radial-gradient(circle at var(--px,50%) var(--py,50%),rgb(var(--lit) / calc(.16 + .12 * var(--charge,0))),rgb(var(--lit) / .1) calc(40% + 60% * var(--charge,0)))
+}
+.verse[data-charge]::before,.verse[data-charge]::after {
+  animation:none
+}
+.live .scripture {
+  -webkit-user-select:none;
+  user-select:none;
+  -webkit-touch-callout:none;
+  -webkit-tap-highlight-color:transparent
 }
 .has-note {
   text-decoration:underline dotted #ad8439;
@@ -237,44 +377,43 @@
 .presenter-space.no-guide v-icon {
   visibility:hidden
 }
-.ink-layer {
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-  overflow:visible
-}
-.ink-layer path {
-  stroke:#bc3442;
-  stroke-width:2.2;
-  vector-effect:non-scaling-stroke;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  fill:none
-}
-.ink-layer.enabled {
-  pointer-events:all;
-  touch-action:none;
-  cursor:crosshair
-}
-.pen-active {
-  pointer-events:none
-}
-@keyframes ink-bloom {
+@keyframes word-bloom {
   0% {
-    background:#e2ba5570;
-    text-shadow:0 0 3px #d0a043
+    background-size:0 100%;
+    box-shadow:0 0 22px 5px rgb(var(--lit) / var(--halo-peak))
   }
-  45% {
-    text-shadow:0 0 12px #d0a043,0 0 28px #dab646
+  55% {
+    background-size:100% 100%
+  }
+}
+@keyframes lit-in {
+  0% {
+    box-shadow:0 0 30px 0 rgb(var(--lit) / .6)
+  }
+}
+@keyframes lit-sweep {
+  0% {
+    opacity:1;
+    background-position:100% 0
+  }
+  80% {
+    opacity:1
   }
   100% {
-    text-shadow:0 0 7px #d0a043b3,0 0 18px #dab64666
+    opacity:0;
+    background-position:0 0
+  }
+}
+@keyframes special-in {
+  0% {
+    box-shadow:0 0 0 0 rgb(var(--lit-gold) / 0)
+  }
+  35% {
+    box-shadow:0 0 34px 4px rgb(var(--lit-gold) / .7)
   }
 }
 @media(prefers-reduced-motion:reduce) {
-  .word-lit {
+  .word-lit,.verse-lit,.verse-special,.verse-lit::after,.verse-special::after {
     animation:none
   }
   .word,.verse {

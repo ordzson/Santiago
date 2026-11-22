@@ -1,6 +1,6 @@
 import {Component, DestroyRef, ElementRef, afterNextRender, inject, input, signal, viewChild} from '@angular/core';
 import {PALETTE, advance, createField, emitBurst, liveCount, needsFrame, renderState, resizeField, ringState, setAmbient, setReduced, spriteKey} from './particles-engine';
-import type {BurstKind, Sprite} from './particles-engine';
+import type {Box, BurstKind, Sprite} from './particles-engine';
 
 // La lógica (pool, emisión, vida, topes) vive en `particles-engine.ts`, pura y probada en Node.
 export * from './particles-engine';
@@ -69,7 +69,7 @@ export class ParticlesComponent {
   }
 
   /** Estallido sobre un rectángulo (coordenadas de ventana, p. ej. `getBoundingClientRect()` de un versículo). */
-  burst(kind:BurstKind,rect:DOMRect){
+  burst(kind:BurstKind,rect:Box){
     if(!this.ready||this.field.reduced)return;
     const origin=this.host.nativeElement.getBoundingClientRect();
     const added=emitBurst(this.field,kind,{left:rect.left-origin.left,top:rect.top-origin.top,width:rect.width,height:rect.height});
