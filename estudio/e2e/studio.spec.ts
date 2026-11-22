@@ -9,7 +9,7 @@ test('preparación y escena en escritorio y teléfono',async({browser})=>{
   const {context:mobile,page:phone,errors:phoneErrors}=await newPhone(browser,false);
   expect(await phone.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   await phone.getByRole('button',{name:'Cierre y ajustes de escena'}).click();
-  await expect(phone.getByRole('dialog',{name:'A tu manera.',exact:true})).toBeVisible();
+  await expect(phone.getByRole('dialog',{name:'Cierre de escena',exact:true})).toBeVisible();
   await phone.getByLabel('Cuenta atrás de 3 segundos al entrar').uncheck();
   await phone.getByRole('button',{name:'Listo',exact:true}).click();
   await phone.getByLabel('Mostrar portada').uncheck();
