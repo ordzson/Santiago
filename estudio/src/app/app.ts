@@ -72,7 +72,6 @@ export class AppComponent implements OnDestroy {
   get canPrevious(){const b=this.bible();if(!b)return false;if(this.mode==='chapters')return locations(b).findIndex(p=>compare(p,this.current())===0)>0;return this.session.findIndex(p=>compare(p,this.current())===0)>0 || this.mode==='book' && this.current().book>0;}
   get canNext(){const b=this.bible();if(!b)return false;if(this.mode==='chapters')return locations(b).findIndex(p=>compare(p,this.current())===0)<locations(b).length-1;return this.session.findIndex(p=>compare(p,this.current())===0)<this.session.length-1 || this.mode==='book' && this.current().book<b.books.length-1;}
   readonly accents=Object.entries(ACCENTS).map(([id,a])=>({id:id as AccentId,label:a.label,color:a.main}));
-  get accentLabel(){return ACCENTS[this.settings.accent].label;}
   chooseAccent(id:AccentId){this.settings.accent=id;applyAccent(id);this.saveSettings();}
   constructor(){this.originalActive.set(this.settings.original);applyAccent(this.settings.accent);this.loadContent();}
   async loadContent(){

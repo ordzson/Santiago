@@ -579,10 +579,6 @@ output {
   margin-top:14px;
   font-size:11px
 }
-.accent-name output {
-  margin-left:6px;
-  color:var(--red)
-}
 .accent-swatches {
   display:flex;
   gap:6px
