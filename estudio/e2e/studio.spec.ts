@@ -29,7 +29,7 @@ test('preparación y escena en escritorio y teléfono',async({browser})=>{
   await openPanel(phone);
   await expect(phone.getByRole('button',{name:'Consultar griego'})).toBeVisible();
   await expect(phone.getByRole('button',{name:'Limpiar marcas de este capítulo'})).toBeVisible();
-  await expect(phone.locator('.press-hint').first()).toContainText('Mantén 2 s para resaltar');
+  await expect(phone.locator('.press-hint').first()).toContainText('Mantén 1 s para resaltar');
   for(const gone of ['Resaltar versículos','Dibujar con el dedo','Deshacer último trazo'])await expect(phone.getByRole('button',{name:gone})).toHaveCount(0);
   await phone.getByRole('button',{name:'Completar y avanzar capítulo'}).click();
   await expect(phone.locator('.chapter-numeral')).toHaveText('2');

@@ -38,7 +38,7 @@
           }
           @if(scene() && (phase() === 'countdown' || dissolve())){<div class="countdown-overlay" [class.dissolving]="dissolve()" [attr.aria-hidden]="dissolve() ? 'true' : null"><span class="sr-only" role="status" aria-live="assertive">{{dissolve() ? '' : countdown()}}</span>@for(n of [countdown()]; track n){<span class="countdown-number" aria-hidden="true">{{n}}</span>}<p>Prepara tu voz.</p><button class="text-button" [disabled]="dissolve()" (click)="exitScene()">Cancelar</button></div>}
           @if(finished()){
-            <div class="ending-screen" (click)="endingTap($event)"><v-lumen phase="dim" [night]="settings.night"/><v-ending [title]="settings.intro.title" [label]="sceneText" [chosen]="chosen()" [message]="settings.endMessage" [night]="settings.night"/><div class="ending-actions" [class.visible]="controls()" [attr.inert]="controls() ? null : ''"><button class="text-button" (click)="exitScene()"><v-icon name="back"/> Volver al estudio</button><button class="text-button" (click)="continueScene()">{{endAt() ? 'Continuar lectura' : 'Leer de nuevo'}} <v-icon name="arrow"/></button></div></div>
+            <div class="ending-screen" (click)="endingTap($event)"><v-lumen [phase]="endLumen()" [night]="settings.night"/><v-ending [title]="settings.intro.title" [label]="sceneText" [chosen]="chosen()" [message]="settings.endMessage" [night]="settings.night"/><div class="ending-actions" [class.visible]="controls()" [attr.inert]="controls() ? null : ''"><button class="text-button" (click)="exitScene()"><v-icon name="back"/> Volver al estudio</button><button class="text-button" (click)="continueScene()">{{endAt() ? 'Continuar lectura' : 'Leer de nuevo'}} <v-icon name="arrow"/></button></div></div>
           }@else if(scene() && phase() === 'reading'){
             <div class="scene-controls" [class.visible]="controls()" [attr.inert]="controls() ? null : ''" (pointerdown)="scheduleHide()" (focusin)="holdControls()" (focusout)="scheduleHide()">
               <div class="scene-topbar"><button class="text-button" (click)="exitScene()"><v-icon name="back"/> Estudio</button><span>{{previewLabel}}</span><button class="text-button" (click)="openDialog('settings')" aria-label="Ajustes de escena">Ajustes</button></div>
@@ -47,7 +47,7 @@
                 <button class="clear-marks" (click)="clearMarks()" aria-label="Limpiar marcas de este capítulo"><v-icon name="trash"/><span>Limpiar marcas</span></button>
               </div>
               @if(chosen().length > 0){<p class="chosen-count"><v-icon name="star"/><span><strong>{{chosen().length}}</strong> para el cierre</span></p>}
-              <p class="press-hint">Mantén 2 s para resaltar · 4 s para el cierre</p>
+              <p class="press-hint">Mantén 1 s para resaltar · 4 s para el cierre</p>
               @if(!originalAvailable()){<p class="press-hint original-missing" id="original-missing">Este libro no tiene notas del idioma original</p>}
               <div class="chapter-nav"><button class="icon-button" [disabled]="!canPrevious" (click)="move(-1)" aria-label="Capítulo anterior"><v-icon name="back"/></button><button class="end-take" (click)="finishScene()">Cerrar lectura <span class="tiny-square"></span></button><button class="icon-button" (click)="move(1,true)" [attr.aria-label]="canNext ? 'Completar y avanzar capítulo' : 'Completar lectura'"><v-icon name="arrow"/></button></div>
               </div>

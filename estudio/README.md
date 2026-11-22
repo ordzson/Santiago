@@ -123,8 +123,8 @@ También puedes cargar los archivos desde **Mi contenido** (casillas «Cargar no
 
 **Gestos sobre el texto** (ratón o dedo, sin herramientas que elegir)
 
-- **Mantener 2 s** un versículo: lo resalta con luz de versículo y una ráfaga de partículas. Repetirlo lo quita (y borra sus palabras marcadas). Desde 0,35 s se ve cómo «carga» la luz.
-- **Arrastrar** tras los 2 s: resalta (o quita) todos los versículos que toca el dedo. Cerca del borde, el texto se desplaza solo. Si te mueves antes de los 2 s, es un desplazamiento normal y no pasa nada.
+- **Mantener 1,35 s** un versículo: lo resalta con luz de versículo y una ráfaga de partículas. Repetirlo lo quita (y borra sus palabras marcadas). Desde 0,35 s se ve cómo «carga» la luz durante 1 s.
+- **Arrastrar** tras 1,35 s: resalta (o quita) todos los versículos que toca el dedo. Cerca del borde, el texto se desplaza solo. Si te mueves antes de 1,35 s, es un desplazamiento normal y no pasa nada.
 - **Tocar una palabra** de un versículo resaltado o elegido: alterna su marcador. Fuera de esos versículos no hace nada.
 - **Mantener 4 s** sin soltar: elige el versículo para el cierre («hoja de oro», con marcapáginas). Es independiente del resaltado, que vuelve a su estado anterior.
 - **Idioma original:** con el interruptor del panel (α, א o «α א» según el libro) activado, tocar una palabra subrayada abre su nota; tiene prioridad sobre el marcador.

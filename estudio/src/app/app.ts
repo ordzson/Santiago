@@ -5,7 +5,7 @@ import { ReaderComponent, ReaderBurst } from './reader';
 import { ParticlesComponent } from './particles';
 import { LumenComponent } from './lumen';
 import { TitleCardComponent } from './title-card';
-import { IntroView, INTRO_START, introSteps } from './intro';
+import { IntroView, INTRO_START, INTRO_LEAD_MS, introSteps } from './intro';
 import { ChosenVerse, chosenIn, toggleChosen } from './chosen';
 import { Settings, DEFAULTS, parseSettings } from './settings';
 import { IconComponent } from './icon';
@@ -50,6 +50,8 @@ export class AppComponent implements OnDestroy {
   finished=computed(()=>{const p=this.phase();return p==='ending'||p==='fading'||p==='black';});
   /** Tras la guarda de 600 ms en negro, un toque vuelve a la preparación. */
   blackReady=signal(false);
+  /** Luz del cierre: nace apagada y se abre a `dim` como la portada (rise), para que la transición sea suave. */
+  endLumen=signal<'off'|'dim'>('off');
   readonly fadeMs=FADE_MS;
   private endTimers:ReturnType<typeof setTimeout>[]=[];
   /** Portada en curso (escena o vista previa): lo que pintan la luz, la tarjeta y el velo. `null` = no hay portada. */
@@ -93,6 +95,7 @@ export class AppComponent implements OnDestroy {
   startScene(){
     const bible=this.bible();if(!bible || this.selectionError())return;
     this.session=sessionLocations(bible,this.mode,this.start,this.end);if(!this.session.length)return;
+    this.enterFullscreen();
     this.stopIntro();
     this.clearEndTimers();this.blackReady.set(false);this.phase.set('reading');this.current.set({...this.session[0]});this.reader()?.reset();this.scene.set(true);this.controls.set(false);this.playing.set(false);this.chosen.set([]);this.endAt.set(null);
     if(this.settings.countdown){this.phase.set('countdown');this.countdown.set(3);this.countdownTimer=setInterval(()=>{const remaining=this.countdown()!;if(remaining<=1){clearInterval(this.countdownTimer);this.afterCountdown();}else this.countdown.set(remaining-1);},1000);}
@@ -129,7 +132,7 @@ export class AppComponent implements OnDestroy {
     this.runIntro(()=>{},()=>this.introPreview.set(false));
   }
   async acquireWakeLock(){try{if('wakeLock' in navigator && !this.wakeLock)this.wakeLock=await navigator.wakeLock.request('screen');}catch{}}
-  async exitScene(){this.playing.set(false);clearInterval(this.countdownTimer);this.clearEndTimers();this.blackReady.set(false);this.stopIntro();this.countdown.set(null);this.phase.set('reading');this.scene.set(false);this.controls.set(true);this.reader()?.reset();await this.wakeLock?.release();this.wakeLock=null;}
+  async exitScene(){this.leaveFullscreen();this.playing.set(false);clearInterval(this.countdownTimer);this.clearEndTimers();this.blackReady.set(false);this.stopIntro();this.countdown.set(null);this.phase.set('reading');this.scene.set(false);this.controls.set(true);this.reader()?.reset();await this.wakeLock?.release();this.wakeLock=null;}
   toggleControls(){this.controls.update(v=>!v);if(this.controls())this.scheduleHide();}
   holdControls(){clearTimeout(this.hideTimer);}
   scheduleHide(){clearTimeout(this.hideTimer);this.hideTimer=setTimeout(()=>{if(!this.dialog().nativeElement.open && !this.noteDialog().nativeElement.open && !document.activeElement?.closest('.scene-controls'))this.controls.set(false);},5000);}
@@ -151,6 +154,7 @@ export class AppComponent implements OnDestroy {
   finishScene(){
     if(this.phase()!=='reading')return;
     this.playing.set(false);this.controls.set(false);this.activeNote.set(null);this.phase.set('ending');this.particles()?.ambient(true);
+    this.endLumen.set('off');this.endTimers.push(setTimeout(()=>this.endLumen.set('dim'),INTRO_LEAD_MS));
   }
   private clearEndTimers(){for(const t of this.endTimers)clearTimeout(t);this.endTimers=[];}
   /** Toque en el cierre: velo negro 0→1 en FADE_MS y el polvo se apaga a la vez. Después, negro y guarda. */
@@ -182,6 +186,9 @@ export class AppComponent implements OnDestroy {
       this.announce(kind==='bible'?'Biblia cargada. Ya puedes preparar tu lectura.':`Notas del ${kind} cargadas.`);
     }catch(error){this.importError.set(error instanceof SyntaxError?'El JSON no es válido. Revisa comas, comillas y el formato del archivo.':error instanceof Error?error.message:'No se pudo leer el archivo.');}finally{this.importing.set(false);input.value='';}
   }
+  /** Pantalla completa al iniciar (síncrono, dentro del gesto del usuario). Si falla, la escena sigue igual. */
+  private enterFullscreen(){try{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.()?.catch(()=>{});}catch{}}
+  private leaveFullscreen(){try{if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});}catch{}}
   async fullscreen(){try{if(document.fullscreenElement)await document.exitFullscreen();else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else this.announce('Usa «Añadir a pantalla de inicio» para abrir sin la barra del navegador.');}catch{this.announce('La pantalla completa no está disponible en este navegador.');}}
   announce(message:string){this.notice.set(message);clearTimeout(this.noticeTimer);this.noticeTimer=setTimeout(()=>this.notice.set(''),4000);}
   @HostListener('document:visibilitychange') visibility(){if(document.hidden){this.playing.set(false);this.wakeLock?.release();this.wakeLock=null;}else if(this.scene())this.acquireWakeLock();}

@@ -1,5 +1,5 @@
 // Máquina de pulsación pura: sin DOM, sin temporizadores, sin Angular. Los tiempos llegan como `t` (ms).
-export const LIT_MS=2000;
+export const LIT_MS=1350; // 350 ms de espera + 1 s de carga visible
 export const SPECIAL_MS=4000;
 export const SLOP_PX=10;
 export const CHARGE_DELAY_MS=350;
@@ -23,7 +23,7 @@ export interface PressState {
   x:number; y:number; t:number;
   /** Estado de resaltado y de elegido del versículo al empezar la pulsación. */
   wasLit:boolean; wasSpecial:boolean;
-  /** Modo de pintura: true = resaltar, false = quitar. Fijado a los 2 s. */
+  /** Modo de pintura: true = resaltar, false = quitar. Fijado a los 1,35 s. */
   mode:boolean;
   /** Versículos ya tratados en esta pulsación (el de origen cuenta). */
   painted:readonly number[];
@@ -45,7 +45,7 @@ export function pressTick(state:PressState,t:number):PressResult{
   if(state.phase==='pressing'){
     if(elapsed<CHARGE_DELAY_MS)return result(state);
     if(elapsed<LIT_MS)return result(state,[{type:'charge',verse:state.verse,stage:1,level:clamp01((elapsed-CHARGE_DELAY_MS)/(LIT_MS-CHARGE_DELAY_MS))}]);
-    // Cruza los 2 s: alterna el resaltado y fija el modo de pintura.
+    // Cruza los 1,35 s: alterna el resaltado y fija el modo de pintura.
     const on=!state.wasLit;
     const next:PressState={...state,phase:'lit',mode:on,painted:[state.verse]};
     const effects:PressEffect[]=[
@@ -77,11 +77,11 @@ export function pressMove(state:PressState,input:MoveInput):PressResult{
   const moved=Math.hypot(input.x-s.x,input.y-s.y)>SLOP_PX;
   if(s.phase==='pressing'){
     if(!moved)return result(s,effects);
-    return result({...s,phase:'cancelled'},[{type:'cancel'}]); // antes de 2 s: es scroll nativo
+    return result({...s,phase:'cancelled'},[{type:'cancel'}]); // antes de 1,35 s: es scroll nativo
   }
   if(s.phase==='lit'){
     if(!moved)return result(s,effects);
-    // Arrastre tras 2 s: empieza a pintar y se anula el paso a 4 s.
+    // Arrastre tras 1,35 s: empieza a pintar y se anula el paso a 4 s.
     effects.push({type:'charge',verse:s.verse,stage:2,level:0});
     return paintUnder({...s,phase:'painting'},input.verseUnder,effects);
   }
@@ -99,7 +99,7 @@ export function pressUp(state:PressState,t:number):PressResult{
   const ticked=pressTick(state,t);
   const s=ticked.state;
   const effects=ticked.effects.filter(e=>e.type!=='charge'); // al soltar no queda carga que animar
-  // Soltar tras 2 s se traga el click siguiente; antes de 2 s no hay efectos de marca.
+  // Soltar tras 1,35 s se traga el click siguiente; antes de 1,35 s no hay efectos de marca.
   if(s.phase==='lit'||s.phase==='painting'||s.phase==='special')effects.push({type:'swallowClick'});
   return result(IDLE,effects);
 }

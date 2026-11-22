@@ -1,0 +1,2864 @@
+{
+  "notes": [
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 1,
+      "word": "Santiago",
+      "greek": "Ἰάκωβος",
+      "transliteration": "Iakōbos",
+      "meaning": "Jacobo",
+      "context": "En griego es Jacobo, el nombre del patriarca Jacob; «Santiago» viene de «Sant Iago», san Jacobo. Probablemente es el hermano del Señor (Gálatas 1:19). Durante el ministerio de Jesús sus hermanos no creían en Él (Juan 7:5); después de la resurrección, Jesús se le apareció a Santiago (1 Corintios 15:7)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 1,
+      "word": "siervo",
+      "greek": "δοῦλος",
+      "transliteration": "doulos",
+      "meaning": "esclavo",
+      "context": "Literalmente, esclavo: alguien que pertenece por completo a su señor. Santiago podía presentarse como hermano de Jesús, pero prefiere llamarse su siervo."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 1,
+      "word": "Señor Jesucristo",
+      "greek": "κυρίου Ἰησοῦ Χριστοῦ",
+      "transliteration": "kyriou Iēsou Christou",
+      "meaning": "del Señor Jesús el Mesías",
+      "context": "Santiago nombra a Jesús solo aquí y en 2:1. Lo llama Señor y lo pone junto a Dios como dueño del mismo siervo. Christos es la forma griega de Mesías, el Ungido."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 1,
+      "word": "doce tribus",
+      "greek": "ταῖς δώδεκα φυλαῖς",
+      "transliteration": "tais dōdeka phylais",
+      "meaning": "a las doce tribus",
+      "context": "El pueblo de Dios completo, como el Israel de los doce hijos de Jacob. Probablemente se refiere a creyentes judíos que vivían fuera de Israel; muchos lo leen también como una imagen de toda la iglesia."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 1,
+      "word": "dispersión",
+      "greek": "διασπορά",
+      "transliteration": "diaspora",
+      "meaning": "semilla esparcida",
+      "context": "Viene de un verbo que significa esparcir semilla. Así se llamaba a los judíos que vivían fuera de Israel. Después de la muerte de Esteban, muchos creyentes fueron esparcidos y llevaron el evangelio consigo (Hechos 8:1–4; 11:19)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 1,
+      "word": "Saludos",
+      "greek": "χαίρειν",
+      "transliteration": "chairein",
+      "meaning": "¡alégrense!",
+      "context": "El saludo común de las cartas griegas. Aparece también en la carta del concilio de Jerusalén, donde Santiago habló (Hechos 15:13, 23). Y Santiago juega con él: el versículo siguiente empieza con chara, «gozo»."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 2,
+      "word": "sumo gozo",
+      "greek": "πᾶσαν χαρὰν ἡγήσασθε",
+      "transliteration": "pasan charan hēgēsasthe",
+      "meaning": "consideren todo gozo",
+      "context": "Chara, «gozo», responde al saludo chairein del v. 1. Santiago no dice «sientan gozo», sino «ténganlo por» gozo: es una decisión sobre cómo ver la prueba. No es alegría por el dolor, sino por lo que Dios produce con él (Romanos 5:3–4)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 2,
+      "word": "se hallen",
+      "greek": "περιπέσητε",
+      "transliteration": "peripesēte",
+      "meaning": "caigan en medio de",
+      "context": "Caer de repente en algo que no se buscó, como el hombre que cayó en manos de los ladrones (Lucas 10:30, el mismo verbo). Las pruebas no se buscan; llegan."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 2,
+      "word": "diversas pruebas",
+      "greek": "πειρασμοῖς ποικίλοις",
+      "transliteration": "peirasmois poikilois",
+      "meaning": "pruebas de muchos colores",
+      "context": "Poikilos significa «de varios colores», como una tela bordada. Peirasmos puede ser una prueba que viene de afuera o una tentación que nace adentro; Santiago usa las dos ideas en los vv. 12–14. Pedro habla igual de «diversas pruebas» (1 Pedro 1:6)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 3,
+      "word": "prueba de su fe",
+      "greek": "τὸ δοκίμιον τῆς πίστεως",
+      "transliteration": "to dokimion tēs pisteōs",
+      "meaning": "lo probado de su fe",
+      "context": "Dokimion se usaba para probar los metales en el fuego y mostrar que eran genuinos. Pedro usa la misma expresión: la fe probada vale más que el oro probado por fuego (1 Pedro 1:7)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 3,
+      "word": "paciencia",
+      "greek": "ὑπομονή",
+      "transliteration": "hypomonē",
+      "meaning": "quedarse bajo el peso",
+      "context": "De hypo, «debajo», y menō, «quedarse»: aguantar bajo la carga sin escapar. Es la paciencia de Job (5:11). Santiago empieza y termina su carta con esta virtud."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 4,
+      "word": "perfecto resultado",
+      "greek": "ἔργον τέλειον",
+      "transliteration": "ergon teleion",
+      "meaning": "obra completa",
+      "context": "La paciencia tiene una obra que terminar en nosotros. Teleios, «completo, maduro», es una de las palabras favoritas de Santiago (1:17, 25; 3:2)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 4,
+      "word": "completos",
+      "greek": "ὁλόκληροι",
+      "transliteration": "holoklēroi",
+      "meaning": "enteros en todas sus partes",
+      "context": "Entero, sin que le falte ninguna parte. La Biblia griega usa la palabra para las piedras enteras, sin labrar, del altar (Deuteronomio 27:6). «Sin que nada les falte» prepara el v. 5: «si a alguno de ustedes le falta sabiduría»."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 5,
+      "word": "le falta sabiduría",
+      "greek": "λείπεται σοφίας",
+      "transliteration": "leipetai sophias",
+      "meaning": "está falto de sabiduría",
+      "context": "Juego de palabras con el v. 4, «sin que nada les falte». Si en la prueba nos falta algo, es sabiduría para entenderla y vivirla. Santiago describe esa sabiduría en 3:13–18."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 5,
+      "word": "abundantemente",
+      "greek": "ἁπλῶς",
+      "transliteration": "haplōs",
+      "meaning": "con sencillez, sin reservas",
+      "context": "Dios da con generosidad y con una sola intención, sin cálculos ni condiciones. Es lo contrario del hombre de doble ánimo del v. 8: Dios da sin dobleces."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 5,
+      "word": "sin reproche",
+      "greek": "μὴ ὀνειδίζοντος",
+      "transliteration": "mē oneidizontos",
+      "meaning": "sin echar en cara",
+      "context": "Dios no humilla al que pide ni le recuerda sus errores. Muchos dan y después lo echan en cara; Dios no."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 6,
+      "word": "sin dudar",
+      "greek": "μηδὲν διακρινόμενος",
+      "transliteration": "mēden diakrinomenos",
+      "meaning": "sin estar dividido",
+      "context": "No es la duda honesta de quien tiene preguntas, sino estar dividido por dentro: pedirle a Dios y a la vez confiar en otra cosa. Jesús usó el mismo verbo: si tienen fe y no dudan (Mateo 21:21)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 6,
+      "word": "ola del mar",
+      "greek": "κλύδωνι θαλάσσης",
+      "transliteration": "klydōni thalassēs",
+      "meaning": "el oleaje del mar",
+      "context": "Klydōn es el oleaje agitado. Es la misma palabra del oleaje que Jesús calmó en el lago (Lucas 8:24)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 6,
+      "word": "impulsada por el viento",
+      "greek": "ἀνεμιζομένῳ καὶ ῥιπιζομένῳ",
+      "transliteration": "anemizomenō kai rhipizomenō",
+      "meaning": "movida por el viento y agitada",
+      "context": "Dos verbos que solo aparecen aquí en el Nuevo Testamento. Rhipizō es abanicar: el viento lleva la ola de un lado a otro, sin rumbo propio. Pablo usa una imagen parecida: llevados por todo viento de doctrina (Efesios 4:14)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 8,
+      "word": "doble ánimo",
+      "greek": "δίψυχος",
+      "transliteration": "dipsychos",
+      "meaning": "de dos almas",
+      "context": "No aparece en ningún texto griego anterior a Santiago; quizá él acuñó la palabra. Vuelve en 4:8: purifiquen sus corazones, ustedes de doble ánimo."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 8,
+      "word": "inestable",
+      "greek": "ἀκατάστατος",
+      "transliteration": "akatastatos",
+      "meaning": "sin estabilidad",
+      "context": "La misma palabra describe la lengua en 3:8, «un mal turbulento», y su pariente akatastasia es la «confusión» de 3:16. El que vive dividido no tiene dónde apoyarse."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 9,
+      "word": "condición humilde",
+      "greek": "ὁ ταπεινός",
+      "transliteration": "ho tapeinos",
+      "meaning": "el de abajo",
+      "context": "El pobre, el que no cuenta para el mundo. Dios da gracia a los humildes (4:6), y María cantó que Dios exaltó a los humildes (Lucas 1:52)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 9,
+      "word": "se gloríe",
+      "greek": "καυχάσθω",
+      "transliteration": "kauchasthō",
+      "meaning": "que se jacte",
+      "context": "Es el verbo de la jactancia mala de 4:16, pero aquí es bueno: gloriarse en lo que Dios da, no en lo que uno tiene (compara Jeremías 9:23–24)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 9,
+      "word": "alta posición",
+      "greek": "ἐν τῷ ὕψει αὐτοῦ",
+      "transliteration": "en tō hypsei autou",
+      "meaning": "en su altura",
+      "context": "Su lugar real ante Dios: rico en fe y heredero del reino (2:5). Lo que el mundo ve abajo, Dios lo ve en lo alto."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 10,
+      "word": "humillación",
+      "greek": "ἐν τῇ ταπεινώσει αὐτοῦ",
+      "transliteration": "en tē tapeinōsei autou",
+      "meaning": "en su bajeza",
+      "context": "Una paradoja: el rico se gloría al descubrir que su riqueza no vale nada ante Dios. Eso lo libra de confiar en ella."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 10,
+      "word": "flor de la hierba",
+      "greek": "ὡς ἄνθος χόρτου",
+      "transliteration": "hōs anthos chortou",
+      "meaning": "como flor del pasto",
+      "context": "Viene de Isaías 40:6–8: toda carne es como hierba; la hierba se seca y la flor se cae, pero la palabra de nuestro Dios permanece para siempre. Pedro cita el mismo pasaje (1 Pedro 1:24–25)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 11,
+      "word": "calor abrasador",
+      "greek": "σὺν τῷ καύσωνι",
+      "transliteration": "syn tō kausōni",
+      "meaning": "con el viento ardiente",
+      "context": "Kausōn puede ser el calor del sol o el siroco, el viento caliente del desierto que en un día seca los campos de Israel. Jesús usa la palabra en Lucas 12:55: «hará calor»."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 11,
+      "word": "se marchitará",
+      "greek": "μαρανθήσεται",
+      "transliteration": "maranthēsetai",
+      "meaning": "se secará",
+      "context": "Lo contrario es amarantos, «que no se marchita»: así describe Pedro la herencia que Dios nos guarda (1 Pedro 1:4) y la corona de gloria (1 Pedro 5:4)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 11,
+      "word": "empresas",
+      "greek": "ἐν ταῖς πορείαις αὐτοῦ",
+      "transliteration": "en tais poreiais autou",
+      "meaning": "en sus caminos",
+      "context": "Literalmente, «en sus viajes». El rico se marchita en plena actividad, en medio de sus negocios, como los comerciantes de 4:13–14."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 12,
+      "word": "Bienaventurado",
+      "greek": "μακάριος",
+      "transliteration": "makarios",
+      "meaning": "dichoso",
+      "context": "La palabra de las bienaventuranzas (Mateo 5:3–12). Santiago la usa otra vez en 1:25, y en 5:11 llama dichosos a los que sufrieron."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 12,
+      "word": "persevera",
+      "greek": "ὑπομένει",
+      "transliteration": "hypomenei",
+      "meaning": "se queda bajo",
+      "context": "Es el verbo de la paciencia del v. 3: no escapar de la prueba, sino atravesarla."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 12,
+      "word": "aprobado",
+      "greek": "δόκιμος",
+      "transliteration": "dokimos",
+      "meaning": "probado y aceptado",
+      "context": "Se decía del metal o de la moneda que pasaba la prueba y era declarada genuina. Es de la misma familia que «la prueba de su fe» del v. 3."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 12,
+      "word": "corona de la vida",
+      "greek": "τὸν στέφανον τῆς ζωῆς",
+      "transliteration": "ton stephanon tēs zōēs",
+      "meaning": "la corona que es la vida",
+      "context": "El stephanos era la corona de laurel u olivo del vencedor en los juegos, no la de un rey. La corona es la vida misma. Jesús promete lo mismo: sé fiel hasta la muerte, y te daré la corona de la vida (Apocalipsis 2:10)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 12,
+      "word": "a los que lo aman",
+      "greek": "τοῖς ἀγαπῶσιν αὐτόν",
+      "transliteration": "tois agapōsin auton",
+      "meaning": "a los que lo aman",
+      "context": "La promesa no es para los que nunca fallan, sino para los que aman a Dios. Santiago repite la frase en 2:5: el reino prometido a los que lo aman."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 13,
+      "word": "tentado",
+      "greek": "πειραζόμενος",
+      "transliteration": "peirazomenos",
+      "meaning": "probado o tentado",
+      "context": "Es la raíz de «pruebas» en los vv. 2 y 12. La misma situación puede ser una prueba que Dios usa para hacernos crecer o una tentación hacia el mal; depende de lo que hacemos con ella."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 13,
+      "word": "no puede ser tentado",
+      "greek": "ἀπείραστος κακῶν",
+      "transliteration": "apeirastos kakōn",
+      "meaning": "intocable por el mal",
+      "context": "Única vez en el Nuevo Testamento. El mal no tiene ningún punto de apoyo en Dios, y Él no empuja a nadie hacia el mal."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 14,
+      "word": "llevado",
+      "greek": "ἐξελκόμενος",
+      "transliteration": "exelkomenos",
+      "meaning": "arrastrado afuera",
+      "context": "Un término de caza y de pesca: sacar a la presa de su escondite. Única vez en el Nuevo Testamento."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 14,
+      "word": "seducido",
+      "greek": "δελεαζόμενος",
+      "transliteration": "deleazomenos",
+      "meaning": "atraído con carnada",
+      "context": "Viene de delear, la carnada del anzuelo. La tentación esconde el anzuelo detrás de algo atractivo. Pedro usa el mismo verbo para los que seducen a las almas inestables (2 Pedro 2:14, 18)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 14,
+      "word": "propia pasión",
+      "greek": "τῆς ἰδίας ἐπιθυμίας",
+      "transliteration": "tēs idias epithymias",
+      "meaning": "su propio deseo",
+      "context": "El problema no está solo afuera. El anzuelo funciona porque algo dentro de nosotros lo desea. En 4:1–2 Santiago muestra adónde llevan esas pasiones."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 15,
+      "word": "concebido",
+      "greek": "συλλαβοῦσα",
+      "transliteration": "syllabousa",
+      "meaning": "habiendo concebido",
+      "context": "Santiago cambia de imagen, de la pesca al nacimiento: el deseo queda embarazado. Es el verbo del anuncio a María: concebirás en tu vientre (Lucas 1:31)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 15,
+      "word": "da a luz",
+      "greek": "τίκτει",
+      "transliteration": "tiktei",
+      "meaning": "da a luz",
+      "context": "El deseo consentido no se queda en un pensamiento: crece y nace como pecado."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 15,
+      "word": "consumado",
+      "greek": "ἀποτελεσθεῖσα",
+      "transliteration": "apotelestheisa",
+      "meaning": "llegado a su madurez",
+      "context": "Cuando el pecado crece hasta su forma adulta. Es lo contrario de la paciencia del v. 4, que también madura, pero hasta hacernos perfectos y completos."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 15,
+      "word": "engendra la muerte",
+      "greek": "ἀποκύει θάνατον",
+      "transliteration": "apokyei thanaton",
+      "meaning": "da a luz la muerte",
+      "context": "Apokyeō solo aparece aquí y en el v. 18, donde Dios «nos hizo nacer». Hay dos nacimientos posibles: el deseo da a luz la muerte; Dios da a luz la vida."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 16,
+      "word": "no se engañen",
+      "greek": "μὴ πλανᾶσθε",
+      "transliteration": "mē planasthe",
+      "meaning": "no se extravíen",
+      "context": "De la misma raíz que el hermano que «se extravía» en 5:19. El error que Santiago corrige es pensar que el mal viene de Dios. De Él solo viene lo bueno."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 17,
+      "word": "buena dádiva",
+      "greek": "δόσις ἀγαθή",
+      "transliteration": "dosis agathē",
+      "meaning": "buen dar",
+      "context": "Dosis es el acto de dar, y dōrēma, «don», es el regalo mismo. En griego la frase tiene el ritmo de un verso de poesía, quizá un dicho conocido."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 17,
+      "word": "Padre de las luces",
+      "greek": "τοῦ πατρὸς τῶν φώτων",
+      "transliteration": "tou patros tōn phōtōn",
+      "meaning": "Padre de los astros",
+      "context": "Dios creó el sol, la luna y las estrellas (Génesis 1:14–18; Salmo 136:7). Los astros cambian; su Creador no."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 17,
+      "word": "cambio",
+      "greek": "παραλλαγή",
+      "transliteration": "parallagē",
+      "meaning": "variación",
+      "context": "Única vez en el Nuevo Testamento. Los astros cambian de lugar y de brillo, y la luna crece y mengua. Dios no."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 17,
+      "word": "sombra de variación",
+      "greek": "τροπῆς ἀποσκίασμα",
+      "transliteration": "tropēs aposkiasma",
+      "meaning": "sombra producida por un giro",
+      "context": "Como la sombra que se mueve en un reloj de sol, o el eclipse que oscurece la luz. En Dios no hay giros ni sombras: Yo, el Señor, no cambio (Malaquías 3:6)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 18,
+      "word": "nos hizo nacer",
+      "greek": "ἀπεκύησεν",
+      "transliteration": "apekyēsen",
+      "meaning": "nos dio a luz",
+      "context": "El mismo verbo del v. 15. El deseo da a luz la muerte, pero Dios, por su voluntad, nos dio a luz a una vida nueva (compara 1 Pedro 1:23)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 18,
+      "word": "palabra de verdad",
+      "greek": "λόγῳ ἀληθείας",
+      "transliteration": "logō alētheias",
+      "meaning": "por la palabra de verdad",
+      "context": "El evangelio (Efesios 1:13; Colosenses 1:5). Es la misma palabra que en el v. 21 está implantada y que en el v. 22 hay que poner en práctica."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 18,
+      "word": "primicias",
+      "greek": "ἀπαρχή",
+      "transliteration": "aparchē",
+      "meaning": "primeros frutos",
+      "context": "Los primeros frutos de la cosecha se ofrecían a Dios como señal de que toda la cosecha le pertenecía (Levítico 23:10). Los creyentes son el anticipo de la nueva creación."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 19,
+      "word": "pronto para oír",
+      "greek": "ταχὺς εἰς τὸ ἀκοῦσαι",
+      "transliteration": "tachys eis to akousai",
+      "meaning": "rápido para escuchar",
+      "context": "Escuchar primero, a Dios en su palabra y a las personas. Es lo único que Santiago pide hacer rápido."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 19,
+      "word": "tardo para hablar",
+      "greek": "βραδὺς εἰς τὸ λαλῆσαι",
+      "transliteration": "bradys eis to lalēsai",
+      "meaning": "lento para hablar",
+      "context": "Santiago desarrolla esta idea en el capítulo 3, el poder de la lengua. En las muchas palabras no falta pecado (Proverbios 10:19)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 19,
+      "word": "tardo para la ira",
+      "greek": "βραδὺς εἰς ὀργήν",
+      "transliteration": "bradys eis orgēn",
+      "meaning": "lento para el enojo",
+      "context": "Así describe la Biblia a Dios mismo: lento para la ira y grande en misericordia (Éxodo 34:6; Salmo 103:8)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 20,
+      "word": "ira del hombre",
+      "greek": "ὀργὴ ἀνδρός",
+      "transliteration": "orgē andros",
+      "meaning": "el enojo humano",
+      "context": "El enojo no produce la vida justa que Dios quiere, aunque parezca tener una causa justa. Lo que sí la produce aparece en 3:18: la justicia se siembra en paz."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 21,
+      "word": "desechando",
+      "greek": "ἀποθέμενοι",
+      "transliteration": "apothemenoi",
+      "meaning": "quitándose",
+      "context": "El verbo de quitarse la ropa. Pablo lo usa para despojarse del viejo hombre (Efesios 4:22) y Pedro para desechar toda malicia (1 Pedro 2:1)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 21,
+      "word": "con humildad",
+      "greek": "ἐν πραΰτητι",
+      "transliteration": "en prautēti",
+      "meaning": "con mansedumbre",
+      "context": "La misma palabra de la «sabia mansedumbre» de 3:13. Recibir la palabra con un corazón enseñable, como tierra preparada para la semilla."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 21,
+      "word": "palabra implantada",
+      "greek": "τὸν ἔμφυτον λόγον",
+      "transliteration": "ton emphyton logon",
+      "meaning": "la palabra plantada adentro",
+      "context": "Única vez en el Nuevo Testamento. Una palabra sembrada en el corazón que echa raíces y crece, como en la parábola del sembrador (Lucas 8:11–15). Recuerda la promesa: pondré mi ley dentro de ellos (Jeremías 31:33)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 21,
+      "word": "salvar sus almas",
+      "greek": "σῶσαι τὰς ψυχὰς ὑμῶν",
+      "transliteration": "sōsai tas psychas hymōn",
+      "meaning": "salvar sus vidas",
+      "context": "Psychē es la vida entera de la persona. Santiago termina la carta con una frase parecida: el que hace volver a un pecador salvará su alma de muerte (5:20)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 22,
+      "word": "hacedores",
+      "greek": "ποιηταί",
+      "transliteration": "poiētai",
+      "meaning": "hacedores",
+      "context": "De poiētēs viene «poeta», el que hace o crea algo. Jesús terminó el Sermón del Monte con esta idea: el que oye y hace es como el que edifica sobre la roca (Mateo 7:24–27)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 22,
+      "word": "oidores",
+      "greek": "ἀκροαταί",
+      "transliteration": "akroatai",
+      "meaning": "oyentes",
+      "context": "Era la palabra para el público que escuchaba a un orador. Pablo dice lo mismo: no los oidores de la ley son justos ante Dios, sino los hacedores (Romanos 2:13)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 22,
+      "word": "se engañan a sí mismos",
+      "greek": "παραλογιζόμενοι ἑαυτούς",
+      "transliteration": "paralogizomenoi heautous",
+      "meaning": "razonando mal consigo mismos",
+      "context": "Un engaño por mal cálculo: creer que oír es lo mismo que obedecer."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 23,
+      "word": "rostro natural",
+      "greek": "τὸ πρόσωπον τῆς γενέσεως αὐτοῦ",
+      "transliteration": "to prosōpon tēs geneseōs autou",
+      "meaning": "el rostro de su nacimiento",
+      "context": "Literalmente, «el rostro de su génesis»: la cara con la que nació. La misma palabra genesis aparece en 3:6, en «el curso de nuestra vida»."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 23,
+      "word": "espejo",
+      "greek": "ἐσόπτρῳ",
+      "transliteration": "esoptrō",
+      "meaning": "espejo",
+      "context": "Los espejos de la época eran de bronce o cobre pulido y daban una imagen imperfecta (compara 1 Corintios 13:12). Servían para una mirada rápida."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 24,
+      "word": "se olvida",
+      "greek": "ἐπελάθετο",
+      "transliteration": "epelatheto",
+      "meaning": "se olvidó",
+      "context": "Santiago describe la escena con tres verbos rápidos: se mira, se va y se olvida. Oír sin hacer es como no haberse visto."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 25,
+      "word": "mira atentamente",
+      "greek": "παρακύψας",
+      "transliteration": "parakypsas",
+      "meaning": "inclinándose para mirar",
+      "context": "Agacharse para ver mejor, como el discípulo que se inclinó para mirar dentro de la tumba vacía (Juan 20:5). Ya no es la mirada rápida del espejo."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 25,
+      "word": "ley de la libertad",
+      "greek": "νόμον τέλειον τὸν τῆς ἐλευθερίας",
+      "transliteration": "nomon teleion ton tēs eleutherias",
+      "meaning": "la ley perfecta, la de la libertad",
+      "context": "Una ley que no esclaviza, porque Dios la escribe en el corazón. Santiago vuelve a ella en 2:12: hablen y actúen como los que serán juzgados por la ley de la libertad."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 26,
+      "word": "religioso",
+      "greek": "θρησκός",
+      "transliteration": "thrēskos",
+      "meaning": "devoto",
+      "context": "Única vez en el Nuevo Testamento. Habla de la religión que se ve: oraciones, ayunos, reuniones, ritos."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 26,
+      "word": "refrena",
+      "greek": "χαλιναγωγῶν",
+      "transliteration": "chalinagōgōn",
+      "meaning": "llevando con freno",
+      "context": "La primera vez que aparece la imagen que Santiago desarrolla en el capítulo 3: el freno en la boca del caballo (3:2–3)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 26,
+      "word": "vana",
+      "greek": "μάταιος",
+      "transliteration": "mataios",
+      "meaning": "vacía, sin fruto",
+      "context": "Una religión hueca, que no produce nada. Pedro usa la palabra para la vana manera de vivir de la que Cristo nos rescató (1 Pedro 1:18)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 27,
+      "word": "pura y sin mancha",
+      "greek": "καθαρὰ καὶ ἀμίαντος",
+      "transliteration": "kathara kai amiantos",
+      "meaning": "limpia y sin contaminación",
+      "context": "Palabras del templo y de los sacrificios. Pero la pureza que Dios busca no es solo de ritos: se ve en el amor por los más débiles."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 27,
+      "word": "visitar",
+      "greek": "ἐπισκέπτεσθαι",
+      "transliteration": "episkeptesthai",
+      "meaning": "visitar para cuidar",
+      "context": "No es una visita de cortesía: es ir a ver qué necesita alguien y ocuparse de él. Jesús dijo: estuve enfermo, y me visitaron (Mateo 25:36). Dios mismo visitó a su pueblo (Lucas 1:68)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 27,
+      "word": "huérfanos",
+      "greek": "ὀρφανοὺς καὶ χήρας",
+      "transliteration": "orphanous kai chēras",
+      "meaning": "huérfanos y viudas",
+      "context": "En la Biblia son los más desprotegidos, y Dios se declara su defensor: Padre de los huérfanos y defensor de las viudas (Salmo 68:5; Deuteronomio 10:18)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 1,
+      "verse": 27,
+      "word": "sin mancha del mundo",
+      "greek": "ἄσπιλον ἀπὸ τοῦ κόσμου",
+      "transliteration": "aspilon apo tou kosmou",
+      "meaning": "sin manchas del mundo",
+      "context": "En 3:6 la lengua mancha todo el cuerpo, y en 4:4 la amistad del mundo es enemistad con Dios. El amor hacia afuera y la pureza hacia adentro van juntos."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 1,
+      "word": "glorioso Señor Jesucristo",
+      "greek": "τοῦ κυρίου ἡμῶν Ἰησοῦ Χριστοῦ τῆς δόξης",
+      "transliteration": "tou kyriou hēmōn Iēsou Christou tēs doxēs",
+      "meaning": "nuestro Señor Jesucristo, el de la gloria",
+      "context": "Literalmente, «de la gloria». Frente al Señor de la gloria, la gloria de un anillo o de una ropa fina no vale nada. Es la segunda y última vez que Santiago nombra a Jesús; la primera está en 1:1."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 1,
+      "word": "favoritismo",
+      "greek": "προσωπολημψία",
+      "transliteration": "prosōpolēmpsia",
+      "meaning": "recibir la cara",
+      "context": "Juzgar a alguien por su apariencia. La palabra viene de una expresión hebrea, «levantar el rostro», y en griego solo la usan los escritores cristianos. Dios no hace acepción de personas (Hechos 10:34; Romanos 2:11)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 2,
+      "word": "congregación",
+      "greek": "συναγωγή",
+      "transliteration": "synagōgē",
+      "meaning": "sinagoga, reunión",
+      "context": "Santiago llama sinagoga a la reunión de los creyentes. Es la única vez que el Nuevo Testamento usa esa palabra para una reunión cristiana, y muestra lo judío de las iglesias a las que escribe."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 2,
+      "word": "anillo de oro",
+      "greek": "χρυσοδακτύλιος",
+      "transliteration": "chrysodaktylios",
+      "meaning": "con dedos de oro",
+      "context": "Una sola palabra: «dedos de oro», alguien con anillos de oro. Única vez en el Nuevo Testamento. En Roma, el anillo de oro distinguía a los de la clase alta."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 2,
+      "word": "ropa lujosa",
+      "greek": "ἐσθῆτι λαμπρᾷ",
+      "transliteration": "esthēti lampra",
+      "meaning": "ropa brillante",
+      "context": "Lampros es «resplandeciente». Es la misma ropa espléndida que Herodes le puso a Jesús para burlarse de Él (Lucas 23:11)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 2,
+      "word": "ropa sucia",
+      "greek": "ῥυπαρᾷ ἐσθῆτι",
+      "transliteration": "rhypara esthēti",
+      "meaning": "ropa manchada",
+      "context": "La ropa de quien trabaja con las manos o no tiene otra. Es de la misma familia que la «inmundicia» de 1:21: lo que hay que limpiar no es la ropa del pobre, sino el corazón."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 3,
+      "word": "estrado",
+      "greek": "ὑποπόδιον",
+      "transliteration": "hypopodion",
+      "meaning": "escabel",
+      "context": "El banquito donde se apoyan los pies. Sentar al pobre junto al estrado era ponerlo a la altura de los pies del que manda. En el Salmo 110:1, Dios pone a los enemigos por estrado de los pies del rey."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 4,
+      "word": "distinciones",
+      "greek": "διεκρίθητε",
+      "transliteration": "diekrithēte",
+      "meaning": "se dividieron",
+      "context": "Es el verbo de 1:6, «el que duda». Quien hace diferencias entre las personas está dividido por dentro, como el hombre de doble ánimo."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 4,
+      "word": "malos pensamientos",
+      "greek": "διαλογισμῶν πονηρῶν",
+      "transliteration": "dialogismōn ponērōn",
+      "meaning": "razonamientos malvados",
+      "context": "Jueces que deciden con criterios torcidos. Jesús dijo que de dentro del corazón salen los malos pensamientos (Marcos 7:21, la misma palabra)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 5,
+      "word": "escogió",
+      "greek": "ἐξελέξατο",
+      "transliteration": "exelexato",
+      "meaning": "eligió",
+      "context": "Dios elige a los que el mundo no tiene en cuenta: lo necio, lo débil, lo despreciado (1 Corintios 1:26–29)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 5,
+      "word": "ricos en fe",
+      "greek": "πλουσίους ἐν πίστει",
+      "transliteration": "plousious en pistei",
+      "meaning": "ricos en fe",
+      "context": "Pobres a los ojos del mundo, pero ricos donde importa. Jesús dijo: dichosos ustedes los pobres, porque suyo es el reino de Dios (Lucas 6:20)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 5,
+      "word": "herederos del reino",
+      "greek": "κληρονόμους τῆς βασιλείας",
+      "transliteration": "klēronomous tēs basileias",
+      "meaning": "herederos del reino",
+      "context": "La única vez que Santiago habla del reino. La herencia no se compra: se recibe por ser hijo. Es la misma promesa de 1:12, para los que aman a Dios."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 6,
+      "word": "despreciado",
+      "greek": "ἠτιμάσατε",
+      "transliteration": "ētimasate",
+      "meaning": "deshonraron",
+      "context": "Quitarle a alguien su honra. El que oprime al pobre afrenta a su Hacedor (Proverbios 14:31)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 6,
+      "word": "oprimen",
+      "greek": "καταδυναστεύουσιν",
+      "transliteration": "katadynasteuousin",
+      "meaning": "dominan con fuerza",
+      "context": "Usar el poder para aplastar a otros. Pedro usa el mismo verbo para los oprimidos por el diablo a quienes Jesús sanó (Hechos 10:38)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 6,
+      "word": "arrastran",
+      "greek": "ἕλκουσιν",
+      "transliteration": "helkousin",
+      "meaning": "arrastran",
+      "context": "Llevar a alguien a la fuerza, como arrastraron a Pablo y a Silas ante las autoridades de Filipos (Hechos 16:19)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 7,
+      "word": "buen nombre",
+      "greek": "τὸ καλὸν ὄνομα",
+      "transliteration": "to kalon onoma",
+      "meaning": "el hermoso nombre",
+      "context": "Probablemente el nombre de Cristo, pronunciado sobre ellos en el bautismo. En Antioquía, a los discípulos los empezaron a llamar cristianos (Hechos 11:26)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 8,
+      "word": "ley real",
+      "greek": "νόμον βασιλικόν",
+      "transliteration": "nomon basilikon",
+      "meaning": "la ley del rey",
+      "context": "La ley del Rey, la que manda sobre las demás. Jesús enseñó que de amar a Dios y al prójimo dependen toda la ley y los profetas (Mateo 22:37–40)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 8,
+      "word": "conforme a la Escritura",
+      "greek": "κατὰ τὴν γραφήν",
+      "transliteration": "kata tēn graphēn",
+      "meaning": "según la Escritura",
+      "context": "Santiago cita Levítico 19:18. Ese mismo capítulo prohíbe el favoritismo en el juicio, sea hacia el pobre o hacia el rico (Levítico 19:15)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 8,
+      "word": "prójimo",
+      "greek": "τὸν πλησίον",
+      "transliteration": "ton plēsion",
+      "meaning": "el que está cerca",
+      "context": "Con la parábola del buen samaritano, Jesús mostró que el prójimo es cualquiera que está cerca y necesita ayuda (Lucas 10:29–37)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 8,
+      "word": "bien hacen",
+      "greek": "καλῶς ποιεῖτε",
+      "transliteration": "kalōs poieite",
+      "meaning": "hacen bien",
+      "context": "La misma expresión vuelve en el v. 19, esta vez con ironía: crees que Dios es uno; «haces bien»."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 9,
+      "word": "muestran favoritismo",
+      "greek": "προσωπολημπτεῖτε",
+      "transliteration": "prosōpolēmpteite",
+      "meaning": "hacen acepción de personas",
+      "context": "El verbo de la palabra del v. 1. Única vez en el Nuevo Testamento."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 9,
+      "word": "transgresores",
+      "greek": "παραβάται",
+      "transliteration": "parabatai",
+      "meaning": "los que pasan el límite",
+      "context": "Parabatēs es el que cruza una línea. El favoritismo no es una falta de cortesía: es pasar por encima de la ley de Dios."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 10,
+      "word": "guarda toda la ley",
+      "greek": "ὅλον τὸν νόμον τηρήσῃ",
+      "transliteration": "holon ton nomon tērēsē",
+      "meaning": "guarde la ley entera",
+      "context": "La ley es un todo, como una cadena: si se rompe un eslabón, se rompe la cadena. Pablo dice algo parecido en Gálatas 3:10 y 5:3."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 10,
+      "word": "falla",
+      "greek": "πταίσῃ",
+      "transliteration": "ptaisē",
+      "meaning": "tropieza",
+      "context": "Es el verbo de 3:2: todos tropezamos de muchas maneras."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 10,
+      "word": "en un punto",
+      "greek": "ἐν ἑνί",
+      "transliteration": "en heni",
+      "meaning": "en uno solo",
+      "context": "Basta un mandamiento quebrantado. En este contexto, el favoritismo del v. 9: no se puede cumplir el resto de la ley y despreciar al pobre."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 10,
+      "word": "culpable de todos",
+      "greek": "πάντων ἔνοχος",
+      "transliteration": "pantōn enochos",
+      "meaning": "responsable de todo",
+      "context": "Enochos es estar sujeto a juicio, como en Mateo 5:22. Santiago no dice que todos los pecados sean iguales, sino que cualquiera nos hace transgresores ante el único Legislador (4:12)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 11,
+      "word": "el que dijo",
+      "greek": "ὁ εἰπών",
+      "transliteration": "ho eipōn",
+      "meaning": "el que dijo",
+      "context": "La ley es una sola porque viene de un solo Dios. Quien quebranta un mandamiento ofende al mismo Dios que dio todos los demás."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 11,
+      "word": "No cometas adulterio",
+      "greek": "μὴ μοιχεύσῃς",
+      "transliteration": "mē moicheusēs",
+      "meaning": "no cometas adulterio",
+      "context": "Santiago pone el adulterio antes que el homicidio, el mismo orden que siguen Lucas 18:20 y Romanos 13:9."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 12,
+      "word": "Así hablen",
+      "greek": "οὕτως λαλεῖτε καὶ οὕτως ποιεῖτε",
+      "transliteration": "houtōs laleite kai houtōs poieite",
+      "meaning": "así hablen y así hagan",
+      "context": "Palabras y obras juntas: los dos grandes temas de la carta, la lengua (capítulo 3) y las obras (2:14–26)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 12,
+      "word": "ley de la libertad",
+      "greek": "νόμου ἐλευθερίας",
+      "transliteration": "nomou eleutherias",
+      "meaning": "la ley de la libertad",
+      "context": "La misma ley de 1:25, una ley que libera porque Dios la escribe en el corazón. Por ella seremos juzgados."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 13,
+      "word": "sin misericordia",
+      "greek": "ἀνέλεος",
+      "transliteration": "aneleos",
+      "meaning": "despiadado",
+      "context": "Única vez en el Nuevo Testamento. Es la lección de la parábola del siervo que no quiso perdonar a su compañero (Mateo 18:23–35)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 13,
+      "word": "mostrado misericordia",
+      "greek": "ποιήσαντι ἔλεος",
+      "transliteration": "poiēsanti eleos",
+      "meaning": "haber hecho misericordia",
+      "context": "En griego la misericordia se «hace»: es una acción, no solo un sentimiento. Así prepara el tema de las obras, que empieza en el v. 14."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 13,
+      "word": "misericordia triunfa",
+      "greek": "κατακαυχᾶται ἔλεος κρίσεως",
+      "transliteration": "katakauchatai eleos kriseōs",
+      "meaning": "la misericordia se gloría sobre el juicio",
+      "context": "Literalmente, la misericordia «se jacta» frente al juicio: tiene la última palabra. Jesús dijo: dichosos los misericordiosos, porque ellos recibirán misericordia (Mateo 5:7)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 14,
+      "word": "¿De qué sirve",
+      "greek": "τί τὸ ὄφελος",
+      "transliteration": "ti to ophelos",
+      "meaning": "¿cuál es el provecho?",
+      "context": "Santiago discute como los maestros de su época, con preguntas y un oponente imaginario. Repite la misma pregunta al final del v. 16."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 14,
+      "word": "dice que tiene fe",
+      "greek": "πίστιν λέγῃ τις ἔχειν",
+      "transliteration": "pistin legē tis echein",
+      "meaning": "alguien dice tener fe",
+      "context": "Santiago no habla de la fe verdadera, sino de la que solo se dice. El problema es una fe de palabras."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 14,
+      "word": "salvarlo",
+      "greek": "μὴ δύναται ἡ πίστις σῶσαι αὐτόν",
+      "transliteration": "mē dynatai hē pistis sōsai auton",
+      "meaning": "¿puede esa fe salvarlo?",
+      "context": "En griego dice «la fe», con artículo: esa fe, la que no tiene obras. La pregunta espera un «no». Pablo lo dice con otras palabras: lo que vale es la fe que obra por el amor (Gálatas 5:6)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 15,
+      "word": "sustento diario",
+      "greek": "τῆς ἐφημέρου τροφῆς",
+      "transliteration": "tēs ephēmerou trophēs",
+      "meaning": "el alimento del día",
+      "context": "Única vez en el Nuevo Testamento: la comida de cada día, lo que Jesús nos enseñó a pedir en el Padre Nuestro (Mateo 6:11)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 16,
+      "word": "Vayan en paz",
+      "greek": "ὑπάγετε ἐν εἰρήνῃ",
+      "transliteration": "hypagete en eirēnē",
+      "meaning": "vayan en paz",
+      "context": "La despedida piadosa de costumbre. Sin ayuda real, la bendición se convierte en una frase vacía."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 16,
+      "word": "caliéntense y sáciense",
+      "greek": "θερμαίνεσθε καὶ χορτάζεσθε",
+      "transliteration": "thermainesthe kai chortazesthe",
+      "meaning": "caliéntense y llénense",
+      "context": "Buenos deseos que no calientan a nadie. Juan dice lo mismo: no amemos de palabra, sino de hecho y en verdad (1 Juan 3:17–18)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 17,
+      "word": "muerta",
+      "greek": "νεκρά",
+      "transliteration": "nekra",
+      "meaning": "muerta",
+      "context": "No dice débil ni pequeña: una fe sin obras está muerta, como un cuerpo sin espíritu (v. 26)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 18,
+      "word": "alguien dirá",
+      "greek": "ἀλλ᾽ ἐρεῖ τις",
+      "transliteration": "all erei tis",
+      "meaning": "pero dirá alguno",
+      "context": "Santiago da la palabra a un interlocutor, como hacían los maestros de su época. No es fácil saber dónde terminan sus palabras; por eso las versiones ponen las comillas de maneras distintas."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 18,
+      "word": "Muéstrame",
+      "greek": "δεῖξόν μοι",
+      "transliteration": "deixon moi",
+      "meaning": "muéstrame",
+      "context": "La fe no se ve; las obras sí. La única manera de mostrar la fe es por lo que hace."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 19,
+      "word": "Dios es uno",
+      "greek": "εἷς ἐστιν ὁ θεός",
+      "transliteration": "heis estin ho theos",
+      "meaning": "Dios es uno",
+      "context": "Es la confesión que Israel repetía cada día, el Shemá: Escucha, Israel, el Señor nuestro Dios, el Señor uno es (Deuteronomio 6:4). Creerlo es correcto, pero no basta."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 19,
+      "word": "demonios",
+      "greek": "τὰ δαιμόνια",
+      "transliteration": "ta daimonia",
+      "meaning": "los demonios",
+      "context": "Su fe es correcta en el contenido: saben quién es Jesús (Marcos 1:24; 5:7). Pero esa fe no los cambia."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 19,
+      "word": "tiemblan",
+      "greek": "φρίσσουσιν",
+      "transliteration": "phrissousin",
+      "meaning": "se estremecen",
+      "context": "Única vez en el Nuevo Testamento: temblar de terror, con los pelos de punta. Saber la verdad sobre Dios sin amarlo produce miedo, no vida."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 20,
+      "word": "hombre vano",
+      "greek": "ὦ ἄνθρωπε κενέ",
+      "transliteration": "ō anthrōpe kene",
+      "meaning": "hombre vacío",
+      "context": "Kenos, vacío. Una fe sin obras deja a la persona hueca por dentro."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 20,
+      "word": "estéril",
+      "greek": "ἀργή",
+      "transliteration": "argē",
+      "meaning": "ociosa, que no trabaja",
+      "context": "De a-ergos, «sin obra». Hay un juego de palabras: la fe sin obras (erga) es argē, una fe que no trabaja."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 21,
+      "word": "justificado",
+      "greek": "ἐδικαιώθη",
+      "transliteration": "edikaiōthē",
+      "meaning": "fue declarado justo",
+      "context": "Pablo usa la misma palabra para mostrar que Dios justifica por la fe (Romanos 4:2–5). Santiago responde a otro problema: una fe que no hace nada. Para los dos, la fe verdadera se ve en obras (Gálatas 5:6)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 21,
+      "word": "ofreció a su hijo Isaac",
+      "greek": "ἀνενέγκας Ἰσαάκ",
+      "transliteration": "anenenkas Isaak",
+      "meaning": "habiendo ofrecido a Isaac",
+      "context": "La historia está en Génesis 22. Abraham obedeció confiando en que Dios podía resucitar a su hijo (Hebreos 11:17–19). Dios detuvo su mano y proveyó un carnero."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 22,
+      "word": "actuaba juntamente",
+      "greek": "συνήργει",
+      "transliteration": "synērgei",
+      "meaning": "trabajaba junto con",
+      "context": "De aquí viene «sinergia»: la fe y las obras trabajando juntas. No compiten: la fe actúa por medio de las obras."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 22,
+      "word": "perfeccionada",
+      "greek": "ἐτελειώθη",
+      "transliteration": "eteleiōthē",
+      "meaning": "llegó a su meta",
+      "context": "De la familia de teleios, «completo» (1:4). La obediencia de Abraham llevó su fe a la madurez."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 23,
+      "word": "contado por justicia",
+      "greek": "ἐλογίσθη αὐτῷ εἰς δικαιοσύνην",
+      "transliteration": "elogisthē autō eis dikaiosynēn",
+      "meaning": "se le acreditó como justicia",
+      "context": "Cita de Génesis 15:6, muchos años antes de Génesis 22. Cuando Abraham ofreció a Isaac, esa palabra «se cumplió»: su fe mostró lo que era."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 23,
+      "word": "amigo de Dios",
+      "greek": "φίλος θεοῦ",
+      "transliteration": "philos theou",
+      "meaning": "amigo de Dios",
+      "context": "Así llaman a Abraham 2 Crónicas 20:7 e Isaías 41:8. Compara 4:4: la amistad del mundo es enemistad hacia Dios."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 24,
+      "word": "no solo por la fe",
+      "greek": "οὐκ ἐκ πίστεως μόνον",
+      "transliteration": "ouk ek pisteōs monon",
+      "meaning": "no por fe sola",
+      "context": "Santiago rechaza una fe sola, separada de las obras. La fe que salva nunca está sola."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 25,
+      "word": "ramera Rahab",
+      "greek": "Ῥαὰβ ἡ πόρνη",
+      "transliteration": "Rhaab hē pornē",
+      "meaning": "Rahab la prostituta",
+      "context": "Una mujer cananea con un pasado conocido. Santiago la pone junto a Abraham, el padre del pueblo: la fe que obra no depende de quién eras antes. Rahab aparece en la genealogía de Jesús (Mateo 1:5)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 25,
+      "word": "recibió a los mensajeros",
+      "greek": "ὑποδεξαμένη τοὺς ἀγγέλους",
+      "transliteration": "hypodexamenē tous angelous",
+      "meaning": "habiendo recibido a los mensajeros",
+      "context": "Los dos espías que Josué envió a Jericó. Rahab los escondió en su azotea, bajo unos tallos de lino (Josué 2:1–6)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 25,
+      "word": "otro camino",
+      "greek": "ἑτέρᾳ ὁδῷ",
+      "transliteration": "hetera hodō",
+      "meaning": "por otro camino",
+      "context": "Su casa estaba sobre la muralla, y los bajó con una cuerda por la ventana para que huyeran a las montañas (Josué 2:15–16). El cordón rojo atado a esa ventana salvó a su familia (Josué 2:18–21)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 26,
+      "word": "cuerpo sin el espíritu",
+      "greek": "τὸ σῶμα χωρὶς πνεύματος",
+      "transliteration": "to sōma chōris pneumatos",
+      "meaning": "el cuerpo sin aliento",
+      "context": "Pneuma también significa aliento. Un cuerpo sin aliento es un cadáver; así es una fe sin obras."
+    },
+    {
+      "book": "santiago",
+      "chapter": 2,
+      "verse": 26,
+      "word": "está muerta",
+      "greek": "νεκρά ἐστιν",
+      "transliteration": "nekra estin",
+      "meaning": "está muerta",
+      "context": "Santiago termina como en el v. 17: la fe sin obras está muerta. La fe viva respira por medio de sus obras."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 1,
+      "word": "maestros",
+      "greek": "διδάσκαλοι",
+      "transliteration": "didaskaloi",
+      "meaning": "los que enseñan",
+      "context": "En la iglesia primitiva enseñar era un ministerio reconocido (Hechos 13:1; 1 Corintios 12:28). Santiago no prohíbe enseñar. Advierte que quien enseña carga con más responsabilidad."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 1,
+      "word": "juicio más severo",
+      "greek": "μεῖζον κρίμα",
+      "transliteration": "meizon krima",
+      "meaning": "un juicio mayor",
+      "context": "Santiago dice «recibiremos» y se incluye a sí mismo. A mayor influencia, más cuentas que rendir (compara Lucas 12:48)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 2,
+      "word": "fallamos",
+      "greek": "πταίομεν",
+      "transliteration": "ptaiomen",
+      "meaning": "tropezamos",
+      "context": "Es la imagen de alguien que da un traspié en el camino. Santiago usa el mismo verbo en 2:10. Nadie está libre de tropezar, y de muchas maneras."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 2,
+      "word": "en lo que dice",
+      "greek": "ἐν λόγῳ",
+      "transliteration": "en logō",
+      "meaning": "en palabra",
+      "context": "Las palabras son el terreno donde más tropezamos. Por eso el dominio de la lengua sirve como prueba de madurez."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 2,
+      "word": "perfecto",
+      "greek": "τέλειος",
+      "transliteration": "teleios",
+      "meaning": "completo, maduro",
+      "context": "No quiere decir «sin pecado». Describe a una persona madura, que ha llegado a la meta. Es una palabra favorita de Santiago (1:4, 17, 25)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 2,
+      "word": "refrenar",
+      "greek": "χαλιναγωγῆσαι",
+      "transliteration": "chalinagōgēsai",
+      "meaning": "guiar con freno",
+      "context": "Literalmente, «llevar con la brida». Santiago ya la usó en 1:26, y aquí prepara la imagen del versículo siguiente: el freno en la boca del caballo."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 3,
+      "word": "freno",
+      "greek": "χαλινός",
+      "transliteration": "chalinos",
+      "meaning": "freno, bocado",
+      "context": "Un pedazo de metal en la boca dirige a un animal que pesa cientos de kilos. Lo pequeño gobierna lo grande."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 4,
+      "word": "naves",
+      "greek": "πλοῖα",
+      "transliteration": "ploia",
+      "meaning": "barcos",
+      "context": "Los barcos mercantes del Mediterráneo eran grandes. En el barco donde naufragó Pablo viajaban 276 personas (Hechos 27:37)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 4,
+      "word": "timón muy pequeño",
+      "greek": "ἐλαχίστου πηδαλίου",
+      "transliteration": "elachistou pēdaliou",
+      "meaning": "el timón más pequeño",
+      "context": "El timón antiguo era un remo grande a un lado de la popa; la palabra reaparece en Hechos 27:40. Elachistos es un superlativo, «pequeñísimo», y subraya el contraste con la nave."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 4,
+      "word": "la voluntad del piloto",
+      "greek": "ἡ ὁρμὴ τοῦ εὐθύνοντος",
+      "transliteration": "hē hormē tou euthynontos",
+      "meaning": "el impulso del que dirige",
+      "context": "El timón obedece al deseo de quien lo maneja. La pregunta de fondo es quién lleva el timón de nuestra lengua."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 5,
+      "word": "se jacta de grandes cosas",
+      "greek": "μεγάλα αὐχεῖ",
+      "transliteration": "megala auchei",
+      "meaning": "presume de cosas grandes",
+      "context": "La lengua es pequeña pero se cree grande, y sus efectos sí lo son. Santiago vuelve a la jactancia en 3:14 y 4:16."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 5,
+      "word": "qué gran bosque",
+      "greek": "ἡλίκον πῦρ ἡλίκην ὕλην",
+      "transliteration": "hēlikon pyr hēlikēn hylēn",
+      "meaning": "¡qué fuego, qué bosque!",
+      "context": "Santiago usa dos veces la misma palabra, hēlikos, con sentidos opuestos: qué pequeño el fuego y qué grande el bosque. Hylē es el bosque o la leña, todo el material listo para arder."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 6,
+      "word": "un mundo de iniquidad",
+      "greek": "ὁ κόσμος τῆς ἀδικίας",
+      "transliteration": "ho kosmos tēs adikias",
+      "meaning": "el mundo de la injusticia",
+      "context": "Todo un universo de maldad cabe en un miembro pequeño. En Santiago, «el mundo» es el sistema de valores que se opone a Dios (1:27; 4:4)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 6,
+      "word": "contamina",
+      "greek": "σπιλοῦσα",
+      "transliteration": "spilousa",
+      "meaning": "mancha",
+      "context": "Contrasta con 1:27, donde la religión pura se guarda sin mancha (aspilos) del mundo. La lengua mancha a la persona entera."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 6,
+      "word": "infierno",
+      "greek": "γέεννα",
+      "transliteration": "geenna",
+      "meaning": "Gehena",
+      "context": "El valle de Hinom, al sur de Jerusalén, asociado con la idolatría y después con el juicio de fuego. Fuera de los labios de Jesús, solo Santiago usa esta palabra en el Nuevo Testamento."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 6,
+      "word": "el curso de nuestra vida",
+      "greek": "τὸν τροχὸν τῆς γενέσεως",
+      "transliteration": "ton trochon tēs geneseōs",
+      "meaning": "la rueda de la existencia",
+      "context": "Literalmente, «la rueda del nacimiento»: todo el ciclo de la vida, de principio a fin. Una chispa de la lengua puede incendiar la vida entera."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 7,
+      "word": "toda clase",
+      "greek": "πᾶσα φύσις",
+      "transliteration": "pasa physis",
+      "meaning": "toda naturaleza, toda especie",
+      "context": "Fieras, aves, reptiles y animales marinos: la lista recuerda Génesis 1:26–28, donde Dios da al ser humano dominio sobre los animales."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 7,
+      "word": "ser humano",
+      "greek": "τῇ φύσει τῇ ἀνθρωπίνῃ",
+      "transliteration": "tē physei tē anthrōpinē",
+      "meaning": "la naturaleza humana",
+      "context": "Juego de palabras: toda naturaleza animal ha sido domada por la naturaleza humana. Pero esa misma naturaleza no logra domarse a sí misma."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 8,
+      "word": "domar",
+      "greek": "δαμάσαι",
+      "transliteration": "damasai",
+      "meaning": "domar, someter",
+      "context": "El mismo verbo aparece en Marcos 5:4: nadie podía dominar al endemoniado de Gadara. Lo que nadie pudo, Jesús lo hizo."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 8,
+      "word": "mal turbulento",
+      "greek": "ἀκατάστατον κακόν",
+      "transliteration": "akatastaton kakon",
+      "meaning": "un mal inquieto",
+      "context": "Un mal que no se queda quieto. Es la misma familia de palabras del hombre de doble ánimo en 1:8 y de la «confusión» de 3:16. Algunos manuscritos dicen «un mal imposible de contener», y por eso otras versiones traducen distinto."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 8,
+      "word": "veneno mortal",
+      "greek": "ἰοῦ θανατηφόρου",
+      "transliteration": "iou thanatēphorou",
+      "meaning": "veneno que trae muerte",
+      "context": "Eco del Salmo 140:3, que Pablo cita en Romanos 3:13: veneno de serpiente bajo los labios. La misma palabra, ios, significa «herrumbre» en Santiago 5:3."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 9,
+      "word": "bendecimos",
+      "greek": "εὐλογοῦμεν",
+      "transliteration": "eulogoumen",
+      "meaning": "hablamos bien de",
+      "context": "En la oración judía se bendecía a Dios muchas veces al día con fórmulas como «Bendito eres, Señor». La boca que bendice en la reunión puede maldecir a la salida."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 9,
+      "word": "maldecimos",
+      "greek": "καταρώμεθα",
+      "transliteration": "katarōmetha",
+      "meaning": "deseamos el mal",
+      "context": "Jesús enseñó lo contrario: bendecir a quienes nos maldicen (Lucas 6:28). Pablo lo repite en Romanos 12:14."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 9,
+      "word": "a la imagen de Dios",
+      "greek": "καθ᾽ ὁμοίωσιν θεοῦ",
+      "transliteration": "kath homoiōsin theou",
+      "meaning": "según la semejanza de Dios",
+      "context": "Santiago toma la palabra de Génesis 1:26 en la Biblia griega. Maldecir a una persona es despreciar la imagen de Aquel a quien decimos bendecir (compara Génesis 9:6)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 10,
+      "word": "no debe ser así",
+      "greek": "οὐ χρή",
+      "transliteration": "ou chrē",
+      "meaning": "no conviene",
+      "context": "Es la única vez que aparece este verbo en el Nuevo Testamento. Señala algo que va contra el orden mismo de la creación."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 11,
+      "word": "fuente",
+      "greek": "πηγή",
+      "transliteration": "pēgē",
+      "meaning": "manantial",
+      "context": "En una tierra seca, un manantial era cuestión de vida. Nadie confiaría en uno que a veces diera agua buena y a veces amarga."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 11,
+      "word": "amarga",
+      "greek": "πικρόν",
+      "transliteration": "pikron",
+      "meaning": "amarga",
+      "context": "Santiago repite la palabra en el v. 14, «celos amargos». El agua amarga del manantial anticipa el corazón amargo."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 11,
+      "word": "abertura",
+      "greek": "ὀπή",
+      "transliteration": "opē",
+      "meaning": "grieta, hendidura",
+      "context": "La grieta en la roca por donde brota el agua. La misma palabra nombra las cuevas donde se escondían los fieles en Hebreos 11:38."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 12,
+      "word": "higuera",
+      "greek": "συκῆ · ἐλαία · ἄμπελος",
+      "transliteration": "sykē · elaia · ampelos",
+      "meaning": "higuera, olivo, vid",
+      "context": "Los tres cultivos típicos de Israel. Jesús usó la misma lógica: cada árbol se conoce por su fruto (Mateo 7:16–20)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 12,
+      "word": "agua salada",
+      "greek": "ἁλυκόν",
+      "transliteration": "halykon",
+      "meaning": "salobre",
+      "context": "Un manantial salobre no puede dar agua dulce. Lo que sale revela lo que hay en la fuente."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 13,
+      "word": "sabio y entendido",
+      "greek": "σοφὸς καὶ ἐπιστήμων",
+      "transliteration": "sophos kai epistēmōn",
+      "meaning": "sabio y con conocimiento",
+      "context": "La misma pareja aparece en la Biblia griega de Deuteronomio (1:13; 4:6) para describir a quienes guiaban al pueblo. Santiago pregunta quién merece ese título."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 13,
+      "word": "buena conducta",
+      "greek": "καλῆς ἀναστροφῆς",
+      "transliteration": "kalēs anastrophēs",
+      "meaning": "manera de vivir",
+      "context": "No es un acto aislado, sino el estilo de vida completo. Para Santiago la sabiduría se demuestra viviendo, igual que la fe (2:18)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 13,
+      "word": "sabia mansedumbre",
+      "greek": "πραΰτητι σοφίας",
+      "transliteration": "prautēti sophias",
+      "meaning": "mansedumbre de sabiduría",
+      "context": "Mansedumbre no es debilidad, es fuerza bajo control. En griego la palabra podía describir a un animal amansado, como el caballo con freno del v. 3. Santiago ya la pidió en 1:21."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 14,
+      "word": "celos amargos",
+      "greek": "ζῆλον πικρόν",
+      "transliteration": "zēlon pikron",
+      "meaning": "celo amargo, envidia",
+      "context": "Zēlos puede ser un celo bueno o una envidia que corroe. Aquí es «amargo», como el agua mala del v. 11."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 14,
+      "word": "ambición personal",
+      "greek": "ἐριθεία",
+      "transliteration": "eritheia",
+      "meaning": "rivalidad egoísta",
+      "context": "Antes del Nuevo Testamento se usaba para quien buscaba cargos públicos por interés propio. Pablo la nombra entre las obras de la carne (Gálatas 5:20) y la rechaza en Filipenses 2:3."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 14,
+      "word": "no sean arrogantes",
+      "greek": "μὴ κατακαυχᾶσθε",
+      "transliteration": "mē katakauchasthe",
+      "meaning": "no se jacten",
+      "context": "Pariente del verbo de la lengua que «se jacta» (v. 5). En 2:13 el mismo verbo dice algo hermoso: la misericordia triunfa sobre el juicio."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 15,
+      "word": "de lo alto",
+      "greek": "ἄνωθεν",
+      "transliteration": "anōthen",
+      "meaning": "desde arriba",
+      "context": "Toda buena dádiva desciende de lo alto (1:17), y la sabiduría se pide a Dios (1:5). Es la misma palabra de Juan 3:3: nacer de lo alto."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 15,
+      "word": "terrenal",
+      "greek": "ἐπίγειος",
+      "transliteration": "epigeios",
+      "meaning": "de la tierra",
+      "context": "Una sabiduría cuyo horizonte termina en esta vida: éxito, fama, ventaja (compara Filipenses 3:19)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 15,
+      "word": "natural",
+      "greek": "ψυχική",
+      "transliteration": "psychikē",
+      "meaning": "del alma, solo humana",
+      "context": "Sabiduría puramente humana, sin el Espíritu de Dios. Pablo usa la palabra en 1 Corintios 2:14, y Judas en el v. 19."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 15,
+      "word": "diabólica",
+      "greek": "δαιμονιώδης",
+      "transliteration": "daimoniōdēs",
+      "meaning": "demoníaca",
+      "context": "Única vez en el Nuevo Testamento. Recuerda 2:19: los demonios también saben cosas de Dios, y tiemblan. Saber no es lo mismo que ser sabio."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 16,
+      "word": "confusión",
+      "greek": "ἀκαταστασία",
+      "transliteration": "akatastasia",
+      "meaning": "desorden, inestabilidad",
+      "context": "Pariente del «mal turbulento» del v. 8. Pablo la usa en 1 Corintios 14:33: Dios no es Dios de confusión, sino de paz."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 16,
+      "word": "toda cosa mala",
+      "greek": "πᾶν φαῦλον πρᾶγμα",
+      "transliteration": "pan phaulon pragma",
+      "meaning": "toda práctica vil",
+      "context": "Phaulos describe lo vil y despreciable. Donde manda la competencia egoísta, todo se degrada."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 17,
+      "word": "pura",
+      "greek": "ἁγνή",
+      "transliteration": "hagnē",
+      "meaning": "limpia, sin mezcla",
+      "context": "Va «primeramente»: la pureza es la raíz de la que brotan las demás cualidades. Una sabiduría sin motivos ocultos."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 17,
+      "word": "pacífica",
+      "greek": "εἰρηνική",
+      "transliteration": "eirēnikē",
+      "meaning": "que ama y produce paz",
+      "context": "Lo opuesto a la confusión del v. 16. Hebreos 12:11 habla del fruto apacible de justicia."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 17,
+      "word": "amable",
+      "greek": "ἐπιεικής",
+      "transliteration": "epieikēs",
+      "meaning": "considerada, razonable",
+      "context": "Describe a quien no exige todos sus derechos y trata a los demás con consideración (Filipenses 4:5; Tito 3:2)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 17,
+      "word": "condescendiente",
+      "greek": "εὐπειθής",
+      "transliteration": "eupeithēs",
+      "meaning": "dispuesta a ceder",
+      "context": "Única vez en el Nuevo Testamento. Describe a quien se deja persuadir por lo razonable: no es terca, es enseñable."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 17,
+      "word": "llena de misericordia",
+      "greek": "μεστὴ ἐλέους",
+      "transliteration": "mestē eleous",
+      "meaning": "llena de compasión",
+      "context": "Santiago ya dijo que la misericordia triunfa sobre el juicio (2:13). La sabiduría de Dios se nota en cómo trata al débil."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 17,
+      "word": "buenos frutos",
+      "greek": "καρπῶν ἀγαθῶν",
+      "transliteration": "karpōn agathōn",
+      "meaning": "buenos frutos",
+      "context": "Como la fe del capítulo 2, esta sabiduría se ve en obras concretas y no solo en ideas."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 17,
+      "word": "sin vacilación",
+      "greek": "ἀδιάκριτος",
+      "transliteration": "adiakritos",
+      "meaning": "sin dudar, imparcial",
+      "context": "Sin doble cara y sin favoritismos. Se relaciona con el que duda en 1:6 y con las distinciones entre personas de 2:4."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 17,
+      "word": "sin hipocresía",
+      "greek": "ἀνυπόκριτος",
+      "transliteration": "anypokritos",
+      "meaning": "sin máscara",
+      "context": "El hypokritēs era el actor de teatro que hablaba detrás de una máscara. La sabiduría de lo alto no actúa un papel."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 18,
+      "word": "la semilla cuyo fruto es la justicia",
+      "greek": "καρπὸς δικαιοσύνης",
+      "transliteration": "karpos dikaiosynēs",
+      "meaning": "fruto de justicia",
+      "context": "La justicia que Dios quiere no se produce con enojo (1:20). Se cultiva con paciencia y crece en un ambiente de paz."
+    },
+    {
+      "book": "santiago",
+      "chapter": 3,
+      "verse": 18,
+      "word": "aquellos que hacen la paz",
+      "greek": "τοῖς ποιοῦσιν εἰρήνην",
+      "transliteration": "tois poiousin eirēnēn",
+      "meaning": "los que hacen la paz",
+      "context": "El griego puede leerse «por» o «para» los que hacen la paz: ellos siembran y ellos cosechan. Eco de Mateo 5:9, dichosos los que trabajan por la paz."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 1,
+      "word": "guerras",
+      "greek": "πόλεμοι καὶ μάχαι",
+      "transliteration": "polemoi kai machai",
+      "meaning": "guerras y batallas",
+      "context": "Santiago usa dos palabras militares: polemos, una guerra larga, y machē, el choque de una batalla. Habla de pleitos dentro de la iglesia, justo después de alabar la paz (3:18)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 1,
+      "word": "pasiones",
+      "greek": "ἡδονῶν",
+      "transliteration": "hēdonōn",
+      "meaning": "placeres",
+      "context": "Hēdonē es el placer, de donde viene «hedonismo». Estos deseos combaten como un ejército acampado dentro de la persona (compara 1 Pedro 2:11)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 2,
+      "word": "codician",
+      "greek": "ἐπιθυμεῖτε",
+      "transliteration": "epithymeite",
+      "meaning": "desean con intensidad",
+      "context": "Santiago ya describió la cadena en 1:14–15: el deseo concibe el pecado, y el pecado da a luz la muerte."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 2,
+      "word": "homicidio",
+      "greek": "φονεύετε",
+      "transliteration": "phoneuete",
+      "meaning": "matan",
+      "context": "Puede ser literal, pero también recuerda a Jesús, que llevó el «no matarás» hasta el enojo (Mateo 5:21–22), y a Juan: el que odia a su hermano es homicida (1 Juan 3:15)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 2,
+      "word": "envidiosos",
+      "greek": "ζηλοῦτε",
+      "transliteration": "zēloute",
+      "meaning": "arden de envidia",
+      "context": "Es la raíz de los «celos amargos» de 3:14. La sabiduría terrenal del capítulo anterior aquí da su fruto."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 2,
+      "word": "no piden",
+      "greek": "διὰ τὸ μὴ αἰτεῖσθαι",
+      "transliteration": "dia to mē aiteisthai",
+      "meaning": "porque no piden",
+      "context": "Santiago ya había invitado a pedir sabiduría a Dios, que da a todos con generosidad (1:5). Muchas peleas empiezan donde la oración nunca empezó."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 3,
+      "word": "malos propósitos",
+      "greek": "κακῶς αἰτεῖσθε",
+      "transliteration": "kakōs aiteisthe",
+      "meaning": "piden mal",
+      "context": "Pedir con la intención equivocada. El verbo que sigue, «gastar», es el mismo que describe al hijo pródigo cuando derrochó todo (Lucas 15:14)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 4,
+      "word": "almas adúlteras",
+      "greek": "μοιχαλίδες",
+      "transliteration": "moichalides",
+      "meaning": "adúlteras",
+      "context": "En griego dice solo «adúlteras». Es el lenguaje de los profetas, que llamaban adúltero a Israel cuando se iba tras otros dioses (Oseas 1–3; Jeremías 3:20). Dios ama a su pueblo como un esposo fiel."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 4,
+      "word": "amistad",
+      "greek": "ἡ φιλία τοῦ κόσμου",
+      "transliteration": "hē philia tou kosmou",
+      "meaning": "la amistad del mundo",
+      "context": "Philia, la amistad, solo aparece aquí en el Nuevo Testamento. Abraham fue llamado amigo de Dios (2:23). Santiago pone delante las dos amistades posibles."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 4,
+      "word": "enemigo de Dios",
+      "greek": "ἐχθρὸς τοῦ θεοῦ καθίσταται",
+      "transliteration": "echthros tou theou kathistatai",
+      "meaning": "queda puesto como enemigo de Dios",
+      "context": "El verbo kathistatai significa «queda establecido». Es el mismo de 3:6, donde la lengua «está puesta» entre nuestros miembros."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 5,
+      "word": "celosamente",
+      "greek": "πρὸς φθόνον ἐπιποθεῖ",
+      "transliteration": "pros phthonon epipothei",
+      "meaning": "anhela con celo",
+      "context": "Uno de los versículos más difíciles de la carta. Puede leerse como Dios que anhela con celo al espíritu que puso en nosotros, como un esposo que no comparte a su esposa. Ningún versículo del Antiguo Testamento lo dice con estas palabras; Santiago resume lo que la Escritura enseña sobre el celo de Dios (Éxodo 20:5; 34:14)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 5,
+      "word": "Espíritu",
+      "greek": "τὸ πνεῦμα ὃ κατῴκισεν",
+      "transliteration": "to pneuma ho katōkisen",
+      "meaning": "el espíritu que hizo habitar",
+      "context": "Puede referirse al Espíritu Santo que Dios hizo habitar en los creyentes, o al espíritu humano, el aliento de vida que Dios sopló al crear (Génesis 2:7). Por eso las versiones traducen este versículo de maneras distintas."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 6,
+      "word": "mayor gracia",
+      "greek": "μείζονα χάριν",
+      "transliteration": "meizona charin",
+      "meaning": "una gracia más grande",
+      "context": "Lo que Dios pide es total, pero lo que da es todavía más. En 3:1 Santiago habló de un juicio mayor; aquí habla de una gracia mayor."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 6,
+      "word": "soberbios",
+      "greek": "ὑπερηφάνοις ἀντιτάσσεται",
+      "transliteration": "hyperēphanois antitassetai",
+      "meaning": "se pone en contra de los soberbios",
+      "context": "Cita de Proverbios 3:34 en la Biblia griega; Pedro cita el mismo versículo (1 Pedro 5:5). «Resiste» es un término militar: ponerse en formación de batalla. Los que hacen guerra (v. 1) encuentran a Dios en el otro bando."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 6,
+      "word": "humildes",
+      "greek": "ταπεινοῖς",
+      "transliteration": "tapeinois",
+      "meaning": "los de condición baja",
+      "context": "Tapeinos es el pequeño, el que no cuenta. Santiago ya dijo que el hermano de condición humilde puede gloriarse en su alta posición (1:9)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 7,
+      "word": "sométanse",
+      "greek": "ὑποτάγητε",
+      "transliteration": "hypotagēte",
+      "meaning": "pónganse bajo",
+      "context": "Un término de orden: tomar el propio lugar bajo alguien. Es el primero de diez mandatos seguidos en los vv. 7–10."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 7,
+      "word": "Resistan",
+      "greek": "ἀντίστητε",
+      "transliteration": "antistēte",
+      "meaning": "hagan frente",
+      "context": "Mantenerse firme frente al enemigo. Pedro usa la misma palabra (1 Pedro 5:9). Y viene con promesa: el diablo huirá."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 7,
+      "word": "diablo",
+      "greek": "διάβολος",
+      "transliteration": "diabolos",
+      "meaning": "el calumniador",
+      "context": "Diabolos significa «calumniador», el que acusa y divide. Por eso, unos versículos después, Santiago prohíbe hablar mal unos de otros (v. 11)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 8,
+      "word": "Acérquense",
+      "greek": "ἐγγίσατε",
+      "transliteration": "engisate",
+      "meaning": "acérquense",
+      "context": "Es lenguaje del templo: los sacerdotes se acercaban a Dios para servirle. Ahora la invitación es para todos, y Dios responde acercándose (compara Hebreos 10:22)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 8,
+      "word": "manos",
+      "greek": "καθαρίσατε χεῖρας",
+      "transliteration": "katharisate cheiras",
+      "meaning": "limpien las manos",
+      "context": "Los sacerdotes lavaban sus manos antes de servir (Éxodo 30:19–21). Las manos representan lo que hacemos. Santiago llama a sus lectores «pecadores» sin rodeos."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 8,
+      "word": "doble ánimo",
+      "greek": "δίψυχοι",
+      "transliteration": "dipsychoi",
+      "meaning": "de dos almas",
+      "context": "No aparece en ningún texto griego anterior a Santiago, que la usa aquí y en 1:8. Quizá él mismo acuñó la palabra."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 8,
+      "word": "corazones",
+      "greek": "ἁγνίσατε καρδίας",
+      "transliteration": "hagnisate kardias",
+      "meaning": "purifiquen los corazones",
+      "context": "Hagnizō es de la misma raíz que «pura» en 3:17. Manos limpias y corazón puro: la misma pareja del Salmo 24:3–4."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 9,
+      "word": "Aflíjanse",
+      "greek": "ταλαιπωρήσατε",
+      "transliteration": "talaipōrēsate",
+      "meaning": "reconozcan su miseria",
+      "context": "Es la palabra de Pablo en «¡Miserable de mí!» (Romanos 7:24). No es tristeza por tristeza: es tomar en serio el pecado."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 9,
+      "word": "laméntense",
+      "greek": "πενθήσατε καὶ κλαύσατε",
+      "transliteration": "penthēsate kai klausate",
+      "meaning": "hagan duelo y lloren",
+      "context": "Penthos es el duelo por un muerto; la misma palabra vuelve en este versículo como «lamento». Jesús dijo: dichosos los que lloran, porque serán consolados (Mateo 5:4)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 9,
+      "word": "risa",
+      "greek": "γέλως",
+      "transliteration": "gelōs",
+      "meaning": "risa",
+      "context": "La risa despreocupada de quien no toma a Dios en serio. Única vez en el Nuevo Testamento. Recuerda la advertencia de Lucas 6:25 a los que ahora ríen."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 9,
+      "word": "tristeza",
+      "greek": "κατήφεια",
+      "transliteration": "katēpheia",
+      "meaning": "mirada baja",
+      "context": "Describe los ojos bajos de quien siente vergüenza, como el recaudador que no se atrevía a alzar la vista (Lucas 18:13). Única vez en el Nuevo Testamento."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 10,
+      "word": "Humíllense",
+      "greek": "ταπεινώθητε",
+      "transliteration": "tapeinōthēte",
+      "meaning": "háganse pequeños",
+      "context": "Cierra la serie de mandatos que empezó en el v. 7 y responde al v. 6: Dios da gracia a los humildes."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 10,
+      "word": "exaltará",
+      "greek": "ὑψώσει",
+      "transliteration": "hypsōsei",
+      "meaning": "levantará en alto",
+      "context": "Jesús lo enseñó: el que se humilla será exaltado (Lucas 14:11; 18:14). Pedro lo repite en 1 Pedro 5:6."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 11,
+      "word": "hablen mal",
+      "greek": "μὴ καταλαλεῖτε",
+      "transliteration": "mē katalaleite",
+      "meaning": "no hablen en contra",
+      "context": "Katalaleō es hablar contra alguien, muchas veces a sus espaldas. Santiago vuelve al tema de la lengua del capítulo 3."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 11,
+      "word": "hermano",
+      "greek": "ἀδελφός",
+      "transliteration": "adelphos",
+      "meaning": "hermano",
+      "context": "En un solo versículo dice «hermano» tres veces. La persona criticada es de la familia."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 11,
+      "word": "ley",
+      "greek": "νόμος",
+      "transliteration": "nomos",
+      "meaning": "la ley",
+      "context": "Probablemente la ley real de 2:8: «Amarás a tu prójimo como a ti mismo» (Levítico 19:18). En el mismo pasaje, Levítico 19:16 prohíbe andar con chismes."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 11,
+      "word": "cumplidor",
+      "greek": "ποιητὴς νόμου",
+      "transliteration": "poiētēs nomou",
+      "meaning": "hacedor de la ley",
+      "context": "Santiago ya pidió ser hacedores de la palabra y no solo oidores (1:22–25). Quien juzga a su hermano deja de hacer la ley y se pone por encima de ella."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 12,
+      "word": "Legislador",
+      "greek": "νομοθέτης καὶ κριτής",
+      "transliteration": "nomothetēs kai kritēs",
+      "meaning": "el que da la ley y juzga",
+      "context": "Nomothetēs aparece solo aquí en el Nuevo Testamento. Dios escribe la ley y solo Él juzga con ella."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 12,
+      "word": "salvar",
+      "greek": "σῶσαι καὶ ἀπολέσαι",
+      "transliteration": "sōsai kai apolesai",
+      "meaning": "salvar y destruir",
+      "context": "Solo Dios tiene ese poder sobre la vida (Deuteronomio 32:39; Mateo 10:28). Juzgar a otro es ocupar un lugar que no nos corresponde."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 12,
+      "word": "prójimo",
+      "greek": "τὸν πλησίον",
+      "transliteration": "ton plēsion",
+      "meaning": "el que está cerca",
+      "context": "Es la misma palabra de la ley real: amarás a tu prójimo (2:8). El que juzgamos es aquel a quien deberíamos amar."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 13,
+      "word": "Oigan ahora",
+      "greek": "Ἄγε νῦν",
+      "transliteration": "Age nyn",
+      "meaning": "¡vamos, ahora!",
+      "context": "Una expresión enérgica para llamar la atención. Santiago la repite en 5:1, cuando habla a los ricos."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 13,
+      "word": "negocio",
+      "greek": "ἐμπορευσόμεθα",
+      "transliteration": "emporeusometha",
+      "meaning": "comerciaremos",
+      "context": "El emporos era el mercader que viajaba de ciudad en ciudad, algo común entre los judíos dispersos por el imperio."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 13,
+      "word": "ganancia",
+      "greek": "κερδήσομεν",
+      "transliteration": "kerdēsomen",
+      "meaning": "ganaremos",
+      "context": "Jesús preguntó de qué sirve ganar el mundo entero y perder el alma (Mateo 16:26)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 14,
+      "word": "mañana",
+      "greek": "τὸ τῆς αὔριον",
+      "transliteration": "to tēs aurion",
+      "meaning": "lo de mañana",
+      "context": "Eco de Proverbios 27:1: no te jactes del día de mañana, porque no sabes qué traerá el día."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 14,
+      "word": "vapor",
+      "greek": "ἀτμίς",
+      "transliteration": "atmis",
+      "meaning": "vapor",
+      "context": "El vapor de una olla o el aliento en el frío: se ve un momento y desaparece. En Hechos 2:19 se usa para el vapor de humo. El Eclesiastés dice algo parecido con la palabra hebel, «soplo»."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 15,
+      "word": "Si el Señor quiere",
+      "greek": "ἐὰν ὁ κύριος θελήσῃ",
+      "transliteration": "ean ho kyrios thelēsē",
+      "meaning": "si el Señor quiere",
+      "context": "Pablo hablaba así de sus planes (Hechos 18:21; 1 Corintios 4:19; 16:7). Siglos después, los cristianos lo escribían en sus cartas en latín: Deo volente."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 16,
+      "word": "jactan",
+      "greek": "καυχᾶσθε",
+      "transliteration": "kauchasthe",
+      "meaning": "se glorían",
+      "context": "Santiago no condena toda gloria: el humilde puede gloriarse en su alta posición (1:9). Lo malo es gloriarse de lo que no controlamos."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 16,
+      "word": "arrogancia",
+      "greek": "ἀλαζονείαις",
+      "transliteration": "alazoneiais",
+      "meaning": "fanfarronerías",
+      "context": "El alazōn era el charlatán que presumía de lo que no tenía, como el vendedor ambulante que promete maravillas. Juan habla de la arrogancia de la vida (1 Juan 2:16)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 17,
+      "word": "sabe hacer lo bueno",
+      "greek": "εἰδότι καλὸν ποιεῖν",
+      "transliteration": "eidoti kalon poiein",
+      "meaning": "al que sabe hacer el bien",
+      "context": "El pecado de omisión. Santiago lo ilustró en 2:15–16: desearle lo mejor a quien tiene hambre sin darle nada."
+    },
+    {
+      "book": "santiago",
+      "chapter": 4,
+      "verse": 17,
+      "word": "pecado",
+      "greek": "ἁμαρτία",
+      "transliteration": "hamartia",
+      "meaning": "errar el blanco",
+      "context": "Pecar no es solo hacer el mal. También es dejar de hacer el bien que ya sabemos (compara Lucas 12:47)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 1,
+      "word": "Oigan ahora",
+      "greek": "Ἄγε νῦν",
+      "transliteration": "Age nyn",
+      "meaning": "¡vamos, ahora!",
+      "context": "La misma llamada enérgica de 4:13. Allí hablaba a los comerciantes que hacían planes sin Dios; aquí, a los ricos que oprimen."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 1,
+      "word": "aúllen",
+      "greek": "ὀλολύζοντες",
+      "transliteration": "ololyzontes",
+      "meaning": "aullando",
+      "context": "Una palabra que suena a lo que dice: gemir a gritos. Los profetas la usaban al anunciar el juicio (Isaías 13:6). Única vez en el Nuevo Testamento."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 1,
+      "word": "miserias",
+      "greek": "ταλαιπωρίαις",
+      "transliteration": "talaipōriais",
+      "meaning": "desdichas",
+      "context": "De la misma raíz que «Aflíjanse» en 4:9. Allí llamó a afligirse ante Dios por voluntad propia; aquí anuncia la desdicha que llega a quien no lo hizo."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 2,
+      "word": "podrido",
+      "greek": "σέσηπεν",
+      "transliteration": "sesēpen",
+      "meaning": "se ha podrido",
+      "context": "Quizá habla del grano y los alimentos almacenados. Santiago lo dice en pasado, como si ya hubiera ocurrido: así de seguro es."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 2,
+      "word": "polilla",
+      "greek": "σητόβρωτα",
+      "transliteration": "sētobrōta",
+      "meaning": "comidas por la polilla",
+      "context": "Única vez en el Nuevo Testamento. Es eco de Jesús: no acumulen tesoros en la tierra, donde la polilla y el óxido destruyen (Mateo 6:19–20)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 3,
+      "word": "oxidado",
+      "greek": "κατίωται",
+      "transliteration": "katiōtai",
+      "meaning": "se ha oxidado",
+      "context": "El oro y la plata no se oxidan. Santiago exagera a propósito: hasta lo que parece eterno se corrompe."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 3,
+      "word": "herrumbre",
+      "greek": "ἰός",
+      "transliteration": "ios",
+      "meaning": "herrumbre",
+      "context": "La misma palabra que en 3:8 era el veneno de la lengua. La riqueza que nunca ayudó a nadie será un testigo en contra de su dueño."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 3,
+      "word": "últimos días",
+      "greek": "ἐν ἐσχάταις ἡμέραις",
+      "transliteration": "en eschatais hēmerais",
+      "meaning": "en los últimos días",
+      "context": "Acumularon justo cuando el tiempo se acaba. Para el Nuevo Testamento, los últimos días empezaron con Jesús (Hechos 2:17; Hebreos 1:2)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 4,
+      "word": "jornal",
+      "greek": "ὁ μισθός",
+      "transliteration": "ho misthos",
+      "meaning": "el salario",
+      "context": "La ley mandaba pagar al jornalero el mismo día, antes de ponerse el sol, porque vivía de ese pago (Deuteronomio 24:14–15; Levítico 19:13)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 4,
+      "word": "retenido",
+      "greek": "ἀπεστερημένος",
+      "transliteration": "apesterēmenos",
+      "meaning": "defraudado",
+      "context": "Retener el salario es robar. Jesús lo nombró entre los mandamientos: no defraudes (Marcos 10:19). Y ese salario «clama», como la sangre de Abel (Génesis 4:10)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 4,
+      "word": "Señor de los ejércitos",
+      "greek": "κυρίου Σαβαώθ",
+      "transliteration": "kyriou Sabaōth",
+      "meaning": "el Señor de los ejércitos",
+      "context": "Santiago deja la palabra hebrea Sabaot, que solo aparece aquí y en Romanos 9:29. El que manda los ejércitos del cielo escucha a unos segadores pobres (compara Isaías 5:9)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 5,
+      "word": "lujosamente",
+      "greek": "ἐτρυφήσατε",
+      "transliteration": "etryphēsate",
+      "meaning": "vivieron en el lujo",
+      "context": "Única vez en el Nuevo Testamento: una vida blanda y cómoda mientras otros pasaban necesidad."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 5,
+      "word": "placer desenfrenado",
+      "greek": "ἐσπαταλήσατε",
+      "transliteration": "espatalēsate",
+      "meaning": "vivieron en derroche",
+      "context": "Pablo usa la misma palabra para la persona que vive para el placer (1 Timoteo 5:6)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 5,
+      "word": "matanza",
+      "greek": "ἐν ἡμέρᾳ σφαγῆς",
+      "transliteration": "en hēmera sphagēs",
+      "meaning": "en el día de la matanza",
+      "context": "Como el ganado que sigue comiendo el mismo día en que lo van a matar, sin darse cuenta. La imagen viene de Jeremías 12:3."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 6,
+      "word": "justo",
+      "greek": "τὸν δίκαιον",
+      "transliteration": "ton dikaion",
+      "meaning": "el justo",
+      "context": "Cualquier inocente pobre que pierde un juicio injusto. Los primeros cristianos también recordaban a Jesús, «el Justo» (Hechos 7:52)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 6,
+      "word": "resistencia",
+      "greek": "οὐκ ἀντιτάσσεται",
+      "transliteration": "ouk antitassetai",
+      "meaning": "no se les opone",
+      "context": "Es el mismo verbo de 4:6, «Dios resiste a los soberbios». El justo no les hace resistencia, pero Dios sí."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 7,
+      "word": "pacientes",
+      "greek": "μακροθυμήσατε",
+      "transliteration": "makrothymēsate",
+      "meaning": "sean de ánimo largo",
+      "context": "Literalmente, «largos de ánimo»: la paciencia con las personas, lo contrario de la mecha corta. Recuerda 1:19, lentos para la ira."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 7,
+      "word": "venida",
+      "greek": "παρουσία",
+      "transliteration": "parousia",
+      "meaning": "presencia, llegada",
+      "context": "Era la palabra para la visita de un rey a una ciudad. Los cristianos la usaron para el regreso de Jesús (Mateo 24:27; 1 Tesalonicenses 4:15)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 7,
+      "word": "labrador",
+      "greek": "γεωργός",
+      "transliteration": "geōrgos",
+      "meaning": "agricultor",
+      "context": "El que trabaja la tierra. De esta palabra viene el nombre Jorge."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 7,
+      "word": "fruto precioso",
+      "greek": "τίμιον καρπόν",
+      "transliteration": "timion karpon",
+      "meaning": "fruto valioso",
+      "context": "La cosecha vale la espera. Pedro usa el mismo adjetivo para la sangre preciosa de Cristo (1 Pedro 1:19)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 7,
+      "word": "lluvia temprana",
+      "greek": "πρόϊμον καὶ ὄψιμον",
+      "transliteration": "proimon kai opsimon",
+      "meaning": "la temprana y la tardía",
+      "context": "En Israel, la lluvia temprana cae en octubre y noviembre, al sembrar, y la tardía en marzo y abril, antes de la cosecha (Deuteronomio 11:14; Joel 2:23). El labrador no puede hacer que llueva: espera."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 8,
+      "word": "Fortalezcan",
+      "greek": "στηρίξατε",
+      "transliteration": "stērixate",
+      "meaning": "afirmen",
+      "context": "Como poner un tutor a una planta para que no se doble. Jesús le dijo lo mismo a Pedro: fortalece a tus hermanos (Lucas 22:32)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 8,
+      "word": "está cerca",
+      "greek": "ἤγγικεν",
+      "transliteration": "ēngiken",
+      "meaning": "se ha acercado",
+      "context": "El mismo verbo de 4:8, «acérquense a Dios», y de la predicación de Jesús: el reino de los cielos se ha acercado (Mateo 4:17)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 9,
+      "word": "quejen",
+      "greek": "στενάζετε",
+      "transliteration": "stenazete",
+      "meaning": "giman",
+      "context": "Bajo presión es fácil desquitarse con el que está al lado. Santiago pide no convertir el sufrimiento en queja contra los hermanos."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 9,
+      "word": "a las puertas",
+      "greek": "πρὸ τῶν θυρῶν",
+      "transliteration": "pro tōn thyrōn",
+      "meaning": "ante las puertas",
+      "context": "Jesús usó la misma imagen: cuando vean estas cosas, sepan que está cerca, a las puertas (Mateo 24:33). Es el mismo Juez de 4:12."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 10,
+      "word": "ejemplo",
+      "greek": "ὑπόδειγμα",
+      "transliteration": "hypodeigma",
+      "meaning": "modelo para copiar",
+      "context": "Jesús usó esta palabra al lavar los pies de sus discípulos: les he dado ejemplo (Juan 13:15)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 10,
+      "word": "aflicción",
+      "greek": "κακοπαθίας",
+      "transliteration": "kakopathias",
+      "meaning": "sufrimiento",
+      "context": "Sufrir el mal. Es la raíz del «¿Sufre alguien?» del v. 13."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 11,
+      "word": "bienaventurados",
+      "greek": "μακαρίζομεν",
+      "transliteration": "makarizomen",
+      "meaning": "los llamamos dichosos",
+      "context": "Santiago empezó la carta así: dichoso el que soporta la prueba (1:12)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 11,
+      "word": "paciencia de Job",
+      "greek": "ὑπομονή",
+      "transliteration": "hypomonē",
+      "meaning": "aguante, perseverancia",
+      "context": "No es la misma palabra de los vv. 7–8. Esta es la resistencia bajo la prueba (1:3–4). Job no sufrió en silencio, se quejó con fuerza, pero no soltó a Dios."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 11,
+      "word": "resultado",
+      "greek": "τὸ τέλος κυρίου",
+      "transliteration": "to telos kyriou",
+      "meaning": "el final que dio el Señor",
+      "context": "Lo que el Señor hizo al final de la historia de Job: le devolvió el doble de lo que tenía (Job 42:10–17)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 11,
+      "word": "compasivo",
+      "greek": "πολύσπλαγχνος",
+      "transliteration": "polysplanchnos",
+      "meaning": "de entrañas grandes",
+      "context": "Única vez en el Nuevo Testamento. Las entrañas eran el lugar de la compasión. Es el retrato de Dios en Éxodo 34:6 y el Salmo 103:8."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 12,
+      "word": "sobre todo",
+      "greek": "Πρὸ πάντων",
+      "transliteration": "Pro pantōn",
+      "meaning": "antes que nada",
+      "context": "Marca algo importante para el cierre de la carta. Pedro usa la misma expresión antes de decir que el amor cubre multitud de pecados (1 Pedro 4:8), la misma frase con que termina Santiago."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 12,
+      "word": "no juren",
+      "greek": "μὴ ὀμνύετε",
+      "transliteration": "mē omnyete",
+      "meaning": "no juren",
+      "context": "Es casi palabra por palabra lo que enseñó Jesús en el Sermón del Monte (Mateo 5:33–37)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 12,
+      "word": "ni por el cielo",
+      "greek": "μήτε τὸν οὐρανόν",
+      "transliteration": "mēte ton ouranon",
+      "meaning": "ni por el cielo",
+      "context": "Algunos juraban por el cielo o por la tierra para no nombrar a Dios y dejarse una salida. Jesús respondió que todo es de Dios: el cielo es su trono y la tierra el estrado de sus pies (Mateo 5:34–35)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 12,
+      "word": "el sí de ustedes, sí",
+      "greek": "τὸ ναὶ ναί",
+      "transliteration": "to nai nai",
+      "meaning": "que el sí sea sí",
+      "context": "Una palabra que no necesita juramento para ser creída. Pablo dice que en Cristo todas las promesas de Dios son «sí» (2 Corintios 1:17–20)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 12,
+      "word": "juicio",
+      "greek": "ὑπὸ κρίσιν",
+      "transliteration": "hypo krisin",
+      "meaning": "bajo juicio",
+      "context": "Otra vez el tema de la lengua: las palabras también serán juzgadas (compara 3:1)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 13,
+      "word": "Sufre",
+      "greek": "κακοπαθεῖ",
+      "transliteration": "kakopathei",
+      "meaning": "sufre el mal",
+      "context": "La misma raíz de la «aflicción» de los profetas (v. 10). La respuesta al sufrimiento no es la queja (v. 9) sino la oración."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 13,
+      "word": "cante alabanzas",
+      "greek": "ψαλλέτω",
+      "transliteration": "psalletō",
+      "meaning": "que cante salmos",
+      "context": "Al principio significaba tocar las cuerdas de un instrumento; de aquí viene «salmo». La alegría también se lleva a Dios (Efesios 5:19)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 14,
+      "word": "ancianos",
+      "greek": "τοὺς πρεσβυτέρους",
+      "transliteration": "tous presbyterous",
+      "meaning": "los presbíteros",
+      "context": "Los líderes de la iglesia local (Hechos 14:23; 20:17). El enfermo toma la iniciativa: los llama."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 14,
+      "word": "aceite",
+      "greek": "ἐλαίῳ",
+      "transliteration": "elaiō",
+      "meaning": "con aceite",
+      "context": "El aceite era la medicina común de la época, como en la parábola del buen samaritano (Lucas 10:34), y también una señal de que la persona se pone en manos de Dios. Los discípulos ungían a los enfermos (Marcos 6:13)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 15,
+      "word": "oración de fe",
+      "greek": "ἡ εὐχὴ τῆς πίστεως",
+      "transliteration": "hē euchē tēs pisteōs",
+      "meaning": "la oración hecha con fe",
+      "context": "Recuerda 1:6: pedir con fe, sin dudar. El poder no está en el aceite ni en quien ora: el Señor es quien levanta."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 15,
+      "word": "restaurará",
+      "greek": "σώσει",
+      "transliteration": "sōsei",
+      "meaning": "salvará",
+      "context": "El mismo verbo sirve para sanar el cuerpo y para salvar la vida. Jesús le dijo a la mujer enferma: tu fe te ha sanado (Marcos 5:34)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 15,
+      "word": "levantará",
+      "greek": "ἐγερεῖ",
+      "transliteration": "egerei",
+      "meaning": "levantará",
+      "context": "El verbo de la resurrección. Jesús tomó de la mano a la suegra de Pedro y la levantó (Marcos 1:31)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 16,
+      "word": "confiésense",
+      "greek": "ἐξομολογεῖσθε",
+      "transliteration": "exomologeisthe",
+      "meaning": "confiesen abiertamente",
+      "context": "Una confesión mutua entre hermanos, no solo ante Dios (compara 1 Juan 1:9). Lo escondido pierde fuerza cuando se dice en voz alta ante alguien que ora por nosotros."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 16,
+      "word": "sanados",
+      "greek": "ἰαθῆτε",
+      "transliteration": "iathēte",
+      "meaning": "sean sanados",
+      "context": "Sanidad del cuerpo y del alma. Pedro usa la misma forma: por sus heridas fueron sanados (1 Pedro 2:24)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 16,
+      "word": "oración eficaz",
+      "greek": "δέησις ἐνεργουμένη",
+      "transliteration": "deēsis energoumenē",
+      "meaning": "súplica que actúa",
+      "context": "De energoumenē viene «energía». Es una oración que está obrando."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 16,
+      "word": "justo",
+      "greek": "δικαίου",
+      "transliteration": "dikaiou",
+      "meaning": "el justo",
+      "context": "En el v. 6 el justo sufría bajo los ricos; aquí el justo ora, y su oración tiene poder. Y Elías muestra que «justo» no quiere decir perfecto."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 17,
+      "word": "pasiones semejantes",
+      "greek": "ὁμοιοπαθής",
+      "transliteration": "homoiopathēs",
+      "meaning": "de la misma naturaleza",
+      "context": "Pablo y Bernabé dijeron lo mismo en Listra: somos hombres como ustedes (Hechos 14:15). Después de su gran victoria, Elías huyó con miedo y quiso morir (1 Reyes 19:4)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 17,
+      "word": "oró fervientemente",
+      "greek": "προσευχῇ προσηύξατο",
+      "transliteration": "proseuchē prosēuxato",
+      "meaning": "oró con oración",
+      "context": "Una forma hebrea de dar énfasis, repitiendo la misma palabra: oró de verdad."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 17,
+      "word": "tres años y seis meses",
+      "greek": "ἐνιαυτοὺς τρεῖς καὶ μῆνας ἕξ",
+      "transliteration": "eniautous treis kai mēnas hex",
+      "meaning": "tres años y seis meses",
+      "context": "La historia está en 1 Reyes 17–18. Jesús menciona el mismo tiempo en Lucas 4:25."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 18,
+      "word": "Oró de nuevo",
+      "greek": "πάλιν προσηύξατο",
+      "transliteration": "palin prosēuxato",
+      "meaning": "volvió a orar",
+      "context": "En el monte Carmelo, Elías oró inclinado hasta el suelo siete veces, hasta que subió del mar una nube pequeña como la mano de un hombre (1 Reyes 18:42–45)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 19,
+      "word": "se extravía",
+      "greek": "πλανηθῇ",
+      "transliteration": "planēthē",
+      "meaning": "se desvía",
+      "context": "Andar errante. De esta raíz viene «planeta», la estrella que vaga. Santiago ya había advertido: no se engañen (1:16)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 19,
+      "word": "le hace volver",
+      "greek": "ἐπιστρέψῃ",
+      "transliteration": "epistrepsē",
+      "meaning": "lo hace dar la vuelta",
+      "context": "Es la palabra de la conversión (Hechos 3:19). Jesús le dijo a Pedro: cuando hayas vuelto, fortalece a tus hermanos (Lucas 22:32)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 20,
+      "word": "error de su camino",
+      "greek": "ἐκ πλάνης ὁδοῦ αὐτοῦ",
+      "transliteration": "ek planēs hodou autou",
+      "meaning": "del extravío de su camino",
+      "context": "La vida como un camino, como en el Salmo 1. Y Jesús contó del pastor que deja a las noventa y nueve para buscar a la oveja perdida (Lucas 15:4–7)."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 20,
+      "word": "salvará su alma de muerte",
+      "greek": "σώσει ψυχὴν αὐτοῦ ἐκ θανάτου",
+      "transliteration": "sōsei psychēn autou ek thanatou",
+      "meaning": "salvará su vida de la muerte",
+      "context": "Santiago empezó advirtiendo que el pecado, cuando madura, da a luz la muerte (1:15). Termina con alguien que rescata a otro de ese final."
+    },
+    {
+      "book": "santiago",
+      "chapter": 5,
+      "verse": 20,
+      "word": "multitud de pecados",
+      "greek": "καλύψει πλῆθος ἁμαρτιῶν",
+      "transliteration": "kalypsei plēthos hamartiōn",
+      "meaning": "cubrirá multitud de pecados",
+      "context": "Eco de Proverbios 10:12: el amor cubre todas las faltas. Pedro dice lo mismo (1 Pedro 4:8)."
+    }
+  ]
+}
