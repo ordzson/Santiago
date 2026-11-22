@@ -49,7 +49,7 @@ test('hebreo: carga manual, conteos y error en la casilla equivocada',async({bro
   const {context,page,errors}=await newPhone(browser);
   await context.route('**/data/hebreo.json',r=>r.fulfill({status:404,body:''}));
   await page.reload();await expect(page.locator('.chapter-heading')).toBeVisible();
-  await page.getByRole('button',{name:'Mi contenido'}).click();
+  await page.getByRole('button',{name:'Contenido'}).click();
   const dialog=page.getByRole('dialog',{name:/contenido/i});await expect(dialog).toBeVisible();
   await expect(dialog.getByText(/notas del griego · 0 del hebreo/)).toBeVisible();
   const hebrew=dialog.locator('.upload-field',{hasText:'Cargar notas del hebreo'}).locator('input[type=file]');

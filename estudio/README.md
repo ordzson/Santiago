@@ -103,7 +103,7 @@ Reglas comunes:
 - Solo se subrayan las palabras con nota cuando «Idioma original» está activo. Una palabra sin datos lo indica, sin inventarlos. No hay generación de traducciones ni llamadas a una API externa.
 - Al abrir una nota, el término va en su idioma (`lang="grc"` o `lang="he"`). El hebreo se muestra de derecha a izquierda, centrado y más grande (44 px), con Noto Serif Hebrew, que conserva niqqud y cantilación. La transliteración y el significado siguen de izquierda a derecha.
 
-También puedes cargar los archivos desde **Mi contenido** (casillas «Cargar notas del griego» y «Cargar notas del hebreo»), sin modificar el repo. Esa carga es temporal y dura hasta recargar la página; los archivos no se suben a un servidor. Al cargar otra Biblia, se limpian las notas de **ambos** idiomas para evitar asociaciones incorrectas. Límite de cada archivo: 35 MB.
+También puedes cargar los archivos desde **Contenido** (casillas «Cargar notas del griego» y «Cargar notas del hebreo»), sin modificar el repo. Esa carga es temporal y dura hasta recargar la página; los archivos no se suben a un servidor. Al cargar otra Biblia, se limpian las notas de **ambos** idiomas para evitar asociaciones incorrectas. Límite de cada archivo: 35 MB.
 
 ## Preparar y grabar
 

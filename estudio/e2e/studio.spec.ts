@@ -193,7 +193,7 @@ test('encuadre, datos externos y límites de los tres modos',async({browser})=>{
       if(!camera||!text)return false;return camera.y+camera.height<=text.y+1 || camera.y>=text.y+text.height-1;},{timeout:3000}).toBe(true);
   }
   await page.getByRole('button',{name:'Noche',exact:true}).click();await expect(page.locator('.reading-sheet')).toHaveClass(/night/);
-  await page.getByRole('button',{name:'Mi contenido',exact:true}).click();
+  await page.getByRole('button',{name:'Contenido',exact:true}).click();
   const synthetic={version:'Prueba de integración',books:[{id:'a',name:'Libro A',chapters:[1,2].map(number=>({number,verses:[{number:1,text:'Contenido sintético para pruebas.'}]}))},{id:'b',name:'Libro B',chapters:[{number:1,verses:[{number:1,text:'Contenido sintético del segundo libro.'}]}]}]};
   await page.locator('input[type=file]').first().setInputFiles({name:'invalid.json',mimeType:'application/json',buffer:Buffer.from('{bad')});await expect(page.getByRole('alert')).toContainText('El JSON no es válido');
   await page.locator('input[type=file]').first().setInputFiles({name:'test.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(synthetic))});

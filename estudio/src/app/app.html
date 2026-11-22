@@ -1,7 +1,7 @@
 <div class="studio" [class.in-scene]="scene()" [class.dark-scene]="settings.night && scene()">
   <header class="studio-header">
     <a class="brand" href="./" aria-label="Verbo, inicio"><span class="brand-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m5 7 11 21L27 7M11 7l5 10 5-10" stroke="currentColor" stroke-width="1.6"/></svg></span><span>verbo<span class="brand-dot">.</span></span><span class="brand-description">Estudio de lectura</span></a>
-    <nav aria-label="Herramientas del estudio"><button class="text-button content-nav" (click)="openDialog('content')"><v-icon name="book"/><span>Mi contenido</span></button><button class="icon-button" (click)="openDialog('help')" aria-label="Cómo usar Verbo"><v-icon name="help"/></button></nav>
+    <nav aria-label="Herramientas del estudio"><button class="text-button content-nav" (click)="openDialog('content')"><v-icon name="book"/><span>Contenido</span></button><button class="icon-button" (click)="openDialog('help')" aria-label="Cómo usar Verbo"><v-icon name="help"/></button></nav>
   </header>
 
   <main class="workbench">
