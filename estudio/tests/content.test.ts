@@ -1,0 +1,12 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {parseBible, parseGreek, sessionLocations, shouldEnd, tokenize} from '../src/app/content.ts';
+const bible=parseBible({version:'Prueba',books:[{id:'a',name:'A',chapters:[{number:1,verses:[{number:1,text:'Uno'}]},{number:2,verses:[{number:1,text:'Dos'}]}]},{id:'b',name:'B',chapters:[{number:1,verses:[{number:1,text:'Tres'}]}]}]});
+test('un recorrido cruza libros en orden sin duplicar capítulos',()=>assert.deepEqual(sessionLocations(bible,'range',{book:0,chapter:1},{book:1,chapter:0}),[{book:0,chapter:1},{book:1,chapter:0}]));
+test('libro completo siempre empieza en el primer capítulo y termina en su límite',()=>assert.deepEqual(sessionLocations(bible,'book',{book:0,chapter:1},{book:1,chapter:0}),[{book:0,chapter:0},{book:0,chapter:1}]));
+test('capítulos sucesivos incluyen el siguiente libro',()=>assert.deepEqual(sessionLocations(bible,'chapters',{book:0,chapter:1},{book:0,chapter:1}),[{book:0,chapter:1},{book:1,chapter:0}]));
+test('un rango invertido no crea una sesión',()=>assert.equal(sessionLocations(bible,'range',{book:1,chapter:0},{book:0,chapter:0}).length,0));
+test('se rechazan datos vacíos, capítulos desordenados y versículos duplicados',()=>{assert.throws(()=>parseBible({}));assert.throws(()=>parseBible({version:'X',books:[{id:'a',name:'A',chapters:[{number:1,verses:[{number:1,text:'a'},{number:1,text:'b'}]}]}]}));});
+test('cierre al cambiar de libro y cierre manual',()=>{assert.equal(shouldEnd('book',{book:0,chapter:1},{book:1,chapter:0}),true);assert.equal(shouldEnd('book',{book:0,chapter:0},{book:0,chapter:1}),false);assert.equal(shouldEnd('manual',{book:0,chapter:1},undefined),false);assert.equal(shouldEnd('chapter',{book:0,chapter:1},undefined),true);});
+test('el griego solo se vincula a frases completas existentes',()=>{const notes=parseGreek({notes:[{book:'a',chapter:1,verse:1,word:'fe',greek:'πίστις',transliteration:'pistis',meaning:'fe'}]});const words=tokenize('La fe persevera, feliz.',notes);assert.equal(words.filter(w=>w.note).length,1);assert.equal(words.find(w=>w.note)?.text,'fe');assert.equal(words.map(w=>w.text).join(''),'La fe persevera, feliz.');});
+test('una nota inválida muestra error',()=>assert.throws(()=>parseGreek({notes:[{word:'fe'}]})));

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.angular/
+out-tsc/
+.impeccable/review/
+playwright-report/
+test-results/

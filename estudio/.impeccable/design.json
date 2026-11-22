@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T06:22:03.616222Z",
+  "title": "Design System: Verbo · Estudio de lectura",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel marfil",
+        "tonalRamp": [
+          "oklch(15% 0.0180 89.36)",
+          "oklch(25% 0.0180 89.36)",
+          "oklch(35% 0.0180 89.36)",
+          "oklch(45% 0.0180 89.36)",
+          "oklch(55% 0.0180 89.36)",
+          "oklch(70% 0.0180 89.36)",
+          "oklch(85% 0.0180 89.36)",
+          "oklch(95% 0.0180 89.36)"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Escritorio cálido",
+        "tonalRamp": [
+          "oklch(15% 0.0185 86.15)",
+          "oklch(25% 0.0185 86.15)",
+          "oklch(35% 0.0185 86.15)",
+          "oklch(45% 0.0185 86.15)",
+          "oklch(55% 0.0185 86.15)",
+          "oklch(70% 0.0185 86.15)",
+          "oklch(85% 0.0185 86.15)",
+          "oklch(95% 0.0185 86.15)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta cálida",
+        "tonalRamp": [
+          "oklch(15% 0.0151 62.73)",
+          "oklch(25% 0.0151 62.73)",
+          "oklch(35% 0.0151 62.73)",
+          "oklch(45% 0.0151 62.73)",
+          "oklch(55% 0.0151 62.73)",
+          "oklch(70% 0.0151 62.73)",
+          "oklch(85% 0.0151 62.73)",
+          "oklch(95% 0.0151 62.73)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Tinta secundaria",
+        "tonalRamp": [
+          "oklch(15% 0.0224 72.33)",
+          "oklch(25% 0.0224 72.33)",
+          "oklch(35% 0.0224 72.33)",
+          "oklch(45% 0.0224 72.33)",
+          "oklch(55% 0.0224 72.33)",
+          "oklch(70% 0.0224 72.33)",
+          "oklch(85% 0.0224 72.33)",
+          "oklch(95% 0.0224 72.33)"
+        ]
+      },
+      "red": {
+        "role": "primary",
+        "displayName": "Carmín de cinta",
+        "tonalRamp": [
+          "oklch(15% 0.1754 18.65)",
+          "oklch(25% 0.1754 18.65)",
+          "oklch(35% 0.1754 18.65)",
+          "oklch(45% 0.1754 18.65)",
+          "oklch(55% 0.1754 18.65)",
+          "oklch(70% 0.1754 18.65)",
+          "oklch(85% 0.1754 18.65)",
+          "oklch(95% 0.1754 18.65)"
+        ]
+      },
+      "red-dark": {
+        "role": "primary",
+        "displayName": "Carmín profundo",
+        "tonalRamp": [
+          "oklch(15% 0.1467 16.49)",
+          "oklch(25% 0.1467 16.49)",
+          "oklch(35% 0.1467 16.49)",
+          "oklch(45% 0.1467 16.49)",
+          "oklch(55% 0.1467 16.49)",
+          "oklch(70% 0.1467 16.49)",
+          "oklch(85% 0.1467 16.49)",
+          "oklch(95% 0.1467 16.49)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Regla de papel",
+        "tonalRamp": [
+          "oklch(15% 0.0253 83.41)",
+          "oklch(25% 0.0253 83.41)",
+          "oklch(35% 0.0253 83.41)",
+          "oklch(45% 0.0253 83.41)",
+          "oklch(55% 0.0253 83.41)",
+          "oklch(70% 0.0253 83.41)",
+          "oklch(85% 0.0253 83.41)",
+          "oklch(95% 0.0253 83.41)"
+        ]
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Oro de luz",
+        "tonalRamp": [
+          "oklch(15% 0.1198 79.67)",
+          "oklch(25% 0.1198 79.67)",
+          "oklch(35% 0.1198 79.67)",
+          "oklch(45% 0.1198 79.67)",
+          "oklch(55% 0.1198 79.67)",
+          "oklch(70% 0.1198 79.67)",
+          "oklch(85% 0.1198 79.67)",
+          "oklch(95% 0.1198 79.67)"
+        ]
+      },
+      "page-ink": {
+        "role": "neutral",
+        "displayName": "Tinta de página",
+        "tonalRamp": [
+          "oklch(15% 0.0196 63.53)",
+          "oklch(25% 0.0196 63.53)",
+          "oklch(35% 0.0196 63.53)",
+          "oklch(45% 0.0196 63.53)",
+          "oklch(55% 0.0196 63.53)",
+          "oklch(70% 0.0196 63.53)",
+          "oklch(85% 0.0196 63.53)",
+          "oklch(95% 0.0196 63.53)"
+        ]
+      },
+      "page-muted": {
+        "role": "neutral",
+        "displayName": "Folio tenue",
+        "tonalRamp": [
+          "oklch(15% 0.0222 72.36)",
+          "oklch(25% 0.0222 72.36)",
+          "oklch(35% 0.0222 72.36)",
+          "oklch(45% 0.0222 72.36)",
+          "oklch(55% 0.0222 72.36)",
+          "oklch(70% 0.0222 72.36)",
+          "oklch(85% 0.0222 72.36)",
+          "oklch(95% 0.0222 72.36)"
+        ]
+      },
+      "night-paper": {
+        "role": "neutral",
+        "displayName": "Papel de noche",
+        "tonalRamp": [
+          "oklch(15% 0.0109 60.90)",
+          "oklch(25% 0.0109 60.90)",
+          "oklch(35% 0.0109 60.90)",
+          "oklch(45% 0.0109 60.90)",
+          "oklch(55% 0.0109 60.90)",
+          "oklch(70% 0.0109 60.90)",
+          "oklch(85% 0.0109 60.90)",
+          "oklch(95% 0.0109 60.90)"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Tinta de noche",
+        "tonalRamp": [
+          "oklch(15% 0.0263 82.38)",
+          "oklch(25% 0.0263 82.38)",
+          "oklch(35% 0.0263 82.38)",
+          "oklch(45% 0.0263 82.38)",
+          "oklch(55% 0.0263 82.38)",
+          "oklch(70% 0.0263 82.38)",
+          "oklch(85% 0.0263 82.38)",
+          "oklch(95% 0.0263 82.38)"
+        ]
+      },
+      "night-muted": {
+        "role": "neutral",
+        "displayName": "Folio de noche",
+        "tonalRamp": [
+          "oklch(15% 0.0288 78.13)",
+          "oklch(25% 0.0288 78.13)",
+          "oklch(35% 0.0288 78.13)",
+          "oklch(45% 0.0288 78.13)",
+          "oklch(55% 0.0288 78.13)",
+          "oklch(70% 0.0288 78.13)",
+          "oklch(85% 0.0288 78.13)",
+          "oklch(95% 0.0288 78.13)"
+        ]
+      },
+      "night-rule": {
+        "role": "neutral",
+        "displayName": "Regla de noche",
+        "tonalRamp": [
+          "oklch(15% 0.0276 71.26)",
+          "oklch(25% 0.0276 71.26)",
+          "oklch(35% 0.0276 71.26)",
+          "oklch(45% 0.0276 71.26)",
+          "oklch(55% 0.0276 71.26)",
+          "oklch(70% 0.0276 71.26)",
+          "oklch(85% 0.0276 71.26)",
+          "oklch(95% 0.0276 71.26)"
+        ]
+      },
+      "night-red": {
+        "role": "primary",
+        "displayName": "Carmín de noche",
+        "tonalRamp": [
+          "oklch(15% 0.1343 14.25)",
+          "oklch(25% 0.1343 14.25)",
+          "oklch(35% 0.1343 14.25)",
+          "oklch(45% 0.1343 14.25)",
+          "oklch(55% 0.1343 14.25)",
+          "oklch(70% 0.1343 14.25)",
+          "oklch(85% 0.1343 14.25)",
+          "oklch(95% 0.1343 14.25)"
+        ]
+      },
+      "word-light": {
+        "role": "secondary",
+        "displayName": "Luz de palabra",
+        "tonalRamp": [
+          "oklch(15% 0.1390 82.86)",
+          "oklch(25% 0.1390 82.86)",
+          "oklch(35% 0.1390 82.86)",
+          "oklch(45% 0.1390 82.86)",
+          "oklch(55% 0.1390 82.86)",
+          "oklch(70% 0.1390 82.86)",
+          "oklch(85% 0.1390 82.86)",
+          "oklch(95% 0.1390 82.86)"
+        ]
+      },
+      "verse-light": {
+        "role": "secondary",
+        "displayName": "Luz de versículo",
+        "tonalRamp": [
+          "oklch(15% 0.1390 82.86)",
+          "oklch(25% 0.1390 82.86)",
+          "oklch(35% 0.1390 82.86)",
+          "oklch(45% 0.1390 82.86)",
+          "oklch(55% 0.1390 82.86)",
+          "oklch(70% 0.1390 82.86)",
+          "oklch(85% 0.1390 82.86)",
+          "oklch(95% 0.1390 82.86)"
+        ]
+      },
+      "drawing-ink": {
+        "role": "secondary",
+        "displayName": "Tinta de trazo",
+        "tonalRamp": [
+          "oklch(15% 0.1718 19.71)",
+          "oklch(25% 0.1718 19.71)",
+          "oklch(35% 0.1718 19.71)",
+          "oklch(45% 0.1718 19.71)",
+          "oklch(55% 0.1718 19.71)",
+          "oklch(70% 0.1718 19.71)",
+          "oklch(85% 0.1718 19.71)",
+          "oklch(95% 0.1718 19.71)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Título editorial",
+        "purpose": "Preparación y familia del cierre; tamaños responsivos descritos en DESIGN.md."
+      },
+      "headline": {
+        "displayName": "Encabezado de lectura",
+        "purpose": "Gelasio para ajustes y títulos de capítulo."
+      },
+      "title": {
+        "displayName": "Título de diálogo",
+        "purpose": "Encabezados visibles de los diálogos nativos."
+      },
+      "reading": {
+        "displayName": "Lectura bíblica",
+        "purpose": "Tamaño inicial 22 px; ajustable de 17 a 32 px con interlineado 1.73."
+      },
+      "body": {
+        "displayName": "Texto de interfaz",
+        "purpose": "Instrucciones y explicación de preparación."
+      },
+      "label": {
+        "displayName": "Acción",
+        "purpose": "Botón principal y opciones de modo."
+      },
+      "label-small": {
+        "displayName": "Acción secundaria",
+        "purpose": "Botones de texto y controles secundarios."
+      },
+      "caption": {
+        "displayName": "Metadatos",
+        "purpose": "Ayudas compactas, valores y mensajes predefinidos."
+      },
+      "greek": {
+        "displayName": "Término griego",
+        "purpose": "Texto griego real proporcionado por el usuario; Noto Serif incluye glifos extendidos."
+      }
+    },
+    "shadows": [
+      {
+        "name": "paper-preview",
+        "value": "0 16px 40px #4a36121c",
+        "purpose": "Sombra ambiental de la prueba; se elimina en escena."
+      },
+      {
+        "name": "scene-dock",
+        "value": "0 -8px 35px #30231a12",
+        "purpose": "Herramientas superpuestas a la lectura."
+      },
+      {
+        "name": "scene-dock-night",
+        "value": "0 -8px 35px #0003",
+        "purpose": "Variante nocturna del dock."
+      },
+      {
+        "name": "dialog",
+        "value": "0 18px 80px #21160f36",
+        "purpose": "Diálogo nativo sobre el escritorio."
+      },
+      {
+        "name": "toast",
+        "value": "0 8px 30px #21160f20",
+        "purpose": "Confirmación temporal inferior."
+      },
+      {
+        "name": "word-light",
+        "value": "0 0 7px #d0a043b3,0 0 18px #dab64666",
+        "purpose": "text-shadow de palabra iluminada; no es box-shadow."
+      },
+      {
+        "name": "verse-light",
+        "value": "0 0 15px #dba73418",
+        "purpose": "box-shadow tenue del versículo marcado."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Easing CSS --ease para controles, cinta y switch."
+      },
+      {
+        "name": "button-state",
+        "value": "background-color .18s,color .18s,transform .18s var(--ease)",
+        "purpose": "Respuesta de botones; desplazamiento activo de 1 px."
+      },
+      {
+        "name": "switch",
+        "value": "transform .2s var(--ease)",
+        "purpose": "Movimiento del indicador al activar la reserva."
+      },
+      {
+        "name": "scene-tools",
+        "value": "opacity .3s var(--ease)",
+        "purpose": "Entrada y salida de herramientas, retenidas durante dibujo o foco."
+      },
+      {
+        "name": "ribbon",
+        "value": "transform .3s var(--ease)",
+        "purpose": "Estiramiento vertical de la cinta visible."
+      },
+      {
+        "name": "mark-state",
+        "value": ".25s",
+        "purpose": "Cambios de fondo y halo de palabras y versículos."
+      },
+      {
+        "name": "ink-bloom",
+        "value": ".6s ease-out",
+        "purpose": "Una floración al marcar; el halo final permanece."
+      },
+      {
+        "name": "loading-line",
+        "value": "1.4s ease-in-out infinite",
+        "purpose": "Solo estado de carga; no se usa durante la lectura."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation:none;transition:none;scroll-behavior:auto",
+        "purpose": "Anulación global bajo prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "small-phone",
+        "value": "359px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "700px"
+      },
+      {
+        "name": "live-reading-wide-min",
+        "value": "700px"
+      },
+      {
+        "name": "tablet-min",
+        "value": "701px"
+      },
+      {
+        "name": "tablet-max",
+        "value": "1100px"
+      },
+      {
+        "name": "wide-min",
+        "value": "1550px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Acción principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Entrada a escena y confirmación de ajustes.",
+      "html": "<button class=\"ds-primary\">Entrar en escena <svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12h16m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:30px;min-height:52px;padding:0 24px;background:var(--ink,#2c251f);color:var(--paper,#f6f1e4);font:500 13px var(--ui,Archivo,Arial,sans-serif);border:0;border-radius:5px;cursor:pointer;transition:background-color .18s,color .18s,transform .18s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-primary:hover:not(:disabled){background:var(--red-dark,#922235)}.ds-primary:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}.ds-primary:active:not(:disabled){transform:translateY(1px)}.ds-primary:disabled{opacity:.4;cursor:not-allowed}"
+    },
+    {
+      "name": "Acción de texto",
+      "kind": "button",
+      "refersTo": "button-text",
+      "description": "Acciones secundarias junto a un icono de línea.",
+      "html": "<button class=\"ds-text\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 6C8 3 4 4 2 5v14c4-2 7-1 10 1m0-14c4-3 8-2 10-1v14c-4-2-7-1-10 1V6Z\"/></svg> Mi contenido</button>",
+      "css": ".ds-text{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:0;border:0;background:none;color:var(--ink,#2c251f);font:400 12px var(--ui,Archivo,Arial,sans-serif);cursor:pointer;transition:color .18s,transform .18s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-text:hover{color:var(--red,#b92d40)}.ds-text:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}.ds-text:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Acción de icono",
+      "kind": "button",
+      "refersTo": "button-icon",
+      "description": "Control circular con etiqueta accesible.",
+      "html": "<button class=\"ds-icon\" aria-label=\"Ajustes de escena\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 7h16M4 17h16M9 4v6M15 14v6\"/></svg></button>",
+      "css": ".ds-icon{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:50%;background:none;color:var(--ink,#2c251f);cursor:pointer;transition:background-color .18s,transform .18s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-icon:hover{background:#2c251f09}.ds-icon:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}.ds-icon:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Campo de mensaje",
+      "kind": "input",
+      "refersTo": "input-text",
+      "description": "Texto final editable con contorno fino.",
+      "html": "<label class=\"ds-field-label\" for=\"ds-end\">Mensaje final</label><input class=\"ds-input\" id=\"ds-end\" type=\"text\" value=\"Es todo por hoy.\" maxlength=\"100\">",
+      "css": ".ds-field-label{display:block;margin:22px 0 10px;color:var(--ink,#2c251f);font:400 11px var(--ui,Archivo,Arial,sans-serif)}.ds-input{width:100%;min-height:48px;background:transparent;border:1px solid var(--rule,#cfc6b5);padding:10px 14px;border-radius:6px;color:var(--ink,#2c251f);caret-color:var(--red,#b92d40);font-family:var(--ui,Archivo,Arial,sans-serif)}.ds-input:hover{border-color:var(--rule,#cfc6b5)}.ds-input:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}"
+    },
+    {
+      "name": "Opción de recorrido",
+      "kind": "custom",
+      "refersTo": "mode-option",
+      "description": "Modo seleccionado en la lista de preparación.",
+      "html": "<button class=\"ds-mode\" aria-pressed=\"true\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 6C8 3 4 4 2 5v14c4-2 7-1 10 1m0-14c4-3 8-2 10-1v14c-4-2-7-1-10 1V6Z\"/></svg><span>Un libro<small>De principio a fin</small></span><span class=\"ds-check\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 12 4 4 10-10\"/></svg></span></button>",
+      "css": ".ds-mode{display:grid;grid-template-columns:26px 1fr 22px;gap:12px;align-items:center;width:100%;min-height:68px;padding:14px 6px;text-align:left;border:0;border-top:1px solid var(--rule,#cfc6b5);border-bottom:1px solid var(--rule,#cfc6b5);background:none;color:var(--red,#b92d40);font:500 13px var(--ui,Archivo,Arial,sans-serif);cursor:pointer;transition:background-color .18s,transform .18s}.ds-mode small{display:block;margin-top:4px;color:var(--muted,#6e6458);font-size:10px;font-weight:400}.ds-check{display:flex}.ds-mode:hover{background:#f6f1e460}.ds-mode:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}.ds-mode:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Tema de página",
+      "kind": "chip",
+      "refersTo": "theme-choice",
+      "description": "Elección Papel/Noche con contorno y muestra de color.",
+      "html": "<div class=\"ds-themes\" role=\"group\" aria-label=\"Color de la página\"><button class=\"ds-theme ds-selected\" aria-pressed=\"true\"><span class=\"ds-swatch\"></span>Papel</button><button class=\"ds-theme\" aria-pressed=\"false\"><span class=\"ds-swatch ds-night\"></span>Noche</button></div>",
+      "css": ".ds-themes{display:flex;gap:8px}.ds-theme{display:flex;align-items:center;gap:8px;min-height:40px;flex:1;padding:8px 12px;background:none;color:var(--ink,#2c251f);font:400 11px var(--ui,Archivo,Arial,sans-serif);border:1px solid var(--rule,#cfc6b5);border-radius:5px;cursor:pointer;transition:background-color .18s,transform .18s}.ds-selected{border-color:var(--ink,#2c251f);background:#f6f1e450}.ds-swatch{width:14px;height:14px;border:1px solid #b8aa96;border-radius:50%;background:var(--paper,#f6f1e4)}.ds-night{background:#211c18}.ds-theme:hover{background:#f6f1e450}.ds-theme:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}.ds-theme:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Mensaje predefinido",
+      "kind": "chip",
+      "refersTo": "message-preset",
+      "description": "Atajo de texto para el cierre.",
+      "html": "<button class=\"ds-preset\">Es todo por hoy.</button>",
+      "css": ".ds-preset{font:400 10px var(--ui,Archivo,Arial,sans-serif);min-height:33px;padding:0 12px;border:1px solid var(--rule,#cfc6b5);border-radius:30px;background:none;color:var(--ink,#2c251f);cursor:pointer;transition:color .18s,transform .18s}.ds-preset:hover{border-color:var(--red,#b92d40);color:var(--red,#b92d40)}.ds-preset:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}.ds-preset:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Prueba de página",
+      "kind": "card",
+      "refersTo": "paper-preview",
+      "description": "Papel casi recto y cinta vertical sobre el escritorio.",
+      "html": "<article class=\"ds-paper\"><span class=\"ds-spine\"></span><div class=\"ds-page-heading\">SANTIAGO</div><div class=\"ds-page-meta\">Capítulo 1 · Ejemplo</div><div class=\"ds-chapter\"><span>1</span><h2>Fe y sabiduría</h2></div></article>",
+      "css": ".ds-paper{position:relative;min-height:260px;padding:29px 28px 36px 32px;background:var(--paper,#f6f1e4);color:#30271f;border-radius:3px;box-shadow:0 16px 40px #4a36121c;overflow:hidden}.ds-spine{position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--red,#b92d40);opacity:.85}.ds-page-heading{font:600 10px var(--ui,Archivo,Arial,sans-serif);letter-spacing:.18em}.ds-page-meta{font:400 11px var(--ui,Archivo,Arial,sans-serif);color:#756b5f;margin-top:7px}.ds-chapter{display:flex;align-items:center;gap:17px;margin:34px 0 25px}.ds-chapter>span{font:400 70px/.95 var(--serif,Gelasio,Georgia,serif);color:var(--red,#b92d40)}.ds-chapter h2{font:400 26px/1.2 var(--serif,Gelasio,Georgia,serif);max-width:12ch;letter-spacing:-.025em;margin:0}"
+    },
+    {
+      "name": "Cinta y herramientas",
+      "kind": "nav",
+      "refersTo": "ribbon",
+      "description": "Cinta de acceso y muestra del dock de herramientas.",
+      "html": "<div class=\"ds-scene\"><button class=\"ds-ribbon\" aria-expanded=\"true\" aria-label=\"Mostrar u ocultar herramientas\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 7h16M4 17h16M9 4v6M15 14v6\"/></svg></button><nav class=\"ds-dock\" aria-label=\"Herramientas de lectura\"><button class=\"ds-tool ds-active\" aria-pressed=\"true\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m12 3 2.3 6.7L21 12l-6.7 2.3L12 21l-2.3-6.7L3 12l6.7-2.3L12 3Z\"/></svg><span>Luz</span></button><button class=\"ds-tool\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m16 3 5 5-12 12-6 1 1-6L16 3ZM13 6l5 5\"/></svg><span>Trazo</span></button><button class=\"ds-tool\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m8 5 11 7-11 7V5Z\"/></svg><span>Scroll</span></button></nav></div>",
+      "css": ".ds-scene{position:relative;min-height:180px;background:var(--paper,#f6f1e4)}.ds-ribbon{position:absolute;right:22px;top:0;width:44px;height:65px;border:0;background:transparent;color:var(--paper,#f6f1e4);padding:0;isolation:isolate;cursor:pointer}.ds-ribbon:before{content:\"\";position:absolute;top:0;right:0;width:32px;height:51px;background:var(--red,#b92d40);clip-path:polygon(0 0,100% 0,100% 100%,50% 88%,0 100%);transform-origin:top;transition:transform .3s var(--ease,cubic-bezier(.16,1,.3,1));z-index:-1}.ds-ribbon>svg{position:absolute;width:15px;height:15px;right:8px;top:17px}.ds-ribbon:hover:before{transform:scaleY(1.12)}.ds-ribbon:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}.ds-ribbon:active{transform:translateY(1px)}.ds-dock{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;gap:2px;padding:10px 16px 12px;background:var(--paper,#f6f1e4);box-shadow:0 -8px 35px #30231a12}.ds-tool{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-width:53px;min-height:58px;border:0;border-radius:7px;background:none;color:var(--muted,#6e6458);font:400 9px var(--ui,Archivo,Arial,sans-serif);cursor:pointer}.ds-active{color:var(--red,#b92d40);background:#b92d400b}.ds-tool:hover{background:#b92d400b}.ds-tool:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}.ds-tool:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Palabra iluminada",
+      "kind": "custom",
+      "refersTo": "illuminated-word",
+      "description": "La luz mantiene la tinta y responde una vez al marcar.",
+      "html": "<p class=\"ds-scripture\">Una palabra con <button class=\"ds-word ds-lit\" aria-pressed=\"true\">luz</button>.</p>",
+      "css": ".ds-scripture{margin:0;color:#30271f;font:400 22px/1.73 var(--serif,Gelasio,Georgia,serif)}.ds-word{display:inline;font:inherit;line-height:inherit;text-align:inherit;padding:0;border:0;border-radius:3px;color:inherit;background:transparent;cursor:pointer;transition:text-shadow .25s,background-color .25s}.ds-lit{background:#dba73433;text-shadow:0 0 7px #d0a043b3,0 0 18px #dab64666;animation:ds-ink-bloom .6s ease-out}.ds-word:hover{color:inherit}.ds-word:focus-visible{outline:2px solid var(--red,#b92d40);outline-offset:4px}.ds-word:active{transform:translateY(1px)}@keyframes ds-ink-bloom{0%{background:#e2ba5570;text-shadow:0 0 3px #d0a043}45%{text-shadow:0 0 12px #d0a043,0 0 28px #dab646}100%{text-shadow:0 0 7px #d0a043b3,0 0 18px #dab64666}}@media(prefers-reduced-motion:reduce){.ds-word{transition:none}.ds-lit{animation:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "El atril de grabación",
+    "overview": "Verbo reúne los materiales de un escritorio editorial: marfil, tinta cálida, reglas finas, una cinta carmín y un grabado geométrico. La preparación es compacta y práctica; la página conserva una lectura amplia y pausada. Comparte esos materiales con la referencia Santiago, pero este sistema pertenece únicamente a la app independiente de `estudio/`.\n\nEn escena, la página ocupa la ventana y las herramientas se retiran. La cinta conserva una entrada pequeña y reconocible a los controles. El énfasis ámbar ilumina palabras sin sustituir su tinta; el trazo rojo aporta una marca manual. La ornamentación procede del canvas geométrico original y de SVG de línea, sin imágenes rasterizadas en la interfaz.",
+    "keyCharacteristics": [
+      "Papel marfil sobre un escritorio ligeramente más oscuro.",
+      "Serif de lectura generosa junto a controles Archivo compactos.",
+      "Carmín para orientar, marcar límites y recuperar herramientas.",
+      "Profundidad suave reservada a la página y a superficies superpuestas.",
+      "Texto, encuadre del presentador y herramientas con espacios propios."
+    ],
+    "rules": [
+      {
+        "name": "The Carmine Wayfinding Rule",
+        "body": "El carmín identifica selección, foco, numerales y la cinta; el botón principal descansa en tinta cálida y usa carmín profundo al pasar el puntero.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reading Voice Rule",
+        "body": "Gelasio sostiene el texto bíblico y Noto Serif sostiene títulos y griego; Archivo organiza la operación sin competir con la lectura.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "**Do** mantener los roles separados de papel, escritorio, tinta de lectura y tinta secundaria.",
+      "**Do** conservar Gelasio y su interlineado amplio al añadir superficies de lectura.",
+      "**Do** combinar color y una señal adicional para comunicar selección, como el check de modo o el contorno de tema.",
+      "**Do** preservar la reserva del presentador cuando su guía se oculta.",
+      "**Do** mantener foco visible, nombres de diálogo y acceso a herramientas mientras se usan con teclado.",
+      "**Do** reutilizar SVG de línea y el grabado geométrico original cuando la ornamentación ayude a enmarcar la página."
+    ],
+    "donts": [
+      "**Don't** convertir cada grupo de ajustes en una tarjeta elevada: la preparación se organiza con reglas y tono.",
+      "**Don't** usar el tamaño de las ayudas compactas para el texto bíblico o para el contenido de las notas.",
+      "**Don't** aplicar brillo al cuerpo completo: la luz corresponde a palabras o versículos marcados.",
+      "**Don't** colocar la imagen del presentador por encima de los versículos ni eliminar su espacio al ocultar la guía.",
+      "**Don't** subrayar como consultable una palabra sin nota griega asociada.",
+      "**Don't** ocultar herramientas que contienen el foco ni reintroducir animaciones bajo movimiento reducido."
+    ]
+  }
+}
