@@ -1,6 +1,6 @@
 # JAS · medición del borrador contra la muestra de oro
 
-Generado: 2026-11-24T08:21:50-06:00. Borrador: 255 notas de «santiago» (`griego.rvr1960.borrador.json`). Muestra: `oro/santiago.json`, 60 entradas (59 con palabra, 1 nulas).
+Generado: 2026-11-24T08:30:34-06:00. Borrador: 255 notas de «santiago» (`griego.rvr1960.borrador.json`). Muestra: `oro/santiago.json`, 60 entradas (59 con palabra, 1 nulas).
 
 Regla de acierto: se unen oro y nota por referencia y Strong base. Correcta si los tokens del `word` de la nota (minúsculas, solo letras) están todos en el del oro, o al revés. Oro nulo con nota: incorrecta.
 
@@ -27,6 +27,8 @@ Regla de acierto: se unen oro y nota por referencia y Strong base. Correcta si l
 
 ## Selección y alineación
 - Tokens seleccionados: 324 · con destino RV09: 267 (82,4 %) · con word: 267 (82,4 %).
+
+- Precisión de `alta` contando las 1 notas no evaluadas como incorrectas: 22 de 23 (95,7 %).
 
 ## Fallos
 Ninguno.

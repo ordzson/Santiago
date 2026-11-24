@@ -54,14 +54,21 @@ function main(): number {
   }
   const biblia = parseBible(JSON.parse(readFileSync(bibliaRuta, 'utf8')));
   const total: Cuenta = {notas: 0, encontradas: 0, faltan: 0};
+  const sinNotas: string[] = [];
   for (const ruta of borradores) {
     const cuenta = validarBorrador(biblia, ruta);
+    if (cuenta.notas === 0) sinNotas.push(ruta);
     total.notas += cuenta.notas;
     total.encontradas += cuenta.encontradas;
     total.faltan += cuenta.faltan;
   }
   if (borradores.length > 1) {
     console.log(`total: ${total.notas} notas · ${total.encontradas} encontradas · ${total.faltan} faltan`);
+  }
+  if (total.notas === 0 || sinNotas.length > 0) {
+    for (const ruta of sinNotas) console.error(`error: «${basename(ruta)}» no trae notas`);
+    if (total.notas === 0) console.error('error: el total de notas es 0');
+    return 1;
   }
   return total.faltan > 0 ? 1 : 0;
 }

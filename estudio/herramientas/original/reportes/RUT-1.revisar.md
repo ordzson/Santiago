@@ -1,6 +1,6 @@
 # RUT-1 · revisión de las notas generadas
 
-Generado: 2026-11-24T08:25:12-06:00. Una fila por palabra seleccionada, en orden de texto.
+Generado: 2026-11-24T08:30:31-06:00. Una fila por palabra seleccionada, en orden de texto.
 
 | ref | versículo RVR1960 | lema | glosa | word | regla |
 |---|---|---|---|---|---|

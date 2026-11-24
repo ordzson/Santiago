@@ -150,6 +150,8 @@ def construir_reporte(codigo, slug, n_notas, oro_lista, filas, sin_nota, sin_eva
     fuera_oro = n_notas - len(filas) - len(sin_evaluar)
     alta = [f for f in filas if f["nota"].get("confidence") == "alta"]
     alta_ok = sum(1 for f in alta if f["correcta"])
+    alta_sin_evaluar = sum(1 for n in sin_evaluar if n.get("confidence") == "alta")
+    alta_estricta = len(alta) + alta_sin_evaluar
 
     reglas_orden = list(generar.REGLAS)
     reglas_orden += sorted({regla_de(f["nota"]) for f in filas} - set(reglas_orden))
@@ -181,6 +183,9 @@ def construir_reporte(codigo, slug, n_notas, oro_lista, filas, sin_nota, sin_eva
         f"- Tokens seleccionados: {alin['tokens']} · con destino RV09: {alin['con_destino']} "
         f"({porcentaje(alin['con_destino'], alin['tokens'])}) · con word: {alin['con_word']} "
         f"({porcentaje(alin['con_word'], alin['tokens'])}).",
+        "",
+        f"- Precisión de `alta` contando las {alta_sin_evaluar} notas no evaluadas como incorrectas: "
+        f"{alta_ok} de {alta_estricta} ({porcentaje(alta_ok, alta_estricta)}).",
         "",
         "## Fallos",
     ]

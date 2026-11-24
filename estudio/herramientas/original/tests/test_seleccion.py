@@ -1,5 +1,6 @@
 """Pruebas de seleccion.py: reglas de pos/Strong/frecuencia/tope y la selección con las fixtures
 de Santiago 1:1 (NT, tests/fixtures/enlace/) y Rut 1:1 (AT, tests/fixtures/enlace_at/)."""
+import re
 import os
 import sys
 import unittest
@@ -79,9 +80,10 @@ class TestElegir(unittest.TestCase):
     def test_prefijo_h9_excluido_solo_en_at(self):
         items = [item("o1", ref="RUT.1.1", sb="H9003", strong="H9003", pos="noun"),
                  item("o2", ref="RUT.1.1", sb="H3117", pos="noun"),
-                 item("o3", ref="RUT.1.1", sb="H1961", pos="verb")]
+                 item("o3", ref="RUT.1.1", sb="H1961", pos="verb"),
+                 item("o4", ref="RUT.1.1", sb="H995", pos="verb")]
         elegidos = seleccion.elegir(items, self.cfg, "AT", set())
-        self.assertEqual([i["id"] for i in elegidos], ["o2"])
+        self.assertEqual([i["id"] for i in elegidos], ["o2", "o4"])
 
     def test_salida_en_orden_de_texto(self):
         items = [item("n1", ref="JAS.1.2", sb="G1", freq=1), item("n2", ref="JAS.1.1", sb="G2", freq=9),
@@ -144,7 +146,7 @@ class TestSeleccionarAT(unittest.TestCase):
         self.assertEqual(len(items), 3)
         self.assertTrue(all(i["ref_orig"] == "RUT.1.1" for i in items))
         self.assertFalse(POS_AT & {i["pos"] for i in items})
-        self.assertFalse(any(i["strong_base"].startswith("H9") for i in items))
+        self.assertFalse(any(re.fullmatch(r"H9\d{3}", i["strong_base"]) for i in items))
         self.assertFalse(any(i["strong_base"] in {"H1961", "H559"} for i in items))
 
     def test_fixture_rut_11_sin_lexico_lema_vacio(self):

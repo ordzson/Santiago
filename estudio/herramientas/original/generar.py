@@ -82,7 +82,7 @@ def original_y_translit(item, enl, ent, modo):
     respaldo en el lema de la fuente y en la forma); `forma`: forma y translit del enlace."""
     if modo == "forma":
         return item["forma"], enl.get("translit_forma", "")
-    original = ent.get("lema") or item["lemma"] or item["forma"]
+    original = ent.get("lemma") or item["lemma"] or item["forma"]
     return original, ent.get("translit") or enl.get("translit_forma", "")
 
 
@@ -134,7 +134,7 @@ def candidatos(codigo, items, enlaces, res, lex, datos, modo, diferencias):
             ("book", slug), ("chapter", cap), ("verse", vers), ("word", r["word"]),
             ("original", original), ("transliteration", translit), ("meaning", ent.get("gloss", "")),
             ("context", ""), ("strong", lexico.clave(item["strong"])),
-            ("lemma", item["lemma"] or ent.get("lema", "")), ("morph", item["morph"]),
+            ("lemma", item["lemma"] or ent.get("lemma", "")), ("morph", item["morph"]),
             ("confidence", "revisar" if cap in diferencias else r["confidence"]),
             ("source", f"RV09 manual → RVR1960 ({r['regla']})"),
         ])

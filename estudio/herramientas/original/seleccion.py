@@ -6,13 +6,14 @@ Uso: python3 -I estudio/herramientas/original/seleccion.py --libro JAS
 Escribe HO/.cache/salida/JAS.seleccion.json (o RUT-1.seleccion.json) y su última línea es
 «tokens N · lemas M» (lemas = Strong base distintos).
 
-Reglas de config.json: se descartan las `pos` excluidas, los Strong de `excluir` y los que empiezan
-por un prefijo excluido (solo AT). Un token con frecuencia (fuentes.frecuencias) > umbral se
+Reglas de config.json: se descartan las `pos` excluidas, los Strong de `excluir` y los que coinciden con
+prefijo+3 dígitos excluido (p. ej. H9001–H9049; solo AT). Un token con frecuencia (fuentes.frecuencias) > umbral se
 descarta salvo que su Strong esté en «siempre» (config + claves de HO/glosario.json si existe).
 Por versículo se conservan `max_por_versiculo`, priorizando «siempre», luego la menor frecuencia y
 luego el orden del texto; la salida vuelve a ir en orden de texto.
 Solo biblioteca estándar.
 """
+import re
 import argparse
 import json
 import os
@@ -65,7 +66,8 @@ def _claves(item):
 
 def _excluido(item, excluir, prefijos):
     claves = _claves(item)
-    return bool(claves & excluir) or any(c.startswith(prefijos) for c in claves)
+    return bool(claves & excluir) or any(
+        re.fullmatch(re.escape(p) + r"\d{3}", c) for c in claves for p in prefijos)
 
 
 def elegir(items, cfg, testamento, siempre):
