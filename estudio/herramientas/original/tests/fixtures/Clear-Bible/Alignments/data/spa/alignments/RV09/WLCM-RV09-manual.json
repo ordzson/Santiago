@@ -1,0 +1,6 @@
+{"documents": [{"docid": "wlcm", "scheme": "BCVWP"}, {"docid": "RV09", "scheme": "BCVWP"}], "meta": {"conformsTo": "0.3", "creator": "United Bible Societies"}, "roles": ["source", "target"], "type": "translation", "records": [
+{"source": ["o010010010012"], "target": ["01001001003"], "meta": {"id": "01001001.1", "origin": "manual"}},
+{"source": ["o080010010012"], "target": ["08001001002"], "meta": {"id": "08001001.1", "origin": "manual"}},
+{"source": ["o080010010022"], "target": ["08001001005"], "meta": {"id": "08001001.2", "origin": "manual"}},
+{"source": ["o080010010031"], "target": ["08001001007"], "meta": {"id": "08001001.3", "origin": "manual"}}
+]}

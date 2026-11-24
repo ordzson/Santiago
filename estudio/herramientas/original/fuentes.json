@@ -1,0 +1,21 @@
+[
+  {"repo": "Clear-Bible/Alignments", "rama": "main", "ruta": "data/sources/SBLGNT.tsv"},
+  {"repo": "Clear-Bible/Alignments", "rama": "main", "ruta": "data/sources/WLCM.tsv"},
+  {"repo": "Clear-Bible/Alignments", "rama": "main", "ruta": "data/spa/targets/RV09/nt_RV09.tsv"},
+  {"repo": "Clear-Bible/Alignments", "rama": "main", "ruta": "data/spa/targets/RV09/ot_RV09.tsv"},
+  {"repo": "Clear-Bible/Alignments", "rama": "main", "ruta": "data/spa/alignments/RV09/SBLGNT-RV09-manual.json"},
+  {"repo": "Clear-Bible/Alignments", "rama": "main", "ruta": "data/spa/alignments/RV09/SBLGNT-RV09-manual.toml"},
+  {"repo": "Clear-Bible/Alignments", "rama": "main", "ruta": "data/spa/alignments/RV09/WLCM-RV09-manual.json"},
+  {"repo": "Clear-Bible/Alignments", "rama": "main", "ruta": "data/spa/alignments/RV09/WLCM-RV09-manual.toml"},
+  {"repo": "STEPBible/STEPBible-Data", "rama": "master", "ruta": "Translators Amalgamated OT+NT/TAGNT Mat-Jhn - Translators Amalgamated Greek NT - STEPBible.org CC-BY.txt"},
+  {"repo": "STEPBible/STEPBible-Data", "rama": "master", "ruta": "Translators Amalgamated OT+NT/TAGNT Act-Rev - Translators Amalgamated Greek NT - STEPBible.org CC-BY.txt"},
+  {"repo": "STEPBible/STEPBible-Data", "rama": "master", "ruta": "Translators Amalgamated OT+NT/TAHOT Gen-Deu - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt"},
+  {"repo": "STEPBible/STEPBible-Data", "rama": "master", "ruta": "Translators Amalgamated OT+NT/TAHOT Jos-Est - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt"},
+  {"repo": "STEPBible/STEPBible-Data", "rama": "master", "ruta": "Translators Amalgamated OT+NT/TAHOT Job-Sng - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt"},
+  {"repo": "STEPBible/STEPBible-Data", "rama": "master", "ruta": "Translators Amalgamated OT+NT/TAHOT Isa-Mal - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt"},
+  {"repo": "STEPBible/STEPBible-Data", "rama": "master", "ruta": "Lexicons/TBESG - Translators Brief lexicon of Extended Strongs for Greek - STEPBible.org CC BY.txt"},
+  {"repo": "STEPBible/STEPBible-Data", "rama": "master", "ruta": "Lexicons/TBESH - Translators Brief lexicon of Extended Strongs for Hebrew - STEPBible.org CC BY.txt"},
+  {"repo": "STEPBible/STEPBible-Data", "rama": "master", "ruta": "Morphology codes/TEGMC - Translators Expansion of Greek Morphhology Codes - STEPBible.org CC BY.txt"},
+  {"repo": "STEPBible/STEPBible-Data", "rama": "master", "ruta": "Morphology codes/TEHMC - Translators Expansion of Hebrew Morphology Codes - STEPBible.org CC BY.txt"},
+  {"repo": "STEPBible/STEPBible-Data", "rama": "master", "ruta": "Versification/TVTMS - Translators Versification Traditions with Methodology for Standardisation for Eng+Heb+Lat+Grk+Others - STEPBible.org CC BY.txt"}
+]

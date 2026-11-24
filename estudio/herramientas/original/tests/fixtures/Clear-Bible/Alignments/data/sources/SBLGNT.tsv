@@ -1,0 +1,15 @@
+id	altId	text	strongs	gloss	gloss2	lemma	pos	morph
+n40001001001	Βίβλος-1	Βίβλος	G0976	[The] book	book	βίβλος	noun	N-NSF
+n40001001002	γενέσεως-1	γενέσεως	G1078	of [the] genealogy	genealogy	γένεσις	noun	N-GSF
+n59001001001	Ἰάκωβος-1	Ἰάκωβος	G2385	James	James	Ἰάκωβος	noun	N-NSM
+n59001001002	θεοῦ-1	θεοῦ	G2316	of God	God	θεός	noun	N-GSM
+n59001001003	καὶ-1	καὶ	G2532	and	and	καί	conj	CONJ
+n59001001004	κυρίου-1	κυρίου	G2962	of [the] Lord	Lord	κύριος	noun	N-GSM
+n59001001005	Ἰησοῦ-1	Ἰησοῦ	G2424	Jesus	Jesus	Ἰησοῦς	noun	N-GSM
+n59001001006	Χριστοῦ-1	Χριστοῦ	G5547	Christ	Christ	Χριστός	noun	N-GSM
+n59001001007	δοῦλος-1	δοῦλος	G1401	a servant	servant	δοῦλος	noun	N-NSM
+n59001001008	ταῖς-1	ταῖς	G3588	To the	the	ὁ	det	T-DPF
+n59001001009	δώδεκα-1	δώδεκα	G1427	twelve	twelve	δώδεκα	num	A-NUI
+n59001001010	φυλαῖς-1	φυλαῖς	G5443	tribes	tribes	φυλή	noun	N-DPF
+n59001001011	ταῖς-2	ταῖς	G3588	-	which	ὁ	det	T-DPF
+n59001001012	ἐν-1	ἐν	G1722	in	in	ἐν	prep	PREP

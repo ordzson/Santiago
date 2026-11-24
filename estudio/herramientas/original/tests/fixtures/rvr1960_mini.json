@@ -1,0 +1,69 @@
+{
+ "version_id": 149,
+ "local_abbreviation": "RVR1960",
+ "books": [
+  {
+   "usfm": "JAS",
+   "human": "Santiago",
+   "chapters": [
+    {
+     "usfm": "JAS.1",
+     "human": "Santiago 1",
+     "items": [
+      {
+       "type": "heading1",
+       "verse_numbers": [],
+       "lines": [
+        "Salutación"
+       ],
+       "rlw_lines": [],
+       "np": true
+      },
+      {
+       "type": "verse",
+       "verse_numbers": [
+        1
+       ],
+       "lines": [
+        "Santiago, siervo de Dios y del Señor Jesucristo, a las doce tribus que están en la dispersión: Salud."
+       ],
+       "rlw_lines": [],
+       "np": true
+      },
+      {
+       "type": "heading1",
+       "verse_numbers": [],
+       "lines": [
+        "La sabiduría que viene de Dios"
+       ],
+       "rlw_lines": [],
+       "np": true
+      },
+      {
+       "type": "verse",
+       "verse_numbers": [
+        2
+       ],
+       "lines": [
+        "Hermanos míos, tened por sumo gozo cuando os halléis en diversas pruebas,"
+       ],
+       "rlw_lines": [],
+       "np": true
+      },
+      {
+       "type": "verse",
+       "verse_numbers": [
+        3
+       ],
+       "lines": [
+        "sabiendo que la prueba de vuestra fe produce paciencia."
+       ],
+       "rlw_lines": [],
+       "np": false
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

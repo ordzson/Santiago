@@ -1,2 +1,5 @@
 __pycache__/
 *.py[cod]
+.verify/
+estudio/herramientas/original/.cache/
+estudio/public/data/*_vid_*.json
