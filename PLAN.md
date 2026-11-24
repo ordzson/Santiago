@@ -30,7 +30,7 @@ Base: b6d44574685738852629204e9783bb341da7133f
 
 ### Oleadas
 
-- [x] O1 — Motor del espectro (lógica pura) (SHA_O1)
+- [x] O1 — Motor del espectro (lógica pura) (a9b9740)
   - Verificación: quick
   - Commit: `feat(estudio): motor del espectro de voz`
   - [x] T1 — Módulo puro `voice-spectrum.ts` + pruebas
