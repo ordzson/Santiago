@@ -59,7 +59,7 @@ Base: b6d44574685738852629204e9783bb341da7133f
     - Archivos: `estudio/src/app/voice-meter.ts`, `estudio/src/app/reader.ts`, `estudio/src/app/reader.css`, `estudio/src/app/app.html`
     - Contenido: canvas a ancho completo del pie (comparte fila con `presenter-space` si la cámara está abajo), alto ≈ el del folio actual más el padding que libere (el pie no crece > 8 px). Barras simétricas: graves en el centro abriéndose hacia los lados, crecen arriba y abajo de una línea base; nº de barras según ancho (≈3 px barra + 3 px hueco), DPR correcto con `ResizeObserver`; colores leídos de las variables CSS (día/noche, acento). Bucle `requestAnimationFrame` solo mientras `active` (= escena en lectura y `voice` y analizador listo) y la pestaña visible; si no, dibuja la línea de reposo (puntos de 2 px) y no anima. Quitar `page-folio`/`folio-line` del pie y su CSS muerto. `aria-hidden` en el canvas.
     - Hecho cuando: `node scripts/verify.mjs quick` y `build` pasan; captura con Chrome `--use-fake-ui-for-media-stream --use-fake-device-for-media-stream` (deviceScaleFactor 1, 390×844 y 1440×1000) muestra barras moviéndose en escena y la línea de reposo en la preparación.
-- [x] O4 — Pulido con impeccable y E2E (SHA_O4)
+- [x] O4 — Pulido con impeccable y E2E (5dbbc03)
   - Verificación: full + `pnpm --dir estudio e2e`
   - Commit: `feat(estudio): pulido del espectro y pruebas e2e de voz`
   - [x] T1 — Pase de diseño con `impeccable`
