@@ -46,7 +46,7 @@ Base: b6d44574685738852629204e9783bb341da7133f
     - Archivos: `estudio/src/app/reader.ts`, `estudio/src/app/reader.css`
     - Contenido: `progress` pasa a fracción 0..1 sin redondear (3 decimales); el filete actual (línea de tinta que se apaga) queda como pista y encima una capa de relleno en `--mark-red` con `transform:scaleX(var(--p))` desde la izquierda, 2 px de alto, `aria-hidden`; transición corta (~200 ms) que se anula con `prefers-reduced-motion` y al reiniciar el capítulo (sin «rebobinado» animado). Funciona en día y noche y con la fila de cámara arriba. Si el pie aún usa `progress` en %, adaptarlo sin romperlo (O3 lo elimina).
     - Hecho cuando: `node scripts/verify.mjs quick` y `node scripts/verify.mjs build` pasan; captura manual con `pnpm --dir estudio dev` + Playwright (deviceScaleFactor 1) muestra la barra a ~0 al inicio y ~1 al final del capítulo.
-- [x] O3 — Micrófono y espectro en el pie (SHA_O3)
+- [x] O3 — Micrófono y espectro en el pie (3769b6c)
   - Verificación: quick + build
   - Commit: `feat(estudio): espectro de voz del micrófono en el pie de página`
   - [x] T1 — Ajuste y entrada de micrófono
