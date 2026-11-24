@@ -31,7 +31,7 @@ ULTIMO_AT = 39  # 1–39 = AT, 40–66 = NT
 PUBLICO = os.path.normpath(os.path.join(BASE, "..", "..", "public", "data"))
 REPORTES = os.path.join(BASE, "reportes")
 CREDITOS = ("Notas generadas con datos de Clear Bible (BiblioNexus), STEPBible (Tyndale House), "
-            "SBLGNT y UXLC · CC BY 4.0.")
+            "SBLGNT y UXLC · CC BY 4.0 (UXLC: uso libre con cita).")
 IDIOMA = {"NT": "griego", "AT": "hebreo"}
 # Escrituras que la app acepta para cada idioma (mismos rangos que `SCRIPTS` de content.ts).
 ESCRITURA = {

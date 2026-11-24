@@ -105,6 +105,20 @@ Reglas comunes:
 
 También puedes cargar los archivos desde **Contenido** (casillas «Cargar notas del griego» y «Cargar notas del hebreo»), sin modificar el repo. Esa carga es temporal y dura hasta recargar la página; los archivos no se suben a un servidor. Al cargar otra Biblia, se limpian las notas de **ambos** idiomas para evitar asociaciones incorrectas. Límite de cada archivo: 35 MB.
 
+### Borradores de la RVR1960
+
+Dos borradores de notas para la RVR1960 los genera el pipeline offline de `herramientas/original/` (guía en [`herramientas/original/LEEME.md`](herramientas/original/LEEME.md)). Son el piloto de este repo y aún están en revisión:
+
+- `public/data/griego.rvr1960.borrador.json`: griego de **Santiago**.
+- `public/data/hebreo.rvr1960.borrador.json`: hebreo de **Rut 1**.
+
+No se cargan solos. Para verlos en la app:
+
+1. En **Contenido**, carga primero la Biblia exportada `herramientas/original/.cache/salida/rvr1960.biblia.json`. Se genera con `python3 -I herramientas/original/rvr1960.py exportar --libros JAS,RUT`; `.cache/` no se commitea.
+2. Después carga los dos borradores con «Cargar notas del griego» y «Cargar notas del hebreo». Cargar una Biblia limpia las notas, por eso el orden importa.
+
+Créditos y licencias de las fuentes: [`../licencias/FUENTES-ORIGINAL.md`](../licencias/FUENTES-ORIGINAL.md). Los borradores son obra derivada: conserva esos créditos al redistribuirlos.
+
 ## Preparar y grabar
 
 **En la preparación**
