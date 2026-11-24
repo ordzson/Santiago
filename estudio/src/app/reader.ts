@@ -20,6 +20,7 @@ const chargeCurve=(level:number)=>Math.pow(level,1.6);
   <header class="page-top" [class.camera-row]="frame().enabled && frame().corner.startsWith('top')" [class.frame-left]="frame().corner.endsWith('left')">
     <div class="page-heading"><span class="page-book">{{book()}}</span><span class="chapter-meta">Capítulo {{chapter().number}} <span>· {{version()}}</span></span></div>
     @if (frame().enabled && frame().corner.startsWith('top')) { <div class="presenter-space" [class.square]="frame().shape === 'square'" [class.no-guide]="live() && !frame().guide"><v-icon name="camera"/><span>Tu imagen</span></div> }
+  <span class="page-progress" [class.snap]="snap()" [style.--p]="progress()" aria-hidden="true"></span>
   </header>
   <div class="reading-scroll" #scroller (scroll)="onScroll()" (wheel)="manualScroll()" (pointerdown)="onPointerDown($event)" (contextmenu)="onContextMenu($event)" tabindex="0" aria-label="Texto bíblico; desplázate para leer">
     <div class="reading-content" #content>
@@ -35,7 +36,7 @@ const chargeCurve=(level:number)=>Math.pow(level,1.6);
     </div>
   </div>
   <footer class="page-bottom" [class.camera-row]="frame().enabled && frame().corner.startsWith('bottom')" [class.frame-left]="frame().corner.endsWith('left')">
-    <div class="page-folio"><span>{{book()}} {{chapter().number}}</span><span class="folio-line" [style.--p]="progress()"></span><span>{{progress()}}<small>%</small></span></div>
+    <div class="page-folio"><span>{{book()}} {{chapter().number}}</span><span class="folio-line" [style.--p]="percent()"></span><span>{{percent()}}<small>%</small></span></div>
     @if (frame().enabled && frame().corner.startsWith('bottom')) {<div class="presenter-space" [class.square]="frame().shape === 'square'" [class.no-guide]="live() && !frame().guide"><v-icon name="camera"/><span>Tu imagen</span></div>}
   </footer>
   <div class="sr-only" role="status" aria-live="polite" aria-atomic="true">{{announcement()}}</div>
@@ -52,7 +53,7 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
   note=output<OriginalNote>(); advance=output<void>(); pause=output<void>();
   specialToggle=output<number>(); burst=output<ReaderBurst>();
   scroll=viewChild.required<ElementRef<HTMLElement>>('scroller'); content=viewChild.required<ElementRef<HTMLElement>>('content');
-  wordMarks=signal(new Set<string>());verseMarks=signal(new Set<number>());progress=signal(0);announcement=signal('');
+  wordMarks=signal(new Set<string>());verseMarks=signal(new Set<number>());progress=signal(0);snap=signal(false);percent=computed(()=>Math.round(this.progress()*100));announcement=signal('');
   focusedWord=signal('1:0');
   verses=computed(()=>this.chapter().verses.map(v=>({...v,words:tokenize(v.text,this.notes().filter(n=>n.book===this.bookId() && n.chapter===this.chapter().number && n.verse===v.number))})));
   // Estado del gesto de pulsación (la máquina pura vive en press.ts).
@@ -114,7 +115,7 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
     el.addEventListener('click',this.swallowClick,true);
     el.addEventListener('touchmove',this.blockTouchScroll,{passive:false});
   }
-  onScroll(){const el=this.scroll().nativeElement; const max=el.scrollHeight-el.clientHeight;this.progress.set(max>0?Math.round(el.scrollTop/max*100):100);}
+  onScroll(){const el=this.scroll().nativeElement; const max=el.scrollHeight-el.clientHeight;this.progress.set(max>0?Math.min(1,Math.max(0,Math.round(el.scrollTop/max*1000)/1000)):1);}
   /** Autoscroll: la rueda o un desplazamiento manual real lo detienen en seco (el usuario ya mueve la hoja). */
   manualScroll(){this.ramp=0;if(this.playing())this.pause.emit();}
   private scrollTakeover(){if(this.pointer.type!=='mouse')this.manualScroll();}
@@ -273,9 +274,16 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
   reset(){
     this.endPress();this.stopTouchWatch();this.stopAuto();
     this.focusedWord.set(this.chapter().verses[0].number+':0');
-    this.wordMarks.set(new Set());this.verseMarks.set(new Set());this.progress.set(0);
+    this.wordMarks.set(new Set());this.verseMarks.set(new Set());this.snapProgress();
     const el=this.scroll()?.nativeElement;if(el){el.scrollTop=0;el.scrollTo(0,0);}
   }
+  /** Pone la barra a cero sin transición (sin «rebobinado» animado) y la restituye tras pintar. */
+  private snapProgress(){
+    this.snap.set(true);this.progress.set(0);
+    cancelAnimationFrame(this.snapRaf);
+    this.snapRaf=requestAnimationFrame(()=>{this.snapRaf=requestAnimationFrame(()=>this.snap.set(false));});
+  }
+  private snapRaf=0;
   /** Anuncio para lectores de pantalla: un mensaje idéntico al anterior se vuelve a leer porque la región se vacía antes (con margen para que Angular pinte el vacío). */
   private say(message:string){
     clearTimeout(this.sayTimer);this.announcement.set('');

@@ -38,10 +38,10 @@ Base: b6d44574685738852629204e9783bb341da7133f
     - Archivos: `estudio/src/app/voice-spectrum.ts`, `estudio/tests/voice-spectrum.test.ts`
     - Contenido: sin DOM ni Web Audio (recibe `Float32Array` en dB). `VOICE_TUNING` exportado con los parámetros iniciales: `fftSize 2048`, `smoothingTimeConstant 0.5`, analizador `minDecibels −95 / maxDecibels −20`, banda 90–7000 Hz en escala logarítmica, inclinación +3 dB/oct sobre 500 Hz, compuerta de ruido −68 dB, ganancia adaptativa (pico móvil con caída τ≈3 s y suelo −55 dB para no amplificar el ruido), ataque τ≈35 ms y caída τ≈220 ms (dependientes de `dt`, no del frame). Funciones: `bandEdges(sampleRate, fftSize, count, fMin, fMax)`, `bandLevels(db, edges, tuning)` → 0..1, `createVoiceSpectrum(count, tuning)` con `update(db, dt)` que devuelve niveles suavizados. Pruebas con espectros sintéticos según el Criterio.
     - Hecho cuando: `node scripts/verify.mjs quick` pasa con las pruebas nuevas.
-- [ ] O2 — Barra de progreso en la cabecera
+- [x] O2 — Barra de progreso en la cabecera (SHA_O2)
   - Verificación: quick + build
   - Commit: `feat(estudio): progreso del capítulo en el filete de cabecera`
-  - [ ] T1 — Filete → barra de progreso
+  - [x] T1 — Filete → barra de progreso
     - Leer: `CLAUDE.md`, `estudio/DESIGN.md` (cabecera, folio, Motion Exception Rule), `estudio/src/app/reader.ts` (`onScroll`, `progress`, `reset`, plantilla de `page-top`), `estudio/src/app/reader.css` (`.page-top::after`, `.folio-line`).
     - Archivos: `estudio/src/app/reader.ts`, `estudio/src/app/reader.css`
     - Contenido: `progress` pasa a fracción 0..1 sin redondear (3 decimales); el filete actual (línea de tinta que se apaga) queda como pista y encima una capa de relleno en `--mark-red` con `transform:scaleX(var(--p))` desde la izquierda, 2 px de alto, `aria-hidden`; transición corta (~200 ms) que se anula con `prefers-reduced-motion` y al reiniciar el capítulo (sin «rebobinado» animado). Funciona en día y noche y con la fila de cámara arriba. Si el pie aún usa `progress` en %, adaptarlo sin romperlo (O3 lo elimina).
@@ -78,6 +78,7 @@ Base: b6d44574685738852629204e9783bb341da7133f
 <!-- Una línea por decisión, desvío o bloqueo. Fecha + oleada. -->
 
 - 2026-11-24 O1: compuerta (−68 dB) aplicada al nivel medido, antes de la inclinación (si no, el ruido de sala encendía los agudos). `bandEdges` devuelve objeto `{sampleRate,fftSize,count,bins,freqs}`; `createVoiceSpectrum(count, tuning, sampleRate=48000)` → O3 debe pasar `audioContext.sampleRate`; `bandLevels(db,edges,tuning,peakDb?)`.
+- 2026-11-24 O2: barra `.page-progress` en el header; `reset()` activa `snap` (sin rebobinado animado). Pie aún usa `percent` (O3 lo quita). Sin captura visual aún (se hace en O3/O4).
 
 ## Próximos hitos
 
