@@ -66,10 +66,11 @@ test('encendido: pide micrófono, las barras cambian entre frames y las pistas t
   const hashes=new Set<number>();
   for(let i=0;i<30&&hashes.size<3;i++){hashes.add(await canvasHash(page));await page.waitForTimeout(100);}
   expect(hashes.size).toBeGreaterThan(1);
+  const PIE_ORIGINAL_PX = 49; // alto del pie antes de H3 (con folio)
   // El pie no muestra porcentaje y no crece más de 8 px respecto a los 49 px originales.
   expect(await page.locator('.page-bottom').innerText()).not.toContain('%');
   const box=(await page.locator('.page-bottom').boundingBox())!;
-  expect(box.height).toBeLessThanOrEqual(49+8);
+  expect(box.height).toBeLessThanOrEqual(PIE_ORIGINAL_PX + 8);
   // Al salir de la escena el micrófono se libera y el pie vuelve a la línea de reposo.
   await openPanel(page);
   await page.getByRole('button',{name:'Estudio'}).click();
