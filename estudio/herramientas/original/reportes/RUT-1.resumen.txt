@@ -1,0 +1,5 @@
+RUT-1: 65 tokens seleccionados · 49 con word (75,4 %) · 49 con destino RV09 (75,4 %)
+Notas en el borrador: 48 · duplicados quitados: 1 · no válidas: 0
+Por confianza (notas): alta 41 · media 5 · revisar 2
+Por regla (tokens): igual 42 · sin_par 16 · pista 5 · no_contiguo 2
+Versificación RV09 vs RVR1960: sin diferencias

@@ -1,0 +1,5 @@
+JAS: 324 tokens seleccionados · 267 con word (82,4 %) · 267 con destino RV09 (82,4 %)
+Notas en el borrador: 255 · duplicados quitados: 12 · no válidas: 0
+Por confianza (notas): alta 251 · media 3 · revisar 1
+Por regla (tokens): igual 261 · sin_par 57 · pista 3 · ambiguo 3
+Versificación RV09 vs RVR1960: sin diferencias
