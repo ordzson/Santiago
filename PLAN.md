@@ -136,33 +136,33 @@ Todas las rutas, relativas a la raíz del repo. `HO` = `estudio/herramientas/ori
       ```
       Conjunto `siempre` efectivo = `config.siempre` ∪ claves de `HO/glosario.json` si existe (lo crea T11). `seleccionar(usfm, capitulo=None)`: tokens fuente con pos no excluido, `strong_base` no excluido, frecuencia (`fuentes.frecuencias`) ≤ umbral salvo que esté en `siempre`. Por versículo, máximo `max_por_versiculo`, priorizando `siempre` > menor frecuencia > posición. Cada ítem: `{id, ref_orig, strong (dstrong del enlace o strong_base), strong_base, lemma, forma, morph, pos, frecuencia}`. CLI `seleccion.py --libro JAS` / `--libro RUT --capitulo 1` → `HO/.cache/salida/<JAS|RUT-1>.seleccion.json` y última línea `tokens N · lemas M`.
     - Hecho cuando: pruebas OK (pos excluidos ausentes, tope por versículo respetado, `siempre` entra aunque supere el umbral); ambos CLI imprimen conteos > 0.
-- [ ] O3 — Léxico en español
+- [x] O3 — Léxico en español
   - Verificación: quick
   - Commit: `feat(herramientas): léxico español del original (Santiago, Rut 1)`
-  - [ ] T11 — Léxico: lotes, validación y glosario · Modelo: haiku, esfuerzo xhigh
+  - [x] T11 — Léxico: lotes, validación y glosario · Modelo: haiku, esfuerzo xhigh
     - Leer: §Contratos; `HO/stepbible.py`, `HO/seleccion.py` (firmas).
     - Archivos: `HO/lexico.py`, `HO/glosario.json`, `HO/instrucciones-traduccion.md`, `HO/tests/test_lexico.py`.
     - `glosario.json` (`strong_base` → término fijo): `G4102 fe · G4100 creer · G1343 justicia · G1344 justificar · G1342 justo · G5485 gracia · G3551 ley · G266 pecado · G264 pecar · G4982 salvar · G4991 salvación · G4151 espíritu · G4561 carne · G2889 mundo · G1401 siervo · G2962 Señor · G2316 Dios · G26 amor · G25 amar · G1577 iglesia · G3986 prueba · G3985 tentar · G5590 alma · G2041 obra · G80 hermano · G4678 sabiduría · G3340 arrepentirse · G932 reino · G1391 gloria · G40 santo · G1680 esperanza · G1656 misericordia · G2222 vida · G2288 muerte · G3056 palabra · G3709 ira · G5281 paciencia · G5046 perfecto · G1242 pacto · H2617 misericordia · H1350 redimir · H3068 Jehová · H430 Dios · H7706 Todopoderoso · H1285 pacto · H8451 ley · H6666 justicia · H2403 pecado · H7307 espíritu · H5315 alma · H7965 paz · H1288 bendecir · H2580 gracia · H3467 salvar · H5650 siervo · H136 Señor`.
     - `instrucciones-traduccion.md` (fijo, se reutiliza en cada lote): entrada = arreglo JSON `{strong, lemma, gloss_en, short_en, es_rv09, glosario}`; salida = **solo** un arreglo JSON, mismo orden, claves `{strong, gloss, short}`. Español neutro latinoamericano, registro de estudio bíblico (no académico). `gloss`: 1–3 palabras. `short`: ≤ 20 palabras, una frase. Preferir el término de la RVR1960 cuando exista (`es_rv09` es la palabra que usa la RV1909 en ese libro; úsala como pista). Si `glosario` no es nulo, `gloss` empieza con ese término. Nombres propios: la forma española de la RVR1960. No explicar, no comentar, no añadir campos.
     - `lexico.py`: `preparar --libro JAS [--capitulo N]` → llama a `seleccion.seleccionar` (no al archivo en caché) y toma los dStrongs únicos de la selección que faltan en `HO/lexico-es.json`, en lotes de 50 `HO/.cache/lotes/<JAS|RUT-1>-NNN.json`; `es_rv09` = palabra RV09 (no excluida, minúsculas) más frecuente alineada a ese strong en el libro; `glosario` = término o `null`. `incorporar <lote.respuesta.json>` valida contra su lote (mismas claves y orden, sin vacíos, `gloss` ≤ 3 palabras, `short` ≤ 20 palabras, término de glosario presente) y fusiona en `lexico-es.json` (`{strong: {lemma, translit, gloss, short, review, fuente}}`, claves ordenadas). `review: true` si el strong está en el glosario o `gloss_en`/`short_en` contiene alguna de: god, lord, holy, sin, faith, believe, righteous, grace, mercy, law, spirit, soul, flesh, save, salvation, redeem, covenant, glory, kingdom, church, repent, forgive, sacrifice, temple, priest, worship, bless, curse, judge. Nunca sobrescribe una entrada existente. `estado --libro JAS [--capitulo N]` → `pendientes N`.
     - Hecho cuando: pruebas OK (respuesta con clave de más, vacía o `short` de 21 palabras → rechazada con mensaje); `preparar --libro JAS` imprime los lotes creados.
-  - [ ] T12 — Traducir Santiago, lotes 001–005 · Modelo: haiku, esfuerzo xhigh
-    - Leer: `HO/instrucciones-traduccion.md` (una vez) y cada lote `HO/.cache/lotes/JAS-00{1..5}.json`.
+  - [x] T12 — Traducir Santiago, lotes 001–004 (ajustado: solo hay 4) · Modelo: haiku, esfuerzo xhigh
+    - Leer: `HO/instrucciones-traduccion.md` (una vez) y cada lote `HO/.cache/lotes/JAS-00{1..4}.json`.
     - Archivos: `HO/.cache/lotes/JAS-00N.respuesta.json`, `HO/lexico-es.json` (vía `incorporar`).
     - Hacer: por lote, escribir la respuesta siguiendo las instrucciones y correr `python3 -I HO/lexico.py incorporar HO/.cache/lotes/JAS-00N.respuesta.json`. Si la validación rechaza, corregir solo lo señalado (máx. 2 veces por lote). No leer otros archivos.
-    - Hecho cuando: los 5 lotes incorporados sin error.
-  - [ ] T13 — Traducir Santiago, lotes 006 en adelante · Modelo: haiku, esfuerzo xhigh
+    - Hecho cuando: los 4 lotes incorporados sin error y `lexico.py estado --libro JAS` → `pendientes 0`.
+  - [x] T13 (sin lotes: JAS solo tiene 4, cubiertos por T12) — Traducir Santiago, lotes 006 en adelante · Modelo: haiku, esfuerzo xhigh
     - Igual que T12 con los lotes restantes de `JAS`. Si hay más de 6, hacer 6 y reportar `parcial`.
     - Hecho cuando: `python3 -I HO/lexico.py estado --libro JAS` → `pendientes 0`.
-  - [ ] T14 — Traducir Rut 1 · Modelo: haiku, esfuerzo xhigh
+  - [x] T14 — Traducir Rut 1 · Modelo: haiku, esfuerzo xhigh
     - Igual que T12: primero `lexico.py preparar --libro RUT --capitulo 1`, luego sus lotes.
     - Hecho cuando: `lexico.py estado --libro RUT --capitulo 1` → `pendientes 0`.
-  - [ ] T15 — Lista de revisión teológica · Modelo: haiku, esfuerzo xhigh
+  - [x] T15 — Lista de revisión teológica · Modelo: haiku, esfuerzo xhigh
     - Leer: `HO/lexico.py`, `HO/rvr1960.py` (firmas).
     - Archivos: `HO/lexico.py` (subcomandos `revision`, `aplicar-revision`), `HO/tests/test_lexico.py`.
     - Hacer: `revision --libro JAS [--capitulo N] --max 40` → entradas `review: true` del libro, priorizando glosario > mayor frecuencia en el libro; escribe `HO/.cache/salida/<JAS|RUT-1>.revision.txt`, una línea: `G4102 · πίστις · fe · <short> · JAS.1.3: sabiendo que la prueba de vuestra fe produce paciencia.` (versículo RVR1960 de la primera aparición, ≤ 160 caracteres). Las que pasen del tope van a `HO/reportes/<JAS|RUT-1>.revision-pendiente.md` (para el usuario). `aplicar-revision <respuesta.json>` (`{strong: {gloss, short}}`) valida longitudes, actualiza y marca `review: false, revisado: "opus"`.
     - Hecho cuando: pruebas OK; los dos `.revision.txt` existen con ≤ 40 líneas cada uno.
-  - [ ] T16 — Revisión teológica del léxico · Modelo: opus, esfuerzo medium
+  - [x] T16 — Revisión teológica del léxico · Modelo: opus, esfuerzo medium
     - Leer: solo `HO/.cache/salida/JAS.revision.txt` y `HO/.cache/salida/RUT-1.revision.txt` (≤ 40 líneas cada uno) y `HO/instrucciones-traduccion.md`.
     - Archivos: `HO/.cache/salida/<JAS|RUT-1>.revision.respuesta.json`, `HO/lexico-es.json` (vía `aplicar-revision`).
     - Hacer: corregir `gloss`/`short` donde la traducción sea imprecisa teológicamente o no use el término de la RVR1960; devolver todas las líneas (las correctas, sin cambios).
@@ -216,6 +216,11 @@ Todas las rutas, relativas a la raíz del repo. `HO` = `estudio/herramientas/ori
 - 2026-11-24 O2/T8: desvío menor de la spec: STEPBible a veces cambia el dStrong (μου G3450 vs G3165). En bloques `replace` se enlaza primero por forma igual y luego 1:1 por `strong_base`. Resultado JAS 1736/1739 (99,8 %); 3 `sin_par` (1.22, 2.3, 5.4). Sigma final = sigma en la clave.
 - 2026-11-24 O2/T9: decisión del usuario: segmentos WLCM sin Strong (10 en Rut 1: בֵּית, לֶחֶם de Belén) salen de la base del % de enlace; siguen listados en el .txt. Rut 1: 236/237 (99,6 %); único fallo RUT.1.11#14 (WLCM H376 vs STEPBible H582). Strong con `\` o `+` pegado se toma por el principal. Porcentajes con coma decimal.
 - 2026-11-24 O2/T10: JAS 324 tokens · 280 lemas; RUT 1 65 · 45 (`lemas` = strong_base distintos). `glosario.json` (T11) debe ser objeto con claves Strong. `ref_orig` AT sale del id WLCM (hebrea; coincide en Rut 1, mapear en Salmos). Tokens sin Strong no entran.
+- 2026-11-24 O3/T11: JAS = 4 lotes (50,50,50,48; 198 pendientes) porque el glosario (`siempre`) concentra 143 de 324 tokens. T12 → lotes 001–004; T13 no aplica. `preparar` no rehace lotes existentes (borrar `.cache/lotes/`). `fuente` = «lote JAS-001»; translit del léxico STEPBible al incorporar. RUT 1: 43 pendientes (1 sin glosa inglesa ni lema en TBESH: T14 la traduce desde el contexto o la deja revisar). `.cache/salida/JAS.seleccion.json` queda viejo; se regenera en `generar`.
+- 2026-11-24 O3/T12: `lexico-es.json` JAS = 198 entradas, 43 `review: true`. Glosas repetidas con strongs distintos (prueba, engañar, resistir, afligirse): aceptable, T15/T16 lo ven.
+- 2026-11-24 O3/T14: RUT 1 = 1 lote (43 strongs), 9 `review`. H430J sin entrada en TBESH: gloss «Dios», lema vacío, `review: true` (generar debe tolerar lema vacío). Pistas `es_rv09` ruidosas (H1481A «á», H2204 «yo», H6912 «seré»): ignoradas; pendiente mejorar `preparar` (filtrar `es_rv09` por `vacias_es` y longitud) si se repite en otros libros.
+- 2026-11-24 O3/T15: listas JAS 40 líneas (+3 pendientes para el usuario en `reportes/JAS.revision-pendiente.md`: G3550 νομοθέτης, G2746 καύχησις, G3649 ὀλολύζω), RUT-1 9 líneas. `aplicar-revision` rechaza entradas ya con `review: false` (no reejecutable sobre lo aplicado).
+- 2026-11-24 O3/T16: Opus revisó 49 líneas, cambió 11 (JAS 8, RUT 3); `review: true` 52 → 3 (solo los pendientes humanos). H430J quedó «Dios, dioses» (RVR1960 Rut 1:15 «sus dioses»); el usuario puede preferir solo «Dios».
 - 2026-11-24 plan: el TSV de RV09 trae `source_verse`: Clear ya resuelve original↔versificación española (p. ej. Sal 3:1 RV09 = 3:2 hebreo). Solo falta RV09↔RVR1960 (misma tradición): se comparan conteos (T17). TVTMS se descarga, pero se aplica en el hito que trate un libro con diferencias.
 - 2026-11-24 plan: `SBLGNT.tsv` de Clear ya trae strong, lema, morfología y glosa. El enlace con TAGNT aporta el dStrong (clave del léxico), la transliteración y la columna «Spanish translation», que sirve de pista. Un token no enlazado sigue con los datos SBLGNT.
 - 2026-11-24 plan: `RVR1960_vid_149.json` trae `items` con líneas ya limpias (sin encabezados ni notas `#`). Se usa eso en lugar del HTML.

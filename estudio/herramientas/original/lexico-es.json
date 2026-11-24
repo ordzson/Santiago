@@ -1,0 +1,1979 @@
+{
+  "G1026": {
+    "lemma": "βρέχω",
+    "translit": "brechō",
+    "gloss": "llover",
+    "short": "Caer agua de lluvia sobre la tierra; humedecer algo con agua.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G1032": {
+    "lemma": "βρύω",
+    "translit": "bruō",
+    "gloss": "brotar",
+    "short": "Salir o manar con fuerza, como el agua de una fuente; también echar brotes.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G1071": {
+    "lemma": "γέλως",
+    "translit": "gelōs",
+    "gloss": "risa",
+    "short": "Sonido de alegría o diversión que hace una persona al reír.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G1141": {
+    "lemma": "δαιμονιώδης",
+    "translit": "daimoniōdēs",
+    "gloss": "diabólica",
+    "short": "Semejante a un demonio, propia de los espíritus malignos.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G1150": {
+    "lemma": "δαμάζω",
+    "translit": "damazō",
+    "gloss": "domar",
+    "short": "Someter o dominar a un animal o una fuerza; en sentido figurado, controlar algo.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G1159": {
+    "lemma": "δαπανάω",
+    "translit": "dapanaō",
+    "gloss": "gastar",
+    "short": "Emplear o consumir algo por completo; también malgastar o derrochar un bien.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G1185": {
+    "lemma": "δελεάζω",
+    "translit": "deleazō",
+    "gloss": "seducir",
+    "short": "Atraer con un cebo o engaño, hasta hacer caer a alguien en una trampa.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G1252": {
+    "lemma": "διακρίνω",
+    "translit": "diakrinō",
+    "gloss": "dudar",
+    "short": "Distinguir o discernir entre dos cosas; también vacilar o dudar entre opciones.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G1261": {
+    "lemma": "διαλογισμός",
+    "translit": "dialogismos",
+    "gloss": "pensamiento",
+    "short": "Razonamiento o idea interior que una persona se hace; a veces con malas intenciones.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G1342": {
+    "lemma": "δίκαιος",
+    "translit": "dikaios",
+    "gloss": "justo",
+    "short": "Que obra conforme a la justicia y al derecho; en la Escritura, el hombre recto ante Dios.",
+    "review": false,
+    "fuente": "lote JAS-004",
+    "revisado": "opus"
+  },
+  "G1343": {
+    "lemma": "δικαιοσύνη",
+    "translit": "dikaiosunē",
+    "gloss": "justicia",
+    "short": "Conducta conforme a la voluntad de Dios; rectitud y cumplimiento de su ley.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G1344": {
+    "lemma": "δικαιόω",
+    "translit": "dikaioō",
+    "gloss": "justificar",
+    "short": "Declarar o tratar a alguien como justo, delante de Dios o de los hombres.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G1374": {
+    "lemma": "δίψυχος",
+    "translit": "dipsuchos",
+    "gloss": "de doble ánimo",
+    "short": "Persona que vacila entre dos actitudes o creencias, sin decidirse con firmeza.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G1383": {
+    "lemma": "δοκίμιον",
+    "translit": "dokimion",
+    "gloss": "prueba",
+    "short": "Resultado de una prueba que demuestra si algo es genuino o auténtico.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G1391": {
+    "lemma": "δόξα",
+    "translit": "doxa",
+    "gloss": "gloria",
+    "short": "Esplendor y honor propios de Dios; también buena fama, reconocimiento o majestad.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G1401": {
+    "lemma": "δοῦλος",
+    "translit": "doulos",
+    "gloss": "siervo",
+    "short": "Esclavo, sometido por completo a su amo; en la Escritura, quien pertenece a Dios y le sirve.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G1503": {
+    "lemma": "ἔοικα",
+    "translit": "eikō",
+    "gloss": "ser semejante",
+    "short": "Parecerse a algo en la apariencia o en la forma.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G1577": {
+    "lemma": "ἐκκλησία",
+    "translit": "ekklēsia",
+    "gloss": "iglesia",
+    "short": "Asamblea o reunión convocada; en el Nuevo Testamento, la comunidad de los creyentes.",
+    "review": false,
+    "fuente": "lote JAS-004",
+    "revisado": "opus"
+  },
+  "G1656": {
+    "lemma": "ἔλεος",
+    "translit": "eleos",
+    "gloss": "misericordia",
+    "short": "Compasión y piedad hacia quien sufre o está necesitado; en la Biblia, la bondad de Dios.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G1657": {
+    "lemma": "ἐλευθερία",
+    "translit": "eleutheria",
+    "gloss": "libertad",
+    "short": "Condición de quien no está sometido a otro; en el sentido religioso, libertad espiritual.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G1710": {
+    "lemma": "ἐμπορεύομαι",
+    "translit": "emporeuomai",
+    "gloss": "comerciar",
+    "short": "Viajar para comprar y vender; dedicarse a negocios o al tráfico de mercancías.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G1724": {
+    "lemma": "ἐνάλιον",
+    "translit": "enalios",
+    "gloss": "marino",
+    "short": "Que vive o pertenece al mar; dicho de los seres que habitan en el agua.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G1777": {
+    "lemma": "ἔνοχος",
+    "translit": "enochos",
+    "gloss": "culpable",
+    "short": "Sujeto a una obligación o a un castigo, por haber faltado a una ley.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G181": {
+    "lemma": "ἀκαταστασία",
+    "translit": "akatastasia",
+    "gloss": "desorden",
+    "short": "Falta de estabilidad o de orden; confusión, agitación o tumulto.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G182": {
+    "lemma": "ἀκατάστατος",
+    "translit": "akatastatos",
+    "gloss": "inconstante",
+    "short": "Que no tiene firmeza ni estabilidad; no logra asentarse en nada.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G1828": {
+    "lemma": "ἐξέλκω",
+    "translit": "exelkō",
+    "gloss": "atraer",
+    "short": "Sacar o arrastrar hacia afuera; en sentido figurado, atraer a alguien por un deseo.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G1914": {
+    "lemma": "ἐπιβλέπω",
+    "translit": "epiblepō",
+    "gloss": "mirar con respeto",
+    "short": "Fijar la mirada en alguien con favor o especial atención.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G1941": {
+    "lemma": "ἐπικαλέω",
+    "translit": "epikaleō",
+    "gloss": "invocar",
+    "short": "Llamar o pronunciar un nombre; invocar el nombre de alguien, como señal de pertenencia.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G1950": {
+    "lemma": "ἐπιλανθάνομαι",
+    "translit": "epilanthanō",
+    "gloss": "olvidar",
+    "short": "No recordar algo, dejarlo de lado o descuidarlo por completo.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G1990": {
+    "lemma": "ἐπιστήμων",
+    "translit": "epistēmōn",
+    "gloss": "sabio",
+    "short": "Que tiene conocimiento y habilidad para juzgar y actuar con acierto.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G1994": {
+    "lemma": "ἐπιστρέφω",
+    "translit": "epistrephō",
+    "gloss": "convertir",
+    "short": "Volver o hacer volver a alguien de un camino equivocado a otro correcto.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G2006": {
+    "lemma": "ἐπιτήδειος",
+    "translit": "epitēdeios",
+    "gloss": "necesario",
+    "short": "Adecuado o útil para un fin; dicho de las cosas que hacen falta para vivir.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G2013": {
+    "lemma": "ἐπιτυγχάνω",
+    "translit": "epitugchanō",
+    "gloss": "alcanzar",
+    "short": "Conseguir o llegar a obtener lo que se busca.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G202": {
+    "lemma": "ἀκροατής",
+    "translit": "akroatēs",
+    "gloss": "oidor",
+    "short": "Persona que escucha o presta atención a lo que se dice.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G2041": {
+    "lemma": "ἔργον",
+    "translit": "ergon",
+    "gloss": "obra",
+    "short": "Trabajo, tarea o empresa realizada; también la acción que muestra la conducta de una persona.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G2052": {
+    "lemma": "ἐριθεία",
+    "translit": "eritheia",
+    "gloss": "contención",
+    "short": "Ambición egoísta o afán de rivalidad, que busca el propio interés.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G2062": {
+    "lemma": "ἑρπετόν",
+    "translit": "herpeton",
+    "gloss": "reptil",
+    "short": "Animal que se arrastra sobre el suelo, como las serpientes.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G2066": {
+    "lemma": "ἐσθής",
+    "translit": "esthēs",
+    "gloss": "vestido",
+    "short": "Prenda o conjunto de ropa con que alguien se viste.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G2072": {
+    "lemma": "ἔσοπτρον",
+    "translit": "esoptron",
+    "gloss": "espejo",
+    "short": "Superficie pulida en la que uno se ve reflejado al mirarse.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G2112": {
+    "lemma": "εὐθέως",
+    "translit": "eutheōs",
+    "gloss": "en seguida",
+    "short": "De inmediato, sin demora; al instante.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G2114": {
+    "lemma": "εὐθυμέω",
+    "translit": "euthumeō",
+    "gloss": "estar alegre",
+    "short": "Sentirse de buen ánimo, con el corazón contento.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G212": {
+    "lemma": "ἀλαζονεία",
+    "translit": "alazoneia",
+    "gloss": "arrogancia",
+    "short": "Actitud de quien se cree superior y se jacta de sí mismo, sin fundamento.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G2138": {
+    "lemma": "εὐπειθής",
+    "translit": "eupeithēs",
+    "gloss": "dócil",
+    "short": "Dispuesto a obedecer y a dejarse guiar, sin resistencia.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G2143": {
+    "lemma": "εὐπρέπεια",
+    "translit": "euprepeia",
+    "gloss": "hermosura",
+    "short": "Apariencia atractiva y elegante, aspecto bello de algo.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G2172": {
+    "lemma": "εὔχομαι",
+    "translit": "euchomai",
+    "gloss": "orar",
+    "short": "Dirigir a Dios una petición o una súplica; pedir algo en oración.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G218": {
+    "lemma": "ἀλείφω",
+    "translit": "aleiphō",
+    "gloss": "ungir",
+    "short": "Untar con aceite u otra sustancia, en un acto ceremonial o de honra.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G2184": {
+    "lemma": "ἐφήμερος",
+    "translit": "ephēmeros",
+    "gloss": "de cada día",
+    "short": "Que dura un solo día, o que es necesario para cada día.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G2198": {
+    "lemma": "ζάω",
+    "translit": "zaō",
+    "gloss": "vivir",
+    "short": "Tener vida o estar vivo; también, conducir la vida de determinada manera.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G2222": {
+    "lemma": "ζωή",
+    "translit": "zōē",
+    "gloss": "vida",
+    "short": "Existencia de la persona, en contraste con la muerte; en la Escritura, también la vida eterna que Dios da.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G2237": {
+    "lemma": "ἡδονή",
+    "translit": "hēdonē",
+    "gloss": "deleite",
+    "short": "Placer o gusto intenso, especialmente el que se busca con deseo.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G2287": {
+    "lemma": "θανατηφόρος",
+    "translit": "thanatēphoros",
+    "gloss": "mortífero",
+    "short": "Que causa la muerte o es capaz de provocarla.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G2288": {
+    "lemma": "θάνατος",
+    "translit": "thanatos",
+    "gloss": "muerte",
+    "short": "Fin de la vida del cuerpo; en el uso bíblico, lo opuesto a la vida.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G2309": {
+    "lemma": "θέλω",
+    "translit": "thelō",
+    "gloss": "querer",
+    "short": "Tener la voluntad o el deseo de hacer algo; estar dispuesto a ello.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G2316": {
+    "lemma": "θεός",
+    "translit": "theos",
+    "gloss": "Dios",
+    "short": "Ser supremo, creador y gobernante del universo, único Dios verdadero según la Escritura.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G2328": {
+    "lemma": "θερμαίνομαι",
+    "translit": "thermainō",
+    "gloss": "calentarse",
+    "short": "Ponerse en calor para aliviar el frío del cuerpo.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G2357": {
+    "lemma": "θρησκός",
+    "translit": "thrēskos",
+    "gloss": "religioso",
+    "short": "Que cuida con esmero las formas externas del culto; persona que practica una religión.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G2447": {
+    "lemma": "ἰός",
+    "translit": "ios",
+    "gloss": "veneno",
+    "short": "Sustancia dañina que causa la muerte; en sentido figurado, lo que envenena.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G2462": {
+    "lemma": "ἵππος",
+    "translit": "hippos",
+    "gloss": "caballo",
+    "short": "Animal doméstico de monta o de carga, que se dirige por medio de un freno.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G25": {
+    "lemma": "ἀγαπάω",
+    "translit": "agapaō",
+    "gloss": "amar",
+    "short": "Sentir afecto y buena voluntad hacia alguien, y mostrarlo con hechos.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G252": {
+    "lemma": "ἁλυκός",
+    "translit": "halukos",
+    "gloss": "salado",
+    "short": "Que tiene sal o sabor a sal; dicho del agua que no es dulce.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G2552": {
+    "lemma": "κακοπαθία",
+    "translit": "kakopatheia",
+    "gloss": "aflicción",
+    "short": "Sufrimiento penoso o adversidad que se padece con dificultad y angustia.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G2553": {
+    "lemma": "κακοπαθέω",
+    "translit": "kakopatheō",
+    "gloss": "afligirse",
+    "short": "Sufrir males o penalidades, padecer una adversidad con dolor o dificultad.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G2560": {
+    "lemma": "κακῶς",
+    "translit": "kakōs",
+    "gloss": "mal",
+    "short": "De manera mala o equivocada; de forma contraria a lo que es recto.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G2570G": {
+    "lemma": "καλός",
+    "translit": "kalos",
+    "gloss": "bueno",
+    "short": "De buena calidad o belleza; en sentido moral, lo que es recto y agradable.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G2590": {
+    "lemma": "καρπός",
+    "translit": "karpos",
+    "gloss": "fruto",
+    "short": "Producto de un árbol o de una planta; en sentido figurado, resultado de una acción.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G2613": {
+    "lemma": "καταδικάζω",
+    "translit": "katadikazō",
+    "gloss": "condenar",
+    "short": "Pronunciar una sentencia de culpa contra alguien; declararlo culpable y castigarlo.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G2616": {
+    "lemma": "καταδυναστεύω",
+    "translit": "katadunasteuō",
+    "gloss": "oprimir",
+    "short": "Ejercer poder sobre alguien de manera abusiva, sometiéndolo y dominándolo.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G2620": {
+    "lemma": "κατακαυχάομαι",
+    "translit": "katakauchaomai",
+    "gloss": "jactarse contra",
+    "short": "Jactarse a costa de otro; también prevalecer o triunfar sobre algo.",
+    "review": false,
+    "fuente": "lote JAS-003",
+    "revisado": "opus"
+  },
+  "G2657": {
+    "lemma": "κατανοέω",
+    "translit": "katanoeō",
+    "gloss": "considerar",
+    "short": "Fijarse con atención en algo para comprenderlo bien; examinar con cuidado.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G266": {
+    "lemma": "ἁμαρτία",
+    "translit": "hamartia",
+    "gloss": "pecado",
+    "short": "Errar el blanco, es decir, fallar frente a lo que Dios exige; transgresión.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G2671": {
+    "lemma": "κατάρα",
+    "translit": "katara",
+    "gloss": "maldición",
+    "short": "Deseo o invocación de daño sobre alguien; lo opuesto a la bendición.",
+    "review": false,
+    "fuente": "lote JAS-003",
+    "revisado": "opus"
+  },
+  "G27": {
+    "lemma": "ἀγαπητός",
+    "translit": "agapētos",
+    "gloss": "amado",
+    "short": "Muy querido; se usaba como forma de trato afectuoso entre creyentes.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G270": {
+    "lemma": "ἀμάω",
+    "translit": "amaō",
+    "gloss": "segar",
+    "short": "Cortar con la hoz la mies o las plantas maduras del campo.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G2726": {
+    "lemma": "κατήφεια",
+    "translit": "katēpheia",
+    "gloss": "tristeza",
+    "short": "Estado de abatimiento o desánimo, con el ánimo caído.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G2728": {
+    "lemma": "κατιόομαι",
+    "translit": "katioomai",
+    "gloss": "enmohecerse",
+    "short": "Cubrirse de óxido o herrumbre, como ocurre con los metales que se corroen.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G2744": {
+    "lemma": "καυχάομαι",
+    "translit": "kauchaomai",
+    "gloss": "gloriarse",
+    "short": "Jactarse o alabarse de algo; en buen sentido, gloriarse o alegrarse en ello.",
+    "review": false,
+    "fuente": "lote JAS-004",
+    "revisado": "opus"
+  },
+  "G2746": {
+    "lemma": "καύχησις",
+    "translit": "kauchēsis",
+    "gloss": "jactancia",
+    "short": "Acción de presumir o de gloriarse en algo; el motivo del que uno se gloría.",
+    "review": true,
+    "fuente": "lote JAS-004"
+  },
+  "G2761": {
+    "lemma": "κενῶς",
+    "translit": "kenōs",
+    "gloss": "en vano",
+    "short": "Sin resultado ni provecho; sin propósito ni utilidad alguna.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G2889": {
+    "lemma": "κόσμος",
+    "translit": "kosmos",
+    "gloss": "mundo",
+    "short": "Orden del universo, conjunto de lo creado; en sentido moral, lo que se aparta de Dios.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G2917": {
+    "lemma": "κρίμα",
+    "translit": "krima",
+    "gloss": "condenación",
+    "short": "Sentencia o juicio que se pronuncia sobre la falta de alguien; también la condena que de ella resulta.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G2922": {
+    "lemma": "κριτήριον",
+    "translit": "kritērion",
+    "gloss": "tribunal",
+    "short": "Lugar donde se juzga una causa; también el medio o criterio para juzgar algo.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G2923": {
+    "lemma": "κριτής",
+    "translit": "kritēs",
+    "gloss": "juez",
+    "short": "Persona que juzga o decide una causa; en la Escritura, Dios como juez de todos.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G2938": {
+    "lemma": "κτίσμα",
+    "translit": "ktisma",
+    "gloss": "criatura",
+    "short": "Cosa o ser que ha sido creado; en el uso bíblico, obra de la creación.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G2962G": {
+    "lemma": "κύριος",
+    "translit": "kurios",
+    "gloss": "Señor",
+    "short": "Quien tiene autoridad y dominio sobre otros; en la Escritura, título de Dios y de Jesucristo.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G2983": {
+    "lemma": "λαμβάνω",
+    "translit": "lambanō",
+    "gloss": "recibir",
+    "short": "Tomar o asir algo; en sentido amplio, recibir u obtener lo que se da.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G3007": {
+    "lemma": "λείπω",
+    "translit": "leipō",
+    "gloss": "faltar",
+    "short": "Carecer de algo o no tener lo necesario; también quedar algo atrás o dejarlo.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G3056": {
+    "lemma": "λόγος",
+    "translit": "logos",
+    "gloss": "palabra",
+    "short": "Lo que se expresa del pensamiento; en el Nuevo Testamento, también el mensaje de Dios.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G3114": {
+    "lemma": "μακροθυμέω",
+    "translit": "makrothumeō",
+    "gloss": "tener paciencia",
+    "short": "Soportar con calma y constancia sin perder el ánimo; ser paciente durante mucho tiempo.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G3133": {
+    "lemma": "μαραίνομαι",
+    "translit": "marainō",
+    "gloss": "marchitarse",
+    "short": "Secarse o debilitarse poco a poco hasta perder fuerza y vigor.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G3163": {
+    "lemma": "μάχη",
+    "translit": "machē",
+    "gloss": "contienda",
+    "short": "Lucha o disputa entre personas; enfrentamiento de palabras o de hechos.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G3164": {
+    "lemma": "μάχομαι",
+    "translit": "machomai",
+    "gloss": "pelear",
+    "short": "Luchar con otro; también discutir o disputar, dicho de personas.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G3173": {
+    "lemma": "μέγας",
+    "translit": "megas",
+    "gloss": "grande",
+    "short": "Grande en tamaño, cantidad, extensión o importancia; de gran alcance o valor.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G3195": {
+    "lemma": "μέλλω",
+    "translit": "mellō",
+    "gloss": "haber de",
+    "short": "Estar a punto de ser o hacer algo; indica algo que va a suceder.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G3329": {
+    "lemma": "μετάγω",
+    "translit": "metagō",
+    "gloss": "dirigir",
+    "short": "Cambiar la dirección de algo, llevándolo de un lugar a otro; hacer girar.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G3498": {
+    "lemma": "νεκρός",
+    "translit": "nekros",
+    "gloss": "muerto",
+    "short": "Sin vida; en sentido figurado, algo que carece de efecto o de fuerza real.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G3550": {
+    "lemma": "νομοθέτης",
+    "translit": "nomothetēs",
+    "gloss": "legislador",
+    "short": "Persona que da leyes o establece normas para una comunidad.",
+    "review": true,
+    "fuente": "lote JAS-004"
+  },
+  "G3551": {
+    "lemma": "νόμος",
+    "translit": "nomos",
+    "gloss": "ley",
+    "short": "Conjunto de mandatos y enseñanzas dados por Dios; en sentido amplio, norma que rige la vida.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G3598": {
+    "lemma": "ὁδός",
+    "translit": "hodos",
+    "gloss": "camino",
+    "short": "Ruta o senda por la que se transita; en sentido figurado, la manera de vivir.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G3633": {
+    "lemma": "οἶμαι",
+    "translit": "oiomai",
+    "gloss": "pensar",
+    "short": "Pensar o suponer que algo es así o que va a ocurrir.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G3649": {
+    "lemma": "ὀλολύζω",
+    "translit": "ololuzō",
+    "gloss": "aullar",
+    "short": "Gritar en voz alta, con dolor o con lamento.",
+    "review": true,
+    "fuente": "lote JAS-004"
+  },
+  "G3660": {
+    "lemma": "ὀμνύω",
+    "translit": "omnumi",
+    "gloss": "jurar",
+    "short": "Afirmar algo invocando como testigo a Dios o a algo sagrado; hacer juramento.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G3663": {
+    "lemma": "ὁμοιοπαθής",
+    "translit": "homoiopathēs",
+    "gloss": "de pasiones semejantes",
+    "short": "Que siente y padece las mismas emociones o afectos que otro.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G3669": {
+    "lemma": "ὁμοίωσις",
+    "translit": "homoiōsis",
+    "gloss": "semejanza",
+    "short": "Parecido o conformidad con algo; el acto de volverse semejante a otro.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G3692": {
+    "lemma": "ὀπή",
+    "translit": "opē",
+    "gloss": "abertura",
+    "short": "Hueco u orificio por donde algo puede pasar o salir.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G3709": {
+    "lemma": "ὀργή",
+    "translit": "orgē",
+    "gloss": "ira",
+    "short": "Enojo o indignación fuerte, tanto de personas como de Dios.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G3727": {
+    "lemma": "ὅρκος",
+    "translit": "horkos",
+    "gloss": "juramento",
+    "short": "Promesa solemne que se confirma invocando algo sagrado o a Dios como testigo.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G3730": {
+    "lemma": "ὁρμή",
+    "translit": "hormē",
+    "gloss": "ímpetu",
+    "short": "Movimiento violento o repentino; en sentido hostil, un ataque o embestida.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G3737": {
+    "lemma": "ὀρφανός",
+    "translit": "orphanos",
+    "gloss": "huérfano",
+    "short": "Persona que ha perdido a su padre o a sus padres; en sentido amplio, desamparada.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G3786": {
+    "lemma": "ὄφελος",
+    "translit": "ophelos",
+    "gloss": "provecho",
+    "short": "Ventaja o beneficio que se obtiene de algo; utilidad real para alguien.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G381": {
+    "lemma": "ἀνάπτω",
+    "translit": "anaptō",
+    "gloss": "encender",
+    "short": "Prender fuego a algo o hacer que empiece a arder.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G3848": {
+    "lemma": "παραβάτης",
+    "translit": "parabatēs",
+    "gloss": "transgresor",
+    "short": "Persona que desobedece o viola una ley o un mandato establecido.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G3883": {
+    "lemma": "παραλλαγή",
+    "translit": "parallagē",
+    "gloss": "variación",
+    "short": "Cambio o alteración de una cosa a otra, en sentido general.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G3884": {
+    "lemma": "παραλογίζομαι",
+    "translit": "paralogizomai",
+    "gloss": "engañar",
+    "short": "Razonar mal o dejarse llevar por una falsa razón, hasta quedar engañado.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G3985G": {
+    "lemma": "πειράζω",
+    "translit": "peirazō",
+    "gloss": "tentar",
+    "short": "Probar a alguien o inducirlo al mal; en sentido amplio, poner algo a prueba.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G3986H": {
+    "lemma": "πειρασμός",
+    "translit": "peirasmos",
+    "gloss": "prueba, tentación",
+    "short": "Situación que pone a examen la fe; también tentación que incita al pecado.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G399": {
+    "lemma": "ἀναφέρω",
+    "translit": "anapherō",
+    "gloss": "ofrecer",
+    "short": "Llevar algo hacia arriba; en sentido religioso, ofrecerlo en sacrificio.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G4045": {
+    "lemma": "περιπίπτω",
+    "translit": "peripiptō",
+    "gloss": "encontrarse con",
+    "short": "Encontrarse de improviso con algo, en particular con pruebas.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G4079": {
+    "lemma": "πηδάλιον",
+    "translit": "pēdalion",
+    "gloss": "timón",
+    "short": "Pieza con que se gobierna una nave para cambiar su rumbo.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G4089": {
+    "lemma": "πικρός",
+    "translit": "pikros",
+    "gloss": "amargo",
+    "short": "De sabor desagradable, contrario al dulce; en sentido figurado, áspero o hiriente.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G4100": {
+    "lemma": "πιστεύω",
+    "translit": "pisteuō",
+    "gloss": "creer",
+    "short": "Confiar en algo o en alguien, teniéndolo por verdadero; en el Nuevo Testamento, creer en Dios o en Cristo.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G4102G": {
+    "lemma": "πίστις",
+    "translit": "pistis",
+    "gloss": "fe",
+    "short": "Confianza firme en Dios y en lo que él ha prometido.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G4105": {
+    "lemma": "πλανάω",
+    "translit": "planaō",
+    "gloss": "extraviar",
+    "short": "Hacer que alguien se desvíe del camino correcto o se equivoque; también engañar.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G4139": {
+    "lemma": "πλησίον",
+    "translit": "plēsion",
+    "gloss": "prójimo",
+    "short": "Persona que está cerca de nosotros; en la Escritura, el semejante o el vecino.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G4149": {
+    "lemma": "πλοῦτος",
+    "translit": "ploutos",
+    "gloss": "riquezas",
+    "short": "Abundancia de bienes o posesiones; también la riqueza en sentido moral o espiritual.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G4151G": {
+    "lemma": "πνεῦμα",
+    "translit": "pneuma",
+    "gloss": "espíritu",
+    "short": "Aliento o viento; en la Escritura, el espíritu que da vida a la persona, o el Espíritu de Dios.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G416": {
+    "lemma": "ἀνεμίζομαι",
+    "translit": "anemizomai",
+    "gloss": "llevado del viento",
+    "short": "Ser empujado de un lado a otro por el viento, sin rumbo fijo.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G4170": {
+    "lemma": "πολεμέω",
+    "translit": "polemeō",
+    "gloss": "guerrear",
+    "short": "Hacer la guerra o pelear en batalla; en sentido amplio, enfrentarse con otros.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G4197": {
+    "lemma": "πορεία",
+    "translit": "poreia",
+    "gloss": "caminos",
+    "short": "Viaje o recorrido; en sentido figurado, la manera de ir por la vida y de actuar.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G436": {
+    "lemma": "ἀνθίστημι",
+    "translit": "anthistēmi",
+    "gloss": "resistir",
+    "short": "Oponerse con firmeza a algo o a alguien; no ceder ante el ataque o la presión.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G438": {
+    "lemma": "ἄνθος",
+    "translit": "anthos",
+    "gloss": "flor",
+    "short": "Flor de una planta, que tiene una vida breve.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G4380": {
+    "lemma": "προσωπολημπτέω",
+    "translit": "prosōpolēpteō",
+    "gloss": "hacer acepción",
+    "short": "Mostrar favor a alguien por su apariencia o posición, en lugar de tratarlo con justicia.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G4406": {
+    "lemma": "πρόϊμος",
+    "translit": "prōimos",
+    "gloss": "temprana",
+    "short": "Que ocurre al comienzo de la estación; dicho sobre todo de la lluvia temprana.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G4417": {
+    "lemma": "πταίω",
+    "translit": "ptaiō",
+    "gloss": "ofender",
+    "short": "Tropezar o caer en falta; en sentido moral, fallar en un punto de la ley.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G4460": {
+    "lemma": "Ῥαάβ",
+    "translit": "Rhaab",
+    "gloss": "Rahab",
+    "short": "Nombre propio de una mujer mencionada en la Escritura.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G448": {
+    "lemma": "ἀνέλεος",
+    "translit": "anileōs",
+    "gloss": "sin misericordia",
+    "short": "Que no muestra compasión ni piedad hacia nadie.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G4494": {
+    "lemma": "ῥιπίζομαι",
+    "translit": "rhipizō",
+    "gloss": "zarandeado",
+    "short": "Ser sacudido de un lado a otro, como algo que el viento agita sin control.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G4508": {
+    "lemma": "ῥυπαρός",
+    "translit": "rhuparos",
+    "gloss": "sucio",
+    "short": "Muy sucio o descuidado, con ropa gastada; en sentido moral, manchado de pecado.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G4561": {
+    "lemma": "σάρξ",
+    "translit": "sarx",
+    "gloss": "carne",
+    "short": "Tejido blando del cuerpo de los seres vivos; en sentido bíblico, la naturaleza humana.",
+    "review": false,
+    "fuente": "lote JAS-004",
+    "revisado": "opus"
+  },
+  "G4595": {
+    "lemma": "σήπω",
+    "translit": "sēpō",
+    "gloss": "pudrirse",
+    "short": "Descomponerse o corromperse por el paso del tiempo; estar echado a perder.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G4598": {
+    "lemma": "σητόβρωτος",
+    "translit": "sētobrōtos",
+    "gloss": "roído por polilla",
+    "short": "Dañado o roído por la polilla, que destruye ropas y tejidos.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G4678": {
+    "lemma": "σοφία",
+    "translit": "sophia",
+    "gloss": "sabiduría",
+    "short": "Entendimiento para vivir con acierto; en la Escritura, la que procede de Dios y se muestra en la conducta.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G4684": {
+    "lemma": "σπαταλάω",
+    "translit": "spatalaō",
+    "gloss": "vivir disolutamente",
+    "short": "Vivir de forma desenfrenada y sin control, entregado a los excesos.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G4687": {
+    "lemma": "σπείρω",
+    "translit": "speirō",
+    "gloss": "sembrar",
+    "short": "Echar semilla en la tierra para que germine y produzca.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G4695": {
+    "lemma": "σπιλόω",
+    "translit": "spiloō",
+    "gloss": "contaminar",
+    "short": "Manchar o ensuciar algo; en sentido moral, corromper a una persona.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G4727": {
+    "lemma": "στενάζω",
+    "translit": "stenazō",
+    "gloss": "quejarse",
+    "short": "Gemir o lamentarse en silencio, con pena interior; también murmurar contra otros.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G4741": {
+    "lemma": "στηρίζω",
+    "translit": "stērizō",
+    "gloss": "afirmar",
+    "short": "Hacer firme algo para que no caiga; en sentido figurado, fortalecer el ánimo o la fe.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G4754": {
+    "lemma": "στρατεύομαι",
+    "translit": "strateuō",
+    "gloss": "combatir",
+    "short": "Pelear como soldado o luchar en una guerra; en sentido figurado, enfrentar una lucha interior.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G48": {
+    "lemma": "ἁγνίζω",
+    "translit": "hagnizō",
+    "gloss": "purificar",
+    "short": "Limpiar de impurezas, tanto en el ámbito ritual como en el moral.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G4810": {
+    "lemma": "σῦκον",
+    "translit": "sukon",
+    "gloss": "higo",
+    "short": "Fruto de la higuera, que es dulce y comestible.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G4967": {
+    "lemma": "σφαγή",
+    "translit": "sphagē",
+    "gloss": "matanza",
+    "short": "Muerte violenta de personas o animales, como en una matanza.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G498": {
+    "lemma": "ἀντιτάσσομαι",
+    "translit": "antitassō",
+    "gloss": "resistir",
+    "short": "Colocarse en contra de alguien, enfrentándose a él; oponerse con decisión.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G4982": {
+    "lemma": "σῴζω",
+    "translit": "sōzō",
+    "gloss": "salvar",
+    "short": "Librar de un peligro o daño; en la Escritura, sobre todo librar del pecado y de su condenación.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G5003": {
+    "lemma": "ταλαιπωρέω",
+    "translit": "talaipōreō",
+    "gloss": "afligirse",
+    "short": "Sufrir penas o trabajos duros, y sentir la angustia que producen.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G5004": {
+    "lemma": "ταλαιπωρία",
+    "translit": "talaipōria",
+    "gloss": "miseria",
+    "short": "Sufrimiento o penuria dura, con angustia y padecimiento.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G5011": {
+    "lemma": "ταπεινός",
+    "translit": "tapeinos",
+    "gloss": "humilde",
+    "short": "De condición baja o modesta; en sentido moral, sencillo y sin orgullo.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G5013": {
+    "lemma": "ταπεινόω",
+    "translit": "tapeinoō",
+    "gloss": "humillar",
+    "short": "Hacer bajar a alguien de su altura o orgullo; en sentido moral, rebajarse con humildad.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G5014": {
+    "lemma": "ταπείνωσις",
+    "translit": "tapeinōsis",
+    "gloss": "humillación",
+    "short": "Estado de bajeza, sencillez o condición modesta; también abatimiento o humillación.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G5036": {
+    "lemma": "ταχύς",
+    "translit": "tachus",
+    "gloss": "pronto",
+    "short": "Rápido o ligero en hacer algo; lo contrario de lento o tardío.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G5046": {
+    "lemma": "τέλειος",
+    "translit": "teleios",
+    "gloss": "perfecto",
+    "short": "Completo y maduro, que ha llegado a su fin propio, sin nada que le falte.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G5157": {
+    "lemma": "τροπή",
+    "translit": "tropē",
+    "gloss": "giro",
+    "short": "Giro o revolución, especialmente el de los astros; en sentido figurado, cambio o variación.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G5164": {
+    "lemma": "τροχός",
+    "translit": "trochos",
+    "gloss": "rueda",
+    "short": "Objeto circular que gira sobre un eje; en sentido figurado, el curso o ciclo de algo.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G5171": {
+    "lemma": "τρυφάω",
+    "translit": "truphaō",
+    "gloss": "vivir en deleites",
+    "short": "Vivir con lujo y comodidades, entregado al placer y a la vida fácil.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G5205": {
+    "lemma": "ὑετός",
+    "translit": "huetos",
+    "gloss": "lluvia",
+    "short": "Agua que cae de las nubes en forma de gotas sobre la tierra.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G5208": {
+    "lemma": "ὕλη",
+    "translit": "hulē",
+    "gloss": "bosque",
+    "short": "Terreno cubierto de árboles; también la madera o leña que sirve de combustible.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G5281": {
+    "lemma": "ὑπομονή",
+    "translit": "hupomonē",
+    "gloss": "paciencia",
+    "short": "Capacidad de permanecer firme y soportar con constancia las dificultades sin rendirse.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G5311": {
+    "lemma": "ὕψος",
+    "translit": "hupsos",
+    "gloss": "altura",
+    "short": "Altura o elevación, en sentido literal y también de posición o condición.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G5312": {
+    "lemma": "ὑψόω",
+    "translit": "hupsoō",
+    "gloss": "exaltar",
+    "short": "Levantar a alguien a una posición de honor; en sentido figurado, enaltecer o engrandecer.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G5337": {
+    "lemma": "φαῦλος",
+    "translit": "phaulos",
+    "gloss": "perverso",
+    "short": "Malo o dañino; en el Nuevo Testamento, siempre con sentido de maldad.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G5343": {
+    "lemma": "φεύγω",
+    "translit": "pheugō",
+    "gloss": "huir",
+    "short": "Escapar o alejarse rápidamente de un peligro o de algo que se rechaza.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G5355": {
+    "lemma": "φθόνος",
+    "translit": "phthonos",
+    "gloss": "envidia",
+    "short": "Tristeza o disgusto por el bien ajeno, con deseo de tenerlo o de quitarlo.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G538": {
+    "lemma": "ἀπατάω",
+    "translit": "apataō",
+    "gloss": "engañar",
+    "short": "Hacer creer algo falso a alguien, llevándolo a error mediante la mentira.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G5407": {
+    "lemma": "φονεύω",
+    "translit": "phoneuō",
+    "gloss": "matar",
+    "short": "Quitar la vida a alguien de forma violenta, dar muerte a otra persona.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G5409": {
+    "lemma": "φορέω",
+    "translit": "phoreō",
+    "gloss": "llevar puesto",
+    "short": "Usar prendas de vestir de manera habitual, llevándolas puestas con frecuencia.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G5468": {
+    "lemma": "χαλιναγωγέω",
+    "translit": "chalinagōgeō",
+    "gloss": "refrenar",
+    "short": "Sujetar con freno, como se hace con un caballo; dominar o controlar algo, como la lengua.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G5469": {
+    "lemma": "χαλινός",
+    "translit": "chalinos",
+    "gloss": "freno",
+    "short": "Pieza de metal que se pone en la boca del caballo para dirigirlo.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G5485": {
+    "lemma": "χάρις",
+    "translit": "charis",
+    "gloss": "gracia",
+    "short": "Favor o bondad que se recibe sin merecerlo; en la Escritura, el amor gratuito de Dios.",
+    "review": false,
+    "fuente": "lote JAS-003",
+    "revisado": "opus"
+  },
+  "G5528": {
+    "lemma": "χόρτος",
+    "translit": "chortos",
+    "gloss": "hierba",
+    "short": "Hierba o pasto, especialmente el que sirve de alimento para el ganado.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G5534": {
+    "lemma": "χρή",
+    "translit": "chrē",
+    "gloss": "convenir",
+    "short": "Ser necesario o adecuado; indica lo que corresponde o es debido.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G5554": {
+    "lemma": "χρυσοδακτύλιος",
+    "translit": "chrusodaktulios",
+    "gloss": "anillo de oro",
+    "short": "Que lleva un anillo de oro en el dedo, como adorno de quien tiene riqueza.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G5567": {
+    "lemma": "ψάλλω",
+    "translit": "psallō",
+    "gloss": "cantar",
+    "short": "Cantar alabanzas, acompañándose de un instrumento de cuerda.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G5590G": {
+    "lemma": "ψυχή",
+    "translit": "psuchē",
+    "gloss": "alma",
+    "short": "Aliento o vida de la persona; en la Biblia, el ser humano en su totalidad.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G5591": {
+    "lemma": "ψυχικός",
+    "translit": "psuchikos",
+    "gloss": "animal",
+    "short": "Propio de la parte inferior o natural del ser humano, en oposición a lo espiritual.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G574": {
+    "lemma": "ἁπλῶς",
+    "translit": "haplōs",
+    "gloss": "generosamente",
+    "short": "Con sencillez y sinceridad, de manera generosa y sin doblez.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G6063": {
+    "lemma": "οἶδα",
+    "translit": "oida",
+    "gloss": "saber",
+    "short": "Tener conocimiento de algo, saber con certeza; conocer un hecho o una verdad.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G6094": {
+    "lemma": "αὐχέω",
+    "translit": "aucheō",
+    "gloss": "jactarse",
+    "short": "Presumir o alardear de algo con orgullo.",
+    "review": false,
+    "fuente": "lote JAS-003"
+  },
+  "G616": {
+    "lemma": "ἀποκυέω",
+    "translit": "apokueō",
+    "gloss": "engendrar",
+    "short": "Dar a luz o producir algo nuevo, dando origen a una vida.",
+    "review": false,
+    "fuente": "lote JAS-001"
+  },
+  "G692": {
+    "lemma": "ἀργός",
+    "translit": "argos",
+    "gloss": "ineficaz",
+    "short": "Inactivo o sin efecto; en sentido figurado, que no produce resultado alguno.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G71": {
+    "lemma": "ἄγε",
+    "translit": "agō",
+    "gloss": "pasar tiempo",
+    "short": "Conducir o llevar a alguien; también pasar o emplear un período de tiempo.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G80": {
+    "lemma": "ἀδελφός",
+    "translit": "adelphos",
+    "gloss": "hermano",
+    "short": "Persona nacida de los mismos padres; en sentido amplio, compañero de fe o prójimo.",
+    "review": false,
+    "fuente": "lote JAS-001",
+    "revisado": "opus"
+  },
+  "G818": {
+    "lemma": "ἀτιμάζω",
+    "translit": "atimazō",
+    "gloss": "afrentar",
+    "short": "Tratar a alguien sin respeto, faltarle al honor o insultarlo.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G822": {
+    "lemma": "ἀτμίς",
+    "translit": "atmis",
+    "gloss": "vapor",
+    "short": "Vapor o humo que se eleva y se disipa en poco tiempo.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G839": {
+    "lemma": "αὔριον",
+    "translit": "aurion",
+    "gloss": "mañana",
+    "short": "El día que sigue inmediatamente al de hoy.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G853": {
+    "lemma": "ἀφανίζω",
+    "translit": "aphanizō",
+    "gloss": "desvanecer",
+    "short": "Hacer desaparecer algo de la vista; en sentido figurado, destruir o arruinar.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G932": {
+    "lemma": "βασιλεία",
+    "translit": "basileia",
+    "gloss": "reino",
+    "short": "Gobierno y soberanía de un rey; en la Escritura, el dominio de Dios sobre su pueblo.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G937": {
+    "lemma": "βασιλικός",
+    "translit": "basilikos",
+    "gloss": "real",
+    "short": "Propio de un rey; dicho de la ley suprema, que gobierna a las demás leyes.",
+    "review": false,
+    "fuente": "lote JAS-002",
+    "revisado": "opus"
+  },
+  "G985": {
+    "lemma": "βλαστάνω",
+    "translit": "blastanō",
+    "gloss": "producir",
+    "short": "Brotar o salir una planta de la tierra; hacer crecer y dar fruto.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "G987": {
+    "lemma": "βλασφημέω",
+    "translit": "blasphēmeō",
+    "gloss": "blasfemar",
+    "short": "Hablar con irreverencia o desprecio contra Dios, su nombre o las cosas sagradas.",
+    "review": false,
+    "fuente": "lote JAS-002"
+  },
+  "G995": {
+    "lemma": "βοή",
+    "translit": "boē",
+    "gloss": "clamor",
+    "short": "Grito fuerte de súplica o de queja que se eleva hacia alguien.",
+    "review": false,
+    "fuente": "lote JAS-004"
+  },
+  "H1481A": {
+    "lemma": "גּוּר",
+    "translit": "gur",
+    "gloss": "morar",
+    "short": "Residir por un tiempo en un lugar ajeno, como forastero.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H1696G": {
+    "lemma": "דָבַר",
+    "translit": "da.var",
+    "gloss": "hablar",
+    "short": "Expresar con palabras; también, prometer, advertir o mandar.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H1870L": {
+    "lemma": "דֶּ֫רֶךְ",
+    "translit": "de.rekh",
+    "gloss": "camino",
+    "short": "Vía o senda por la que se viaja; también, forma de vivir o de conducirse.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H1949": {
+    "lemma": "הוּם",
+    "translit": "hum",
+    "gloss": "conmoverse",
+    "short": "Agitarse o turbarse por algo; también, hacer ruido o alborotar.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H2204": {
+    "lemma": "זָקֵן",
+    "translit": "za.qen",
+    "gloss": "envejecer",
+    "short": "Hacerse viejo o llegar a una edad avanzada.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H2308": {
+    "lemma": "חָדַל",
+    "translit": "cha.dal",
+    "gloss": "cesar",
+    "short": "Dejar de hacer algo; terminar o detenerse.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H2545": {
+    "lemma": "חֲמוֹת",
+    "translit": "cha.mot",
+    "gloss": "suegra",
+    "short": "Madre del esposo, respecto de la mujer casada con su hijo.",
+    "review": false,
+    "fuente": "lote RUT-1-001",
+    "revisado": "opus"
+  },
+  "H2617A": {
+    "lemma": "חֶ֫סֶד",
+    "translit": "che.sed",
+    "gloss": "misericordia",
+    "short": "Bondad, fidelidad y amor leal; firmeza en la lealtad hacia alguien.",
+    "review": false,
+    "fuente": "lote RUT-1-001",
+    "revisado": "opus"
+  },
+  "H2994": {
+    "lemma": "יְבֵ֫מֶת",
+    "translit": "ye.ve.met",
+    "gloss": "cuñada",
+    "short": "Esposa de un hermano; también, la viuda de un hermano.",
+    "review": false,
+    "fuente": "lote RUT-1-001",
+    "revisado": "opus"
+  },
+  "H3068G": {
+    "lemma": "יְהֹוָה",
+    "translit": "ye.ho.vah",
+    "gloss": "Jehová",
+    "short": "Nombre propio del Dios de Israel, el único verdadero; se relaciona con «yo soy», el que existe.",
+    "review": false,
+    "fuente": "lote RUT-1-001",
+    "revisado": "opus"
+  },
+  "H3206": {
+    "lemma": "יֶ֫לֶד",
+    "translit": "ye.led",
+    "gloss": "hijo",
+    "short": "Niño, hijo o descendiente; también, joven.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H3618H": {
+    "lemma": "כַּלָּה",
+    "translit": "kal.lah",
+    "gloss": "nuera",
+    "short": "Mujer casada con un hijo; también, novia o esposa joven.",
+    "review": false,
+    "fuente": "lote RUT-1-001",
+    "revisado": "opus"
+  },
+  "H3630": {
+    "lemma": "כִּלְיוֹן",
+    "translit": "kil.yon",
+    "gloss": "Quelión",
+    "short": "Hijo de Elimelec y Noemí, casado con Orfa; su nombre significa «que languidece».",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H3915": {
+    "lemma": "לַ֫יְלָה",
+    "translit": "lay.lah",
+    "gloss": "noche",
+    "short": "Tiempo de oscuridad, en contraste con el día; en sentido figurado, aflicción o sombra protectora.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H4124G": {
+    "lemma": "מוֹאָב",
+    "translit": "mo.av",
+    "gloss": "Moab",
+    "short": "Nación descendiente del hijo de Lot; su nombre significa «de su padre».",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H4125": {
+    "lemma": "מוֹאָבִי",
+    "translit": "mo.a.vi",
+    "gloss": "moabita",
+    "short": "Natural de Moab, habitante de la tierra de Moab.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H4248": {
+    "lemma": "מַחְלוֹן",
+    "translit": "mach.lon",
+    "gloss": "Mahlón",
+    "short": "Hijo de Elimelec y Noemí, casado con Rut; su nombre significa «enfermo».",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H430G": {
+    "lemma": "אֱלֹהִים",
+    "translit": "e.lo.him",
+    "gloss": "Dios",
+    "short": "Nombre hebreo de Dios; su forma plural se usa con sentido singular.",
+    "review": false,
+    "fuente": "lote RUT-1-001",
+    "revisado": "opus"
+  },
+  "H430J": {
+    "lemma": "",
+    "translit": "",
+    "gloss": "Dios, dioses",
+    "short": "Plural hebreo usado para los dioses falsos de los pueblos; la misma palabra designa también al Dios verdadero.",
+    "review": false,
+    "fuente": "lote RUT-1-001",
+    "revisado": "opus"
+  },
+  "H4496H": {
+    "lemma": "מְנוּחָה",
+    "translit": "me.nu.chah",
+    "gloss": "descanso",
+    "short": "Lugar de reposo o quietud; tranquilidad y sosiego.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H4578": {
+    "lemma": "מֵעֶה",
+    "translit": "me.eh",
+    "gloss": "vientre",
+    "short": "Parte interior del cuerpo; en sentido figurado, el seno materno o el lugar de los afectos.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H458": {
+    "lemma": "אֱלִימֶ֫לֶךְ",
+    "translit": "e.li.me.lekh",
+    "gloss": "Elimelec",
+    "short": "Esposo de Noemí y padre de Mahlón y Quelión; su nombre significa «mi Dios es rey».",
+    "review": false,
+    "fuente": "lote RUT-1-001",
+    "revisado": "opus"
+  },
+  "H4725": {
+    "lemma": "מָקוֹם",
+    "translit": "ma.qom",
+    "gloss": "lugar",
+    "short": "Sitio o espacio donde algo o alguien está; también, una región o ciudad.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H4755": {
+    "lemma": "מָרָא",
+    "translit": "ma.ra",
+    "gloss": "Mara",
+    "short": "Otro nombre de Noemí; también llamada así en el relato.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H4843": {
+    "lemma": "מָרַר",
+    "translit": "ma.rar",
+    "gloss": "amargar",
+    "short": "Ser amargo, llenar de amargura o de angustia; también, enojarse.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H5281": {
+    "lemma": "נׇעֳמִי",
+    "translit": "no.o.mi",
+    "gloss": "Noemí",
+    "short": "Esposa de Elimelec, madre de Mahlón y Quelión; también llamada Mara.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H5401A": {
+    "lemma": "נָשַׁק",
+    "translit": "na.shaq",
+    "gloss": "besar",
+    "short": "Besar; también, tocar suavemente a alguien.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H553": {
+    "lemma": "אָמֵץ",
+    "translit": "a.mats",
+    "gloss": "resolverse",
+    "short": "Mostrarse firme, valiente o decidido; fortalecerse.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H5702": {
+    "lemma": "עָגַן",
+    "translit": "a.gan",
+    "gloss": "abstenerse",
+    "short": "Contenerse o retraerse, abstenerse de hacer algo.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H5750": {
+    "lemma": "עוֹד",
+    "translit": "od",
+    "gloss": "todavía",
+    "short": "Todavía, aún, de nuevo o además; indica que algo continúa o se repite.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H5971A": {
+    "lemma": "עַם",
+    "translit": "am",
+    "gloss": "pueblo",
+    "short": "Nación o pueblo; también, los miembros del propio pueblo o compatriotas.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H6204": {
+    "lemma": "עׇרְפָּה",
+    "translit": "or.pah",
+    "gloss": "Orfa",
+    "short": "Mujer moabita, esposa de Quelión; su nombre significa «gacela».",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H6504": {
+    "lemma": "פָּרַד",
+    "translit": "pa.rad",
+    "gloss": "separar",
+    "short": "Dividir o apartar una cosa de otra; también, quedar separado o dividido.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H673H": {
+    "lemma": "אֶפְרָתִי",
+    "translit": "eph.ra.ti",
+    "gloss": "efrateo",
+    "short": "Descendiente de Efrata, de la tribu de Judá.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H6912": {
+    "lemma": "קָבַר",
+    "translit": "qa.var",
+    "gloss": "sepultar",
+    "short": "Poner un cuerpo en la tumba o en la tierra; también, ser sepultado.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H7327": {
+    "lemma": "רוּת",
+    "translit": "rut",
+    "gloss": "Rut",
+    "short": "Mujer moabita, casada con Mahlón y con Booz; madre de Obed.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H7458": {
+    "lemma": "רָעָב",
+    "translit": "ra.av",
+    "gloss": "hambre",
+    "short": "Escasez grave de alimento en una tierra; también, figuradamente, falta de la palabra de Jehová.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H7604": {
+    "lemma": "שָׁאַר",
+    "translit": "sha.ar",
+    "gloss": "quedar",
+    "short": "Permanecer, quedar atrás o sobrevivir; también, el remanente que queda.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H7663B": {
+    "lemma": "שָׂבַר",
+    "translit": "sa.var",
+    "gloss": "esperar",
+    "short": "Aguardar, esperar con confianza; también, tener esperanza en algo.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H7706": {
+    "lemma": "שַׁדַּי",
+    "translit": "shad.day",
+    "gloss": "Todopoderoso",
+    "short": "Nombre de Dios que expresa su poder; significa «el más poderoso».",
+    "review": false,
+    "fuente": "lote RUT-1-001",
+    "revisado": "opus"
+  },
+  "H7725G": {
+    "lemma": "שׁוּב",
+    "translit": "shuv",
+    "gloss": "volver",
+    "short": "Regresar, dar la vuelta o volver a un lugar o a alguien.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H8147": {
+    "lemma": "שְׁנַ֫יִם",
+    "translit": "she.na.yim",
+    "gloss": "dos",
+    "short": "Número dos; también, ambos, o el segundo en orden.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  },
+  "H8615B": {
+    "lemma": "תִּקְוָה",
+    "translit": "tiq.vah",
+    "gloss": "esperanza",
+    "short": "Expectativa confiada de algo bueno; también, aquello que se espera.",
+    "review": false,
+    "fuente": "lote RUT-1-001"
+  }
+}
