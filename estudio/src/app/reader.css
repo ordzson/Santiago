@@ -373,7 +373,8 @@
   gap:20px;
   justify-content:space-between;
   flex:none;
-  padding:10px 28px 12px 32px
+  /* En pantalla completa el pie llega al borde físico: se respeta el área segura (barra de gestos, esquinas). */
+  padding:10px max(28px,env(safe-area-inset-right)) calc(12px + env(safe-area-inset-bottom)) max(32px,env(safe-area-inset-left))
 }
 .camera-row {
   min-height:calc(var(--frame-size) + 30px)

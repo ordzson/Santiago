@@ -1,4 +1,4 @@
-import { Component, inject, signal, computed, viewChild, ElementRef, HostListener, OnDestroy } from '@angular/core';
+import { Component, inject, signal, computed, viewChild, ElementRef, HostListener, OnDestroy, effect, untracked } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Bible, OriginalNote, OriginalLanguage, Location, ReadingMode, EndRule, parseBible, parseOriginal, sessionLocations, sceneLabel, compare, locations, shouldEnd } from './content';
 import { ReaderComponent, ReaderBurst } from './reader';
@@ -75,7 +75,13 @@ export class AppComponent implements OnDestroy {
   get canNext(){const b=this.bible();if(!b)return false;if(this.mode==='chapters')return locations(b).findIndex(p=>compare(p,this.current())===0)<locations(b).length-1;return this.session.findIndex(p=>compare(p,this.current())===0)<this.session.length-1 || this.mode==='book' && this.current().book<b.books.length-1;}
   readonly accents=Object.entries(ACCENTS).map(([id,a])=>({id:id as AccentId,label:a.label,color:a.main}));
   chooseAccent(id:AccentId){this.settings.accent=id;applyAccent(id);this.saveSettings();}
-  constructor(){this.originalActive.set(this.settings.original);applyAccent(this.settings.accent);this.loadContent();}
+  constructor(){
+    this.originalActive.set(this.settings.original);applyAccent(this.settings.accent);this.loadContent();
+    /* Sin micrófono el espectro se queda en reposo: se avisa en vez de fallar en silencio. */
+    effect(()=>{const state=this.voiceInput.state();untracked(()=>{if(!this.scene())return;
+      if(state==='denied')this.announce('Sin permiso de micrófono: el espectro no se mostrará. Actívalo en el navegador.');
+      else if(state==='unavailable')this.announce('Micrófono no disponible: el espectro no se mostrará.');});});
+  }
   async loadContent(){
     this.loading.set(true);this.loadError.set('');
     try{
@@ -101,8 +107,9 @@ export class AppComponent implements OnDestroy {
   startScene(){
     const bible=this.bible();if(!bible || this.selectionError())return;
     this.session=sessionLocations(bible,this.mode,this.start,this.rangeEnd);if(!this.session.length)return;
-    this.enterFullscreen();
+    /* El micrófono se pide antes que la pantalla completa: en el teléfono el aviso de permiso puede no mostrarse en pantalla completa. */
     if(this.settings.voice)this.voiceInput.start();else this.voiceInput.stop();
+    this.enterFullscreen();
     this.stopIntro();
     this.clearEndTimers();this.blackReady.set(false);this.phase.set('reading');this.current.set({...this.session[0]});this.reader()?.reset();this.scene.set(true);this.controls.set(false);this.playing.set(false);this.chosen.set([]);this.endAt.set(null);
     if(this.settings.countdown){this.phase.set('countdown');this.countdown.set(3);this.countdownTimer=setInterval(()=>{const remaining=this.countdown()!;if(remaining<=1){clearInterval(this.countdownTimer);this.afterCountdown();}else this.countdown.set(remaining-1);},1000);}
@@ -205,7 +212,10 @@ export class AppComponent implements OnDestroy {
     try{const request=this.requestFs();if(request)request.catch(fail);else fail();}catch(error){fail(error);}
   }
   private leaveFullscreen(){try{if(this.fsElement())this.exitFs().catch(()=>{});}catch{}}
-  async fullscreen(){try{if(this.fsElement())await this.exitFs();else{const request=this.requestFs();if(request)await request;else this.announce('Usa «Añadir a pantalla de inicio» para abrir sin la barra del navegador.');}}catch{this.announce('La pantalla completa no está disponible en este navegador.');}}
+  async fullscreen(){
+    /* Gesto del usuario: si el micrófono falló al entrar, se vuelve a intentar. */
+    const voice=this.voiceInput.state();if(this.scene()&&this.settings.voice&&(voice==='denied'||voice==='unavailable'))this.voiceInput.start();
+    try{if(this.fsElement())await this.exitFs();else{const request=this.requestFs();if(request)await request;else this.announce('Usa «Añadir a pantalla de inicio» para abrir sin la barra del navegador.');}}catch{this.announce('La pantalla completa no está disponible en este navegador.');}}
   announce(message:string){this.notice.set(message);clearTimeout(this.noticeTimer);this.noticeTimer=setTimeout(()=>this.notice.set(''),4000);}
   @HostListener('document:visibilitychange') visibility(){if(document.hidden){this.playing.set(false);this.wakeLock?.release();this.wakeLock=null;}else if(this.scene())this.acquireWakeLock();}
   @HostListener('document:keydown',['$event']) key(event:KeyboardEvent){
