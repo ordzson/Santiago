@@ -1,0 +1,7 @@
+{"original": "lema",
+ "nt": {"excluir_pos": ["det", "conj", "prep", "pron", "ptcl"], "umbral_frecuencia": 1000},
+ "at": {"excluir_pos": ["conjunction", "particle", "preposition", "pronoun", "suffix"], "excluir_prefijo_strong": ["H9"], "umbral_frecuencia": 2000},
+ "siempre": [], "excluir": ["G1510", "G3004", "H1961", "H559"],
+ "max_por_versiculo": 3,
+ "reglas_alta": ["igual"],
+ "vacias_es": ["el","la","los","las","lo","un","una","unos","unas","de","del","al","a","en","y","e","o","u","que","se","por","para","con","su","sus","mi","mis","tu","tus","nos","os","le","les","me","te"]}

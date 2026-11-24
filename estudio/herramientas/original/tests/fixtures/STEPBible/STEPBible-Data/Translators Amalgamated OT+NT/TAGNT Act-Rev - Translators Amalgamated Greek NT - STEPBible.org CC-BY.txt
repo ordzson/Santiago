@@ -1,0 +1,6 @@
+﻿TAGNT Mat-Jhn - Translators Amalgamated Greek NT -  STEPBible.org CC BY 4.0																
+Act.1.1#01=NKO	Τὸν (Ton)	The	G3588=T-ASM	ὁ=the/this/who	NA28+NA27+Tyn+SBL+WH+Treg+TR+Byz			A la	the	#01»04:G3056	G3588_A					
+Jas.1.1#01=NKO	Ἰάκωβος (Iakōbos)	James	G2385I=N-NSM-P	Ἰάκωβος=James	NA28+NA27+Tyn+SBL+WH+Treg+TR+Byz			Jacobo	James»James|James@Mat.13.55	#01	G2385					
+Jas.1.1#02=NKO	θεοῦ (theou)	of God	G2316=N-GSM-T	θεός=God	NA28+NA27+Tyn+SBL+WH+Treg+TR+Byz			de Dios	God	#02	G2316					
+Jas.1.1#03=NKO	καὶ (kai)	and	G2532=CONJ	καί=and	NA28+NA27+Tyn+SBL+WH+Treg+TR+Byz			y	and	#03	G2532					
+Jas.1.1#04=NKO	κυρίου (kuriou)	of [the] Lord	G2962G=N-GSM-T	κύριος=lord	NA28+NA27+Tyn+SBL+WH+Treg+TR+Byz			de Señor	: God»lord|1_God	#04	G2962					

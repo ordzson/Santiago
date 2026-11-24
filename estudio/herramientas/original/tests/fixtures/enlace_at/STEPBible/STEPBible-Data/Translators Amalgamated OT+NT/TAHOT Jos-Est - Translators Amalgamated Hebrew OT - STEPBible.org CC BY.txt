@@ -1,0 +1,19 @@
+Rut.1.1#01=L	וַ/יְהִ֗י	va/y.Hi	and/ it was	H9001/{H1961}	Hc/Vqw3ms			H1961_A			H9001=ו=&/{H1961=הָיָה=to be}					
+Rut.1.1#02=L	בִּ/ימֵי֙	bi./Mei	in/ [the] days of	H9003/{H3117G}	HR/Ncmpc			H3117G			H9003=ב=in/{H3117G=יוֹם=: day»day;_when:1_day;_when;_period}					
+Rut.1.1#03=L	שְׁפֹ֣ט	she.Fot	[the] judging of	{H8199}	HVqcc			H8199_A			{H8199=שָׁפַט=to judge}					
+Rut.1.1#04=L	הַ/שֹּׁפְטִ֔ים	ha./sho.fe.Tim	the/ judges	H9009/{H8199}	HTd/Vqrmpa			H8199_B			H9009=ה=the/{H8199=שָׁפַט=to judge}					
+Rut.1.1#05=L	וַ/יְהִ֥י	va/y.Hi	and/ it was	H9001/{H1961}	Hc/Vqw3ms			H1961_B			H9001=ו=&/{H1961=הָיָה=to be}					
+Rut.1.1#06=L	רָעָ֖ב	ra.'Av	a famine	{H7458}	HNcmsa			H7458			{H7458=רָעָב=famine}					
+Rut.1.1#07=L	בָּ/אָ֑רֶץ	ba./'A.retz	in the/ land	H9003/{H0776G}	HRd/Ncfsa			H0776G			H9003=ב=in/{H0776G=אֶ֫רֶץ=: country;_planet»land:2_country;_planet}					
+Rut.1.1#08=L	וַ/יֵּ֨לֶךְ	va/i.Ye.lekh	and/ he went	H9001/{H1980G}	Hc/Vqw3ms			H1980G	H3212		H9001=ו=&/{H1980G=הָלַךְ=: went»to go:3_went;_go[away]}					
+Rut.1.1#09=L	אִ֜ישׁ	'ish	a man	{H0376G}	HNcmsa			H0376G			{H0376G=אִישׁ=: man»man:1_man}					
+Rut.1.1#10=L	מִ/בֵּ֧ית	mi./Beit	from/ Beth-	H9006/{H1035G}+	HR/Npl			H1035G_A			H9006=מ=from/{H1035G=בֵּית לֶ֫חֶם=Bethlehem»Bethlehem@Gen.35.16-Jhn}+					
+Rut.1.1#11=L	לֶ֣חֶם	Le.chem	-lehem	{H1035G}	HNpl			H1035G_b			{H1035G=בֵּית לֶ֫חֶם=Bethlehem»Bethlehem@Gen.35.16-Jhn}					
+Rut.1.1#12=L	יְהוּדָ֗ה	ye.hu.Dah	Judah	{H3063G}	HNpl			H3063G			{H3063G=יְהוּדָה=Judah»Judah@Gen.29.35-Rev}					
+Rut.1.1#13=L	לָ/גוּר֙	la./Gur	to/ sojourn	H9005/{H1481A}	HR/Vqcc			H1481A			H9005=ל=to/{H1481A=גּוּר=to sojourn}					
+Rut.1.1#14=L	בִּ/שְׂדֵ֣י	bi/s.Dei	in/ [the] region<s> of	H9003/{H7704G}	HR/Ncmpc			H7704G			H9003=ב=in/{H7704G=שָׂדֶה=: country;_planet»land:2_country;_planet}					
+Rut.1.1#15=L	מוֹאָ֔ב	mo.'Av	Moab	{H4124G}	HNpl			H4124G			{H4124G=מוֹאָב=Moab»Moab@Gen.19.37b-Zep}					
+Rut.1.1#16=L	ה֥וּא	hu'	he	{H1931}	HPp3ms			H1931			{H1931=הוּא=he;_she;_it}					
+Rut.1.1#17=L	וְ/אִשְׁתּ֖/וֹ	ve./'ish.T/o	and/ wife/ his	H9002/{H0802H}/H9023	HC/Ncfsc/Sp3ms			H0802H			H9002=ו=and/{H0802H=אִשָּׁה=: wife»woman:2_wife;_widow}/H9023=Ps3m=his					
+Rut.1.1#18=L	וּ/שְׁנֵ֥י	u./she.Nei	and/ [the] two	H9002/{H8147}	HC/Ncbdc			H8147			H9002=ו=and/{H8147=שְׁנַ֫יִם=two}					
+Rut.1.1#19=L	בָנָֽי/ו\׃	va.Na/v	sons/ his	{H1121A}/H9023\H9016	HNcmpc/Sp3ms			H1121A			{H1121A=בֵּן=: child»son:1_child;_son}/H9023=Ps3m=his\H9016=׃=verseEnd					

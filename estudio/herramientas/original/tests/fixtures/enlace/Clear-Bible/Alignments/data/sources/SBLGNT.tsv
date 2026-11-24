@@ -1,0 +1,16 @@
+id	altId	text	strongs	gloss	gloss2	lemma	pos	morph
+n59001001001	Ἰάκωβος-1	Ἰάκωβος	G2385	James	James	Ἰάκωβος	noun	N-NSM
+n59001001002	θεοῦ-1	θεοῦ	G2316	of God	God	θεός	noun	N-GSM
+n59001001003	καὶ-1	καὶ	G2532	and	and	καί	conj	CONJ
+n59001001004	κυρίου-1	κυρίου	G2962	of [the] Lord	Lord	κύριος	noun	N-GSM
+n59001001005	Ἰησοῦ-1	Ἰησοῦ	G2424	Jesus	Jesus	Ἰησοῦς	noun	N-GSM
+n59001001006	Χριστοῦ-1	Χριστοῦ	G5547	Christ	Christ	Χριστός	noun	N-GSM
+n59001001007	δοῦλος-1	δοῦλος	G1401	a servant	servant	δοῦλος	noun	N-NSM
+n59001001008	ταῖς-1	ταῖς	G3588	To the	the	ὁ	det	T-DPF
+n59001001009	δώδεκα-1	δώδεκα	G1427	twelve	twelve	δώδεκα	num	A-NUI
+n59001001010	φυλαῖς-1	φυλαῖς	G5443	tribes	tribes	φυλή	noun	N-DPF
+n59001001011	ταῖς-2	ταῖς	G3588	-	which	ὁ	det	T-DPF
+n59001001012	ἐν-1	ἐν	G1722	in	in	ἐν	prep	PREP
+n59001001013	τῇ-1	τῇ	G3588	the	the	ὁ	det	T-DSF
+n59001001014	διασπορᾷ-1	διασπορᾷ	G1290	Dispersion	dispersion	διασπορά	noun	N-DSF
+n59001001015	χαίρειν-1	χαίρειν	G5463	Greetings	greetings	χαίρω	verb	V-PAN

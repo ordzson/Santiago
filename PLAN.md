@@ -95,10 +95,10 @@ Todas las rutas, relativas a la raíz del repo. `HO` = `estudio/herramientas/ori
     - Archivos: `HO/oro/santiago.json`.
     - Hacer: por cada línea, la palabra o frase **contigua y literal** de la RVR1960 que traduce ese término griego (la más corta que lo exprese; sin artículo inicial salvo que sea parte del sentido). Si la RVR1960 no lo expresa, `null`. Formato: `[{"ref": "JAS.1.2", "strong": "G5479", "word": "gozo"}, …]`.
     - Hecho cuando: `python3 -I HO/oro.py comprobar` (añádelo si falta: cada `word` no nulo aparece en su versículo con la regla de la app) → «N asociaciones · 0 fuera del versículo».
-- [ ] O2 — Enlace con STEPBible y selección de palabras
+- [x] O2 — Enlace con STEPBible y selección de palabras
   - Verificación: quick
   - Commit: `feat(herramientas): enlace con STEPBible y selección de palabras`
-  - [ ] T7 — Lectores de STEPBible · Modelo: haiku, esfuerzo xhigh
+  - [x] T7 — Lectores de STEPBible · Modelo: haiku, esfuerzo xhigh
     - Leer: §Contratos; con `grep -n "^Jas\.1\.1#0[12]"` en TAGNT, `grep -n "^Rut\.1\.1#0[12]"` en TAHOT, `grep -n "^G2316\b"` en TBESG y `grep -m3 -n "^H1961"` en TBESH (más la línea de cabecera de cada uno) ver el formato.
     - Archivos: `HO/stepbible.py`, `HO/tests/test_stepbible.py`, `HO/tests/fixtures/` (recortes).
     - Formato de entrada (real, tabulado):
@@ -111,17 +111,17 @@ Todas las rutas, relativas a la raíz del repo. `HO` = `estudio/herramientas/ori
       ```
     - Hacer: `leer_tagnt(usfm)` → filas del libro `{ref_es, ref_orig, n, forma, translit, dstrong, morf, lema, glosa, ediciones, es}` (regex de ref `^([1-3]?[A-Z][a-z]{2})\.(\d+)\.(\d+)(?:\((\d+)\.(\d+)\))?#(\d+)=`; ignorar líneas que no casan). `leer_tahot(usfm)` → igual con `segmentos: [{dstrong, morf, hebreo, translit}]` (quitar `{}`). `leer_lexico('G'|'H')` → `{strong_canon(dStrong): {lema, translit, gloss_en, short_en}}`; `short_en` = definición sin `<ref…>…</ref>`, sin etiquetas, espacios colapsados, cortada a ≤ 200 caracteres en límite de palabra. Si TBESH tiene otra columna de cabecera, adáptalo y anótalo en el reporte. CLI `resumen --libro JAS|RUT`.
     - Hecho cuando: pruebas OK (`κυρίου` → dstrong `G2962G`, morf `N-GSM-T`, es `de Señor`; `Rut.1.1#02` → 2 segmentos, raíz `H3117G`; `leer_lexico('G')['G2316']['translit']=='theos'`); `resumen --libro JAS` imprime filas TAGNT con «SBL» > 1700.
-  - [ ] T8 — Enlace SBLGNT ↔ TAGNT · Modelo: sonnet, esfuerzo medium
+  - [x] T8 — Enlace SBLGNT ↔ TAGNT · Modelo: sonnet, esfuerzo medium
     - Leer: §Contratos; `HO/fuentes.py`, `HO/stepbible.py`.
     - Archivos: `HO/enlace.py`, `HO/tests/test_enlace.py`, fixtures de Jas 1:1 (SBLGNT + TAGNT, extraídas por `grep`).
     - Hacer: `enlazar_nt(usfm)` → `({sblgnt_id: {dstrong, morf_step, translit_forma, es_step, ref_tagnt}}, no_enlazados)`. Por versículo, solo filas TAGNT cuyas ediciones contienen `SBL`. Clave = `(strong_base, forma normalizada)` (NFD, sin diacríticos, minúsculas, sin puntuación). `difflib.SequenceMatcher(autojunk=False)` sobre las claves; en bloques `replace` del mismo largo, enlazar 1:1 si coincide `strong_base` aunque cambie la forma; el resto, a `no_enlazados` con motivo (`variante`, `sin_par`). Nunca inventar un enlace. CLI `python3 -I HO/enlace.py nt --libro JAS` escribe `HO/.cache/salida/JAS.enlace.json` y `JAS.enlace.txt` (no enlazados legibles: ref, forma, strong, motivo).
     - Hecho cuando: pruebas OK; en Santiago ≥ 99 % de los 1739 tokens enlazados y los no enlazados listados en el `.txt`.
-  - [ ] T9 — Enlace WLCM ↔ TAHOT · Modelo: haiku, esfuerzo xhigh
+  - [x] T9 — Enlace WLCM ↔ TAHOT · Modelo: haiku, esfuerzo xhigh
     - Leer: §Contratos; `HO/fuentes.py`, `HO/stepbible.py`, `HO/enlace.py`.
     - Archivos: `HO/enlace.py` (añadir `enlazar_at`), `HO/tests/test_enlace_at.py`, fixture de Rut 1:1.
     - Hacer: id WLCM `oBBCCCVVVWWWS` → versículo hebreo `CCC.VVV`, palabra `WWW`, segmento `S`. Fila TAHOT de la misma ref **hebrea** (la de paréntesis si existe) y `#n == WWW`. Para cada segmento WLCM cuyo `strong_base` no sea prefijo (`H9xxx` en TAHOT) ni su `pos` esté en `conjunction, particle, preposition, pronoun, suffix`: buscar en los segmentos de esa fila TAHOT el único con igual `strong_base`; si no hay en esa palabra, probar las palabras `WWW±1`, `WWW±2`. Uno solo → enlace; cero o varios → `no_enlazados`. CLI `enlace.py at --libro RUT --capitulo 1` → `HO/.cache/salida/RUT-1.enlace.json`/`.txt`.
     - Hecho cuando: pruebas OK; en Rut 1 ≥ 98 % de los segmentos de contenido enlazados.
-  - [ ] T10 — Selección de palabras con nota · Modelo: haiku, esfuerzo xhigh
+  - [x] T10 — Selección de palabras con nota · Modelo: haiku, esfuerzo xhigh
     - Leer: §Contratos; `HO/fuentes.py`, `HO/enlace.py` (solo firmas).
     - Archivos: `HO/config.json`, `HO/seleccion.py`, `HO/tests/test_seleccion.py`.
     - Hacer: `config.json` exactamente:
@@ -212,6 +212,10 @@ Todas las rutas, relativas a la raíz del repo. `HO` = `estudio/herramientas/ori
 - 2026-11-24 O1/T4: `rvr1960.leer()` añade `titulos` por libro (para `title` de capítulo). Item sin `verse_numbers` continúa el versículo anterior. Rutas reales: `HO` = `estudio/herramientas/original`.
 - 2026-11-24 O1/T5: candidatos descartan tokens sin Strong y duplicados (ref+strong). 135 notas de una palabra → 60 candidatos (12 por capítulo).
 - 2026-11-24 O1/T6: oro = 60 entradas (59 con palabra, 1 `null`: JAS.2.20 G692, la RVR1960 sigue la variante «muerta»). Se eligió por orden del texto griego, no por la NBLA (p. ej. 1.4 «cabales»).
+- 2026-11-24 O2/T7: TBESH = mismo diseño que TBESG. Léxico indexado por dStrong (col. 2 sin « ="). TAHOT: `dstrong`/`morf` de la fila = segmento con raíz `{}` o el último; `lema`/`ediciones`/`es` vacíos. 2 filas de Jas traen «SBL»1»: contar SBL por nombre base. Normalizar NFD/NFC al comparar griego.
+- 2026-11-24 O2/T8: desvío menor de la spec: STEPBible a veces cambia el dStrong (μου G3450 vs G3165). En bloques `replace` se enlaza primero por forma igual y luego 1:1 por `strong_base`. Resultado JAS 1736/1739 (99,8 %); 3 `sin_par` (1.22, 2.3, 5.4). Sigma final = sigma en la clave.
+- 2026-11-24 O2/T9: decisión del usuario: segmentos WLCM sin Strong (10 en Rut 1: בֵּית, לֶחֶם de Belén) salen de la base del % de enlace; siguen listados en el .txt. Rut 1: 236/237 (99,6 %); único fallo RUT.1.11#14 (WLCM H376 vs STEPBible H582). Strong con `\` o `+` pegado se toma por el principal. Porcentajes con coma decimal.
+- 2026-11-24 O2/T10: JAS 324 tokens · 280 lemas; RUT 1 65 · 45 (`lemas` = strong_base distintos). `glosario.json` (T11) debe ser objeto con claves Strong. `ref_orig` AT sale del id WLCM (hebrea; coincide en Rut 1, mapear en Salmos). Tokens sin Strong no entran.
 - 2026-11-24 plan: el TSV de RV09 trae `source_verse`: Clear ya resuelve original↔versificación española (p. ej. Sal 3:1 RV09 = 3:2 hebreo). Solo falta RV09↔RVR1960 (misma tradición): se comparan conteos (T17). TVTMS se descarga, pero se aplica en el hito que trate un libro con diferencias.
 - 2026-11-24 plan: `SBLGNT.tsv` de Clear ya trae strong, lema, morfología y glosa. El enlace con TAGNT aporta el dStrong (clave del léxico), la transliteración y la columna «Spanish translation», que sirve de pista. Un token no enlazado sigue con los datos SBLGNT.
 - 2026-11-24 plan: `RVR1960_vid_149.json` trae `items` con líneas ya limpias (sin encabezados ni notas `#`). Se usa eso en lugar del HTML.
