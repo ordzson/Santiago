@@ -152,7 +152,7 @@ Las marcas y los elegidos duran lo que la escena: no se guardan entre sesiones. 
 
 ## Espacio del presentador
 
-Círculo o cuadrado de 72 a 150 píxeles CSS, en cualquiera de las cuatro esquinas. La zona se reserva en una fila superior o inferior junto al encabezado o folio; el área de lectura se ajusta para que **ningún versículo pase detrás de la imagen**, incluso durante autoscroll. Es layout nativo: no requiere medir cada palabra con JavaScript ni añadir una dependencia. La guía se muestra durante la preparación; puedes hacerla visible en la toma.
+Círculo o cuadrado de 72 a 150 píxeles CSS, en cualquiera de las cuatro esquinas. La zona se reserva en una fila superior o inferior junto al encabezado o al pie; el área de lectura se ajusta para que **ningún versículo pase detrás de la imagen**, incluso durante autoscroll. Es layout nativo: no requiere medir cada palabra con JavaScript ni añadir una dependencia. La guía se muestra durante la preparación; puedes hacerla visible en la toma.
 
 La app no accede a la cámara. Coloca la imagen con tu herramienta de captura en el espacio reservado.
 

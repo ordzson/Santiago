@@ -59,15 +59,15 @@ Base: b6d44574685738852629204e9783bb341da7133f
     - Archivos: `estudio/src/app/voice-meter.ts`, `estudio/src/app/reader.ts`, `estudio/src/app/reader.css`, `estudio/src/app/app.html`
     - Contenido: canvas a ancho completo del pie (comparte fila con `presenter-space` si la cámara está abajo), alto ≈ el del folio actual más el padding que libere (el pie no crece > 8 px). Barras simétricas: graves en el centro abriéndose hacia los lados, crecen arriba y abajo de una línea base; nº de barras según ancho (≈3 px barra + 3 px hueco), DPR correcto con `ResizeObserver`; colores leídos de las variables CSS (día/noche, acento). Bucle `requestAnimationFrame` solo mientras `active` (= escena en lectura y `voice` y analizador listo) y la pestaña visible; si no, dibuja la línea de reposo (puntos de 2 px) y no anima. Quitar `page-folio`/`folio-line` del pie y su CSS muerto. `aria-hidden` en el canvas.
     - Hecho cuando: `node scripts/verify.mjs quick` y `build` pasan; captura con Chrome `--use-fake-ui-for-media-stream --use-fake-device-for-media-stream` (deviceScaleFactor 1, 390×844 y 1440×1000) muestra barras moviéndose en escena y la línea de reposo en la preparación.
-- [ ] O4 — Pulido con impeccable y E2E
+- [x] O4 — Pulido con impeccable y E2E (SHA_O4)
   - Verificación: full + `pnpm --dir estudio e2e`
   - Commit: `feat(estudio): pulido del espectro y pruebas e2e de voz`
-  - [ ] T1 — Pase de diseño con `impeccable`
+  - [x] T1 — Pase de diseño con `impeccable`
     - Leer: `CLAUDE.md`, `estudio/PRODUCT.md`, `estudio/DESIGN.md`, `estudio/src/app/voice-meter.ts`, `estudio/src/app/voice-spectrum.ts` (`VOICE_TUNING`), `estudio/src/app/reader.css` (cabecera y pie).
     - Archivos: `estudio/src/app/voice-meter.ts`, `estudio/src/app/voice-spectrum.ts`, `estudio/src/app/reader.css`, `estudio/DESIGN.md`, `estudio/tests/voice-spectrum.test.ts` (solo si cambian umbrales)
     - Contenido: invocar la skill `impeccable` (polish) sobre el espectro y la barra de cabecera; iterar con capturas (Chrome con dispositivo falso; día/noche; teléfono/escritorio; cámara abajo) ajustando nº/ancho/radio de barras, alto útil, color/opacidad, suavizado y sensibilidad para que llene bien el pie al hablar y quede sereno en silencio; barra de cabecera discreta. Documentar en `DESIGN.md` ambos elementos y la excepción de movimiento del espectro (movimiento continuo en lectura permitido solo porque refleja la voz; con reduced-motion: mismo espectro sin transición de la barra de cabecera). Las pruebas de O1 deben seguir pasando.
     - Hecho cuando: `node scripts/verify.mjs full` pasa; capturas finales en `.impeccable/review/voice-*.png`.
-  - [ ] T2 — E2E de voz y progreso
+  - [x] T2 — E2E de voz y progreso
     - Leer: `CLAUDE.md`, este plan (Criterio de terminado), `estudio/playwright.config.ts`, `estudio/e2e/helpers.ts`, `estudio/e2e/studio.spec.ts` (patrón de entrar en escena).
     - Archivos: `estudio/e2e/voice.spec.ts`, `estudio/e2e/helpers.ts` (si hace falta), `estudio/playwright.config.ts` (solo si hace falta un proyecto con flags de medios falsos)
     - Contenido: lanzar Chrome con `--use-fake-ui-for-media-stream --use-fake-device-for-media-stream` (o proyecto propio); casos del Criterio: interruptor encendido por defecto y persistido; barras que cambian entre frames; apagado sin `getUserMedia` (contar llamadas con `addInitScript`); denegado (stub que rechaza) sin `pageerror`; pistas `ended` al salir; pie sin «%» y alto ≤ actual + 8 px; barra de cabecera ≈0 → ≈1 y reinicio al cambiar de capítulo. Ajustar specs existentes que dependan del folio.
@@ -81,6 +81,7 @@ Base: b6d44574685738852629204e9783bb341da7133f
 - 2026-11-24 O2: barra `.page-progress` en el header; `reset()` activa `snap` (sin rebobinado animado). Pie aún usa `percent` (O3 lo quita). Sin captura visual aún (se hace en O3/O4).
 - 2026-11-24 O3 T1: `VoiceInput` expone `state` (señal), `analyser` (solo si 'on'), `sampleRate`. Pasar `sampleRate` a `createVoiceSpectrum` en T2.
 - 2026-11-24 O3 T2: pie 50 px (antes 49). `DESIGN.md` aún menciona el folio (~l.215, 316): actualizar en O4 T1. Capturas del agente en /tmp/vm (fuera del repo).
+- 2026-11-24 O4 T1: pie 54 px (canvas 32), `mask-image` 14 px en `.reading-scroll`; capturas en `estudio/.impeccable/review/` (gitignoradas). DESIGN.md sin folio.
 
 ## Próximos hitos
 

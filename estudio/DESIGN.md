@@ -212,7 +212,7 @@ La paleta combina neutrales cálidos con carmín de orientación y luz ámbar de
 
 - **Carmín de cinta** (`red`): cinta, numerales, selección, foco y acentos de recorrido. **Carmín profundo** (`red-dark`) responde al hover del botón principal y a errores de selección.
 - **Carmín de noche** (`night-red`): reemplaza el acento de los controles dentro de la escena nocturna.
-- **Carmín de cabecera** (`head-red`): variante legible del carmín para la cabecera y el folio de la página, `#922235` en día y `#f2a0a9` en noche.
+- **Carmín de cabecera** (`head-red`): variante legible del carmín para la cabecera de la página, `#922235` en día y `#f2a0a9` en noche.
 
 ### Secondary
 
@@ -225,10 +225,10 @@ La paleta combina neutrales cálidos con carmín de orientación y luz ámbar de
 
 - **Papel marfil** (`paper`): página, diálogos y herramientas superpuestas. **Escritorio cálido** (`ground`): preparación y sus márgenes.
 - **Tinta cálida** (`ink`) y **tinta de página** (`page-ink`): interfaz y lectura respectivamente. La diferencia existente se conserva.
-- **Tinta secundaria** (`muted`) y **folio tenue** (`page-muted`): ayudas de preparación y metadatos de la página respectivamente. No intercambiar sus contextos.
+- **Tinta secundaria** (`muted`) y **tinta tenue de página** (`page-muted`): ayudas de preparación y metadatos de la página (subtítulo de capítulo, reposo del espectro) respectivamente. No intercambiar sus contextos.
 - **Regla de papel** (`rule`): separadores, contornos de campos y organización de ajustes.
-- **Folio tenue** se oscureció a `#675d52` en día para que numerales, folio y metadatos de la página alcancen contraste de lectura; el folio de noche es `#b6aa98`.
-- **Papel de noche**, **tinta de noche**, **folio de noche** y **regla de noche** (`night-paper`, `night-ink`, `night-muted`, `night-rule`): sustituciones de la lectura y de los controles durante la escena nocturna. La preparación conserva el escritorio claro.
+- **Tinta tenue de página** se oscureció a `#675d52` en día para que numerales y metadatos de la página alcancen contraste de lectura; en noche es `#b6aa98`.
+- **Papel de noche**, **tinta de noche**, **tinta tenue de noche** y **regla de noche** (`night-paper`, `night-ink`, `night-muted`, `night-rule`): sustituciones de la lectura y de los controles durante la escena nocturna. La preparación conserva el escritorio claro.
 
 **The Carmine Wayfinding Rule.** El carmín identifica selección, foco, numerales y la cinta; el botón principal descansa en tinta cálida y usa carmín profundo al pasar el puntero.
 
@@ -247,7 +247,7 @@ Las cuatro familias se sirven localmente con `font-display: swap`. Noto Serif in
 - **Headline** (`headline`): encabezado de ajustes en Gelasio. El título del capítulo usa la misma familia y tamaño con interlineado 1.2; en escena de al menos 700 px aumenta a 34 px.
 - **Title** (`title`): títulos de diálogos; en móvil se reducen a 26 px.
 - **Reading** (`reading`): texto bíblico. El tamaño inicial es el token registrado y el lector permite ajustarlo entre 17 y 32 px; conserva el interlineado amplio. 
-- **Body / Label / Caption** (`body`, `label`, `label-small`, `caption`): Archivo distingue instrucciones, acciones y metadatos. Las etiquetas pequeñas pertenecen a preparación y folio, nunca al texto bíblico.
+- **Body / Label / Caption** (`body`, `label`, `label-small`, `caption`): Archivo distingue instrucciones, acciones y metadatos. Las etiquetas pequeñas pertenecen a preparación y metadatos de página, nunca al texto bíblico.
 - **Numeral** (`numeral`): numeral de capítulo en Gelasio carmín, 92 px (118 px en escena a partir de 700 px), interlineado .9, con sombra de relieve (desplazada y difusa) además del color. Entra con una animación de «tinta» de .75 s una sola vez al cambiar de capítulo.
 - **Cover title / label** (`cover-title`, `cover-label`): título de la portada en Noto Serif (`clamp(36px, 11.2vw, 84px)`, interletra -.03em) y rótulo del recorrido en Gelasio cursiva (`clamp(19px, 5.4vw, 28px)`). En el cierre, la cita elegida usa Gelasio con tamaño que baja en pasos hasta caber (mínimo 15 px) y la referencia va en Archivo 15 px.
 - **Greek** (`greek`): término griego en Noto Serif carmín, 38 px; transliteración en Gelasio cursiva y significado en Gelasio romana.
@@ -263,7 +263,7 @@ La preparación de escritorio usa tres columnas: selección, prueba de página y
 
 Entre 701 y 1100 px hay dos columnas con los ajustes debajo en tres grupos. Hasta 700 px el orden se vuelve vertical, con márgenes laterales de 24 px, modos en tres columnas y acción de entrada fija al borde inferior mediante un pie sticky. Bajo 360 px los márgenes se reducen a 18 px. Los valores del grupo `spacing` son distancias observadas y repetidas; el código no declara una escala CSS global ni una cuadrícula estricta para todas las medidas.
 
-La prueba de página mantiene proporción vertical mediante una altura controlada; no simula un teléfono con bisel. En escena ocupa `100dvh`, sin esquinas ni sombra de tarjeta. A partir de 700 px, lectura, encabezado y folio tienen una medida máxima de 780 px; el contenido añade 50 px de margen interior horizontal. En móvil el contenido conserva los márgenes propios de la página y el scroll vive entre encabezado y folio.
+La prueba de página mantiene proporción vertical mediante una altura controlada; no simula un teléfono con bisel. En escena ocupa `100dvh`, sin esquinas ni sombra de tarjeta. A partir de 700 px, lectura, encabezado y pie tienen una medida máxima de 780 px; el contenido añade 50 px de margen interior horizontal. En móvil el contenido conserva los márgenes propios de la página y el scroll vive entre encabezado y pie.
 
 **Reserva protegida.** El espacio del presentador pertenece a una fila superior o inferior de la página. Su reserva de 72 a 150 px reduce el área de lectura; los versículos nunca pasan detrás de ella. Ocultar la guía conserva la reserva.
 
@@ -313,7 +313,10 @@ No hay herramientas que elegir: las marcas nacen de gestos (mantener 2 s, arrast
 - **Luz de versículo** (`illuminated-verse`). Banda cálida de degradado horizontal, más intensa a la izquierda; resplandor exterior suave y filete dorado de 3 px a la izquierda. Entrada de 700 ms con barrido de luz de izquierda a derecha.
 - **Palabra marcada** (`illuminated-word`). Solo dentro de un versículo resaltado o elegido: marcador ámbar en la mitad inferior de la palabra más un halo; florece una vez en 600 ms con un destello, sin escalar la caja.
 - **Hoja de oro** (`chosen-verse`). Versículo elegido para el cierre: fondo dorado con brillo diagonal, filetes dorados finos arriba y abajo, marcapáginas carmín con cola en V en el margen izquierdo (14×22 px) y una estrella ✦ tras el número. Entra con un barrido de brillo de 1.2 s y un pulso de resplandor, una sola vez. Prevalece visualmente sobre la luz de versículo.
-- **Papel y cabecera.** Grano, viñeta y resplandor superior bajo el texto; numeral de capítulo (`numeral`) con relieve; cabecera y folio en `head-red` y `page-muted`. Al cambiar de capítulo en escena, un barrido de luz de 1.1 s cruza la página una vez.
+- **Papel y cabecera.** Grano, viñeta y resplandor superior bajo el texto; numeral de capítulo (`numeral`) con relieve; cabecera en `head-red` y metadatos en `page-muted`. Al cambiar de capítulo en escena, un barrido de luz de 1.1 s cruza la página una vez.
+- **Barra de cabecera** (`page-progress`). Filete de 2 px en el borde inferior de la cabecera, alineado con los márgenes de la página: la pista es tinta al 34 % que se apaga hacia la derecha, y encima el relleno `mark-red` crece de izquierda a derecha con el avance del capítulo (≈0 al inicio, ≈1 al final). Sin porcentaje ni número: solo se lee como línea. Al cambiar de capítulo vuelve a 0 sin rebobinar (`snap`). La transición de .2 s con ease-out solo suaviza el movimiento del desplazamiento; con `prefers-reduced-motion` el relleno salta sin transición.
+- **Borde del texto.** El área de lectura se funde a transparente en sus 14 px superior e inferior (`mask-image`), de modo que el texto no se corta contra la barra de cabecera ni contra el espectro.
+- **Espectro de voz** (`v-voice-meter`). Al pie de la página, 32 px de alto (pie de 54 px con sus márgenes); comparte fila con el espacio del presentador cuando está abajo y entonces ocupa el ancho restante. Barras de 3 px con hueco de 3 px y extremos redondos, simétricas respecto a una línea base: los graves al centro y los agudos hacia los lados, en escala logarítmica de 90 Hz a 7 kHz. Las barras que suenan van en `mark-red` (carmín de acento, también de noche) con opacidad creciente con el nivel (de .5 a 1) y un leve desvanecimiento hacia los agudos; crecen arriba y abajo hasta casi el alto completo. En silencio solo queda una línea de puntos de 2 px en `page-muted` al 45 %, sin barras. Ataque rápido (35 ms) y caída lenta (220 ms), con compuerta contra ruido de sala y ganancia adaptativa, de modo que llena el pie al hablar con cualquier volumen de micrófono. Es decorativo (`aria-hidden`), no graba ni envía audio, y solo aparece en escena con el ajuste «Espectro de voz» activo y el permiso concedido; sin permiso o con el ajuste apagado el pie queda vacío.
 - **Notas del idioma original.** Solo las palabras con datos reciben subrayado punteado, y solo con «Idioma original» activo. El diálogo presenta el término (griego 38 px, hebreo 44 px RTL), transliteración y significado.
 - **Espacio del presentador.** Círculo o cuadrado en cualquiera de las cuatro esquinas; la guía discontinua se muestra en preparación y es opcional en escena.
 
@@ -327,7 +330,7 @@ La portada y el cierre comparten un mismo material.
 - **Cierre.** Misma luz y polvo. Arriba, pequeño, `título · rótulo` en Archivo versalitas; en el centro, los versículos elegidos en orden canónico, cada uno con su referencia en Archivo y un marcapáginas carmín (una cita grande, 2–3 apiladas con reglas, 4 o más en columnas en escritorio); debajo, el mensaje final. Sin elegidos, el mensaje final ocupa el centro.
 - **Fundido.** Un toque funde a negro con un velo de 6 s (ease-in-out) mientras el polvo se apaga; en negro, tras una guarda de 600 ms, otro toque vuelve a la preparación.
 
-**The Motion Exception Rule.** El movimiento continuo existe solo en la portada y el cierre, secuencias autorizadas porque son la toma, y nunca en la lectura. Las excepciones permitidas en la lectura son puntuales y de una sola pasada: entrada y barrido del numeral al cambiar de capítulo, floración de marcas y desplazamiento automático elegido. Con `prefers-reduced-motion` no hay partículas ni desplazamientos: la portada es una composición fija que dura lo configurado, las marcas aparecen sin animación y se conservan únicamente los fundidos de opacidad que son el cierre buscado (velo negro y salida de la portada).
+**The Motion Exception Rule.** El movimiento continuo existe solo en la portada y el cierre, secuencias autorizadas porque son la toma, y nunca en la lectura. Las excepciones permitidas en la lectura son puntuales y de una sola pasada: entrada y barrido del numeral al cambiar de capítulo, floración de marcas y desplazamiento automático elegido; y una única excepción continua: el espectro de voz del pie, que se mueve solo porque refleja la voz de quien lee (en silencio se detiene y queda una línea de puntos; no hay animación propia ni bucle sin señal). Con `prefers-reduced-motion` no hay partículas ni desplazamientos, pero el espectro se dibuja igual (es la voz, no un adorno; no se suaviza más de lo que ya lo hace su ataque y caída) y solo la barra de cabecera pierde su transición: la portada es una composición fija que dura lo configurado, las marcas aparecen sin animación y se conservan únicamente los fundidos de opacidad que son el cierre buscado (velo negro y salida de la portada).
 
 ## Do's and Don'ts
 
@@ -349,7 +352,8 @@ La portada y el cierre comparten un mismo material.
 - **Don't** aplicar brillo al cuerpo completo: la luz corresponde a palabras o versículos marcados, y los rayos a la portada y el cierre.
 - **Don't** colocar la imagen del presentador por encima de los versículos ni eliminar su espacio al ocultar la guía.
 - **Don't** subrayar como consultable una palabra sin nota asociada.
-- **Don't** añadir movimiento continuo a la lectura, ni mostrar avisos visibles (toasts) durante la escena: saldrían en el video.
+- **Don't** añadir movimiento continuo a la lectura salvo el espectro de voz, que responde a la señal real y nunca se anima por sí solo; ni mostrar avisos visibles (toasts) durante la escena: saldrían en el video.
 - **Don't** usar el oro para orientar ni el carmín para iluminar.
-- **Don't** reintroducir animaciones bajo movimiento reducido; solo los fundidos de opacidad del cierre permanecen.
+- **Don't** reintroducir animaciones bajo movimiento reducido; solo permanecen los fundidos de opacidad del cierre y el espectro de voz, que no es animación propia.
+- **Don't** mostrar el avance del capítulo como porcentaje o número en la página: es la barra de cabecera.
 - **Don't** ocultar controles que contienen el foco.

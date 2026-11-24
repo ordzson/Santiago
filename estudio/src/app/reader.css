@@ -123,7 +123,9 @@
   overflow:auto;
   overscroll-behavior:contain;
   scrollbar-width:none;
-  scroll-behavior:auto
+  scroll-behavior:auto;
+  /* El texto se funde en vez de cortarse contra la barra de cabecera y el espectro. */
+  mask-image:linear-gradient(to bottom,transparent,#000 14px,#000 calc(100% - 14px),transparent)
 }
 .reading-scroll:focus-visible {
   outline-offset:-4px

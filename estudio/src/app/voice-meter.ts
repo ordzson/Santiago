@@ -7,7 +7,7 @@ const BAR=3,GAP=3,DOT=2;
  * crecen arriba y abajo de una línea base. Solo anima mientras `active` y la pestaña está visible; si no, dibuja la línea de reposo.
  */
 @Component({selector:'v-voice-meter',standalone:true,template:`<canvas #canvas aria-hidden="true"></canvas>`,
-  styles:`:host{display:block;flex:1;min-width:0;height:28px}canvas{display:block;width:100%;height:100%}`})
+  styles:`:host{display:block;flex:1;min-width:0;height:32px}canvas{display:block;width:100%;height:100%}`})
 export class VoiceMeterComponent implements AfterViewInit, OnDestroy {
   analyser=input<AnalyserNode|null>(null); sampleRate=input(48000);
   /** Escena en lectura con la voz encendida y el analizador listo. */
@@ -84,10 +84,12 @@ export class VoiceMeterComponent implements AfterViewInit, OnDestroy {
     const mid=this.cssH/2,maxHalf=Math.max(DOT/2,mid-1);
     const cx=this.cssW/2,pitch=BAR+GAP;
     const pair=(i:number,level:number)=>{
-      const half=level>0.02?Math.max(DOT/2,level*maxHalf):DOT/2;
-      const lit=half>DOT/2;
+      const lit=level>0.02;
+      const half=lit?Math.min(maxHalf,Math.max(BAR/2,level*maxHalf)):DOT/2;
+      /* Las barras que suenan van sólidas y las bajas se aclaran; hacia los agudos el conjunto se desvanece un poco. */
+      const fade=1-0.3*Math.pow(i/Math.max(1,pairs-1),2);
       ctx.fillStyle=lit?this.colors.bar:this.colors.rest;
-      ctx.globalAlpha=lit?1:0.45;
+      ctx.globalAlpha=lit?Math.min(1,(0.5+0.5*Math.sqrt(level))*fade):0.45;
       const w=lit?BAR:DOT,off=(BAR-w)/2;
       const dx=(i+0.5)*pitch;
       ctx.beginPath();
