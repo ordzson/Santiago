@@ -38,7 +38,7 @@ Base: b6d44574685738852629204e9783bb341da7133f
     - Archivos: `estudio/src/app/voice-spectrum.ts`, `estudio/tests/voice-spectrum.test.ts`
     - Contenido: sin DOM ni Web Audio (recibe `Float32Array` en dB). `VOICE_TUNING` exportado con los parámetros iniciales: `fftSize 2048`, `smoothingTimeConstant 0.5`, analizador `minDecibels −95 / maxDecibels −20`, banda 90–7000 Hz en escala logarítmica, inclinación +3 dB/oct sobre 500 Hz, compuerta de ruido −68 dB, ganancia adaptativa (pico móvil con caída τ≈3 s y suelo −55 dB para no amplificar el ruido), ataque τ≈35 ms y caída τ≈220 ms (dependientes de `dt`, no del frame). Funciones: `bandEdges(sampleRate, fftSize, count, fMin, fMax)`, `bandLevels(db, edges, tuning)` → 0..1, `createVoiceSpectrum(count, tuning)` con `update(db, dt)` que devuelve niveles suavizados. Pruebas con espectros sintéticos según el Criterio.
     - Hecho cuando: `node scripts/verify.mjs quick` pasa con las pruebas nuevas.
-- [x] O2 — Barra de progreso en la cabecera (SHA_O2)
+- [x] O2 — Barra de progreso en la cabecera (c494521)
   - Verificación: quick + build
   - Commit: `feat(estudio): progreso del capítulo en el filete de cabecera`
   - [x] T1 — Filete → barra de progreso
