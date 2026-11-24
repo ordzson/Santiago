@@ -1,7 +1,7 @@
 import type {EndRule} from './content.ts';
 export interface FrameSettings {enabled:boolean; corner:string; shape:string; size:number; guide:boolean}
 export interface IntroSettings {enabled:boolean; title:string; duration:number}
-export interface Settings {fontSize:number; speed:number; night:boolean; frame:FrameSettings; endRule:EndRule; endMessage:string; countdown:boolean; intro:IntroSettings; original:boolean; accent:AccentId}
+export interface Settings {fontSize:number; speed:number; night:boolean; frame:FrameSettings; endRule:EndRule; endMessage:string; countdown:boolean; intro:IntroSettings; original:boolean; accent:AccentId; voice:boolean}
 export const INTRO_TITLE_MAX=60;
 /** Acentos: día (`main`, `dark`) y noche (`night`, `soft` para rótulos, `num` para números resaltados). */
 export const ACCENTS={
@@ -19,7 +19,7 @@ export function applyAccent(id:AccentId,root:HTMLElement=document.documentElemen
   const vars:Record<string,string>={'--red':a.main,'--red-dark':a.dark,'--red-night':a.night,'--red-night-soft':a.soft,'--red-night-num':a.num};
   for(const [k,v] of Object.entries(vars))root.style.setProperty(k,v);
 }
-export const DEFAULTS:Settings={fontSize:22,speed:26,night:false,frame:{enabled:false,corner:'top-right',shape:'circle',size:104,guide:false},endRule:'session',endMessage:'Es todo por hoy.',countdown:true,intro:{enabled:true,title:'Episodio 1',duration:5},original:false,accent:'carmin'};
+export const DEFAULTS:Settings={fontSize:22,speed:26,night:false,frame:{enabled:false,corner:'top-right',shape:'circle',size:104,guide:false},endRule:'session',endMessage:'Es todo por hoy.',countdown:true,intro:{enabled:true,title:'Episodio 1',duration:5},original:false,accent:'carmin',voice:true};
 const clamp=(value:number,min:number,max:number)=>Math.min(max,Math.max(min,value));
 const isRecord=(value:unknown):value is Record<string,any>=>typeof value==='object' && value!==null && !Array.isArray(value);
 export function parseSettings(raw:unknown):Settings{
@@ -45,6 +45,7 @@ export function parseSettings(raw:unknown):Settings{
     if(Number.isFinite(intro['duration']))valid.intro.duration=clamp(Math.round(intro['duration']),3,10);
   }
   if(typeof raw['accent']==='string' && raw['accent'] in ACCENTS)valid.accent=raw['accent'] as AccentId;
+  valid.voice=typeof raw['voice']==='boolean'?raw['voice']:true;
   valid.original=typeof raw['original']==='boolean'?raw['original']:raw['greek']===true;
   return valid;
 }

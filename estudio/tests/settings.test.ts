@@ -36,3 +36,10 @@ test('ajustes viejos sin intro ni original usan los valores por defecto en esos 
 });
 test('la clave antigua greek:true pasa a original:true',()=>{assert.equal(parseSettings({greek:true}).original,true);assert.equal(parseSettings({greek:false}).original,false);});
 test('original tiene prioridad sobre greek',()=>{assert.equal(parseSettings({original:false,greek:true}).original,false);assert.equal(parseSettings({original:true}).original,true);});
+test('voice es booleano, por defecto true y acepta solo booleanos',()=>{
+  assert.equal(DEFAULTS.voice,true);
+  assert.equal(parseSettings({}).voice,true);
+  assert.equal(parseSettings({voice:false}).voice,false);
+  assert.equal(parseSettings({voice:true}).voice,true);
+  for(const v of ['false',0,null,'x',{}])assert.equal(parseSettings({voice:v}).voice,true);
+});

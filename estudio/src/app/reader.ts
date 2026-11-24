@@ -1,6 +1,7 @@
 import { Component, ElementRef, AfterViewInit, effect, input, output, signal, viewChild, computed, OnDestroy, untracked } from '@angular/core';
 import { Chapter, OriginalNote, tokenize } from './content';
 import { IconComponent } from './icon';
+import { VoiceMeterComponent } from './voice-meter';
 import { EDGE_PX, IDLE, SLOP_PX, PressEffect, PressState, pressCancel, pressDown, pressMove, pressUp } from './press';
 import type { Box, BurstKind } from './particles-engine';
 export interface Frame { enabled: boolean; corner: string; shape: string; size: number; guide: boolean }
@@ -13,7 +14,7 @@ const RAMP_MS=650;
 const easeInOut=(t:number)=>t*t*(3-2*t);
 /** La carga visual acelera hacia el umbral (anticipación): lenta al principio, urgente justo antes de cruzar 2 s o 4 s. */
 const chargeCurve=(level:number)=>Math.pow(level,1.6);
-@Component({selector:'v-reader',standalone:true,imports:[IconComponent],template:`
+@Component({selector:'v-reader',standalone:true,imports:[IconComponent,VoiceMeterComponent],template:`
 <div class="reading-sheet" [class.live]="live()" [class.night]="night()" [style.--reading-size.px]="fontSize()" [style.--frame-size.px]="frame().size">
   <div class="sheet-ribbon" aria-hidden="true"></div>
   @for (current of [chapter()]; track current) { <div class="page-sweep" aria-hidden="true"></div> }
@@ -36,7 +37,7 @@ const chargeCurve=(level:number)=>Math.pow(level,1.6);
     </div>
   </div>
   <footer class="page-bottom" [class.camera-row]="frame().enabled && frame().corner.startsWith('bottom')" [class.frame-left]="frame().corner.endsWith('left')">
-    <div class="page-folio"><span>{{book()}} {{chapter().number}}</span><span class="folio-line" [style.--p]="percent()"></span><span>{{percent()}}<small>%</small></span></div>
+    <v-voice-meter [analyser]="analyser()" [sampleRate]="sampleRate()" [active]="live() && voice() && !!analyser()" [night]="night()"/>
     @if (frame().enabled && frame().corner.startsWith('bottom')) {<div class="presenter-space" [class.square]="frame().shape === 'square'" [class.no-guide]="live() && !frame().guide"><v-icon name="camera"/><span>Tu imagen</span></div>}
   </footer>
   <div class="sr-only" role="status" aria-live="polite" aria-atomic="true">{{announcement()}}</div>
@@ -47,13 +48,15 @@ export class ReaderComponent implements AfterViewInit, OnDestroy {
   fontSize=input(23); night=input(false); live=input(false); playing=input(false); speed=input(26);
   /** Modo «idioma original»: las palabras con nota abren la nota al tocarlas. */
   original=input(false);
+  /** Espectro de voz: analizador del micrófono (null si no hay) y su frecuencia de muestreo; `voice` es el ajuste del usuario. */
+  analyser=input<AnalyserNode|null>(null); sampleRate=input(48000); voice=input(false);
   /** Versículos «elegidos para el cierre» del capítulo actual (el almacén vive en la app). */
   specials=input<ReadonlySet<number>>(new Set());
   frame=input<Frame>({enabled:false,corner:'top-right',shape:'circle',size:110,guide:true});
   note=output<OriginalNote>(); advance=output<void>(); pause=output<void>();
   specialToggle=output<number>(); burst=output<ReaderBurst>();
   scroll=viewChild.required<ElementRef<HTMLElement>>('scroller'); content=viewChild.required<ElementRef<HTMLElement>>('content');
-  wordMarks=signal(new Set<string>());verseMarks=signal(new Set<number>());progress=signal(0);snap=signal(false);percent=computed(()=>Math.round(this.progress()*100));announcement=signal('');
+  wordMarks=signal(new Set<string>());verseMarks=signal(new Set<number>());progress=signal(0);snap=signal(false);announcement=signal('');
   focusedWord=signal('1:0');
   verses=computed(()=>this.chapter().verses.map(v=>({...v,words:tokenize(v.text,this.notes().filter(n=>n.book===this.bookId() && n.chapter===this.chapter().number && n.verse===v.number))})));
   // Estado del gesto de pulsación (la máquina pura vive en press.ts).

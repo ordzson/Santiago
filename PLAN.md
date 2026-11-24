@@ -46,15 +46,15 @@ Base: b6d44574685738852629204e9783bb341da7133f
     - Archivos: `estudio/src/app/reader.ts`, `estudio/src/app/reader.css`
     - Contenido: `progress` pasa a fracción 0..1 sin redondear (3 decimales); el filete actual (línea de tinta que se apaga) queda como pista y encima una capa de relleno en `--mark-red` con `transform:scaleX(var(--p))` desde la izquierda, 2 px de alto, `aria-hidden`; transición corta (~200 ms) que se anula con `prefers-reduced-motion` y al reiniciar el capítulo (sin «rebobinado» animado). Funciona en día y noche y con la fila de cámara arriba. Si el pie aún usa `progress` en %, adaptarlo sin romperlo (O3 lo elimina).
     - Hecho cuando: `node scripts/verify.mjs quick` y `node scripts/verify.mjs build` pasan; captura manual con `pnpm --dir estudio dev` + Playwright (deviceScaleFactor 1) muestra la barra a ~0 al inicio y ~1 al final del capítulo.
-- [ ] O3 — Micrófono y espectro en el pie
+- [x] O3 — Micrófono y espectro en el pie (SHA_O3)
   - Verificación: quick + build
   - Commit: `feat(estudio): espectro de voz del micrófono en el pie de página`
-  - [ ] T1 — Ajuste y entrada de micrófono
+  - [x] T1 — Ajuste y entrada de micrófono
     - Leer: `CLAUDE.md`, `estudio/src/app/settings.ts`, `estudio/tests/settings.test.ts`, `estudio/src/app/app.ts` (`startScene`, `exitScene`, `ngOnDestroy`), `estudio/src/app/app.html` (sección «Tu lugar en la escena», patrón `switch-label`), `estudio/src/app/voice-spectrum.ts` (`VOICE_TUNING`).
     - Archivos: `estudio/src/app/settings.ts`, `estudio/tests/settings.test.ts`, `estudio/src/app/voice-input.ts`, `estudio/src/app/app.ts`, `estudio/src/app/app.html`
     - Contenido: `Settings.voice:boolean` (por defecto `true`, `parseSettings` acepta solo booleano). Servicio `VoiceInput` (injectable, root): `start()` llamado **síncronamente** dentro de `startScene` si `settings.voice` (crea/reanuda `AudioContext` en el gesto, `getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}})`, `AnalyserNode` con `VOICE_TUNING`, sin conectar a `destination`); `stop()` en `exitScene` y `ngOnDestroy` (detiene pistas, cierra contexto); señal `state: 'off'|'asking'|'on'|'denied'|'unavailable'` y getter del analizador. Sin `navigator.mediaDevices` o denegado → estado sin lanzar errores. Interruptor «Espectro de voz» en la preparación con nota breve («Durante la toma, tu voz se dibuja al pie de la página. No se graba ni se envía nada.»).
     - Hecho cuando: `node scripts/verify.mjs quick` pasa (prueba de `voice` en settings incluida) y `node scripts/verify.mjs build` pasa.
-  - [ ] T2 — Componente `v-voice-meter` y nuevo pie
+  - [x] T2 — Componente `v-voice-meter` y nuevo pie
     - Leer: `CLAUDE.md`, `estudio/DESIGN.md` (colores `mark-red`, `head-red`, `page-muted`, noche), `estudio/src/app/voice-spectrum.ts`, `estudio/src/app/voice-input.ts`, `estudio/src/app/reader.ts` (plantilla del `page-bottom`, inputs), `estudio/src/app/reader.css` (`.page-bottom`, `.page-folio`, `.camera-row`), `estudio/src/app/app.html` (uso de `v-reader`).
     - Archivos: `estudio/src/app/voice-meter.ts`, `estudio/src/app/reader.ts`, `estudio/src/app/reader.css`, `estudio/src/app/app.html`
     - Contenido: canvas a ancho completo del pie (comparte fila con `presenter-space` si la cámara está abajo), alto ≈ el del folio actual más el padding que libere (el pie no crece > 8 px). Barras simétricas: graves en el centro abriéndose hacia los lados, crecen arriba y abajo de una línea base; nº de barras según ancho (≈3 px barra + 3 px hueco), DPR correcto con `ResizeObserver`; colores leídos de las variables CSS (día/noche, acento). Bucle `requestAnimationFrame` solo mientras `active` (= escena en lectura y `voice` y analizador listo) y la pestaña visible; si no, dibuja la línea de reposo (puntos de 2 px) y no anima. Quitar `page-folio`/`folio-line` del pie y su CSS muerto. `aria-hidden` en el canvas.
@@ -79,6 +79,8 @@ Base: b6d44574685738852629204e9783bb341da7133f
 
 - 2026-11-24 O1: compuerta (−68 dB) aplicada al nivel medido, antes de la inclinación (si no, el ruido de sala encendía los agudos). `bandEdges` devuelve objeto `{sampleRate,fftSize,count,bins,freqs}`; `createVoiceSpectrum(count, tuning, sampleRate=48000)` → O3 debe pasar `audioContext.sampleRate`; `bandLevels(db,edges,tuning,peakDb?)`.
 - 2026-11-24 O2: barra `.page-progress` en el header; `reset()` activa `snap` (sin rebobinado animado). Pie aún usa `percent` (O3 lo quita). Sin captura visual aún (se hace en O3/O4).
+- 2026-11-24 O3 T1: `VoiceInput` expone `state` (señal), `analyser` (solo si 'on'), `sampleRate`. Pasar `sampleRate` a `createVoiceSpectrum` en T2.
+- 2026-11-24 O3 T2: pie 50 px (antes 49). `DESIGN.md` aún menciona el folio (~l.215, 316): actualizar en O4 T1. Capturas del agente en /tmp/vm (fuera del repo).
 
 ## Próximos hitos
 
