@@ -111,6 +111,7 @@ export class AppComponent implements OnDestroy {
     if(this.settings.voice)this.voiceInput.start();else this.voiceInput.stop();
     this.enterFullscreen();
     this.stopIntro();
+    if(this.settings.intro.enabled)this.primeIntroAudio();
     this.clearEndTimers();this.blackReady.set(false);this.phase.set('reading');this.current.set({...this.session[0]});this.reader()?.reset();this.scene.set(true);this.controls.set(false);this.playing.set(false);this.chosen.set([]);this.endAt.set(null);
     if(this.settings.countdown){this.phase.set('countdown');this.countdown.set(3);this.countdownTimer=setInterval(()=>{const remaining=this.countdown()!;if(remaining<=1){clearInterval(this.countdownTimer);this.afterCountdown();}else this.countdown.set(remaining-1);},1000);}
     else this.afterCountdown();
@@ -128,6 +129,9 @@ export class AppComponent implements OnDestroy {
   private runIntro(onDone:()=>void,onEnd:()=>void){
     const reduced=typeof matchMedia==='function'&&matchMedia('(prefers-reduced-motion: reduce)').matches;
     this.intro.set({...INTRO_START});
+    /* La portada dura lo que digan los ajustes; la música acompaña sin alargarla ni recortarla. */
+    const audio=this.introAudio??=this.createIntroAudio();
+    if(audio){this.introUnlock++;try{audio.muted=false;audio.currentTime=0;void audio.play().catch(()=>{});}catch{}}
     for(const step of introSteps(this.settings.intro.duration,reduced)){
       this.sceneTimers.push(setTimeout(()=>{
         if(step.view)this.intro.update(view=>view&&{...view,...step.view});
@@ -137,9 +141,21 @@ export class AppComponent implements OnDestroy {
       },step.at));
     }
   }
+  private introAudio:HTMLAudioElement|null=this.createIntroAudio();
+  private introUnlock=0;
+  /** Desbloquea el audio dentro del toque: el navegador del teléfono rechaza `play()` lanzado tras la cuenta atrás si el elemento no sonó antes en un gesto. */
+  private primeIntroAudio(){
+    const audio=this.introAudio??=this.createIntroAudio();if(!audio)return;
+    const token=++this.introUnlock;audio.muted=true;
+    try{audio.play().then(()=>{if(token===this.introUnlock){audio.pause();audio.currentTime=0;audio.muted=false;}},()=>{if(token===this.introUnlock)audio.muted=false;});}catch{audio.muted=false;}
+  }
+  private createIntroAudio(){
+    if(typeof Audio==='undefined')return null;
+    const audio=new Audio('audio/IntroVerbo.mp3');audio.preload='auto';return audio;
+  }
   private clearSceneTimers(){for(const t of this.sceneTimers)clearTimeout(t);this.sceneTimers=[];}
   /** Detiene la portada (o su vista previa) y apaga el polvo. */
-  private stopIntro(){this.clearSceneTimers();this.particles()?.ambient(false);this.intro.set(null);this.dissolve.set(false);this.introPreview.set(false);}
+  private stopIntro(){this.introAudio?.pause();this.clearSceneTimers();this.particles()?.ambient(false);this.intro.set(null);this.dissolve.set(false);this.introPreview.set(false);}
   toggleIntroPreview(){
     if(this.introPreview()||!this.settings.intro.enabled||this.scene()){this.stopIntro();return;}
     this.introPreview.set(true);
